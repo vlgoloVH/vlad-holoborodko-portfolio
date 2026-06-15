@@ -13,7 +13,7 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="relative">
-        <div className="absolute inset-0 border-b border-white/10 bg-white/10 backdrop-blur-md" />
+        <div className="pointer-events-none absolute inset-0 border-b border-white/10 bg-white/10 backdrop-blur-md" />
 
         <div className="relative mx-auto flex max-w-content items-center justify-between px-6 py-6 md:px-10">
           <Link
