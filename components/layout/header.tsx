@@ -1,24 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/site";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
+const HEADER_HEIGHT = 88;
+
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [overDark, setOverDark] = useState(false);
+
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>(".section-invert"));
+    if (!sections.length) return;
+
+    const check = () => {
+      const overlap = sections.some((s) => {
+        const rect = s.getBoundingClientRect();
+        return rect.top < HEADER_HEIGHT && rect.bottom > 0;
+      });
+      setOverDark(overlap);
+    };
+
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    };
+  }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="relative">
-        <div className="pointer-events-none absolute inset-0 border-b border-white/10 bg-white/10 backdrop-blur-md" />
-
-        <div className="relative mx-auto flex max-w-content items-center justify-between px-6 py-6 md:px-10">
+    <header className={`fixed inset-x-0 top-0 z-50 ${overDark ? "section-invert" : ""}`}>
+      <div className="glass-bg border-b border-line backdrop-blur-md transition-colors duration-300">
+        <div className="mx-auto flex max-w-content items-center justify-between px-6 py-6 md:px-10">
           <Link
             href="/"
-            className="font-display text-base font-semibold uppercase tracking-wide text-white mix-blend-difference transition-opacity duration-300 hover:opacity-70"
+            className="font-display text-base font-semibold uppercase tracking-wide text-ink transition-colors hover:text-accent"
           >
             {SITE.name}
           </Link>
@@ -28,21 +50,22 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-mono text-xs uppercase tracking-widest text-white/70 mix-blend-difference transition-colors duration-300 hover:text-white"
+                className="group relative font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:text-ink"
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
-            <ThemeToggle className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white mix-blend-difference transition-opacity duration-300 hover:opacity-70" />
+            <ThemeToggle />
           </nav>
 
           <div className="flex items-center gap-3 md:hidden">
-            <ThemeToggle className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white mix-blend-difference transition-opacity duration-300 hover:opacity-70" />
+            <ThemeToggle />
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen((v) => !v)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white mix-blend-difference"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink"
             >
               {open ? <X size={16} /> : <Menu size={16} />}
             </button>
