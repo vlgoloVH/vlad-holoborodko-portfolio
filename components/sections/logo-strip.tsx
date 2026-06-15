@@ -34,30 +34,30 @@ export function LogoStrip() {
             Companies I&apos;ve shipped products with
           </p>
         </Reveal>
+      </div>
 
-        {/* Infinite marquee */}
-        <div className="overflow-hidden">
-          <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-16 motion-reduce:animate-none">
-            {[...LOGOS, ...LOGOS].map((logo, i) => {
-              const suffix = theme === "dark" ? "Dark" : "Light";
-              const imagePath = `/logos/${logo}-${suffix}.svg`;
+      {/* Infinite marquee - full bleed */}
+      <div className="relative left-1/2 mt-8 w-screen -translate-x-1/2 overflow-hidden">
+        <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-10 motion-reduce:animate-none">
+          {[...LOGOS, ...LOGOS].map((logo, i) => {
+            const suffix = theme === "dark" ? "Dark" : "Light";
+            const imagePath = `/logos/${logo}-${suffix}.svg`;
 
-              return (
-                <div
-                  key={`${logo}-${suffix}-${i}`}
-                  className="relative h-10 w-[120px] flex-shrink-0 transition-opacity duration-300 hover:opacity-70"
-                >
-                  <Image
-                    src={imagePath}
-                    alt={logo}
-                    fill
-                    className="object-contain"
-                    priority={i < 15}
-                  />
-                </div>
-              );
-            })}
-          </div>
+            return (
+              <div
+                key={`${logo}-${suffix}-${i}`}
+                className="relative h-14 w-[140px] flex-shrink-0 transition-opacity duration-300 hover:opacity-70"
+              >
+                <Image
+                  src={imagePath}
+                  alt={logo}
+                  fill
+                  className="object-contain"
+                  priority={i < 15}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -67,7 +67,7 @@ export function LogoStrip() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-50% - 2rem));
+            transform: translateX(calc(-50% - 1.5rem));
           }
         }
       `}</style>
