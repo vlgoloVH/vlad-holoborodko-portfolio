@@ -21,7 +21,7 @@ export function SocialSidebar() {
             rel="noreferrer noopener"
             aria-label={link.label}
             data-cursor="Open"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg/30 text-ink backdrop-blur-md transition-colors duration-300 hover:border-accent hover:text-accent"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg/80 text-ink shadow-lg shadow-black/10 backdrop-blur-md transition-colors duration-300 hover:border-accent hover:text-accent"
           >
             {Icon && <Icon size={18} strokeWidth={1.5} />}
           </a>
