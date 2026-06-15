@@ -49,12 +49,6 @@ export function Header() {
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
-            <Link
-              href="/#contact"
-              className="rounded-full border border-ink px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
-            >
-              Contact
-            </Link>
             <ThemeToggle />
           </nav>
 
@@ -92,13 +86,6 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/#contact"
-                onClick={() => setOpen(false)}
-                className="mt-2 rounded-full border border-ink px-4 py-2 text-center font-mono text-sm uppercase tracking-widest text-ink"
-              >
-                Contact
-              </Link>
             </nav>
           </motion.div>
         )}
