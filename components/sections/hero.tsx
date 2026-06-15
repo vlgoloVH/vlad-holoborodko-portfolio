@@ -1,8 +1,4 @@
-"use client";
-
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { Download } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 
 export function Hero() {
@@ -20,45 +16,52 @@ export function Hero() {
           </span>
         </div>
 
-        <Reveal delay={0.05} className="mt-6">
-          <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink">
-            Vlad
-            <br />
-            Holoborodko
-            <span className="text-accent">.</span>
-          </h1>
-        </Reveal>
+        <div className="mt-10 grid items-center gap-12 md:grid-cols-[1fr_auto] md:gap-16">
+          <div>
+            <Reveal delay={0.05}>
+              <h1 className="font-display text-display-md font-semibold uppercase leading-[1.05] text-ink">
+                Designing experiences that drive action
+                <span className="text-accent">.</span>
+              </h1>
+            </Reveal>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-16">
-          <Reveal delay={0.1}>
-            <p className="font-display text-display-sm leading-snug text-ink">
-              I design calm, considered products for teams solving{" "}
-              <span className="text-accent">genuinely complex</span> problems.
-            </p>
-          </Reveal>
+            <Reveal delay={0.1} className="mt-6">
+              <p className="font-display text-display-sm leading-snug text-ink">
+                I design calm, considered products for teams solving{" "}
+                <span className="text-accent">genuinely complex</span> problems.
+              </p>
+            </Reveal>
+          </div>
 
-          <Reveal delay={0.15} className="flex flex-col justify-between gap-6">
-            <p className="max-w-md text-sm leading-relaxed text-muted md:text-base">
-              Ten years across fintech, travel, HR tech and healthcare — taking
-              products from a rough problem statement to a shipped, measurable
-              outcome. Research, UX, UI and the business case behind every
-              screen.
-            </p>
-
-            <Link
-              href="#work"
-              data-cursor="View"
-              className="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:text-accent"
+          <Reveal delay={0.15}>
+            <a
+              href="/resume.pdf"
+              download
+              data-cursor="Download"
+              className="group relative mx-auto flex h-40 w-40 items-center justify-center md:h-48 md:w-48"
             >
-              View selected work
-              <motion.span
-                animate={{ y: [0, 4, 0] }}
-                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                className="flex h-7 w-7 items-center justify-center rounded-full border border-line transition-colors group-hover:border-accent"
+              <svg
+                viewBox="0 0 200 200"
+                className="absolute inset-0 h-full w-full animate-[spin_24s_linear_infinite] text-muted"
               >
-                <ArrowDown size={14} />
-              </motion.span>
-            </Link>
+                <defs>
+                  <path
+                    id="resume-circle"
+                    d="M 100,100 m -88,0 a 88,88 0 1,1 176,0 a 88,88 0 1,1 -176,0"
+                    fill="none"
+                  />
+                </defs>
+                <text fill="currentColor" className="font-mono text-[10px] uppercase tracking-[0.3em]">
+                  <textPath href="#resume-circle">
+                    Download resume • Download resume • Download resume •
+                  </textPath>
+                </text>
+              </svg>
+
+              <span className="glass-bg flex h-16 w-16 items-center justify-center rounded-full border border-line text-ink backdrop-blur-md transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink">
+                <Download size={20} strokeWidth={1.5} />
+              </span>
+            </a>
           </Reveal>
         </div>
       </div>
