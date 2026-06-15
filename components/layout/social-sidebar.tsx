@@ -42,7 +42,7 @@ export function SocialSidebar() {
 
   return (
     <div
-      className={`fixed inset-y-0 right-4 z-40 hidden flex-col items-center justify-center gap-4 md:right-6 lg:flex ${
+      className={`fixed inset-y-0 right-4 z-40 hidden !bg-transparent flex-col items-center justify-center gap-4 md:right-6 lg:flex ${
         overDark ? "section-invert" : ""
       }`}
     >
