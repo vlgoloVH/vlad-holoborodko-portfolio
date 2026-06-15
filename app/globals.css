@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #f4f1ea;
+  --color-surface: #e9e4d9;
+  --color-ink: #181613;
+  --color-muted: #8a8273;
+  --color-accent: #d9552c;
+  --color-accent-ink: #f4f1ea;
+  --color-line: rgba(24, 22, 19, 0.12);
+}
+
+.dark {
+  --color-bg: #15130f;
+  --color-surface: #1f1c17;
+  --color-ink: #f4f1ea;
+  --color-muted: #948c7c;
+  --color-accent: #ec6a3c;
+  --color-accent-ink: #15130f;
+  --color-line: rgba(244, 241, 234, 0.14);
+}
+
+/* Inverted band — used for the dark "About" section regardless of theme */
+.section-invert {
+  --color-bg: #181613;
+  --color-surface: #232017;
+  --color-ink: #f4f1ea;
+  --color-muted: #a39a8a;
+  --color-accent: #ec6a3c;
+  --color-accent-ink: #181613;
+  --color-line: rgba(244, 241, 234, 0.14);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  transition: background-color 0.4s var(--tw-ease, ease), color 0.4s ease;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+/* Subtle drafting-grid backdrop used behind the hero & section dividers */
+.spec-grid {
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.ruler {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-ink) 0,
+    var(--color-ink) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+  opacity: 0.18;
+  height: 8px;
+}
+
+/* Focus states */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Custom cursor (desktop only, respects reduced motion) */
+@media (pointer: fine) {
+  .has-custom-cursor {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
