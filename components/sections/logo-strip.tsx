@@ -14,7 +14,7 @@ const LOGOS = [
   "LegalShelf",
   "LoquidBank",
   "Marffa",
-  "NotaryHub",
+  "NotaryHUB",
   "SmartCrowd",
   "SpaceNeedle",
   "SPD",
@@ -37,7 +37,7 @@ export function LogoStrip() {
 
         {/* Infinite marquee */}
         <div className="overflow-hidden">
-          <div className="flex w-max animate-[scroll_50s_linear_infinite] gap-16 motion-reduce:animate-none">
+          <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-16 motion-reduce:animate-none">
             {[...LOGOS, ...LOGOS].map((logo, i) => {
               const suffix = theme === "dark" ? "Dark" : "Light";
               const imagePath = `/logos/${logo}-${suffix}.svg`;
@@ -45,18 +45,13 @@ export function LogoStrip() {
               return (
                 <div
                   key={`${logo}-${suffix}-${i}`}
-                  className="relative h-10 w-auto flex-shrink-0 transition-opacity duration-300 hover:opacity-70"
+                  className="relative h-10 w-[120px] flex-shrink-0 transition-opacity duration-300 hover:opacity-70"
                 >
                   <Image
                     src={imagePath}
                     alt={logo}
-                    height={40}
-                    width={150}
-                    style={{
-                      height: "auto",
-                      width: "auto",
-                      maxWidth: "150px",
-                    }}
+                    fill
+                    className="object-contain"
                     priority={i < 15}
                   />
                 </div>
