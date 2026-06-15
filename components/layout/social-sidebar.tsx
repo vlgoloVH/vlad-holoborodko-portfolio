@@ -21,9 +21,16 @@ export function SocialSidebar() {
             rel="noreferrer noopener"
             aria-label={link.label}
             data-cursor="Open"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg/80 text-ink shadow-lg shadow-black/10 backdrop-blur-md transition-colors duration-300 hover:border-accent hover:text-accent"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-110"
           >
-            {Icon && <Icon size={18} strokeWidth={1.5} />}
+            {Icon && (
+              <Icon
+                size={18}
+                strokeWidth={1.5}
+                className="text-white"
+                style={{ mixBlendMode: "difference" }}
+              />
+            )}
           </a>
         );
       })}
