@@ -26,11 +26,11 @@ export function Header() {
         transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
         className={
           scrolled
-            ? "border-b border-line bg-bg/95 backdrop-blur-md"
+            ? "border-b border-line bg-bg backdrop-blur-md"
             : "border-b border-transparent bg-transparent"
         }
       >
-                        <div className="mx-auto flex max-w-content items-center justify-between px-6 md:px-10">
+        <div className="mx-auto flex max-w-content items-center justify-between px-6 md:px-10">
           <Link
             href="/"
             className="font-display text-base font-semibold uppercase tracking-wide text-ink transition-colors hover:text-accent"
