@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-32 md:px-10 md:pt-44">
+    <section className="relative overflow-hidden px-6 pb-20 pt-32 md:px-10 md:pt-44 lg:pl-10">
       <div className="spec-grid pointer-events-none absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,black,transparent_70%)] opacity-40" />
 
       <div className="mx-auto max-w-content">
@@ -15,10 +15,10 @@ export function Hero() {
           <span>— Product Designer · Est. 2015</span>
           <span className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            Available for new projects — Q3 2026 · Lisbon, PT · Remote
+            Available for new projects
           </span>
         </div>
 
