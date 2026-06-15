@@ -8,17 +8,17 @@ const LOGOS = [
   "BitterBrain",
   "DoPropdo",
   "Edgeless",
-  "Front Nation",
+  "FrontNation",
   "Howdi",
   "Hyper6",
-  "Legal Shelf",
-  "Loquid Bank",
+  "LegalShelf",
+  "LoquidBank",
   "Marffa",
-  "Notary HUB",
-  "Smart Crowd",
-  "Space Needle",
+  "NotaryHub",
+  "SmartCrowd",
+  "SpaceNeedle",
   "SPD",
-  "Vue School",
+  "VueSchool",
   "Wander",
 ];
 
@@ -40,7 +40,7 @@ export function LogoStrip() {
           <div className="flex w-max animate-[scroll_50s_linear_infinite] gap-16 motion-reduce:animate-none">
             {[...LOGOS, ...LOGOS].map((logo, i) => {
               const suffix = theme === "dark" ? "Dark" : "Light";
-              const imagePath = `/logos/${logo} - ${suffix}.svg`;
+              const imagePath = `/logos/${logo}-${suffix}.svg`;
 
               return (
                 <div
