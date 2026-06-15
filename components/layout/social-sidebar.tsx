@@ -21,15 +21,11 @@ export function SocialSidebar() {
             rel="noreferrer noopener"
             aria-label={link.label}
             data-cursor="Open"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-110"
+            className="relative flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-300 hover:scale-110"
           >
+            <span className="absolute inset-0 rounded-full border border-white/20 bg-white/10 backdrop-blur-md" />
             {Icon && (
-              <Icon
-                size={18}
-                strokeWidth={1.5}
-                className="text-white"
-                style={{ mixBlendMode: "difference" }}
-              />
+              <Icon size={18} strokeWidth={1.5} className="relative text-white mix-blend-difference" />
             )}
           </a>
         );
