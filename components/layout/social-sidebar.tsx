@@ -1,30 +1,32 @@
+import { Linkedin, Instagram, Dribbble } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/site";
+
+const ICONS: Record<string, LucideIcon> = {
+  LinkedIn: Linkedin,
+  Dribbble: Dribbble,
+  Instagram: Instagram,
+};
 
 export function SocialSidebar() {
   return (
-    <div className="fixed inset-y-0 left-0 z-40 hidden w-16 flex-col items-center justify-between py-10 lg:flex">
-      <div className="h-16 w-px bg-line" />
-
-      <nav className="flex flex-col items-center gap-7">
-        {SOCIAL_LINKS.map((link) => (
+    <div className="fixed inset-y-0 right-4 z-40 hidden flex-col items-center justify-center gap-4 md:right-6 lg:flex">
+      {SOCIAL_LINKS.map((link) => {
+        const Icon = ICONS[link.label];
+        return (
           <a
             key={link.label}
             href={link.href}
             target="_blank"
             rel="noreferrer noopener"
-            className="font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 hover:text-accent [writing-mode:vertical-rl] rotate-180"
+            aria-label={link.label}
+            data-cursor="Open"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg/30 text-ink backdrop-blur-md transition-colors duration-300 hover:border-accent hover:text-accent"
           >
-            {link.label}
+            {Icon && <Icon size={18} strokeWidth={1.5} />}
           </a>
-        ))}
-      </nav>
-
-      <div className="flex flex-col items-center gap-3">
-        <div className="h-16 w-px bg-line" />
-        <span className="font-mono text-xs text-muted [writing-mode:vertical-rl] rotate-180">
-          © 2026
-        </span>
-      </div>
+        );
+      })}
     </div>
   );
 }
