@@ -30,7 +30,7 @@ export function Header() {
             : "border-b border-transparent bg-transparent"
         }
       >
-        <div className="mx-auto flex max-w-content items-center justify-between px-6 md:px-10 lg:pl-16">
+                <div className="mx-auto flex max-w-content items-center justify-between px-6 md:px-10 lg:pr-20">
           <Link
             href="/"
             className="font-display text-base font-semibold uppercase tracking-wide text-ink transition-colors hover:text-accent"
