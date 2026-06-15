@@ -26,7 +26,7 @@ export function Header() {
         transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
         className={
           scrolled
-            ? "border-b border-line bg-bg/80 backdrop-blur-md"
+            ? "border-b border-line bg-bg/95 backdrop-blur-md"
             : "border-b border-transparent bg-transparent"
         }
       >
