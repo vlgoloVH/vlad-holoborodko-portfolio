@@ -65,8 +65,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Cursor />
           <SocialSidebar />
           <Header />
-          <main className="lg:pl-16">{children}</main>
-          <div className="lg:pl-16">
+          <main className="lg:pr-20">{children}</main>
+          <div className="lg:pr-20">
             <Footer />
           </div>
         </ThemeProvider>
