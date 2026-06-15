@@ -15,10 +15,10 @@ export const NAV_LINKS = [
 
 export const SOCIAL_LINKS = [
   { label: "LinkedIn", href: "https://linkedin.com/in/vladholoborodko" },
-  { label: "Behance", href: "https://behance.net/vladholoborodko" },
   { label: "Dribbble", href: "https://dribbble.com/vladholoborodko" },
-  { label: "Read.cv", href: "https://read.cv/vladholoborodko" },
+  { label: "Instagram", href: "https://instagram.com/vladholoborodko" },
 ];
+
 
 export const METRICS = [
   { value: 10, suffix: "+", label: "Years in product design" },
