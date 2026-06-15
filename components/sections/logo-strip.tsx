@@ -26,7 +26,7 @@ export function LogoStrip() {
   const { theme } = useTheme();
 
   return (
-    <section className="px-6 py-12 md:px-10">
+    <section className="border-y border-border px-6 py-12 md:px-10">
       <div className="mx-auto max-w-content space-y-8">
         {/* Label */}
         <Reveal>
