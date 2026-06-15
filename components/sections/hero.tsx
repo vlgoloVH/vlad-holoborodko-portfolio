@@ -51,14 +51,9 @@ export function Hero() {
                     fill="none"
                   />
                 </defs>
-                <text
-                  fill="currentColor"
-                  className="font-mono text-[13px] uppercase tracking-[0.25em]"
-                  textLength="553"
-                  lengthAdjust="spacingAndGlyphs"
-                >
+                <text fill="currentColor" className="font-mono text-[14px] uppercase tracking-[0.25em]">
                   <textPath href="#resume-circle">
-                    Download resume • Download resume •
+                    Download resume • Download resume • Download resume •
                   </textPath>
                 </text>
               </svg>
