@@ -36,7 +36,7 @@ export function Header() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 ${overDark ? "section-invert" : ""}`}>
-      <div className="glass-bg border-b border-line backdrop-blur-md transition-colors duration-300">
+      <div className="glass-bg backdrop-blur-md transition-colors duration-300">
         <div className="mx-auto flex max-w-content items-center justify-between px-6 py-6 md:px-10">
           <Link
             href="/"
