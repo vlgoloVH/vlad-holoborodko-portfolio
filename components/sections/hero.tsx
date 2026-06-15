@@ -16,16 +16,16 @@ export function Hero() {
           </span>
         </div>
 
-        <div className="mt-10 grid items-center gap-12 md:grid-cols-[1fr_auto] md:gap-16">
+        <div className="mt-8 grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-10">
           <div>
             <Reveal delay={0.05}>
-              <h1 className="font-display text-display-md font-semibold uppercase leading-[1.05] text-ink">
+              <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink">
                 Designing experiences that drive action
                 <span className="text-accent">.</span>
               </h1>
             </Reveal>
 
-            <Reveal delay={0.1} className="mt-6">
+            <Reveal delay={0.1} className="mt-4">
               <p className="font-display text-display-sm leading-snug text-ink">
                 I design calm, considered products for teams solving{" "}
                 <span className="text-accent">genuinely complex</span> problems.
@@ -68,4 +68,3 @@ export function Hero() {
     </section>
   );
 }
-
