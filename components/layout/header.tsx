@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/site";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
@@ -12,8 +12,10 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <motion.div className="border-b border-white/10 bg-white/10 px-6 py-6 backdrop-blur-md md:px-10">
-        <div className="mx-auto flex max-w-content items-center justify-between">
+      <div className="relative">
+        <div className="absolute inset-0 border-b border-white/10 bg-white/10 backdrop-blur-md" />
+
+        <div className="relative mx-auto flex max-w-content items-center justify-between px-6 py-6 md:px-10">
           <Link
             href="/"
             className="font-display text-base font-semibold uppercase tracking-wide text-white mix-blend-difference transition-opacity duration-300 hover:opacity-70"
@@ -26,7 +28,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative font-mono text-xs uppercase tracking-widest text-white/70 mix-blend-difference transition-colors duration-300 hover:text-white"
+                className="font-mono text-xs uppercase tracking-widest text-white/70 mix-blend-difference transition-colors duration-300 hover:text-white"
               >
                 {link.label}
               </Link>
@@ -46,7 +48,7 @@ export function Header() {
             </button>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <AnimatePresence>
         {open && (
