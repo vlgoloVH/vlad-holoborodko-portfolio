@@ -7,9 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-32 md:px-10 md:pt-44 lg:pl-10">
-      <div className="spec-grid pointer-events-none absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,black,transparent_70%)] opacity-40" />
-
+    <section className="relative overflow-hidden px-6 pb-20 pt-32 md:px-10 md:pt-44">
       <div className="mx-auto max-w-content">
         <div className="flex flex-col gap-3 font-mono text-xs uppercase tracking-widest text-muted md:flex-row md:items-center md:justify-between">
           <span>— Product Designer · Est. 2015</span>
