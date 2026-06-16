@@ -30,7 +30,7 @@ export const CASES: Case[] = [
     slug: "smartcrowd",
     title: "SmartCrowd",
     client: "SmartCrowd — Real Estate Investment Platform",
-    year: "2024-2025",
+    year: "2025-2026",
     description:
       "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
     cover:
