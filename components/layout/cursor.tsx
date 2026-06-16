@@ -38,9 +38,8 @@ export function Cursor() {
   if (!enabled) return null;
 
   const isDark = resolvedTheme === "dark";
-  const borderColor = inverted || isDark
-    ? "var(--color-accent-ink)"
-    : "var(--color-ink)";
+  const needsLightCursor = isDark || inverted;
+  const borderColor = needsLightCursor ? "#f4f1ea" : "var(--color-ink)";
 
   return (
     <motion.div
