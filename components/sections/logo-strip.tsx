@@ -27,7 +27,7 @@ export function LogoStrip() {
 
   return (
     <div className="relative left-1/2 w-screen -translate-x-1/2 border-y border-border">
-      <div className="px-16 py-8 md:px-20">
+    <div className="py-8" style={{ paddingLeft: "200px" }}>
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-widest text-muted">
             Companies I&apos;ve shipped products with
