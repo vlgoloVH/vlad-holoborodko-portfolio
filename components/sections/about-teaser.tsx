@@ -45,7 +45,7 @@ export function AboutTeaser() {
 
               <Link
                 href="/about"
-                className="group inline-flex w-fit items-center gap-3 rounded-full border border-line px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
+                className="group inline-flex w-fit items-center gap-3 rounded-full border border-line px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
               >
                 Learn more about me
                 <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
