@@ -27,7 +27,7 @@ export function LogoStrip() {
 
   return (
     <section className="-mx-8 border-y border-border py-8 md:-mx-14">
-      <div className="px-8 md:px-14">
+      <div className="mx-auto max-w-content px-8 md:px-14">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-widest text-muted">
             Companies I&apos;ve shipped products with
