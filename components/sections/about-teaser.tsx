@@ -14,7 +14,7 @@ export function AboutTeaser() {
               About
             </h2>
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              [ 02 — Profile ]
+              [ 01 — INTRO ]
             </span>
           </div>
         </Reveal>
