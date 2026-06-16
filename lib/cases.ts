@@ -26,16 +26,16 @@ export type Case = {
 
 export const CASES: Case[] = [
   {
-    slug: "finlytic",
-    title: "Finlytic",
-    client: "Finlytic — B2B Financial Analytics",
-    year: "2023",
+    slug: "smartcrowd",
+    title: "SmartCrowd",
+    client: "SmartCrowd — Real Estate Investment Platform",
+    year: "2025",
     description:
-      "Rebuilding a finance dashboard so analysts spend less time exporting data and more time making decisions.",
+      "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
     cover:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
     industry: "Fintech",
-    businessType: "SaaS",
+    businessType: "B2C",
     platform: "Web",
     meta: {
       duration: "7 months",
