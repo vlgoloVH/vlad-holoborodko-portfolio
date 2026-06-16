@@ -18,7 +18,7 @@ const config: Config = {
         line: "var(--color-line)",
       },
       fontFamily: {
-        display: ["var(--font-display)"],
+        display: ["Georgia", "serif"],
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
