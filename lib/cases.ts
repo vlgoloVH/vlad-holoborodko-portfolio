@@ -264,12 +264,13 @@ export const CASES: Case[] = [
     ],
   },
   {
-    slug: "bitterbrains",
-    title: "BitterBrains",
-    client: "BitterBrains — Developer Education Platform",
+    slug: "dan-mon-fairwind",
+    title: "Dan-Mon Fairwind",
+    client: "Dan-Mon Fairwind — Enterprise CRM",
     year: "2022-2023",
     description:
-      "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
+      "Designed an enterprise CRM platform that supports the complete sales lifecycle for marine equipment and spare parts, helping global teams manage opportunities, quotations, procurement, and customer relationships in one place.",
+    tags: ["Enterprise", "CRM", "B2B"],
     tags: ["EdTech", "SaaS", "Community"],
     cover:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop",
