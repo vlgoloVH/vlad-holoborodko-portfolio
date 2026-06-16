@@ -4,7 +4,6 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export function Cursor() {
   const [enabled, setEnabled] = useState(false);
-  const [label, setLabel] = useState<string | null>(null);
   const [inverted, setInverted] = useState(false);
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
@@ -23,9 +22,6 @@ export function Cursor() {
       x.set(e.clientX);
       y.set(e.clientY);
 
-      const target = (e.target as HTMLElement)?.closest("[data-cursor]") as HTMLElement | null;
-      setLabel(target?.dataset.cursor ?? null);
-
       const onDark = !!(e.target as HTMLElement)?.closest(".section-invert");
       setInverted(onDark);
     };
@@ -39,9 +35,7 @@ export function Cursor() {
 
   if (!enabled) return null;
 
-  const borderColor = label
-    ? "var(--color-accent)"
-    : inverted
+  const borderColor = inverted
     ? "var(--color-accent-ink)"
     : "var(--color-ink)";
 
@@ -53,19 +47,13 @@ export function Cursor() {
     >
       <motion.div
         animate={{
-          width: label ? 64 : 14,
-          height: label ? 64 : 14,
+          width: 14,
+          height: 14,
           borderColor,
         }}
         transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] }}
         className="flex items-center justify-center rounded-full border"
-      >
-        {label && (
-          <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-            {label}
-          </span>
-        )}
-      </motion.div>
+      />
     </motion.div>
   );
 }
