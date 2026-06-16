@@ -14,6 +14,7 @@ export type Case = {
   industry: string;
   businessType: "B2B" | "B2C" | "SaaS";
   platform: "Web" | "Mobile" | "Desktop";
+  tags?: string[];
   meta: {
     duration: string;
     role: string;
@@ -34,9 +35,10 @@ export const CASES: Case[] = [
       "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
     cover:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
-    industry: "Proptech",
+  industry: "Fintech",
     businessType: "B2C",
-    platform: "Product Design",
+    platform: "Web",
+    tags: ["Fintech", "Proptech", "Product Design"],
     meta: {
       duration: "7 months",
       role: "Lead Product Designer",
