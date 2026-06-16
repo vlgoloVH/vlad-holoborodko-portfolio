@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
-import { CoverPlaceholder } from "@/components/ui/cover-placeholder";
+import Image from "next/image";
 import { SKILLS } from "@/lib/experience";
 
 export function AboutTeaser() {
@@ -14,7 +14,7 @@ export function AboutTeaser() {
               About
             </h2>
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              [ 01 — INTRO ]
+              [ 02 — Profile ]
             </span>
           </div>
         </Reveal>
@@ -55,7 +55,15 @@ export function AboutTeaser() {
 
           {/* Center — Photo */}
           <Reveal delay={0.1}>
-            <CoverPlaceholder label="Portrait" ratio="aspect-[3/5]" />
+            <div className="relative aspect-[3/5] w-full overflow-hidden rounded-sm">
+              <Image
+                src="/profile_photo.jpg"
+                alt="Vlad Holoborodko"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </Reveal>
 
           {/* Right — Skills */}
