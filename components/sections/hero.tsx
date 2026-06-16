@@ -36,7 +36,7 @@ export function Hero() {
               </Reveal>
             </div>
             <Reveal delay={0.15}>
-              
+              <a
                 href="/resume.pdf"
                 download
                 data-cursor="Download"
