@@ -27,35 +27,35 @@ export function LogoStrip() {
 
   return (
     <section className="border-y border-border px-8 py-8 md:px-14">
-      <div className="mx-auto max-w-content space-y-8">
+      <div className="mx-auto max-w-content">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-widest text-muted">
             Companies I&apos;ve shipped products with
           </p>
         </Reveal>
+      </div>
 
-        <div className="overflow-hidden">
-          <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-10 motion-reduce:animate-none">
-            {[...LOGOS, ...LOGOS].map((logo, i) => {
-              const suffix = theme === "dark" ? "Dark" : "Light";
-              const imagePath = `/logos/${logo}-${suffix}.svg`;
+      <div className="mt-8 overflow-hidden">
+        <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-10 motion-reduce:animate-none">
+          {[...LOGOS, ...LOGOS].map((logo, i) => {
+            const suffix = theme === "dark" ? "Dark" : "Light";
+            const imagePath = `/logos/${logo}-${suffix}.svg`;
 
-              return (
-                <div
-                  key={`${logo}-${suffix}-${i}`}
-                  className="relative h-14 w-[140px] flex-shrink-0 transition-opacity duration-300 hover:opacity-70"
-                >
-                  <Image
-                    src={imagePath}
-                    alt={logo}
-                    fill
-                    className="object-contain"
-                    priority={i < 15}
-                  />
-                </div>
-              );
-            })}
-          </div>
+            return (
+              <div
+                key={`${logo}-${suffix}-${i}`}
+                className="relative h-14 w-[140px] flex-shrink-0 transition-opacity duration-300 hover:opacity-70"
+              >
+                <Image
+                  src={imagePath}
+                  alt={logo}
+                  fill
+                  className="object-contain"
+                  priority={i < 15}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 
