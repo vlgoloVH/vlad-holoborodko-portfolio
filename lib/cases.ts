@@ -30,7 +30,7 @@ export const CASES: Case[] = [
     slug: "smartcrowd",
     title: "SmartCrowd",
     client: "SmartCrowd — Real Estate Investment Platform",
-    year: "2025",
+    year: "2024-2025",
     description:
       "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
     cover:
@@ -106,12 +106,13 @@ export const CASES: Case[] = [
     ],
   },
   {
-    slug: "wayfare",
-    title: "Wayfare",
-    client: "Wayfare — Travel Booking",
-    year: "2022",
+    slug: "space-needle",
+    title: "Space Needle",
+    client: "Space Needle — Ticketing Experience",
+    year: "2024-2025",
     description:
-      "Redesigning the booking flow for a travel app to reduce drop-off between search and checkout.",
+      "Designed the end-to-end ticketing experience for one of Seattle's most iconic attractions. Created customer-facing products across kiosks, web, and box offices, alongside a powerful internal platform for managing ticket inventory, pricing, discounts, schedules, and sales operations.",
+    tags: ["B2C", "B2B", "Enterprise"],
     cover:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop",
     industry: "Travel",
