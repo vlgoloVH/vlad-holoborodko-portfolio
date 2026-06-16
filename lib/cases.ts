@@ -34,8 +34,8 @@ export const CASES: Case[] = [
       "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
     cover:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
-    industry: "Fintech",
-    businessType: "Proptech",
+    industry: "Proptech",
+    businessType: "B2C",
     platform: "Product Design",
     meta: {
       duration: "7 months",
