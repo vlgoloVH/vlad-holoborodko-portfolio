@@ -1,11 +1,11 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export function Cursor() {
   const [enabled, setEnabled] = useState(false);
   const [label, setLabel] = useState<string | null>(null);
+  const [inverted, setInverted] = useState(false);
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
   const springX = useSpring(x, { stiffness: 500, damping: 40, mass: 0.3 });
@@ -22,8 +22,12 @@ export function Cursor() {
     const move = (e: MouseEvent) => {
       x.set(e.clientX);
       y.set(e.clientY);
+
       const target = (e.target as HTMLElement)?.closest("[data-cursor]") as HTMLElement | null;
       setLabel(target?.dataset.cursor ?? null);
+
+      const onDark = !!(e.target as HTMLElement)?.closest(".section-invert");
+      setInverted(onDark);
     };
 
     window.addEventListener("mousemove", move);
@@ -35,6 +39,12 @@ export function Cursor() {
 
   if (!enabled) return null;
 
+  const borderColor = label
+    ? "var(--color-accent)"
+    : inverted
+    ? "var(--color-accent-ink)"
+    : "var(--color-ink)";
+
   return (
     <motion.div
       style={{ left: springX, top: springY }}
@@ -45,7 +55,7 @@ export function Cursor() {
         animate={{
           width: label ? 64 : 14,
           height: label ? 64 : 14,
-          borderColor: label ? "var(--color-accent)" : "var(--color-ink)",
+          borderColor,
         }}
         transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] }}
         className="flex items-center justify-center rounded-full border"
