@@ -1,10 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useTheme } from "next-themes";
 
 export function Cursor() {
   const [enabled, setEnabled] = useState(false);
   const [inverted, setInverted] = useState(false);
+  const { resolvedTheme } = useTheme();
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
   const springX = useSpring(x, { stiffness: 500, damping: 40, mass: 0.3 });
@@ -35,7 +37,8 @@ export function Cursor() {
 
   if (!enabled) return null;
 
-  const borderColor = inverted
+  const isDark = resolvedTheme === "dark";
+  const borderColor = inverted || isDark
     ? "var(--color-accent-ink)"
     : "var(--color-ink)";
 
