@@ -35,7 +35,7 @@ export function LogoStrip() {
         </Reveal>
       </div>
 
-      <div className="mt-8 overflow-hidden">
+      <div className="-mx-8 mt-8 overflow-hidden md:-mx-14">
         <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-10 motion-reduce:animate-none">
           {[...LOGOS, ...LOGOS].map((logo, i) => {
             const suffix = theme === "dark" ? "Dark" : "Light";
