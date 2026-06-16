@@ -21,10 +21,10 @@ export function Hero() {
             <div>
               <Reveal delay={0.05}>
                 <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink">
-                  Turning{" "}
-                  <span className="text-accent">complex</span>{" "}
-                  problems into clear{" "}
-                  <span className="text-accent">products</span>
+                  Designing{" "}
+                  <span className="text-accent">products</span>{" "}
+                  that drive{" "}
+                  <span className="text-accent">growth</span>
                   <span className="text-accent">.</span>
                 </h1>
               </Reveal>
