@@ -42,7 +42,7 @@ export const CASES: Case[] = [
       role: "Lead Product Designer",
       team: "2 PMs, 6 engineers, 1 data analyst",
       tools: ["Figma", "FigJam", "Maze", "Notion"],
-      skills: ["Discovery research", "Information architecture", "Design system", "Data visualisation"],
+      skills: ["Fintech", "Proptech", "Product Design"],
     },
     sections: [
       {
