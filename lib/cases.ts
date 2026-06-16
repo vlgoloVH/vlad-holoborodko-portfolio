@@ -35,8 +35,8 @@ export const CASES: Case[] = [
     cover:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
     industry: "Fintech",
-    businessType: "B2C",
-    platform: "Web",
+    businessType: "Proptech",
+    platform: "Product Design",
     meta: {
       duration: "7 months",
       role: "Lead Product Designer",
