@@ -185,12 +185,13 @@ export const CASES: Case[] = [
     ],
   },
   {
-    slug: "cohort-hr",
-    title: "Cohort HR",
-    client: "Cohort — People Operations Platform",
+    slug: "bitterbrains",
+    title: "BitterBrains",
+    client: "BitterBrains — Developer Education Platform",
     year: "2021",
     description:
-      "Designing a guided onboarding experience for HR admins setting up a new company workspace.",
+      "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
+    tags: ["EdTech", "SaaS", "Community"],
     cover:
       "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2000&auto=format&fit=crop",
     industry: "HR Tech",
