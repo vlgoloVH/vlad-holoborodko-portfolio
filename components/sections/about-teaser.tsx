@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
-import { Counter } from "@/components/ui/counter";
 import { CoverPlaceholder } from "@/components/ui/cover-placeholder";
-import { METRICS } from "@/lib/site";
 import { SKILLS } from "@/lib/experience";
 
 export function AboutTeaser() {
@@ -16,86 +14,102 @@ export function AboutTeaser() {
               About
             </h2>
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              [ 02 — Profile ]
+              [ 01 — Intro ]
             </span>
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-12 md:grid-cols-[minmax(0,320px)_1fr] md:gap-16">
+        {/* 3-column grid: skills | photo | bio */}
+        <div className="mt-12 grid gap-8 md:grid-cols-[1fr_auto_1fr] md:gap-12">
+
+          {/* Left — Skills */}
           <Reveal delay={0.05}>
-            <CoverPlaceholder label="Portrait" ratio="aspect-[4/5]" />
+            <div className="flex flex-col gap-10">
+              <div>
+                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-muted">
+                  What I do
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {SKILLS.practice.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-ink"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-muted">
+                  Tools
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {SKILLS.tools.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-ink"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </Reveal>
 
-          <div className="flex flex-col gap-10">
-            <Reveal delay={0.1}>
-              <div className="grid gap-6 md:grid-cols-2">
-                <p className="font-display text-display-sm leading-snug text-ink">
-                  Product designer with ten years of practice, working where
-                  user needs, business goals and engineering reality meet.
+          {/* Center — Photo */}
+          <Reveal delay={0.1}>
+            <div className="mx-auto w-full max-w-[280px] md:max-w-[320px]">
+              <CoverPlaceholder label="Portrait" ratio="aspect-[4/5]" />
+            </div>
+          </Reveal>
+
+          {/* Right — Bio */}
+          <Reveal delay={0.15}>
+            <div className="flex flex-col gap-8">
+              <div>
+                <p className="mb-3 text-2xl">
+                  <span
+                    className="inline-block animate-[wave_2s_ease-in-out_infinite]"
+                    style={{ transformOrigin: "70% 70%" }}
+                  >
+                    👋
+                  </span>
                 </p>
-                <p className="text-sm leading-relaxed text-muted md:text-base">
-                  I&apos;m happiest reducing complexity — finding the one
-                  interface, flow or system that makes a hard problem feel
-                  obvious. I&apos;ve led design at startups and partnered with
-                  teams from seed stage to enterprise, always staying close to
-                  research, data and delivery.
+                <p className="font-display text-display-sm font-semibold text-ink">
+                  Hey there, I&apos;m Vlad!
                 </p>
               </div>
-            </Reveal>
 
-            <Reveal delay={0.15}>
-              <dl className="grid grid-cols-2 gap-8 border-t border-line pt-8 sm:grid-cols-4">
-                {METRICS.map((metric) => (
-                  <div key={metric.label}>
-                    <dt className="font-display text-3xl font-semibold text-ink md:text-4xl">
-                      <Counter value={metric.value} suffix={metric.suffix} />
-                    </dt>
-                    <dd className="mt-1 font-mono text-xs uppercase tracking-widest text-muted">
-                      {metric.label}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
+              <p className="text-sm leading-relaxed text-muted md:text-base">
+                I&apos;m a Product Designer with 11+ years of experience building
+                digital products across diverse industries and markets. I help teams
+                transform complex ideas into intuitive experiences that create
+                meaningful value for users and measurable results for businesses.
+              </p>
 
-            <Reveal delay={0.2}>
-              <div className="grid gap-8 border-t border-line pt-8 sm:grid-cols-2">
-                <div>
-                  <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
-                    What I do
-                  </p>
-                  <ul className="space-y-2 text-sm text-ink">
-                    {SKILLS.practice.slice(0, 4).map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
-                    Tools
-                  </p>
-                  <ul className="space-y-2 text-sm text-ink">
-                    {SKILLS.tools.slice(0, 4).map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.25}>
               <Link
                 href="/about"
-                data-cursor="Open"
                 className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
               >
                 Learn more about me
                 <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
+
         </div>
       </div>
+
+      <style>{`
+        @keyframes wave {
+          0%, 100% { transform: rotate(0deg); }
+          25% { transform: rotate(20deg); }
+          75% { transform: rotate(-10deg); }
+        }
+      `}</style>
     </section>
   );
 }
