@@ -35,7 +35,7 @@ export function AboutTeaser() {
                   </span>
                   Hey there, I&apos;m Vlad!
                 </p>
-                <p className="font-display text-xl leading-relaxed text-ink">
+                <p className="font-display text-2xl leading-relaxed text-ink">
                   I&apos;m a Product Designer with 11+ years of experience building
                   digital products across diverse industries and markets. I help teams
                   transform complex ideas into intuitive experiences that create
