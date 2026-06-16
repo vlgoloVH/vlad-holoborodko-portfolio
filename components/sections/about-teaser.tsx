@@ -14,7 +14,7 @@ export function AboutTeaser() {
               About
             </h2>
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              [ 02 — Profile ]
+              [ 01 — INTRO ]
             </span>
           </div>
         </Reveal>
@@ -36,7 +36,7 @@ export function AboutTeaser() {
                   Hey there, I&apos;m Vlad!
                 </p>
                 <p className="font-display text-2xl leading-relaxed text-ink">
-                  I&apos;m a Product Designer with 11+1000 years of experience building
+                  I&apos;m a Product Designer with 11+ years of experience building
                   digital products across diverse industries and markets. I help teams
                   transform complex ideas into intuitive experiences that create
                   meaningful value for users and measurable results for businesses.
