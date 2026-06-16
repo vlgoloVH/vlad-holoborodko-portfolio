@@ -35,7 +35,7 @@ export function AboutTeaser() {
                   </span>
                   Hey there, I&apos;m Vlad!
                 </p>
-                <p className="font-display text-display-sm leading-snug text-ink">
+                <p className="font-display text-lg leading-relaxed text-ink">
                   I&apos;m a Product Designer with 11+ years of experience building
                   digital products across diverse industries and markets. I help teams
                   transform complex ideas into intuitive experiences that create
@@ -55,7 +55,7 @@ export function AboutTeaser() {
 
           {/* Center — Photo */}
           <Reveal delay={0.1}>
-            <CoverPlaceholder label="Portrait" ratio="aspect-[4/5]" />
+            <CoverPlaceholder label="Portrait" ratio="aspect-[3/5]" />
           </Reveal>
 
           {/* Right — Skills */}
