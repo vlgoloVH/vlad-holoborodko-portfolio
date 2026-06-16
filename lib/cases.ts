@@ -188,7 +188,7 @@ export const CASES: Case[] = [
     slug: "bitterbrains",
     title: "BitterBrains",
     client: "BitterBrains — Developer Education Platform",
-    year: "2021",
+    year: "2019-2025",
     description:
       "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
     tags: ["EdTech", "SaaS", "Community"],
@@ -264,12 +264,13 @@ export const CASES: Case[] = [
     ],
   },
   {
-    slug: "pulse-health",
-    title: "Pulse Health",
-    client: "Pulse Health — Telehealth",
-    year: "2020",
+    slug: "bitterbrains",
+    title: "BitterBrains",
+    client: "BitterBrains — Developer Education Platform",
+    year: "2022-2023",
     description:
-      "Designing a patient-facing app for booking and attending virtual consultations with clear, calm guidance.",
+      "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
+    tags: ["EdTech", "SaaS", "Community"],
     cover:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop",
     industry: "Healthcare",
