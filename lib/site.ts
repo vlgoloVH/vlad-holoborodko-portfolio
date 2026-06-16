@@ -14,9 +14,9 @@ export const NAV_LINKS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/vladholoborodko" },
-  { label: "Dribbble", href: "https://dribbble.com/vladholoborodko" },
-  { label: "Instagram", href: "https://instagram.com/vladholoborodko" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/vlgolo/" },
+  { label: "Dribbble", href: "https://dribbble.com/vlgolo" },
+  { label: "Instagram", href: "https://www.instagram.com/vlgolo/" },
 ];
 
 
