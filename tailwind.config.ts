@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-
 const config: Config = {
   darkMode: "class",
   content: [
@@ -18,7 +17,7 @@ const config: Config = {
         line: "var(--color-line)",
       },
       fontFamily: {
-        display: ["Georgia", "serif"],
+        display: ["var(--font-display)"],
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
@@ -55,5 +54,4 @@ const config: Config = {
   },
   plugins: [],
 };
-
 export default config;
