@@ -51,7 +51,7 @@ export function CaseCard({ item, index }: { item: Case; index: number }) {
       </p>
 
       <ul className="mt-4 flex flex-wrap gap-2">
-        {[item.industry, item.businessType, item.platform].map((tag) => (
+        {(item.tags ?? [item.industry, item.businessType, item.platform]).map((tag) => (
           <li
             key={tag}
             className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-muted"
