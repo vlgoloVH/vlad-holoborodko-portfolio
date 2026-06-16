@@ -343,12 +343,13 @@ export const CASES: Case[] = [
     ],
   },
   {
-    slug: "atlas-design-system",
-    title: "Atlas Studio",
-    client: "Atlas Studio — Internal Design System",
-    year: "2018",
+    slug: "fozzy-group",
+    title: "Fozzy Group",
+    client: "Fozzy Group — Internal Back-Office Platform",
+    year: "2025",
     description:
-      "Building a shared design system and component library to align three product teams shipping on different timelines.",
+      "Designed an internal back-office platform that helps teams manage operational processes, data, and workflows across one of Ukraine's largest retail ecosystems.",
+    tags: ["Enterprise", "Operations", "B2B"],
     cover:
       "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2000&auto=format&fit=crop",
     industry: "Enterprise Software",
