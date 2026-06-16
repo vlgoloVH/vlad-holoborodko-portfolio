@@ -26,9 +26,8 @@ export function LogoStrip() {
   const { theme } = useTheme();
 
   return (
-    <section className="border-y border-border px-6 py-12 md:px-10">
-      <div className="mx-auto max-w-content space-y-8">
-        {/* Label */}
+    <div className="relative left-1/2 w-screen -translate-x-1/2 border-y border-border">
+      <div className="px-8 py-8 md:px-14">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-widest text-muted">
             Companies I&apos;ve shipped products with
@@ -36,8 +35,8 @@ export function LogoStrip() {
         </Reveal>
       </div>
 
-      {/* Infinite marquee - full bleed */}
-      <div className="relative left-1/2 mt-8 w-screen -translate-x-1/2 overflow-hidden">
+      {/* Infinite marquee */}
+      <div className="overflow-hidden pb-8">
         <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-10 motion-reduce:animate-none">
           {[...LOGOS, ...LOGOS].map((logo, i) => {
             const suffix = theme === "dark" ? "Dark" : "Light";
@@ -63,14 +62,10 @@ export function LogoStrip() {
 
       <style>{`
         @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(-50% - 1.5rem));
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 1.5rem)); }
         }
       `}</style>
-    </section>
+    </div>
   );
 }
