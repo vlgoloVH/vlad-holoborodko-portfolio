@@ -19,16 +19,16 @@ export function AboutTeaser() {
           </div>
         </Reveal>
 
-        {/* 3-column grid: bio | photo | skills */}
-        <div className="mt-16 grid gap-10 md:grid-cols-[1fr_auto_1fr] md:gap-12 md:items-start">
+        {/* 3 equal columns */}
+        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12 md:items-start">
 
           {/* Left — Bio */}
           <Reveal delay={0.05}>
             <div className="flex flex-col gap-8">
-              <div>
-                <p className="mb-4 font-display text-display-sm font-semibold text-ink">
+              <div className="flex flex-col gap-4">
+                <p className="font-mono text-sm uppercase tracking-widest text-muted">
                   <span
-                    className="mr-3 inline-block animate-[wave_2s_ease-in-out_infinite]"
+                    className="mr-2 inline-block animate-[wave_2s_ease-in-out_infinite]"
                     style={{ transformOrigin: "70% 70%" }}
                   >
                     👋
@@ -55,9 +55,7 @@ export function AboutTeaser() {
 
           {/* Center — Photo */}
           <Reveal delay={0.1}>
-            <div className="mx-auto w-full max-w-[260px] md:max-w-[300px]">
-              <CoverPlaceholder label="Portrait" ratio="aspect-[4/5]" />
-            </div>
+            <CoverPlaceholder label="Portrait" ratio="aspect-[4/5]" />
           </Reveal>
 
           {/* Right — Skills */}
