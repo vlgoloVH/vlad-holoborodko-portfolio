@@ -23,7 +23,7 @@ const config: Config = {
         mono: ["var(--font-mono)"],
       },
       fontSize: {
-        "display-xl": ["clamp(3rem, 6.5vw, 6rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
+        "display-xl": ["clamp(3.5rem, 7.5vw, 7rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
         "display-lg": ["clamp(2.5rem, 6vw, 5rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
         "display-md": ["clamp(2rem, 4vw, 3.25rem)", { lineHeight: "1.08", letterSpacing: "-0.01em" }],
         "display-sm": ["clamp(1.5rem, 2.5vw, 2.25rem)", { lineHeight: "1.15" }],
