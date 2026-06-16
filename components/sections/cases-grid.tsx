@@ -12,7 +12,7 @@ export function CasesGrid() {
               Selected work
             </h2>
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              [ 01 — Projects ]
+              [ 02 — Case Studies ]
             </span>
           </div>
           <div className="ruler mt-6 w-full" />
