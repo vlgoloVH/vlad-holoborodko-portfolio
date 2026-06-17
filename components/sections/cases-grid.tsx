@@ -9,7 +9,7 @@ export function CasesGrid() {
         <Reveal>
           <div className="flex items-baseline justify-between">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-              Selected work
+              Featured Projects
             </h2>
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
               [ 02 — Case Studies ]
