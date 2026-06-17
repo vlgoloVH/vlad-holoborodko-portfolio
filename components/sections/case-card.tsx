@@ -1,8 +1,8 @@
 "use client";
-
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import type { Case } from "@/lib/cases";
 import { CoverPlaceholder } from "@/components/ui/cover-placeholder";
 
@@ -21,9 +21,19 @@ export function CaseCard({ item, index }: { item: Case; index: number }) {
             variants={{ rest: { scale: 1 }, hover: { scale: 1.03 } }}
             transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
           >
-            <CoverPlaceholder label={item.title} index={number} />
+            {item.cover && !item.cover.includes("unsplash") ? (
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
+                <Image
+                  src={item.cover}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <CoverPlaceholder label={item.title} index={number} />
+            )}
           </motion.div>
-
           <motion.div
             variants={{
               rest: { opacity: 0, y: 8 },
