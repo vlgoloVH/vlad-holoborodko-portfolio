@@ -56,7 +56,7 @@ export function CaseCard({ item, index }: { item: Case; index: number }) {
         </span>
       </div>
 
-      <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
+      <p className="mt-2 text-sm leading-relaxed text-muted">
         {item.description}
       </p>
 
