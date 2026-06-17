@@ -33,8 +33,7 @@ export const CASES: Case[] = [
     year: "2025-2026",
     description:
       "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
-    cover:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
+    cover: "/cases/SmartCrowd_preview.jpg",
   industry: "Fintech",
     businessType: "B2C",
     platform: "Web",
