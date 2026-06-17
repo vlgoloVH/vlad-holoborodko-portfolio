@@ -190,8 +190,7 @@ export const CASES: Case[] = [
     description:
       "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
     tags: ["EdTech", "SaaS", "Community"],
-    cover:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2000&auto=format&fit=crop",
+    cover: "/BitterBrail_preview.jpg",
     industry: "HR Tech",
     businessType: "B2B",
     platform: "Web",
