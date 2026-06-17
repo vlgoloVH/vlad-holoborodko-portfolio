@@ -270,8 +270,7 @@ export const CASES: Case[] = [
     description:
       "Designed an enterprise CRM platform that supports the complete sales lifecycle for marine equipment and spare parts, helping global teams manage opportunities, quotations, procurement, and customer relationships in one place.",
     tags: ["Enterprise", "CRM", "B2B"],
-    cover:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop",
+    cover: "/DanMon_preview.jpg",
     industry: "Healthcare",
     businessType: "B2C",
     platform: "Mobile",
