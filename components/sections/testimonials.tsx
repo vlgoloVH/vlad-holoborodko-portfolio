@@ -33,8 +33,7 @@ export function Testimonials() {
   useEffect(() => {
     const calc = () => {
       if (anchorRef.current) {
-        const pad = window.innerWidth >= 768 ? 40 : 24;
-setLeftPad(anchorRef.current.getBoundingClientRect().left + pad);
+       setLeftPad(anchorRef.current.getBoundingClientRect().left);
       }
     };
     // Затримка щоб layout вже відрендерився
