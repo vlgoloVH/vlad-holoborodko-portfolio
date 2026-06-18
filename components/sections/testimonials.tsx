@@ -108,7 +108,6 @@ export function Testimonials() {
         >
           <div
             className="flex gap-4 pb-4"
-            className="flex gap-4 pb-4"
           >
             {doubled.map((t, i) => (
               <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
