@@ -72,7 +72,7 @@ export function Contact() {
           </a>
           <nav className="flex flex-wrap gap-3">
             {SOCIAL_LINKS.map((link) => (
-              
+              <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
