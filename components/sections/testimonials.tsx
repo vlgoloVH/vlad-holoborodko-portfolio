@@ -122,11 +122,12 @@ export function Testimonials() {
       >
         <div
           className="flex gap-4 pb-4"
-          style={{ paddingLeft: leftPad, paddingRight: leftPad }}
+          style={{ paddingLeft: leftPad }}
         >
           {doubled.map((t, i) => (
             <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
           ))}
+          <div style={{ width: leftPad, flexShrink: 0 }} />
         </div>
       </div>
 
