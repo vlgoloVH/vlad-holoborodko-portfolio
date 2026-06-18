@@ -100,7 +100,7 @@ setLeftPad(Math.round(rect.left) - padValue);
 
   return (
     <section className="border-t border-line py-20 md:py-28">
-      <div className="mx-auto max-w-content px-6 md:px-10">
+      <div style={{ paddingLeft: leftPad, paddingRight: leftPad }}>
         <Reveal>
           <div ref={headingRef} className="flex items-baseline justify-between mb-12">
             <h2
