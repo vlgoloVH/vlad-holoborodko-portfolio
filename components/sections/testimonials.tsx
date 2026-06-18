@@ -84,8 +84,7 @@ export function Testimonials() {
 
   return (
     <section className="border-t border-line py-20 md:py-28">
-      {/* Заголовок */}
-      <div className="px-6 md:px-10">
+      <div className="mx-auto max-w-content px-6 md:px-10">
         <Reveal>
           <div className="flex items-baseline justify-between mb-12">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
@@ -96,34 +95,37 @@ export function Testimonials() {
             </span>
           </div>
         </Reveal>
-      </div>
 
-      {/* Картки — повна ширина екрану, padding відповідає max-w-content */}
-      <div
-        ref={scrollRef}
-        onScroll={handleScroll}
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={onMouseUp}
-        onMouseLeave={onMouseUp}
-        className="overflow-x-auto cursor-grab active:cursor-grabbing w-screen"
-        style={{ scrollbarWidth: "none" } as React.CSSProperties}
-      >
         <div
-          className="flex gap-4 pb-4 px-6 md:px-10"
-          style={{ width: "max-content" }}
+          ref={scrollRef}
+          onScroll={handleScroll}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseUp}
+          className="overflow-x-auto cursor-grab active:cursor-grabbing"
+          style={{
+            scrollbarWidth: "none",
+            marginLeft: "calc(-1 * (100vw - min(100vw, 1240px)) / 2 - 2.5rem)",
+            marginRight: "calc(-1 * (100vw - min(100vw, 1240px)) / 2 - 2.5rem)",
+          } as React.CSSProperties}
         >
-          {doubled.map((t, i) => (
-            <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
-          ))}
+          <div
+            className="flex gap-4 pb-4"
+            style={{
+              paddingLeft: "max(1.5rem, calc((100vw - 1240px) / 2 + 2.5rem))",
+              paddingRight: "max(1.5rem, calc((100vw - 1240px) / 2 + 2.5rem))",
+            }}
+          >
+            {doubled.map((t, i) => (
+              <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Скролбар */}
-     <div className="px-6 md:px-10 mt-6">
         <div
           ref={scrollbarRef}
-          className="relative h-2.5 rounded-full bg-line cursor-pointer"
+          className="relative h-2.5 rounded-full bg-line cursor-pointer mt-6"
           onMouseDown={onScrollbarMouseDown}
         >
           <div
