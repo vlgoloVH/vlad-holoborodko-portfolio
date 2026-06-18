@@ -77,7 +77,7 @@ export function AboutTeaser() {
                   {SKILLS.practice.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-ink"
+                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink"
                     >
                       {item}
                     </span>
@@ -93,7 +93,7 @@ export function AboutTeaser() {
                   {SKILLS.tools.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-ink"
+                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink"
                     >
                       {item}
                     </span>
