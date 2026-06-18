@@ -30,6 +30,8 @@ export function Testimonials() {
     setProgress(max > 0 ? el.scrollLeft / max : 0);
   };
 
+  const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
+
   return (
     <section className="border-t border-line py-20 md:py-28">
       <div className="mx-auto max-w-content px-6 md:px-10">
@@ -49,17 +51,15 @@ export function Testimonials() {
         ref={scrollRef}
         onScroll={handleScroll}
         className="overflow-x-auto cursor-grab active:cursor-grabbing"
-        style={{ msOverflowStyle: "none", scrollbarWidth: "none" } as React.CSSProperties}
+        style={{ scrollbarWidth: "none" } as React.CSSProperties}
       >
-        <style>{`div::-webkit-scrollbar { display: none; }`}</style>
         <div
           className="flex gap-4 pb-4"
-          style={{ paddingLeft: "max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))" }}
+          style={{ paddingLeft: "max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))", paddingRight: "2.5rem" }}
         >
-          {TESTIMONIALS.map((t) => (
-            <TestimonialCard key={t.name} quote={t.quote} name={t.name} role={t.role} />
+          {doubled.map((t, i) => (
+            <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
           ))}
-          <div className="w-6 shrink-0 md:w-10" />
         </div>
       </div>
 
