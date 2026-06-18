@@ -26,38 +26,40 @@ export function LogoStrip() {
   const { theme } = useTheme();
 
   return (
-    <section className="border-y border-line py-8">
-      <div className="mx-auto max-w-content px-8 md:px-14">
-        <Reveal>
-          <p className="font-mono text-xs uppercase tracking-widest text-muted">
-            Companies I&apos;ve shipped products with
-          </p>
-        </Reveal>
-      </div>
-
-      <div className="relative mt-8 w-screen overflow-hidden" style={{ marginLeft: "calc(50% - 50vw)" }}>
-        <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-10 motion-reduce:animate-none">
-          {[...LOGOS, ...LOGOS].map((logo, i) => {
-            const suffix = theme === "dark" ? "Dark" : "Light";
-            const imagePath = `/logos/${logo}-${suffix}.svg`;
-
-            return (
-              <div
-                key={`${logo}-${suffix}-${i}`}
-                className="relative h-14 w-[140px] flex-shrink-0 transition-opacity duration-300 hover:opacity-70"
-              >
-                <Image
-                  src={imagePath}
-                  alt={logo}
-                  fill
-                  className="object-contain"
-                  priority={i < 15}
-                />
-              </div>
-            );
-          })}
+    <div className="relative w-screen" style={{ marginLeft: "calc(50% - 50vw)" }}>
+      <section className="border-y border-line py-8">
+        <div className="mx-auto max-w-content px-8 md:px-14">
+          <Reveal>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted">
+              Companies I&apos;ve shipped products with
+            </p>
+          </Reveal>
         </div>
-      </div>
+
+        <div className="relative mt-8 overflow-hidden">
+          <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-10 motion-reduce:animate-none">
+            {[...LOGOS, ...LOGOS].map((logo, i) => {
+              const suffix = theme === "dark" ? "Dark" : "Light";
+              const imagePath = `/logos/${logo}-${suffix}.svg`;
+
+              return (
+                <div
+                  key={`${logo}-${suffix}-${i}`}
+                  className="relative h-14 w-[140px] flex-shrink-0 transition-opacity duration-300 hover:opacity-70"
+                >
+                  <Image
+                    src={imagePath}
+                    alt={logo}
+                    fill
+                    className="object-contain"
+                    priority={i < 15}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       <style>{`
         @keyframes scroll {
@@ -65,6 +67,6 @@ export function LogoStrip() {
           100% { transform: translateX(calc(-50% - 1.5rem)); }
         }
       `}</style>
-    </section>
+    </div>
   );
 }
