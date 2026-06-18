@@ -38,7 +38,6 @@ export function Contact() {
             <Download size={20} strokeWidth={1.5} />
           </span>
         </a>
-        </div>
         <Reveal delay={0.1} className="mt-6">
           <p className="max-w-lg text-sm leading-relaxed text-muted md:text-base">
             Open to senior product design roles and select freelance
@@ -47,6 +46,7 @@ export function Contact() {
             I&apos;d like to hear about it.
           </p>
         </Reveal>
+          </div>
 
         <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
           <a
