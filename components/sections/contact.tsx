@@ -52,7 +52,7 @@ export function Contact() {
           <a
             href={`mailto:${SITE.email}`}
             data-cursor="Email"
-            className="font-display text-xl uppercase text-ink transition-colors duration-300 hover:text-accent md:text-2xl"
+            className="font-display text-xl text-ink transition-colors duration-300 hover:text-accent md:text-2xl"
           >
             {SITE.email}
           </a>
