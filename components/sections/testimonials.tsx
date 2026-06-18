@@ -27,14 +27,15 @@ export function Testimonials() {
   const startScrollLeft = useRef(0);
   const isScrollbarDragging = useRef(false);
   const scrollbarRef = useRef<HTMLDivElement>(null);
-  const [leftPad, setLeftPad] = useState(40);
+  const [leftPad, setLeftPad] = useState(24);
+  const headingRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const calc = () => {
-      const vw = window.innerWidth;
-      const maxW = 1240;
-      const pad = vw > maxW ? (vw - maxW) / 2 + 40 : 24;
-      setLeftPad(pad);
+      if (headingRef.current) {
+        const rect = headingRef.current.getBoundingClientRect();
+        setLeftPad(rect.left);
+      }
     };
     calc();
     window.addEventListener("resize", calc);
@@ -97,7 +98,7 @@ export function Testimonials() {
 
   return (
     <section className="border-t border-line py-20 md:py-28">
-      <div className="mx-auto max-w-content px-6 md:px-10">
+    <div ref={headingRef} className="mx-auto max-w-content px-6 md:px-10">
         <Reveal>
           <div className="flex items-baseline justify-between mb-12">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
