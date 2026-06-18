@@ -6,6 +6,7 @@ export function Contact() {
   return (
     <section id="contact" className="section-invert px-6 py-20 md:px-10 md:py-28 lg:scroll-mt-24">
       <div className="mx-auto max-w-content">
+        <div className="flex flex-col gap-0 md:grid md:grid-cols-[1fr_auto] md:items-start">
         <Reveal>
           <p className="mb-6 font-mono text-xs uppercase tracking-widest text-muted">
             — Get in touch
@@ -19,8 +20,26 @@ export function Contact() {
             <ArrowUpRight className="inline-block h-[0.7em] w-[0.7em] text-accent" />
           </h2>
         </Reveal>
-
-        <Reveal delay={0.1} className="mt-6 flex flex-col gap-10 md:grid md:grid-cols-[1fr_auto] md:items-start">
+        
+          href="/resume.pdf"
+          download
+          data-cursor="Download"
+          className="group relative hidden md:flex h-44 w-44 items-center justify-center md:h-56 md:w-56 row-span-2"
+        >
+          <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-[spin_24s_linear_infinite] text-muted">
+            <defs>
+              <path id="contact-circle" d="M 100,100 m -88,0 a 88,88 0 1,1 176,0 a 88,88 0 1,1 -176,0" fill="none" />
+            </defs>
+            <text fill="currentColor" className="font-mono text-[14px] uppercase tracking-[0.25em]">
+              <textPath href="#contact-circle">Download resume • Download resume • Download resume •</textPath>
+            </text>
+          </svg>
+          <span className="glass-bg flex h-16 w-16 items-center justify-center rounded-full border border-line text-ink backdrop-blur-md transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink">
+            <Download size={20} strokeWidth={1.5} />
+          </span>
+        </a>
+        </div>
+        <Reveal delay={0.1} className="mt-6">
           <p className="max-w-lg text-sm leading-relaxed text-muted md:text-base">
             Open to senior product design roles and select freelance
             engagements — research, UX, UI or design-systems work. If you&apos;re
