@@ -6,7 +6,7 @@ export function Contact() {
   return (
     <section id="contact" className="section-invert px-6 py-20 md:px-10 md:py-28 lg:scroll-mt-24">
       <div className="mx-auto max-w-content">
-        <div className="flex flex-col gap-0 md:grid md:grid-cols-[1fr_auto] md:items-start">
+        <div className="flex flex-col gap-0 md:grid md:grid-cols-[1fr_auto] md:grid-rows-[auto_auto] md:items-center">
         <Reveal>
           <p className="mb-6 font-mono text-xs uppercase tracking-widest text-muted">
             — Get in touchhhh
@@ -24,7 +24,7 @@ export function Contact() {
           href="/resume.pdf"
           download
           data-cursor="Download"
-          className="group relative hidden md:flex h-44 w-44 items-center justify-center md:h-56 md:w-56 row-span-2"
+          className="group relative hidden md:flex h-44 w-44 items-center justify-center md:h-56 md:w-56 md:row-span-2 md:self-center"
         >
           <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-[spin_24s_linear_infinite] text-muted">
             <defs>
