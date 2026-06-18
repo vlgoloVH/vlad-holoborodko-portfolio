@@ -62,7 +62,7 @@ export function Contact() {
           </Reveal>
         </Reveal>
 
-        <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
+        <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <a
             href={`mailto:${SITE.email}`}
             data-cursor="Email"
