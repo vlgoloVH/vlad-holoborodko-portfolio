@@ -120,7 +120,7 @@ export function Testimonials() {
             {doubled.map((t, i) => (
               <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
             ))}
-            <div style={{ width: "calc(100vw - 420px - max(1.5rem, calc(50vw - 620px)))", flexShrink: 0 }} />
+            <div style={{ width: "calc(100vw - 840px - max(1.5rem, calc(50vw - 620px)))", flexShrink: 0 }} />
           </div>
         </div>
 
