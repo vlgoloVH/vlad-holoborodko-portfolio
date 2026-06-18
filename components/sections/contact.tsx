@@ -28,7 +28,6 @@ export function Contact() {
             I&apos;d like to hear about it.
           </p>
 
-          <Reveal delay={0.15}>
             <a
               href="/resume.pdf"
               download
@@ -56,7 +55,6 @@ export function Contact() {
                 <Download size={20} strokeWidth={1.5} />
               </span>
             </a>
-          </Reveal>
         </Reveal>
 
         <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
