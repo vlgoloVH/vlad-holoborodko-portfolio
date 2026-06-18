@@ -32,7 +32,7 @@ export function Hero() {
                 </h1>
               </Reveal>
               <Reveal delay={0.1} className="mt-4">
-                <p className="font-display text-display-sm leading-snug text-ink max-w-xl">
+                <p className="font-display text-display-sm leading-snug text-ink max-w-2xl">
                   I design calm, considered products for teams solving{" "}
                   <span className="text-accent">genuinely complex</span> problems.
                 </p>
