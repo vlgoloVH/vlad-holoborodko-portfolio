@@ -4,7 +4,7 @@ import { SITE, SOCIAL_LINKS } from "@/lib/site";
 
 export function Contact() {
   return (
-    <section id="contact" className="section-invert border-t border-line px-6 py-20 md:px-10 md:py-28 lg:scroll-mt-24">
+    <section id="contact" className="section-invert px-6 py-20 md:px-10 md:py-28 lg:scroll-mt-24">
       <div className="mx-auto max-w-content">
         <Reveal>
           <p className="mb-6 font-mono text-xs uppercase tracking-widest text-muted">
@@ -20,7 +20,7 @@ export function Contact() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-10 flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        <Reveal delay={0.1} className="mt-10 flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-6">
             <p className="max-w-lg text-sm leading-relaxed text-muted md:text-base">
               Open to senior product design roles and select freelance
