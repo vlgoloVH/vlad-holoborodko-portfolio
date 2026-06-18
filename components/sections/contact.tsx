@@ -20,7 +20,7 @@ export function Contact() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-6 flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        <Reveal delay={0.1} className="mt-6 flex flex-col gap-10 md:grid md:grid-cols-[1fr_auto] md:items-start">
           <p className="max-w-lg text-sm leading-relaxed text-muted md:text-base">
             Open to senior product design roles and select freelance
             engagements — research, UX, UI or design-systems work. If you&apos;re
