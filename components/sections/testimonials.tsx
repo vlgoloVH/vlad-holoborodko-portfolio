@@ -114,13 +114,13 @@ export function Testimonials() {
             className="flex gap-4 pb-4"
             style={{
               paddingLeft: "max(1.5rem, calc(50vw - 620px))",
-              paddingRight: "max(1.5rem, calc(50vw - 620px))",
+              paddingRight: 0,
             }}
           >
             {doubled.map((t, i) => (
               <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
             ))}
-            <div style={{ width: 0, flexShrink: 0 }} />
+           <div style={{ width: "max(3rem, calc(50vw - 620px + 1.5rem))", flexShrink: 0 }} />
           </div>
         </div>
 
