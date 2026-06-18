@@ -1,4 +1,4 @@
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Download } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SITE, SOCIAL_LINKS } from "@/lib/site";
 
@@ -56,19 +56,13 @@ export function Contact() {
           >
             {SITE.email}
           </a>
-          <nav className="flex flex-wrap gap-3">
-            {SOCIAL_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="rounded-full border border-line px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 hover:border-accent hover:text-accent"
-              >
-                {link.label} ↗
-              </a>
-            ))}
-          </nav>
+          <a
+       href={`mailto:${SITE.email}`}
+            className="group inline-flex w-fit items-center gap-3 rounded-full border border-line px-5 py-4 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
+          >
+            Contact me
+            <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
         </Reveal>
       </div>
     </section>
