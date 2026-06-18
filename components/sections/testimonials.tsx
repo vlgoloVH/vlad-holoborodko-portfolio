@@ -104,18 +104,11 @@ export function Testimonials() {
           onMouseUp={onMouseUp}
           onMouseLeave={onMouseUp}
           className="overflow-x-auto cursor-grab active:cursor-grabbing"
-          style={{
-            scrollbarWidth: "none",
-            marginLeft: "calc(-1 * (100vw - min(100vw, 1240px)) / 2 - 2.5rem)",
-            marginRight: "calc(-1 * (100vw - min(100vw, 1240px)) / 2 - 2.5rem)",
-          } as React.CSSProperties}
+           style={{ scrollbarWidth: "none" } as React.CSSProperties}
         >
           <div
             className="flex gap-4 pb-4"
-            style={{
-              paddingLeft: "max(1.5rem, calc((100vw - 1240px) / 2 + 2.5rem))",
-              paddingRight: "max(1.5rem, calc((100vw - 1240px) / 2 + 2.5rem))",
-            }}
+            className="flex gap-4 pb-4"
           >
             {doubled.map((t, i) => (
               <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
