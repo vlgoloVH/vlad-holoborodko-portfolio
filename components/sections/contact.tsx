@@ -46,34 +46,6 @@ export function Contact() {
             solving a hard problem and need someone to make it feel obvious,
             I&apos;d like to hear about it.
           </p>
-
-            <a
-              href="/resume.pdf"
-              download
-              data-cursor="Download"
-              className="group relative flex h-44 w-44 items-center justify-center md:h-56 md:w-56"
-            >
-              <svg
-                viewBox="0 0 200 200"
-                className="absolute inset-0 h-full w-full animate-[spin_24s_linear_infinite] text-muted"
-              >
-                <defs>
-                  <path
-                    id="contact-circle"
-                    d="M 100,100 m -88,0 a 88,88 0 1,1 176,0 a 88,88 0 1,1 -176,0"
-                    fill="none"
-                  />
-                </defs>
-                <text fill="currentColor" className="font-mono text-[14px] uppercase tracking-[0.25em]">
-                  <textPath href="#contact-circle">
-                    Download resume • Download resume • Download resume •
-                  </textPath>
-                </text>
-              </svg>
-              <span className="glass-bg flex h-16 w-16 items-center justify-center rounded-full border border-line text-ink backdrop-blur-md transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink">
-                <Download size={20} strokeWidth={1.5} />
-              </span>
-            </a>
         </Reveal>
 
         <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
