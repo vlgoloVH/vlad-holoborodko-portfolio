@@ -29,11 +29,13 @@ export function LogoStrip() {
     <div className="relative -mx-8 md:-mx-14">
       <section className="border-y border-line py-8">
         <div className="px-8 md:px-14">
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted">
-              Companies I&apos;ve shipped products with
-            </p>
-          </Reveal>
+          <div className="mx-auto max-w-content">
+            <Reveal>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                Companies I&apos;ve shipped products with
+              </p>
+            </Reveal>
+          </div>
         </div>
 
         <div className="relative mt-8 overflow-hidden">
