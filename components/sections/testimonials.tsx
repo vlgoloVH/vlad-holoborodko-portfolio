@@ -113,7 +113,7 @@ export function Testimonials() {
           <div
             className="flex gap-4 pb-4"
             style={{
-              ppaddingLeft: "max(1.5rem, calc(50vw - 700px))",
+              paddingLeft: "max(1.5rem, calc(50vw - 700px))",
               paddingRight: 0,
             }}
           >
