@@ -85,7 +85,7 @@ export function Testimonials() {
   return (
     <section className="border-t border-line py-20 md:py-28">
       {/* Заголовок — в max-w-content */}
-      <div className="mx-auto max-w-content px-6 md:px-10">
+ <div className="px-6 md:px-10">
         <Reveal>
           <div className="flex items-baseline justify-between mb-12">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
@@ -118,7 +118,7 @@ export function Testimonials() {
       </div>
 
       {/* Скролбар — в max-w-content */}
-      <div className="mx-auto max-w-content px-6 md:px-10 mt-6">
+       <div className="px-6 md:px-10 mt-6">
         <div
           ref={scrollbarRef}
           className="relative h-2.5 rounded-full bg-line cursor-pointer"
