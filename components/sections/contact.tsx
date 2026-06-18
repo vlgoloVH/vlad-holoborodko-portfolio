@@ -9,7 +9,7 @@ export function Contact() {
         <div className="flex flex-col gap-0 md:grid md:grid-cols-[1fr_auto] md:items-start">
         <Reveal>
           <p className="mb-6 font-mono text-xs uppercase tracking-widest text-muted">
-            — Get in touch
+            — Get in touchhhh
           </p>
           <h2 className="font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
             Let&apos;s create
