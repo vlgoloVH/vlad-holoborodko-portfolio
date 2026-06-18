@@ -101,9 +101,8 @@ export function Testimonials() {
     <section className="border-t border-line py-20 md:py-28">
       <div className="mx-auto max-w-content px-6 md:px-10">
         <Reveal>
-          <div className="flex items-baseline justify-between mb-12">
+          <div ref={headingRef} className="flex items-baseline justify-between mb-12">
             <h2
-              ref={headingRef}
               className="font-display text-display-md font-semibold uppercase text-ink"
             >
               What people say
