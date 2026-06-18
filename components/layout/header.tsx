@@ -40,7 +40,7 @@ export function Header() {
         <div className="mx-auto flex max-w-content items-center justify-between px-6 py-6 md:px-10">
           <Link
             href="/"
-            className="font-display text-base font-semibold tracking-wide text-ink transition-colors hover:text-accent"
+            className="font-display text-xl font-semibold tracking-wide text-ink transition-colors hover:text-accent"
           >
             Vlad Holoborodko<span className="text-accent">.</span>
           </Link>
