@@ -34,7 +34,8 @@ export function Testimonials() {
     const calc = () => {
       if (headingRef.current) {
         const rect = headingRef.current.getBoundingClientRect();
-        setLeftPad(Math.round(rect.left));
+        const padValue = window.innerWidth >= 768 ? 40 : 24;
+setLeftPad(Math.round(rect.left) - padValue);
       }
     };
     // Запускаємо після повного рендеру
