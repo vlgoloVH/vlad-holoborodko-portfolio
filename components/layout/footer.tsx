@@ -8,7 +8,7 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {SITE.name} — {SITE.role}
         </p>
-        
+        <a
           href="#top"
           className="transition-colors duration-300 hover:text-accent"
         >
