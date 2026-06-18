@@ -2,7 +2,7 @@
 
 import { Reveal } from "@/components/ui/reveal";
 import { TESTIMONIALS } from "@/lib/site";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 function TestimonialCard({ quote, name, role }: { quote: string; name: string; role: string }) {
   return (
@@ -21,12 +21,26 @@ function TestimonialCard({ quote, name, role }: { quote: string; name: string; r
 
 export function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const anchorRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
+  const [leftPad, setLeftPad] = useState(24);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
   const isScrollbarDragging = useRef(false);
   const scrollbarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const calc = () => {
+      if (anchorRef.current) {
+        setLeftPad(anchorRef.current.getBoundingClientRect().left);
+      }
+    };
+    // Затримка щоб layout вже відрендерився
+    setTimeout(calc, 100);
+    window.addEventListener("resize", calc);
+    return () => window.removeEventListener("resize", calc);
+  }, []);
 
   const handleScroll = () => {
     const el = scrollRef.current;
@@ -84,8 +98,10 @@ export function Testimonials() {
 
   return (
     <section className="border-t border-line py-20 md:py-28">
-      {/* Заголовок — в max-w-content */}
- <div className="px-6 md:px-10">
+
+      {/* Anchor — невидимий елемент для вимірювання відступу */}
+      <div className="mx-auto max-w-content px-6 md:px-10">
+        <div ref={anchorRef} />
         <Reveal>
           <div className="flex items-baseline justify-between mb-12">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
@@ -98,7 +114,7 @@ export function Testimonials() {
         </Reveal>
       </div>
 
-      {/* Картки — повна ширина екрану */}
+      {/* Картки — повна ширина, починаються від leftPad */}
       <div
         ref={scrollRef}
         onScroll={handleScroll}
@@ -109,16 +125,16 @@ export function Testimonials() {
         className="overflow-x-auto cursor-grab active:cursor-grabbing w-full"
         style={{ scrollbarWidth: "none" } as React.CSSProperties}
       >
-        <div className="flex gap-4 pb-4 px-6 md:px-10">
+        <div className="flex gap-4 pb-4" style={{ paddingLeft: leftPad }}>
           {doubled.map((t, i) => (
             <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
           ))}
-          <div className="w-6 md:w-10 shrink-0" />
+          <div style={{ width: leftPad, flexShrink: 0 }} />
         </div>
       </div>
 
-      {/* Скролбар — в max-w-content */}
-       <div className="px-6 md:px-10 mt-6">
+      {/* Скролбар — вирівняний по max-w-content */}
+      <div className="mx-auto max-w-content px-6 md:px-10 mt-6">
         <div
           ref={scrollbarRef}
           className="relative h-2.5 rounded-full bg-line cursor-pointer"
