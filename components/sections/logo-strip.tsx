@@ -26,8 +26,8 @@ export function LogoStrip() {
   const { theme } = useTheme();
 
   return (
-    <section className="border-y border-border py-8">
-      <div className="mx-auto max-w-content">
+    <section className="border-y border-line py-8">
+      <div className="mx-auto max-w-content px-8 md:px-14">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-widest text-muted">
             Companies I&apos;ve shipped products with
@@ -35,7 +35,7 @@ export function LogoStrip() {
         </Reveal>
       </div>
 
-      <div className="mt-8 overflow-hidden">
+      <div className="relative mt-8 w-screen overflow-hidden" style={{ marginLeft: "calc(50% - 50vw)" }}>
         <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-10 motion-reduce:animate-none">
           {[...LOGOS, ...LOGOS].map((logo, i) => {
             const suffix = theme === "dark" ? "Dark" : "Light";
