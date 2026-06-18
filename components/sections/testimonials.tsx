@@ -91,7 +91,7 @@ export function Testimonials() {
               What people say
             </h2>
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              [ 03 — Notes ]
+           [ 03 — Recommendations ]
             </span>
           </div>
         </Reveal>
