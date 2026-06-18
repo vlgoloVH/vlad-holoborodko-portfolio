@@ -84,7 +84,7 @@ export function Testimonials() {
 
   return (
     <section className="border-t border-line py-20 md:py-28">
-     <div className="mx-auto max-w-content px-10">
+      <div className="mx-auto max-w-content px-6 md:px-10">
         <Reveal>
           <div className="flex items-baseline justify-between mb-12">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
