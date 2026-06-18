@@ -83,8 +83,9 @@ export function Testimonials() {
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
-    <section className="border-t border-line px-6 py-20 md:px-10 md:py-28">
-      <div className="mx-auto max-w-content">
+    <section className="border-t border-line py-20 md:py-28">
+      {/* Заголовок — в max-w-content */}
+      <div className="mx-auto max-w-content px-6 md:px-10">
         <Reveal>
           <div className="flex items-baseline justify-between mb-12">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
@@ -95,28 +96,32 @@ export function Testimonials() {
             </span>
           </div>
         </Reveal>
+      </div>
 
-        <div
-          ref={scrollRef}
-          onScroll={handleScroll}
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          onMouseUp={onMouseUp}
-          onMouseLeave={onMouseUp}
-          className="overflow-x-auto cursor-grab active:cursor-grabbing -mx-6 md:-mx-10"
-          style={{ scrollbarWidth: "none" } as React.CSSProperties}
-        >
-          <div className="flex gap-4 pb-4 px-6 md:px-10">
-            {doubled.map((t, i) => (
-              <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
-            ))}
-            <div className="w-6 md:w-10 shrink-0" />
-          </div>
+      {/* Картки — повна ширина екрану */}
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        className="overflow-x-auto cursor-grab active:cursor-grabbing w-full"
+        style={{ scrollbarWidth: "none" } as React.CSSProperties}
+      >
+        <div className="flex gap-4 pb-4 px-6 md:px-10">
+          {doubled.map((t, i) => (
+            <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
+          ))}
+          <div className="w-6 md:w-10 shrink-0" />
         </div>
+      </div>
 
+      {/* Скролбар — в max-w-content */}
+      <div className="mx-auto max-w-content px-6 md:px-10 mt-6">
         <div
           ref={scrollbarRef}
-          className="relative h-2.5 rounded-full bg-line cursor-pointer mt-6"
+          className="relative h-2.5 rounded-full bg-line cursor-pointer"
           onMouseDown={onScrollbarMouseDown}
         >
           <div
