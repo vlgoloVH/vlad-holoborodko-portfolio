@@ -84,7 +84,7 @@ export function Testimonials() {
 
   return (
     <section className="border-t border-line py-20 md:py-28">
-      <div className="mx-auto max-w-content px-6 md:px-10">
+     <div className="mx-auto max-w-content px-10">
         <Reveal>
           <div className="flex items-baseline justify-between mb-12">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
@@ -107,7 +107,7 @@ export function Testimonials() {
         className="overflow-x-auto cursor-grab active:cursor-grabbing w-screen"
         style={{ scrollbarWidth: "none" } as React.CSSProperties}
       >
-        <div className="flex gap-4 pb-4" style={{ paddingLeft: "max(2.5rem, calc((100vw - 1240px) / 2 + 2.5rem))" }}>
+                <div className="flex gap-4 pb-4" style={{ paddingLeft: "max(0.5rem, calc((100vw - 1240px) / 2 + 0.5rem))" }}>
           {doubled.map((t, i) => (
             <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
           ))}
