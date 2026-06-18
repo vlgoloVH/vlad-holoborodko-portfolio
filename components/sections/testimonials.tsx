@@ -78,9 +78,4 @@ export function Testimonials() {
       </div>
     </section>
   );
-}        <MarqueeRow items={row1} />
-        <MarqueeRow items={row2} reverse />
-      </div>
-    </section>
-  );
 }
