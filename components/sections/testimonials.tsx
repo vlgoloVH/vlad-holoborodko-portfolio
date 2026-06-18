@@ -107,7 +107,7 @@ export function Testimonials() {
         className="overflow-x-auto cursor-grab active:cursor-grabbing w-screen"
         style={{ scrollbarWidth: "none" } as React.CSSProperties}
       >
-        <div className="flex gap-4 pb-4 px-6 md:px-10">
+        <div className="flex gap-4 pb-4" style={{ paddingLeft: "max(2.5rem, calc((100vw - 1240px) / 2 + 2.5rem))" }}>
           {doubled.map((t, i) => (
             <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
           ))}
