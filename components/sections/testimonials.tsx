@@ -2,7 +2,7 @@
 
 import { Reveal } from "@/components/ui/reveal";
 import { TESTIMONIALS } from "@/lib/site";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 function TestimonialCard({ quote, name, role }: { quote: string; name: string; role: string }) {
   return (
@@ -27,6 +27,19 @@ export function Testimonials() {
   const startScrollLeft = useRef(0);
   const isScrollbarDragging = useRef(false);
   const scrollbarRef = useRef<HTMLDivElement>(null);
+  const [leftPad, setLeftPad] = useState(40);
+
+  useEffect(() => {
+    const calc = () => {
+      const vw = window.innerWidth;
+      const maxW = 1280;
+      const pad = vw > maxW ? (vw - maxW) / 2 + 40 : 24;
+      setLeftPad(pad);
+    };
+    calc();
+    window.addEventListener("resize", calc);
+    return () => window.removeEventListener("resize", calc);
+  }, []);
 
   const handleScroll = () => {
     const el = scrollRef.current;
@@ -35,7 +48,6 @@ export function Testimonials() {
     setProgress(max > 0 ? el.scrollLeft / max : 0);
   };
 
-  // Mouse drag on cards
   const onMouseDown = useCallback((e: React.MouseEvent) => {
     isDragging.current = true;
     startX.current = e.pageX;
@@ -54,14 +66,12 @@ export function Testimonials() {
     document.body.style.userSelect = "";
   }, []);
 
-  // Scrollbar drag
   const onScrollbarMouseDown = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     isScrollbarDragging.current = true;
     const bar = scrollbarRef.current;
     if (!bar) return;
-    const barRect = bar.getBoundingClientRect();
-    const thumbWidth = barRect.width * 0.3;
+    const thumbWidth = bar.getBoundingClientRect().width * 0.3;
 
     const onMove = (ev: MouseEvent) => {
       if (!isScrollbarDragging.current || !scrollRef.current || !bar) return;
@@ -84,9 +94,6 @@ export function Testimonials() {
   }, []);
 
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
-
-  // Right padding to align last card with content grid
-  const rightPadding = "max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))";
 
   return (
     <section className="border-t border-line py-20 md:py-28">
@@ -115,10 +122,7 @@ export function Testimonials() {
       >
         <div
           className="flex gap-4 pb-4"
-          style={{
-            paddingLeft: "max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))",
-            paddingRight: rightPadding,
-          }}
+          style={{ paddingLeft: leftPad, paddingRight: leftPad }}
         >
           {doubled.map((t, i) => (
             <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
@@ -126,7 +130,6 @@ export function Testimonials() {
         </div>
       </div>
 
-      {/* Custom scrollbar */}
       <div className="mx-auto max-w-content px-6 md:px-10 mt-6">
         <div
           ref={scrollbarRef}
@@ -134,8 +137,8 @@ export function Testimonials() {
           onMouseDown={onScrollbarMouseDown}
         >
           <div
-            className="absolute top-0 h-full rounded-full bg-accent transition-[left] duration-75"
-            style={{ width: "30%", left: `${progress * 70}%` }}
+            className="absolute top-0 h-full rounded-full bg-accent"
+            style={{ width: "30%", left: `${progress * 70}%`, transition: "left 0.05s linear" }}
           />
         </div>
       </div>
