@@ -32,7 +32,7 @@ export function Testimonials() {
   useEffect(() => {
     const calc = () => {
       const vw = window.innerWidth;
-      const maxW = 1280;
+      const maxW = 1240;
       const pad = vw > maxW ? (vw - maxW) / 2 + 40 : 24;
       setLeftPad(pad);
     };
