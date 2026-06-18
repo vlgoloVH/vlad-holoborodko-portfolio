@@ -2,7 +2,7 @@
 
 import { Reveal } from "@/components/ui/reveal";
 import { TESTIMONIALS } from "@/lib/site";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 function TestimonialCard({ quote, name, role }: { quote: string; name: string; role: string }) {
   return (
@@ -21,12 +21,27 @@ function TestimonialCard({ quote, name, role }: { quote: string; name: string; r
 
 export function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
   const [progress, setProgress] = useState(0);
+  const [leftPad, setLeftPad] = useState(24);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
   const isScrollbarDragging = useRef(false);
   const scrollbarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const calc = () => {
+      if (headingRef.current) {
+        const rect = headingRef.current.getBoundingClientRect();
+        setLeftPad(Math.round(rect.left));
+      }
+    };
+    // Запускаємо після повного рендеру
+    requestAnimationFrame(() => requestAnimationFrame(calc));
+    window.addEventListener("resize", calc);
+    return () => window.removeEventListener("resize", calc);
+  }, []);
 
   const handleScroll = () => {
     const el = scrollRef.current;
@@ -87,7 +102,10 @@ export function Testimonials() {
       <div className="mx-auto max-w-content px-6 md:px-10">
         <Reveal>
           <div className="flex items-baseline justify-between mb-12">
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink">
+            <h2
+              ref={headingRef}
+              className="font-display text-display-md font-semibold uppercase text-ink"
+            >
               What people say
             </h2>
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
@@ -95,29 +113,34 @@ export function Testimonials() {
             </span>
           </div>
         </Reveal>
+      </div>
 
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        className="overflow-x-auto cursor-grab active:cursor-grabbing"
+        style={{ scrollbarWidth: "none" } as React.CSSProperties}
+      >
         <div
-          ref={scrollRef}
-          onScroll={handleScroll}
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          onMouseUp={onMouseUp}
-          onMouseLeave={onMouseUp}
-          className="overflow-x-auto cursor-grab active:cursor-grabbing"
-           style={{ scrollbarWidth: "none" } as React.CSSProperties}
+          className="flex gap-4 pb-4"
+          style={{ paddingLeft: leftPad, paddingRight: leftPad }}
         >
-          <div
-            className="flex gap-4 pb-4"
-          >
-            {doubled.map((t, i) => (
-              <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
-            ))}
-          </div>
+          {doubled.map((t, i) => (
+            <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
+          ))}
         </div>
+      </div>
 
+      <div
+        className="mx-auto max-w-content px-6 md:px-10 mt-6"
+      >
         <div
           ref={scrollbarRef}
-          className="relative h-2.5 rounded-full bg-line cursor-pointer mt-6"
+          className="relative h-2.5 rounded-full bg-line cursor-pointer"
           onMouseDown={onScrollbarMouseDown}
         >
           <div
