@@ -58,7 +58,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                   name="name"
                   required
                   placeholder="Your name"
-                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted focus:border-accent transition-colors"
+                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted hover:border-accent focus:border-accent transition-colors"
                 />
               </div>
               <div className="flex flex-col gap-1.5">
@@ -68,7 +68,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                   type="email"
                   required
                   placeholder="your@email.com"
-                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted focus:border-accent transition-colors"
+                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted hover:border-accent focus:border-accent transition-colors"
                 />
               </div>
               <div className="flex flex-col gap-1.5">
@@ -76,7 +76,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                 <input
                   name="company"
                   placeholder="Your company"
-                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted focus:border-accent transition-colors"
+                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted hover:border-accent focus:border-accent transition-colors"
                 />
               </div>
               <div className="flex flex-col gap-1.5">
@@ -86,7 +86,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                   required
                   rows={4}
                   placeholder="Enter your message here"
-                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted focus:border-accent transition-colors resize-none"
+                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted hover:border-accent focus:border-accent transition-colors resize-none"
                 />
               </div>
               {status === "error" && (
