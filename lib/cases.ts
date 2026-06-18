@@ -346,8 +346,7 @@ export const CASES: Case[] = [
     description:
       "Designed an internal back-office platform that helps teams manage operational processes, data, and workflows across one of Ukraine's largest retail ecosystems.",
     tags: ["Enterprise", "Operations", "B2B"],
-    cover:
-      "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2000&auto=format&fit=crop",
+    cover: "/FozzyGroup_preview.jpg",
     industry: "Enterprise Software",
     businessType: "B2B",
     platform: "Desktop",
