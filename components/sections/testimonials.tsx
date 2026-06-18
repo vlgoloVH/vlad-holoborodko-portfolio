@@ -2,6 +2,7 @@
 
 import { Reveal } from "@/components/ui/reveal";
 import { TESTIMONIALS } from "@/lib/site";
+import { useRef, useState } from "react";
 
 function TestimonialCard({ quote, name, role }: { quote: string; name: string; role: string }) {
   return (
@@ -19,6 +20,16 @@ function TestimonialCard({ quote, name, role }: { quote: string; name: string; r
 }
 
 export function Testimonials() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setProgress(max > 0 ? el.scrollLeft / max : 0);
+  };
+
   return (
     <section className="border-t border-line py-20 md:py-28">
       <div className="mx-auto max-w-content px-6 md:px-10">
@@ -32,19 +43,28 @@ export function Testimonials() {
             </span>
           </div>
         </Reveal>
+      </div>
 
+      {/* Cards — виходять за межі max-w-content, але починаються по лівому краю */}
+      <div className="mx-auto max-w-content px-6 md:px-10">
         <div
-          className="overflow-x-auto cursor-grab active:cursor-grabbing"
-          style={{
-            scrollbarWidth: "thin",
-            scrollbarColor: "var(--color-accent) var(--color-line)",
-          }}
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="overflow-x-auto cursor-grab active:cursor-grabbing scrollbar-hide -mr-6 md:-mr-10"
         >
-          <div className="flex gap-4 w-max pb-4">
+          <div className="flex gap-4 w-max pb-6 pr-6 md:pr-10">
             {TESTIMONIALS.map((t) => (
               <TestimonialCard key={t.name} quote={t.quote} name={t.name} role={t.role} />
             ))}
           </div>
+        </div>
+
+        {/* Custom scrollbar */}
+        <div className="mt-2 h-1 rounded-full bg-line overflow-hidden">
+          <div
+            className="h-full rounded-full bg-accent transition-all duration-100"
+            style={{ width: "40%", transform: `translateX(${progress * 150}%)` }}
+          />
         </div>
       </div>
     </section>
