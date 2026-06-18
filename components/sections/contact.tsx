@@ -62,6 +62,16 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                 />
               </div>
               <div className="flex flex-col gap-1.5">
+                <label className="font-mono text-xs uppercase tracking-widest text-muted">Email</label>
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="your@email.com"
+                  className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted focus:border-accent transition-colors"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
                 <label className="font-mono text-xs uppercase tracking-widest text-muted">Company</label>
                 <input
                   name="company"
@@ -75,7 +85,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                   name="message"
                   required
                   rows={4}
-                  placeholder="What are you working on?"
+                  placeholder="Enter your message here"
                   className="rounded-lg border border-line bg-transparent px-4 py-3 text-sm text-ink outline-none placeholder:text-muted focus:border-accent transition-colors resize-none"
                 />
               </div>
