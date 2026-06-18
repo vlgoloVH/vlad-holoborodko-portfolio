@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Vlad Holoborodko",
   role: "Product Designer",
-  email: "hello@vladholoborodko.com",
+  email: "vlgolo1996@gmail.com",
   location: "Based in Lisbon — working worldwide",
   description:
     "Product Designer since 2015. I take ideas from a rough problem statement to a shipped product — research, UX, UI and the business case behind every screen.",
