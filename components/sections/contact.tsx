@@ -32,7 +32,7 @@ export function Contact() {
               href="/resume.pdf"
               download
               data-cursor="Download"
-              className="group relative mx-auto flex h-44 w-44 items-center justify-center md:h-56 md:w-56"
+              className="group relative flex h-44 w-44 items-center justify-center md:h-56 md:w-56"
             >
               <svg
                 viewBox="0 0 200 200"
