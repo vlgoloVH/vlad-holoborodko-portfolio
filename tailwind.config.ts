@@ -32,7 +32,7 @@ const config: Config = {
         widest2: "0.22em",
       },
       maxWidth: {
-        content: "1240px",
+        content: "1400px",
       },
       transitionTimingFunction: {
         "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)",
