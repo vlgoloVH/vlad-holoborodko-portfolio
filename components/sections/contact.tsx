@@ -20,17 +20,14 @@ export function Contact() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-10 flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-6">
-            <p className="max-w-lg text-sm leading-relaxed text-muted md:text-base">
-              Open to senior product design roles and select freelance
-              engagements — research, UX, UI or design-systems work. If you&apos;re
-              solving a hard problem and need someone to make it feel obvious,
-              I&apos;d like to hear about it.
-            </p>
-          </div>
+        <Reveal delay={0.1} className="mt-6 flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <p className="max-w-lg text-sm leading-relaxed text-muted md:text-base">
+            Open to senior product design roles and select freelance
+            engagements — research, UX, UI or design-systems work. If you&apos;re
+            solving a hard problem and need someone to make it feel obvious,
+            I&apos;d like to hear about it.
+          </p>
 
-          {/* Download Resume button */}
           <Reveal delay={0.15}>
             <a
               href="/resume.pdf"
@@ -62,7 +59,7 @@ export function Contact() {
           </Reveal>
         </Reveal>
 
-        <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
           <a
             href={`mailto:${SITE.email}`}
             data-cursor="Email"
