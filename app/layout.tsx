@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body
         id="top"
-        className={`${display.variable} ${sans.variable} ${mono.variable} font-sans antialiased`}
+        className={`${display.variable} ${sans.variable} ${mono.variable} font-sans antialiased overflow-x-clip`}
       >
         <ThemeProvider>
           <Preloader />
