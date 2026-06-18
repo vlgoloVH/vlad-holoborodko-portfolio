@@ -1,3 +1,4 @@
+"use client";
 import { ArrowUpRight, ArrowRight, Download, X } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SITE } from "@/lib/site";
