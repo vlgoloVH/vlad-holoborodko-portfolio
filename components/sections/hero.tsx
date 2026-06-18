@@ -21,9 +21,12 @@ export function Hero() {
             <div>
               <Reveal delay={0.05}>
                 <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink">
-                  Designing{" "}
-                  <span className="text-accent">products</span>{" "}
-                  that drive{" "}
+                  Designing
+                  <br />
+                  <span className="text-accent">products</span>
+                  <br />
+                  that drive
+                  <br />
                   <span className="text-accent">growth</span>
                   <span className="text-accent">.</span>
                 </h1>
