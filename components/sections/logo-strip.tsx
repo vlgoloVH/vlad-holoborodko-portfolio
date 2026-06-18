@@ -26,7 +26,7 @@ export function LogoStrip() {
   const { theme } = useTheme();
 
   return (
-    <div className="relative w-screen" style={{ marginLeft: "calc(50% - 50vw)" }}>
+    <div className="relative -mx-8 md:-mx-14">
       <section className="border-y border-line py-8">
         <div className="mx-auto max-w-content px-8 md:px-14">
           <Reveal>
