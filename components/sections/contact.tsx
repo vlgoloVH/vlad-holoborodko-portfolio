@@ -20,7 +20,7 @@ export function Contact() {
             <ArrowUpRight className="inline-block h-[0.7em] w-[0.7em] text-accent" />
           </h2>
         </Reveal>
-        
+        <a
           href="/resume.pdf"
           download
           data-cursor="Download"
