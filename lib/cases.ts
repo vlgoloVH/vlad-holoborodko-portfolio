@@ -34,7 +34,7 @@ export const CASES: Case[] = [
     description:
       "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
     cover: "/SmartCrowd_preview.jpg",
-  industry: "Fintech",
+    industry: "Fintech",
     businessType: "B2C",
     platform: "Web",
     tags: ["Fintech", "Proptech", "Product Design"],
@@ -415,6 +415,27 @@ export const CASES: Case[] = [
         ],
       },
     ],
+  },
+  {
+    slug: "notary-hub",
+    title: "Notary HUB",
+    client: "Notary HUB — LegalTech SaaS Platform",
+    year: "2018-2019",
+    description:
+      "Led a complete redesign of a LegalTech SaaS platform that helps notaries manage clients, documents, approvals, and remote online notarization workflows.",
+    cover: "/NotaryHUB_preview.jpg",
+    industry: "LegalTech",
+    businessType: "B2B",
+    platform: "Web",
+    tags: ["LegalTech", "SaaS", "Product Design"],
+    meta: {
+      duration: "TBD",
+      role: "Lead Product Designer",
+      team: "TBD",
+      tools: ["Figma"],
+      skills: ["Product Design"],
+    },
+    sections: [],
   },
 ];
 
