@@ -105,6 +105,27 @@ export const CASES: Case[] = [
     ],
   },
   {
+    slug: "notary-hub",
+    title: "Notary HUB",
+    client: "Notary HUB — LegalTech SaaS Platform",
+    year: "2018-2019",
+    description:
+      "Led a complete redesign of a LegalTech SaaS platform that helps notaries manage clients, documents, approvals, and remote online notarization workflows.",
+    cover: "/NotaryHUB_preview.jpg",
+    industry: "LegalTech",
+    businessType: "B2B",
+    platform: "Web",
+    tags: ["LegalTech", "SaaS", "Product Design"],
+    meta: {
+      duration: "TBD",
+      role: "Lead Product Designer",
+      team: "TBD",
+      tools: ["Figma"],
+      skills: ["Product Design"],
+    },
+    sections: [],
+  },
+  {
     slug: "space-needle",
     title: "Space Needle",
     client: "Space Needle — Ticketing Experience",
@@ -178,84 +199,6 @@ export const CASES: Case[] = [
         body: [
           "Checkout completion rose by 18% relative to the control flow, and add-on attach rate held steady despite the less aggressive presentation — protecting the revenue line the business cared about.",
           "The sticky price summary pattern was adopted across the hotel and car-rental booking flows within two quarters, becoming a shared pattern in the design system.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "bitterbrains",
-    title: "BitterBrains",
-    client: "BitterBrains — Developer Education Platform",
-    year: "2019-2025",
-    description:
-      "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
-    tags: ["EdTech", "SaaS", "Community"],
-    cover: "/BitterBrail_preview.jpg",
-    industry: "HR Tech",
-    businessType: "B2B",
-    platform: "Web",
-    meta: {
-      duration: "4 months",
-      role: "Product Designer",
-      team: "1 PM, 3 engineers",
-      tools: ["Figma", "FullStory", "Typeform"],
-      skills: ["Onboarding design", "Workflow mapping", "Content design", "Usability testing"],
-    },
-    sections: [
-      {
-        id: "summary",
-        title: "Executive summary",
-        body: [
-          "Cohort's setup flow asked new HR admins to configure pay schedules, departments, roles and integrations before they could invite a single employee — and most never finished.",
-          "I redesigned setup as a guided, sequential experience that gets a workspace 'usable' in under 10 minutes, with advanced configuration moved to an in-product checklist that admins complete over their first weeks.",
-        ],
-      },
-      {
-        id: "problem",
-        title: "The problem",
-        body: [
-          "Only 34% of new workspaces completed setup within the first session. Support data showed admins frequently abandoned on the integrations step, which required information (payroll provider API keys) they didn't have to hand.",
-          "Sales had positioned Cohort as 'set up in minutes', but the actual experience required roughly 40 individual fields across 6 screens before any value was visible.",
-        ],
-      },
-      {
-        id: "context",
-        title: "Context & constraints",
-        body: [
-          "Compliance requirements meant certain fields (tax jurisdiction, pay frequency) genuinely had to be collected before payroll features could activate — we couldn't remove them, only reorder and reframe when they were asked for.",
-          "The engineering team was mid-migration to a new permissions model, so any new flow had to work with both the old and new permission schemas during a transition period.",
-        ],
-      },
-      {
-        id: "research",
-        title: "Research",
-        body: [
-          "I shadowed 6 HR admins setting up workspaces for the first time and found a consistent pattern: people wanted to see 'their' data (their team, their org chart) as early as possible, and were willing to defer compliance fields if told clearly they'd be prompted later.",
-          "A short survey of 40 recently onboarded admins confirmed that 'I didn't have the information needed' was the top reason for pausing setup — particularly for payroll integrations.",
-        ],
-      },
-      {
-        id: "process",
-        title: "Process",
-        body: [
-          "I mapped every field in the original setup flow against 'required to activate core value' vs 'required eventually', which split the 40-field form roughly in half. The first half became a streamlined 3-screen flow; the second became a persistent setup checklist in the sidebar.",
-          "Wireframes were tested with 5 admins using a clickable prototype, refining the checklist's framing after participants initially read it as a list of incomplete tasks rather than a guided next-steps panel.",
-        ],
-      },
-      {
-        id: "solution",
-        title: "Solution",
-        body: [
-          "The new flow asks only for company name, team size and pay frequency before showing the admin their workspace with sample data already populated — making the product feel 'alive' immediately.",
-          "A persistent checklist then walks admins through integrations, departments and roles at their own pace, with progress visible from the dashboard and contextual help linked to each item.",
-        ],
-      },
-      {
-        id: "results",
-        title: "Results",
-        body: [
-          "First-session setup completion rose from 34% to 81%. Time-to-first-invited-employee dropped from an average of 3.2 days to same-day for 70% of new accounts.",
-          "Support tickets related to setup dropped by roughly a third, freeing the support team to focus on higher-value account configuration questions.",
         ],
       },
     ],
@@ -417,25 +360,82 @@ export const CASES: Case[] = [
     ],
   },
   {
-    slug: "notary-hub",
-    title: "Notary HUB",
-    client: "Notary HUB — LegalTech SaaS Platform",
-    year: "2018-2019",
+    slug: "bitterbrains",
+    title: "BitterBrains",
+    client: "BitterBrains — Developer Education Platform",
+    year: "2019-2025",
     description:
-      "Led a complete redesign of a LegalTech SaaS platform that helps notaries manage clients, documents, approvals, and remote online notarization workflows.",
-    cover: "/NotaryHUB_preview.jpg",
-    industry: "LegalTech",
+      "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
+    tags: ["EdTech", "SaaS", "Community"],
+    cover: "/BitterBrail_preview.jpg",
+    industry: "HR Tech",
     businessType: "B2B",
     platform: "Web",
-    tags: ["LegalTech", "SaaS", "Product Design"],
     meta: {
-      duration: "TBD",
-      role: "Lead Product Designer",
-      team: "TBD",
-      tools: ["Figma"],
-      skills: ["Product Design"],
+      duration: "4 months",
+      role: "Product Designer",
+      team: "1 PM, 3 engineers",
+      tools: ["Figma", "FullStory", "Typeform"],
+      skills: ["Onboarding design", "Workflow mapping", "Content design", "Usability testing"],
     },
-    sections: [],
+    sections: [
+      {
+        id: "summary",
+        title: "Executive summary",
+        body: [
+          "Cohort's setup flow asked new HR admins to configure pay schedules, departments, roles and integrations before they could invite a single employee — and most never finished.",
+          "I redesigned setup as a guided, sequential experience that gets a workspace 'usable' in under 10 minutes, with advanced configuration moved to an in-product checklist that admins complete over their first weeks.",
+        ],
+      },
+      {
+        id: "problem",
+        title: "The problem",
+        body: [
+          "Only 34% of new workspaces completed setup within the first session. Support data showed admins frequently abandoned on the integrations step, which required information (payroll provider API keys) they didn't have to hand.",
+          "Sales had positioned Cohort as 'set up in minutes', but the actual experience required roughly 40 individual fields across 6 screens before any value was visible.",
+        ],
+      },
+      {
+        id: "context",
+        title: "Context & constraints",
+        body: [
+          "Compliance requirements meant certain fields (tax jurisdiction, pay frequency) genuinely had to be collected before payroll features could activate — we couldn't remove them, only reorder and reframe when they were asked for.",
+          "The engineering team was mid-migration to a new permissions model, so any new flow had to work with both the old and new permission schemas during a transition period.",
+        ],
+      },
+      {
+        id: "research",
+        title: "Research",
+        body: [
+          "I shadowed 6 HR admins setting up workspaces for the first time and found a consistent pattern: people wanted to see 'their' data (their team, their org chart) as early as possible, and were willing to defer compliance fields if told clearly they'd be prompted later.",
+          "A short survey of 40 recently onboarded admins confirmed that 'I didn't have the information needed' was the top reason for pausing setup — particularly for payroll integrations.",
+        ],
+      },
+      {
+        id: "process",
+        title: "Process",
+        body: [
+          "I mapped every field in the original setup flow against 'required to activate core value' vs 'required eventually', which split the 40-field form roughly in half. The first half became a streamlined 3-screen flow; the second became a persistent setup checklist in the sidebar.",
+          "Wireframes were tested with 5 admins using a clickable prototype, refining the checklist's framing after participants initially read it as a list of incomplete tasks rather than a guided next-steps panel.",
+        ],
+      },
+      {
+        id: "solution",
+        title: "Solution",
+        body: [
+          "The new flow asks only for company name, team size and pay frequency before showing the admin their workspace with sample data already populated — making the product feel 'alive' immediately.",
+          "A persistent checklist then walks admins through integrations, departments and roles at their own pace, with progress visible from the dashboard and contextual help linked to each item.",
+        ],
+      },
+      {
+        id: "results",
+        title: "Results",
+        body: [
+          "First-session setup completion rose from 34% to 81%. Time-to-first-invited-employee dropped from an average of 3.2 days to same-day for 70% of new accounts.",
+          "Support tickets related to setup dropped by roughly a third, freeing the support team to focus on higher-value account configuration questions.",
+        ],
+      },
+    ],
   },
 ];
 
