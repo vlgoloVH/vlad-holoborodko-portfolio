@@ -94,10 +94,24 @@ export default function AboutPage() {
   return (
     <>
       {/* ── 1. Hero ── */}
-      <section className="section-invert px-8 pb-24 pt-36 md:px-14 md:pt-44">
+      <section className="px-8 pb-24 pt-36 md:px-14 md:pt-44">
         <div className="mx-auto max-w-content">
-          <div className="grid gap-16 md:grid-cols-[1fr_380px] md:items-start">
-            <div>
+          <div className="grid gap-16 md:grid-cols-[380px_1fr] md:items-start">
+
+            <Reveal delay={0.05}>
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-surface">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
+                  <span className="font-mono text-xs uppercase tracking-widest text-muted">Portrait</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted opacity-60">replace with final photo</span>
+                </div>
+                <span className="absolute left-3 top-3 h-3 w-3 border-l border-t border-line" />
+                <span className="absolute right-3 top-3 h-3 w-3 border-r border-t border-line" />
+                <span className="absolute bottom-3 left-3 h-3 w-3 border-b border-l border-line" />
+                <span className="absolute bottom-3 right-3 h-3 w-3 border-b border-r border-line" />
+              </div>
+            </Reveal>
+
+            <div className="flex flex-col justify-between gap-12 md:pt-4">
               <Reveal>
                 <p className="font-mono text-xs uppercase tracking-widest text-muted">
                   — About
@@ -110,7 +124,7 @@ export default function AboutPage() {
               </Reveal>
 
               <Reveal delay={0.1}>
-                <p className="mt-8 max-w-xl text-sm leading-relaxed text-muted md:text-base">
+                <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base">
                   I&apos;m Vlad Holoborodko, a Product Designer with 7+ years of
                   experience designing digital products across fintech, proptech,
                   SaaS, and enterprise platforms.
@@ -120,56 +134,42 @@ export default function AboutPage() {
                 </p>
               </Reveal>
 
-              <Reveal delay={0.15} className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  href="/#work"
-                  className="group inline-flex items-center gap-3 rounded-full bg-accent px-5 py-3 font-mono text-xs uppercase tracking-widest text-accent-ink transition-opacity duration-300 hover:opacity-80"
-                >
-                  View work
-                  <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
-                >
-                  Download CV
-                  <Download size={14} className="transition-transform duration-300 group-hover:translate-y-0.5" />
-                </a>
+              <Reveal delay={0.15}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/#work"
+                    className="group inline-flex items-center gap-3 rounded-full border border-ink px-5 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
+                  >
+                    View work
+                    <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                  
+                    href="/resume.pdf"
+                    download
+                    className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-3 font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 hover:border-accent hover:text-accent"
+                  >
+                    Download CV
+                    <Download size={14} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+                  </a>
+                </div>
+
+                <div className="mt-10 border-t border-line pt-8">
+                  <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+                    {STATS.map((s) => (
+                      <div key={s.label}>
+                        <dt className="font-display text-display-sm font-semibold text-ink">
+                          {s.value}
+                        </dt>
+                        <dd className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted">
+                          {s.label}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
               </Reveal>
             </div>
 
-            <Reveal delay={0.1}>
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
-                <Image
-                  src="/profile_photo.jpg"
-                  alt="Vlad Holoborodko"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. Stats ── */}
-      <section className="border-y border-line px-8 py-16 md:px-14">
-        <div className="mx-auto max-w-content">
-          <div className="grid grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
-            {STATS.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.05}>
-                <div className="flex flex-col gap-2 bg-bg px-8 py-10">
-                  <span className="font-display text-display-md font-semibold text-ink">
-                    {s.value}
-                  </span>
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                    {s.label}
-                  </span>
-                </div>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
