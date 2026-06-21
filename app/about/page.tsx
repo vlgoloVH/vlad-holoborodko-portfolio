@@ -196,20 +196,34 @@ export default function AboutPage() {
               </p>
             </Reveal>
             <Reveal delay={0.05}>
-              <div className="space-y-6 text-sm leading-relaxed text-muted md:text-base">
+             <div className="space-y-6 text-sm leading-relaxed text-muted md:text-base">
                 <p>
-                  Over the past 7 years, I&apos;ve worked with startups and product
-                  teams to design products used by real customers — not just
-                  polished screens. My focus is on the intersection of user
-                  needs, business goals, and technical constraints, because
-                  that&apos;s where the most interesting design problems live.
+                  My path into design started with a strong visual foundation.
+                  I studied at an art school before earning a Bachelor&apos;s
+                  degree in Graphic Design, where I developed an understanding
+                  of visual communication, composition, and problem-solving
+                  through design.
                 </p>
                 <p>
-                  Most recently, I led product design initiatives at SmartCrowd,
-                  working across mobile and web platforms — from product
-                  discovery and design systems to end-to-end feature delivery.
-                  Before that I&apos;ve shipped products in LegalTech, enterprise
-                  software, EdTech, and retail ecosystems.
+                  While still at university, I began my career as a freelance
+                  designer, working with clients across different industries and
+                  learning how to transform ideas into real products. Those early
+                  experiences taught me adaptability, ownership, and the
+                  importance of designing for both people and business outcomes.
+                </p>
+                <p>
+                  Over the last 11+ years, I&apos;ve collaborated with startups,
+                  scale-ups, and international companies, designing products
+                  across fintech, proptech, SaaS, LegalTech, retail, and
+                  enterprise software. Along the way, my focus naturally evolved
+                  from visual design to product design — combining research,
+                  strategy, systems thinking, and user experience to solve
+                  increasingly complex challenges.
+                </p>
+                <p>
+                  Today, I help teams turn complexity into clarity by creating
+                  digital products that are intuitive, scalable, and aligned
+                  with both user needs and business goals.
                 </p>
               </div>
             </Reveal>
