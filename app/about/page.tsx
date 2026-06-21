@@ -158,7 +158,7 @@ export default function AboutPage() {
         </div>
       </section>
       {/* ── 2. Stats ── */}
-      <section className="border-y border-line px-8 py-16 md:px-14">
+      <section className="px-8 py-16 md:px-14">
         <div className="mx-auto max-w-content">
           <div className="grid grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
             {[
