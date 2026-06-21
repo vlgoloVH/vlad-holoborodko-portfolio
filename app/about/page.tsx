@@ -118,8 +118,6 @@ export default function AboutPage() {
                 </p>
                 <h1 className="mt-6 font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
                   Designing products where <span className="text-accent">clarity</span> meets complexity<span className="text-accent">.</span>
-                  <span className="text-accent">,</span> and technical reality
-                  meet<span className="text-accent">.</span>
                 </h1>
               </Reveal>
 
