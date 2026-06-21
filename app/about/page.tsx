@@ -168,7 +168,10 @@ export default function AboutPage() {
               { value: "Lead", label: "Design level", body: "Led design from discovery to delivery, across mobile and web platforms." },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 0.05}>
-                <div className={`section-invert flex flex-col gap-4 px-8 py-10 ${i > 0 ? "border-l border-white/10" : ""}`}>
+                <div className="relative section-invert flex flex-col gap-4 px-8 py-10">
+                  {i > 0 && (
+                    <div className="absolute left-0 top-10 h-16 w-px bg-white/10" />
+                  )}
                   <span className="font-mono text-xs uppercase tracking-widest text-muted">
                     {s.label}
                   </span>
