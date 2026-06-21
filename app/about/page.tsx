@@ -96,10 +96,10 @@ export default function AboutPage() {
       {/* ── 1. Hero ── */}
       <section className="px-8 pb-24 pt-36 md:px-14 md:pt-44">
         <div className="mx-auto max-w-content">
-          <div className="grid gap-16 md:grid-cols-[380px_1fr] md:items-start">
+          <div className="grid gap-16 md:grid-cols-[440px_1fr] md:items-start">
 
             <Reveal delay={0.05}>
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-surface">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-surface">
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
                   <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#a39a8a" }}>Portrait</span>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-muted opacity-60">replace with final photo</span>
