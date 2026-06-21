@@ -101,7 +101,7 @@ export default function AboutPage() {
             <Reveal delay={0.05}>
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-surface">
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted">Portrait</span>
+                  <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#a39a8a" }}>Portrait</span>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-muted opacity-60">replace with final photo</span>
                 </div>
                 <span className="absolute left-3 top-3 h-3 w-3 border-l border-t border-line" />
@@ -169,7 +169,7 @@ export default function AboutPage() {
               { value: "Lead", label: "Design level", body: "Led design from discovery to delivery, across mobile and web platforms." },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 0.05}>
-               <div className="flex flex-col gap-4 bg-surface px-8 py-10">
+                <div className="section-invert flex flex-col gap-4 px-8 py-10">
                   <span className="font-mono text-xs uppercase tracking-widest text-muted">
                     {s.label}
                   </span>
@@ -185,6 +185,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      
       {/* ── 3. About me ── */}
       <section className="px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
@@ -296,7 +297,7 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-2">
             {VALUE.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.05}>
-                <div className="flex flex-col gap-4 bg-bg px-8 py-10">
+                <div className="flex flex-col gap-4 px-8 py-10" style={{ backgroundColor: "#181613" }}>
                   <h3 className="font-display text-xl font-semibold uppercase text-ink">
                     {v.title}
                   </h3>
