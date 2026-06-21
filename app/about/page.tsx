@@ -135,6 +135,14 @@ export default function AboutPage() {
 
               <Reveal delay={0.15}>
                 <div className="flex flex-wrap gap-4">
+                 <a
+                  href="/resume.pdf"
+                    download
+                    className="group inline-flex items-center gap-3 rounded-full border border-ink px-5 py-4 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
+                  >
+                    Download CV
+                    <Download size={14} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+                  </a>
                   <Link
                     href="/#work"
                     className="group inline-flex items-center gap-3 rounded-full border border-ink px-5 py-4 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
@@ -142,14 +150,6 @@ export default function AboutPage() {
                     View work
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
-                  <a
-                    href="/resume.pdf"
-                    download
-                    className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-4 font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 hover:border-accent hover:text-accent"
-                  >
-                    Download CV
-                    <Download size={14} className="transition-transform duration-300 group-hover:translate-y-0.5" />
-                  </a>
                 </div>
               </Reveal>
             </div>
