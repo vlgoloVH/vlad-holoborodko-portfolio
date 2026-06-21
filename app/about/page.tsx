@@ -127,7 +127,7 @@ export default function AboutPage() {
                   View work
                   <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
-                
+                <a
                   href="/resume.pdf"
                   download
                   className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
@@ -369,14 +369,14 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={0.15} className="mt-10 flex flex-wrap gap-4">
-            
+            <a
               href="mailto:vlgolo1996@gmail.com"
               className="group inline-flex items-center gap-3 rounded-full bg-accent px-5 py-3 font-mono text-xs uppercase tracking-widest text-accent-ink transition-opacity duration-300 hover:opacity-80"
             >
               Email me
               <ArrowUpRight size={14} />
             </a>
-            
+            <a
               href="https://www.linkedin.com/in/vlgolo/"
               target="_blank"
               rel="noreferrer noopener"
@@ -385,7 +385,7 @@ export default function AboutPage() {
               LinkedIn
               <ArrowUpRight size={14} />
             </a>
-            
+            <a
               href="/resume.pdf"
               download
               className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
