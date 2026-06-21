@@ -159,7 +159,7 @@ export default function AboutPage() {
         </div>
       </section>
       {/* ── 2. Stats ── */}
-      <section className="section-invert border-y border-line px-8 py-16 md:px-14">
+      <section className="border-y border-line px-8 py-16 md:px-14">
         <div className="mx-auto max-w-content">
           <div className="grid grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
             {[
@@ -169,7 +169,7 @@ export default function AboutPage() {
               { value: "Lead", label: "Design level", body: "Led design from discovery to delivery, across mobile and web platforms." },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 0.05}>
-                <div className="flex flex-col gap-4 bg-bg px-8 py-10">
+               <div className="flex flex-col gap-4 bg-surface px-8 py-10">
                   <span className="font-mono text-xs uppercase tracking-widest text-muted">
                     {s.label}
                   </span>
