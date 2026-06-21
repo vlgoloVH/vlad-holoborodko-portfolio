@@ -118,7 +118,7 @@ export default function AboutPage() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                   </span>
-                  Based in Europe · Available for remote roles · Product / UX / UI
+                  Based in Europe · Available for remote roles
                 </p>
                 <h1 className="mt-6 font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
                   Designing products where <span className="text-accent">clarity</span> meets complexity<span className="text-accent">.</span>
