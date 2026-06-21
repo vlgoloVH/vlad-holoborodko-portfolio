@@ -44,13 +44,15 @@ export const EXPERIENCE: ExperienceItem[] = [
 ];
 
 export const SKILLS = {
-  practice: [
-    "Discovery & user research",
+ practice: [
+    "Product discovery",
+    "User research",
     "Information architecture",
-    "Interaction & visual design",
+    "UX & interface design",
+    "Prototyping & validation",
+    "Product strategy",
     "Design systems",
-    "Prototyping & usability testing",
-    "Roadmap & strategy input",
+    "Product analytics",
   ],
   collaboration: [
     "Cross-functional facilitation",
