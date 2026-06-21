@@ -343,22 +343,25 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12">
+          <div className="mt-12 grid gap-px bg-white/5 sm:grid-cols-2">
             {VALUE.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06}>
-                <div className="group grid cursor-default gap-6 border-t border-white/10 py-8 transition-all duration-500 hover:border-accent md:grid-cols-[80px_1fr_1fr] md:items-center md:py-10">
-                  <span className="font-display text-display-sm font-semibold text-accent/20 transition-colors duration-500 group-hover:text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-2xl font-semibold uppercase text-ink transition-colors duration-300 group-hover:text-accent md:text-3xl">
-                    {v.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-muted md:text-base">
+                <div className="group flex flex-col gap-4 bg-[#181613] px-8 py-10 transition-colors duration-300 hover:bg-[#1c1a14]">
+                  <div className="flex items-start gap-4">
+                    <span className="mt-1 font-mono text-xs text-accent/40 group-hover:text-accent transition-colors duration-300">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display text-lg font-semibold uppercase text-ink">
+                      {v.title}
+                    </h3>
+                  </div>
+                  <p className="pl-8 text-sm leading-relaxed text-muted">
                     {v.body}
                   </p>
                 </div>
               </Reveal>
             ))}
+          </div>
             <div className="border-t border-white/10" />
           </div>
 
