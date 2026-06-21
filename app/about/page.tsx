@@ -354,7 +354,7 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-2">
             {VALUE.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.05}>
-                <div className="flex flex-col gap-4 px-8 py-10" style={{ backgroundColor: "#181613" }}>
+                <div className="flex flex-col gap-4 bg-bg px-8 py-10">
                   <h3 className="font-display text-xl font-semibold uppercase text-ink">
                     {v.title}
                   </h3>
@@ -369,7 +369,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── 7. Product Design Stack ── */}
-      <section className="section-invert border-t border-line px-8 py-24 md:px-14 md:py-32">
+      <section className="border-t border-line px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
