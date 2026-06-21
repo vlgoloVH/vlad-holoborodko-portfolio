@@ -278,82 +278,45 @@ export default function AboutPage() {
               <h2 className="font-display text-display-md font-semibold uppercase text-ink">
                 How I work
               </h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                [ Process ]
-              </span>
             </div>
           </Reveal>
 
-          <div className="mt-16 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 step: "01",
                 title: "Discover",
                 body: "Understand users, business goals, constraints, and opportunities.",
                 accent: "Research & Insights",
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.25">
-                    <circle cx="14" cy="14" r="8" />
-                    <line x1="20" y1="20" x2="28" y2="28" />
-                    <line x1="14" y1="10" x2="14" y2="18" />
-                    <line x1="10" y1="14" x2="18" y2="14" />
-                  </svg>
-                ),
               },
               {
                 step: "02",
                 title: "Define",
                 body: "Turn messy problems into clear product direction, flows, and priorities.",
                 accent: "Strategy & Direction",
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.25">
-                    <rect x="4" y="4" width="24" height="24" rx="1" />
-                    <line x1="4" y1="12" x2="28" y2="12" />
-                    <line x1="12" y1="12" x2="12" y2="28" />
-                    <line x1="16" y1="18" x2="22" y2="18" />
-                    <line x1="16" y1="22" x2="20" y2="22" />
-                  </svg>
-                ),
               },
               {
                 step: "03",
                 title: "Design",
                 body: "Create intuitive interfaces, prototypes, and scalable design patterns.",
                 accent: "UI & Systems",
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.25">
-                    <rect x="4" y="8" width="16" height="12" rx="1" />
-                    <rect x="14" y="14" width="14" height="10" rx="1" />
-                    <line x1="7" y1="12" x2="15" y2="12" />
-                    <line x1="7" y1="15" x2="13" y2="15" />
-                  </svg>
-                ),
               },
               {
                 step: "04",
                 title: "Validate",
                 body: "Test assumptions, use feedback, and improve with data.",
                 accent: "Testing & Iteration",
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.25">
-                    <polyline points="4,20 10,14 16,18 22,10 28,12" />
-                    <circle cx="28" cy="12" r="2" fill="currentColor" stroke="none" />
-                    <line x1="4" y1="26" x2="28" y2="26" />
-                  </svg>
-                ),
               },
             ].map((p, i) => (
               <Reveal key={p.step} delay={i * 0.08}>
                 <div className="group relative flex flex-col gap-8 bg-[#181613] px-8 py-12 transition-all duration-500 hover:bg-[#1c1a14] min-h-[380px]">
+                  {i > 0 && (
+                    <div className="absolute left-0 top-12 bottom-12 w-px bg-white/10" />
+                  )}
 
-                  <div className="flex items-start justify-between">
-                    <span className="font-display text-[80px] font-semibold leading-none text-white/5 transition-colors duration-500 group-hover:text-accent/20 select-none">
-                      {p.step}
-                    </span>
-                    <span className="text-muted transition-all duration-300 group-hover:text-accent mt-2">
-                      {p.icon}
-                    </span>
-                  </div>
+                  <span className="font-display text-[80px] font-semibold leading-none text-white/5 transition-colors duration-500 group-hover:text-accent/20 select-none">
+                    {p.step}
+                  </span>
 
                   <div className="flex flex-col gap-3 flex-1">
                     <h3 className="font-display text-2xl font-semibold uppercase text-ink">
