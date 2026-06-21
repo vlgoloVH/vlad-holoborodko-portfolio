@@ -270,15 +270,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 5. How I work ── */}
+      {/* ── 5. How I work + What I bring ── */}
       <section className="section-invert px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
+
+          {/* How I work */}
           <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                How I work
-              </h2>
-            </div>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink">
+              How I work
+            </h2>
           </Reveal>
 
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4">
@@ -313,11 +313,9 @@ export default function AboutPage() {
                   {i > 0 && (
                     <div className="absolute left-0 top-12 bottom-12 w-px bg-white/10" />
                   )}
-
                   <span className="font-display text-[80px] font-semibold leading-none text-white/5 transition-colors duration-500 group-hover:text-accent/20 select-none">
                     {p.step}
                   </span>
-
                   <div className="flex flex-col gap-3 flex-1">
                     <h3 className="font-display text-2xl font-semibold uppercase text-ink">
                       {p.title}
@@ -326,27 +324,21 @@ export default function AboutPage() {
                       {p.body}
                     </p>
                   </div>
-
                   <div className="flex items-center gap-2">
                     <span className="h-px w-6 bg-accent/40 transition-all duration-500 group-hover:w-10 group-hover:bg-accent" />
                     <span className="font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 group-hover:text-accent">
                       {p.accent}
                     </span>
                   </div>
-
                   <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-accent transition-all duration-500 group-hover:w-full" />
                 </div>
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ── 6. What I bring ── */}
-      <section className="px-8 py-24 md:px-14 md:py-32">
-        <div className="mx-auto max-w-content">
+          {/* What I bring */}
           <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink">
+            <h2 className="mt-24 font-display text-display-md font-semibold uppercase text-ink">
               What I bring
             </h2>
           </Reveal>
@@ -354,7 +346,7 @@ export default function AboutPage() {
           <div className="mt-12">
             {VALUE.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06}>
-                <div className="group grid cursor-default gap-6 border-t border-line py-8 transition-all duration-500 hover:border-accent md:grid-cols-[80px_1fr_1fr] md:items-center md:py-10">
+                <div className="group grid cursor-default gap-6 border-t border-white/10 py-8 transition-all duration-500 hover:border-accent md:grid-cols-[80px_1fr_1fr] md:items-center md:py-10">
                   <span className="font-display text-display-sm font-semibold text-accent/20 transition-colors duration-500 group-hover:text-accent">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -367,8 +359,9 @@ export default function AboutPage() {
                 </div>
               </Reveal>
             ))}
-            <div className="border-t border-line" />
+            <div className="border-t border-white/10" />
           </div>
+
         </div>
       </section>
 
