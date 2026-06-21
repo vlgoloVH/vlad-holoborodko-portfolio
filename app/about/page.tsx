@@ -143,7 +143,7 @@ export default function AboutPage() {
                     View work
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
-                  
+                  <a
                     href="/resume.pdf"
                     download
                     className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-3 font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 hover:border-accent hover:text-accent"
