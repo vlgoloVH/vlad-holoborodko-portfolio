@@ -113,8 +113,12 @@ export default function AboutPage() {
 
             <div className="flex flex-col justify-between gap-12 md:pt-4">
               <Reveal>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                  — About
+               <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                  </span>
+                  Based in Europe · Available for remote roles · Product / UX / UI
                 </p>
                 <h1 className="mt-6 font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
                   Designing products where <span className="text-accent">clarity</span> meets complexity<span className="text-accent">.</span>
@@ -126,9 +130,6 @@ export default function AboutPage() {
                   I&apos;m Vlad Holoborodko, a Product Designer with 7+ years of
                   experience designing digital products across fintech, proptech,
                   SaaS, and enterprise platforms.
-                </p>
-                <p className="mt-3 font-mono text-xs uppercase tracking-widest text-muted">
-                  Based in Kyiv · Available for remote roles · Product / UX / UI
                 </p>
               </Reveal>
 
