@@ -152,28 +152,39 @@ export default function AboutPage() {
                     <Download size={14} className="transition-transform duration-300 group-hover:translate-y-0.5" />
                   </a>
                 </div>
-
-                <div className="mt-10 border-t border-line pt-8">
-                  <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-                    {STATS.map((s) => (
-                      <div key={s.label}>
-                        <dt className="font-display text-display-sm font-semibold text-ink">
-                          {s.value}
-                        </dt>
-                        <dd className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted">
-                          {s.label}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
               </Reveal>
             </div>
 
           </div>
         </div>
       </section>
-
+      {/* ── 2. Stats ── */}
+      <section className="section-invert border-y border-line px-8 py-16 md:px-14">
+        <div className="mx-auto max-w-content">
+          <div className="grid grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
+            {[
+              { value: "7+", label: "Years of experience", body: "A proven track record of delivering outcome-focused design solutions." },
+              { value: "20+", label: "Products shipped", body: "Shipped products across fintech, proptech, SaaS and enterprise platforms." },
+              { value: "3", label: "Industries shaped", body: "Fintech, PropTech, and LegalTech products used by real customers." },
+              { value: "Lead", label: "Design level", body: "Led design from discovery to delivery, across mobile and web platforms." },
+            ].map((s, i) => (
+              <Reveal key={s.label} delay={i * 0.05}>
+                <div className="flex flex-col gap-4 bg-bg px-8 py-10">
+                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                    {s.label}
+                  </span>
+                  <span className="font-display text-display-md font-semibold text-ink">
+                    {s.value}
+                  </span>
+                  <p className="text-sm leading-relaxed text-muted">
+                    {s.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* ── 3. About me ── */}
       <section className="px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
