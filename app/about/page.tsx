@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Download, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import Image from "next/image";
+import { Contact } from "@/components/sections/contact";
 
 export const metadata: Metadata = {
   title: "About",
@@ -353,49 +354,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── 9. CTA ── */}
-      <section className="section-invert border-t border-line px-8 py-24 md:px-14 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <h2 className="font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
-              Let&apos;s build something
-              <br />
-              meaningful together<span className="text-accent">.</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-8 max-w-lg text-sm leading-relaxed text-muted md:text-base">
-              Open to product design roles, freelance projects, and
-              collaborations with teams building thoughtful digital products.
-            </p>
-          </Reveal>
-          <Reveal delay={0.15} className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="mailto:vlgolo1996@gmail.com"
-              className="group inline-flex items-center gap-3 rounded-full bg-accent px-5 py-3 font-mono text-xs uppercase tracking-widest text-accent-ink transition-opacity duration-300 hover:opacity-80"
-            >
-              Email me
-              <ArrowUpRight size={14} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/vlgolo/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
-            >
-              LinkedIn
-              <ArrowUpRight size={14} />
-            </a>
-            <a
-              href="/resume.pdf"
-              download
-              className="group inline-flex items-center gap-3 rounded-full border border-line px-5 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
-            >
-              Download CV
-              <Download size={14} />
-            </a>
-          </Reveal>
-        </div>
-      </section>
+      <Contact />
     </>
   );
 }
