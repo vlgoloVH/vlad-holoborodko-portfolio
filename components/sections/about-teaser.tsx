@@ -69,33 +69,51 @@ export function AboutTeaser() {
           {/* Right — Skills */}
           <Reveal delay={0.15}>
             <div className="flex flex-col gap-8">
-              <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                Product Design Stack
-              </p>
-              {[
-                { label: "Design", tools: ["Figma", "FigJam", "Sketch"] },
-                { label: "Design Systems", tools: ["Storybook", "Design Tokens"] },
-                { label: "Research", tools: ["Maze", "Mobbin", "User Interviews"] },
-                { label: "Analytics", tools: ["Amplitude", "SQL"] },
-                { label: "Collaboration", tools: ["Jira", "Notion"] },
-                { label: "AI", tools: ["Claude", "ChatGPT", "Figma Make"] },
-              ].map((group) => (
-                <div key={group.label}>
-                  <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
-                    {group.label}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {group.tools.map((tool) => (
-                      <span
-                        key={tool}
-                        className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
+              <div>
+                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-muted">
+                  What I do
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {SKILLS.practice.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div>
+                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-muted">
+                  Product Design Stack
+                </p>
+                {[
+                  { label: "Design", tools: ["Figma", "FigJam", "Sketch"] },
+                  { label: "Design Systems", tools: ["Storybook", "Design Tokens"] },
+                  { label: "Research", tools: ["Maze", "Mobbin", "User Interviews"] },
+                  { label: "Analytics", tools: ["Amplitude", "SQL"] },
+                  { label: "Collaboration", tools: ["Jira", "Notion"] },
+                  { label: "AI", tools: ["Claude", "ChatGPT", "Figma Make"] },
+                ].map((group) => (
+                  <div key={group.label} className="mt-4">
+                    <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted">
+                      {group.label}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {group.tools.map((tool) => (
+                        <span
+                          key={tool}
+                          className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
