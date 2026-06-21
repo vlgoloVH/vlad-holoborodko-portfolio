@@ -351,19 +351,23 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-2">
+          <div className="mt-12">
             {VALUE.map((v, i) => (
-              <Reveal key={v.title} delay={i * 0.05}>
-                <div className="flex flex-col gap-4 bg-bg px-8 py-10">
-                  <h3 className="font-display text-xl font-semibold uppercase text-ink">
+              <Reveal key={v.title} delay={i * 0.06}>
+                <div className="group grid cursor-default gap-6 border-t border-line py-8 transition-all duration-500 hover:border-accent md:grid-cols-[80px_1fr_1fr] md:items-center md:py-10">
+                  <span className="font-display text-display-sm font-semibold text-accent/20 transition-colors duration-500 group-hover:text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display text-2xl font-semibold uppercase text-ink transition-colors duration-300 group-hover:text-accent md:text-3xl">
                     {v.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-muted">
+                  <p className="text-sm leading-relaxed text-muted md:text-base">
                     {v.body}
                   </p>
                 </div>
               </Reveal>
             ))}
+            <div className="border-t border-line" />
           </div>
         </div>
       </section>
