@@ -160,7 +160,7 @@ export default function AboutPage() {
       {/* ── 2. Stats ── */}
       <section className="px-8 py-16 md:px-14">
         <div className="mx-auto max-w-content">
-          <div className="grid grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {[
               { value: "7+", label: "Years of experience", body: "A proven track record of delivering outcome-focused design solutions." },
               { value: "20+", label: "Products shipped", body: "Shipped products across fintech, proptech, SaaS and enterprise platforms." },
@@ -168,7 +168,7 @@ export default function AboutPage() {
               { value: "Lead", label: "Design level", body: "Led design from discovery to delivery, across mobile and web platforms." },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 0.05}>
-                <div className="section-invert flex flex-col gap-4 px-8 py-10">
+                <div className={`section-invert flex flex-col gap-4 px-8 py-10 ${i > 0 ? "border-l border-white/10" : ""}`}>
                   <span className="font-mono text-xs uppercase tracking-widest text-muted">
                     {s.label}
                   </span>
