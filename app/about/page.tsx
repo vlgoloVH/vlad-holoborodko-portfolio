@@ -127,9 +127,7 @@ export default function AboutPage() {
 
               <Reveal delay={0.1}>
                 <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base">
-                  I&apos;m Vlad Holoborodko, a Product Designer with 7+ years of
-                  experience designing digital products across fintech, proptech,
-                  SaaS, and enterprise platforms.
+                  I'm a Product Designer with 11+ years of experience building digital products across diverse industries and markets. I help teams transform complex ideas into intuitive experiences that create meaningful value for users and measurable results for businesses.
                 </p>
               </Reveal>
 
