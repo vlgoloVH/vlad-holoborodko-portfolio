@@ -279,19 +279,59 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-            {PROCESS.map((p, i) => (
-              <Reveal key={p.step} delay={i * 0.05}>
-                <div className="flex flex-col gap-6 bg-bg px-8 py-10">
-                  <span className="font-mono text-xs uppercase tracking-widest text-accent">
-                    {p.step}
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                step: "01",
+                title: "Discover",
+                body: "Understand users, business goals, constraints, and opportunities.",
+                icon: "🔍",
+                accent: "Research & Insights",
+              },
+              {
+                step: "02",
+                title: "Define",
+                body: "Turn messy problems into clear product direction, flows, and priorities.",
+                icon: "🎯",
+                accent: "Strategy & Direction",
+              },
+              {
+                step: "03",
+                title: "Design",
+                body: "Create intuitive interfaces, prototypes, and scalable design patterns.",
+                icon: "✦",
+                accent: "UI & Systems",
+              },
+              {
+                step: "04",
+                title: "Validate",
+                body: "Test assumptions, use feedback, and improve with data.",
+                icon: "◎",
+                accent: "Testing & Iteration",
+              },
+            ].map((p, i) => (
+              <Reveal key={p.step} delay={i * 0.08}>
+                <div className="group relative flex flex-col gap-6 rounded-sm border border-white/10 bg-white/5 px-8 py-10 transition-all duration-500 hover:border-accent/40 hover:bg-white/8 min-h-[320px]">
+                  <div className="flex items-start justify-between">
+                    <span className="font-mono text-xs uppercase tracking-widest text-accent">
+                      {p.step}
+                    </span>
+                    <span className="text-2xl opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
+                      {p.icon}
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-3 flex-1">
+                    <h3 className="font-display text-2xl font-semibold uppercase text-ink">
+                      {p.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-muted">
+                      {p.body}
+                    </p>
+                  </div>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent/50 transition-colors duration-300 group-hover:text-accent">
+                    {p.accent}
                   </span>
-                  <h3 className="font-display text-xl font-semibold uppercase text-ink">
-                    {p.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-muted">
-                    {p.body}
-                  </p>
+                  <div className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-500 group-hover:w-full" />
                 </div>
               </Reveal>
             ))}
