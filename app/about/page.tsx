@@ -68,30 +68,35 @@ const EXPERIENCE = [
     company: "Wandr",
     role: "UX/UI Designer · Remote",
     body: "Designed UI and UX solutions for multiple client projects across web and mobile platforms, creating user flows, wireframes, prototypes, and high-fidelity interfaces.",
+    tags: ["UX Design", "User Flows", "Information Architecture", "Wireframing", "Prototyping", "Web & Mobile"],
   },
   {
     year: "2018–2023",
     company: "BitterBrains",
     role: "Product Designer · Remote",
     body: "Designed end-to-end user experiences for educational and SaaS products, from research and wireframes to polished interfaces, design systems, and developer handoff.",
+    tags: ["EdTech", "SaaS", "User Research", "Design Systems", "Developer Handoff", "End-to-End Design"],
   },
   {
     year: "2023–2025",
     company: "SPD Tech",
     role: "Lead Product Designer · Part-time",
     body: "Led end-to-end product design for complex digital products, shaping user experiences, influencing product decisions, and driving successful product launches across multiple platforms.",
+    tags: ["Product Design", "Complex Workflows", "Cross-platform", "Design Leadership", "Product Strategy", "Digital Products"],
   },
   {
     year: "2024–2025",
     company: "Fozzy Group",
     role: "Product Designer · Part-time",
     body: "Designed scalable enterprise solutions for one of Ukraine's largest retail groups, simplifying complex processes, improving user productivity, and enhancing operational efficiency.",
+    tags: ["Enterprise Products", "Retail Operations", "Workflow Optimization", "Process Simplification", "Data-heavy Interfaces", "Scalable Systems"],
   },
   {
     year: "2025–2026",
     company: "SmartCrowd",
     role: "Lead Product Designer · Remote",
     body: "Led product design for a regulated real estate investment platform, shaping core investment experiences across web and mobile products while driving product innovation and business growth.",
+    tags: ["Product Leadership", "Fintech", "Investment Platform", "Cross-platform", "Product Innovation", "Business Growth"],
   },
 ];
 
@@ -274,6 +279,18 @@ export default function AboutPage() {
                     <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
                       {item.body}
                     </p>
+                    {item.tags && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {item.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-muted"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </Reveal>
