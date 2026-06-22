@@ -257,10 +257,10 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <div className="mt-12 border-t border-line">
+          <div className="mt-12">
             {EXPERIENCE.map((item, i) => (
               <Reveal key={item.company} delay={i * 0.05}>
-                <div className="grid gap-4 border-b border-line py-10 md:grid-cols-[160px_1fr_auto] md:gap-12 md:items-start">
+                <div className={`grid gap-4 py-10 md:grid-cols-[160px_1fr_auto] md:gap-12 md:items-start ${i < EXPERIENCE.length - 1 ? "border-b border-line" : ""}`}>
                   <span className="font-mono text-xs uppercase tracking-widest text-muted">
                     {item.year}
                   </span>
