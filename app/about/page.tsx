@@ -413,18 +413,20 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 space-y-10">
+          <div className="mt-12 grid grid-cols-2 gap-px border border-line bg-line md:grid-cols-6">
             {STACK.map((group, i) => (
               <Reveal key={group.label} delay={i * 0.05}>
-                <div className="grid gap-4 border-t border-line pt-8 md:grid-cols-[160px_1fr]">
-                  <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                    {group.label}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
+                <div className="flex flex-col bg-bg">
+                  <div className="border-b border-line px-5 py-4">
+                    <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                      {group.label}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2 px-5 py-5">
                     {group.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="rounded-full border border-line px-4 py-2 font-mono text-xs tracking-wide text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
+                        className="rounded-full border border-line px-3 py-2 font-mono text-xs tracking-wide text-ink transition-colors duration-300 hover:border-accent hover:text-accent text-center"
                       >
                         {tool}
                       </span>
