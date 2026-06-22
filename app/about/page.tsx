@@ -12,12 +12,13 @@ export const metadata: Metadata = {
 };
 
 const STACK = [
-  { label: "Design", tools: ["Figma", "FigJam", "Framer", "Mobbin"] },
-  { label: "Design Systems", tools: ["Storybook", "Design Tokens"] },
-  { label: "Research", tools: ["Maze", "User Interviews"] },
-  { label: "Analytics", tools: ["Amplitude", "SQL"] },
-  { label: "Collaboration", tools: ["Jira", "Notion"] },
-  { label: "AI", tools: ["Claude", "ChatGPT", "Figma Make"] },
+  { label: "Design", tools: ["Figma", "FigJam", "Framer", "Mobbin", "Protopie", "Principle", "Adobe Creative Suite"] },
+  { label: "Design Systems", tools: ["Storybook", "Design Tokens", "Variables", "Component Libraries", "Documentation", "Accessibility"] },
+  { label: "Research", tools: ["User Interviews", "Maze", "Usability Testing", "Surveys", "Competitive Analysis", "Journey Mapping"] },
+  { label: "Analytics", tools: ["Amplitude", "SQL", "A/B Testing"] },
+  { label: "Product", tools: ["Product Strategy", "Product Discovery", "Roadmapping", "Prioritization", "KPI Definition", "Feature Planning"] },
+  { label: "Collaboration", tools: ["Jira", "Notion", "Confluence", "Slack", "Workshop Facilitation", "Stakeholder Management"] },
+  { label: "AI", tools: ["ChatGPT", "Claude", "Figma Make", "Generative AI Tools"] },
 ];
 
 const PROCESS = [
@@ -413,7 +414,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-6">
+          <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-7">
             {STACK.map((group, i) => (
               <Reveal key={group.label} delay={i * 0.05}>
                 <div className="flex flex-col gap-3">
