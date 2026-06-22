@@ -121,7 +121,7 @@ export default function AboutPage() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                   </span>
-                  Based in Ukraine · Available for remote roles
+                  Based in Europe · Available for remote roles
                 </p>
                 <h1 className="mt-6 font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
                   Designing
@@ -140,7 +140,7 @@ export default function AboutPage() {
                 href="/resume.pdf"
                 download
                 data-cursor="Download"
-                className="group relative hidden md:flex h-44 w-44 items-center justify-center shrink-0"
+                className="group relative hidden md:flex h-56 w-56 items-center justify-center shrink-0"
               >
                 <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-[spin_24s_linear_infinite] text-muted">
                   <defs>
