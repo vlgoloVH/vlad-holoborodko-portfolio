@@ -64,22 +64,34 @@ const VALUE = [
 
 const EXPERIENCE = [
   {
+    year: "2016–2018",
+    company: "Wandr",
+    role: "UX/UI Designer · Remote",
+    body: "Designed UI and UX solutions for multiple client projects across web and mobile platforms, creating user flows, wireframes, prototypes, and high-fidelity interfaces.",
+  },
+  {
+    year: "2018–2023",
+    company: "BitterBrains",
+    role: "Product Designer · Remote",
+    body: "Designed end-to-end user experiences for educational and SaaS products, from research and wireframes to polished interfaces, design systems, and developer handoff.",
+  },
+  {
+    year: "2023–2025",
+    company: "SPD Tech",
+    role: "Lead Product Designer · Part-time",
+    body: "Led end-to-end product design for complex digital products, shaping user experiences, influencing product decisions, and driving successful product launches across multiple platforms.",
+  },
+  {
+    year: "2024–2025",
+    company: "Fozzy Group",
+    role: "Product Designer · Part-time",
+    body: "Designed scalable enterprise solutions for one of Ukraine's largest retail groups, simplifying complex processes, improving user productivity, and enhancing operational efficiency.",
+  },
+  {
     year: "2025–2026",
     company: "SmartCrowd",
-    role: "Lead Product Designer",
-    body: "Redesigned core investment experiences across mobile and web, including portfolio, wallet, property discovery, investment flows, and new product features.",
-  },
-  {
-    year: "2025",
-    company: "Fozzy Group",
-    role: "Product Designer",
-    body: "Worked on back-office and operational product experiences for internal teams across one of Ukraine's largest retail ecosystems.",
-  },
-  {
-    year: "2018–2019",
-    company: "Notary HUB",
-    role: "Product Designer",
-    body: "Designed and improved complex notary-related digital platforms and product flows, introducing remote online notarization workflows.",
+    role: "Lead Product Designer · Remote",
+    body: "Led product design for a regulated real estate investment platform, shaping core investment experiences across web and mobile products while driving product innovation and business growth.",
   },
 ];
 
@@ -237,7 +249,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="flex items-baseline justify-between">
               <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                Selected experience
+                Experience
               </h2>
               <span className="font-mono text-xs uppercase tracking-widest text-muted">
                 [ 2015 — Now ]
