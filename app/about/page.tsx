@@ -124,7 +124,13 @@ export default function AboutPage() {
                   Based in Europe · Available for remote roles
                 </p>
                 <h1 className="mt-6 font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
-                  Designing products where <span className="text-accent">clarity</span> meets complexity<span className="text-accent">.</span>
+                  Designing
+                  <br />
+                  products where
+                  <br />
+                  <span className="text-accent">clarity</span> meets
+                  <br />
+                  complexity<span className="text-accent">.</span>
                 </h1>
               </Reveal>
             </div>
