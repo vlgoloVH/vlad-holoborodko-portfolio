@@ -427,7 +427,40 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
+      
+      {/* ── 8. Photo grid ── */}
+      <section className="px-8 py-24 md:px-14 md:py-32">
+        <div className="mx-auto max-w-content">
+          <div className="grid grid-cols-3 grid-rows-2 gap-3 h-[600px]">
+            <div className="row-span-2 bg-surface rounded-sm overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 1</span>
+              </div>
+            </div>
+            <div className="bg-surface rounded-sm overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 2</span>
+              </div>
+            </div>
+            <div className="bg-surface rounded-sm overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 3</span>
+              </div>
+            </div>
+            <div className="bg-surface rounded-sm overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 4</span>
+              </div>
+            </div>
+            <div className="bg-surface rounded-sm overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* ── 9. CTA ── */}
       <Contact />
     </>
