@@ -223,25 +223,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 2. Stats ── */}
-      <section className="px-8 py-16 md:px-14">
+     {/* ── 2. Stats ── */}
+      <section className="px-8 py-20 md:px-14">
         <div className="mx-auto max-w-content">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {[
-              { value: "7+", label: "Years of experience", body: "A proven track record of delivering outcome-focused design solutions." },
-              { value: "20+", label: "Products shipped", body: "Shipped products across fintech, proptech, SaaS and enterprise platforms." },
-              { value: "3", label: "Industries shaped", body: "Fintech, PropTech, and LegalTech products used by real customers." },
-              { value: "Lead", label: "Design level", body: "Led design from discovery to delivery, across mobile and web platforms." },
+              { value: "11+", label: "Years of experience", body: "A proven track record of designing and launching digital products across multiple industries." },
+              { value: "40+", label: "Projects launched", body: "Delivered web and mobile products from concept to launch in startups and enterprise teams." },
+              { value: "15+", label: "Industries shaped", body: "From investment platforms and retail systems to SaaS products, education platforms and enterprise solutions." },
+              { value: "Lead", label: "Product Designer", body: "Driving product strategy, UX direction and execution." },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 0.05}>
-                <div className="relative section-invert flex flex-col gap-4 px-8 py-10">
+                <div className="relative section-invert flex flex-col gap-4 px-8 py-14">
                   {i > 0 && (
                     <div className="absolute left-0 top-10 bottom-10 w-px bg-white/10" />
                   )}
                   <span className="font-mono text-xs uppercase tracking-widest text-muted">
                     {s.label}
                   </span>
-                  <span className="font-display text-display-md font-semibold text-ink">
+                  <span className="font-display text-display-lg font-semibold text-ink">
                     {s.value}
                   </span>
                   <p className="text-sm leading-relaxed text-muted">
