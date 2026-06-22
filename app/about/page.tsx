@@ -374,36 +374,6 @@ export default function AboutPage() {
           </div>
       </section>
 
-      {/* ── 6. What I bring ── */}
-      <section className="px-8 py-24 md:px-14 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-              What I bring
-            </h2>
-          </Reveal>
-
-          <div className="mt-12">
-            {VALUE.map((v, i) => (
-              <Reveal key={v.title} delay={i * 0.06}>
-                <div className="group grid cursor-default border-t border-line py-8 transition-all duration-500 md:grid-cols-[64px_1fr_1fr] md:items-center md:py-10 hover:border-accent">
-                  <span className="font-display text-display-sm font-semibold text-accent/20 transition-colors duration-500 group-hover:text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-2xl font-semibold uppercase text-ink transition-colors duration-300 group-hover:text-accent md:text-3xl">
-                    {v.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted md:mt-0 md:text-base">
-                    {v.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-            <div className="border-t border-line" />
-          </div>
-        </div>
-      </section>
-
       {/* ── 7. Product Design Stack ── */}
       <section className="border-t border-line px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
@@ -420,7 +390,7 @@ export default function AboutPage() {
                   <p className="font-mono text-xs uppercase tracking-widest text-muted">
                     {group.label}
                   </p>
-                  <div className="flex flex-col items-start gap-2">
+                <div className="flex flex-col items-start gap-3">
                     {group.tools.map((tool) => (
                       <span
                         key={tool}
