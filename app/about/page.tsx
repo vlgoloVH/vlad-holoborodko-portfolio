@@ -111,25 +111,12 @@ export default function AboutPage() {
   return (
     <>
       {/* ── 1. Hero ── */}
-      <section className="px-8 pb-24 pt-36 md:px-14 md:pt-44">
+      <section className="px-8 pb-0 pt-36 md:px-14 md:pt-44">
         <div className="mx-auto max-w-content">
-          <div className="grid gap-16 md:grid-cols-[440px_1fr] md:items-start">
-
-            <Reveal delay={0.05}>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
-                <Image
-                  src="/About_photo.jpg"
-                  alt="Vlad Holoborodko"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </Reveal>
-
-            <div className="flex flex-col justify-between gap-12 md:pt-4">
+          <div className="flex items-start justify-between gap-8">
+            <div className="flex flex-col gap-6">
               <Reveal>
-               <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
+                <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -140,62 +127,60 @@ export default function AboutPage() {
                   Designing products where <span className="text-accent">clarity</span> meets complexity<span className="text-accent">.</span>
                 </h1>
               </Reveal>
-
-              <Reveal delay={0.15}>
-                <div className="flex flex-wrap gap-4">
-                 <a
-                  href="/resume.pdf"
-                    download
-                    className="group inline-flex items-center gap-3 rounded-full border border-ink px-5 py-4 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
-                  >
-                    Download CV
-                    <Download size={14} className="transition-transform duration-300 group-hover:translate-y-0.5" />
-                  </a>
-                  <Link
-                    href="/#work"
-                    className="group inline-flex items-center gap-3 rounded-full border border-ink px-5 py-4 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
-                  >
-                    View work
-                    <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </div>
+              <Reveal delay={0.1} className="mt-4 flex flex-wrap gap-4">
+                <Link
+                  href="/#work"
+                  className="group inline-flex items-center gap-3 rounded-full border border-ink px-5 py-4 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
+                >
+                  View work
+                  <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
               </Reveal>
             </div>
 
+            <Reveal delay={0.1}>
+              
+                href="/resume.pdf"
+                download
+                data-cursor="Download"
+                className="group relative hidden md:flex h-44 w-44 items-center justify-center shrink-0"
+              >
+                <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-[spin_24s_linear_infinite] text-muted">
+                  <defs>
+                    <path id="about-circle" d="M 100,100 m -88,0 a 88,88 0 1,1 176,0 a 88,88 0 1,1 -176,0" fill="none" />
+                  </defs>
+                  <text fill="currentColor" className="font-mono text-[14px] uppercase tracking-[0.25em]">
+                    <textPath href="#about-circle">
+                      Download resume • Download resume • Download resume •
+                    </textPath>
+                  </text>
+                </svg>
+                <span className="glass-bg flex h-16 w-16 items-center justify-center rounded-full border border-line text-ink backdrop-blur-md transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink">
+                  <Download size={20} strokeWidth={1.5} />
+                </span>
+              </a>
+            </Reveal>
           </div>
         </div>
       </section>
-      {/* ── 2. Stats ── */}
-      <section className="px-8 py-16 md:px-14">
+
+      {/* ── Photo ── */}
+      <section className="mt-16 px-8 md:px-14">
         <div className="mx-auto max-w-content">
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {[
-              { value: "7+", label: "Years of experience", body: "A proven track record of delivering outcome-focused design solutions." },
-              { value: "20+", label: "Products shipped", body: "Shipped products across fintech, proptech, SaaS and enterprise platforms." },
-              { value: "3", label: "Industries shaped", body: "Fintech, PropTech, and LegalTech products used by real customers." },
-              { value: "Lead", label: "Design level", body: "Led design from discovery to delivery, across mobile and web platforms." },
-            ].map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.05}>
-                <div className="relative section-invert flex flex-col gap-4 px-8 py-10">
-                  {i > 0 && (
-                    <div className="absolute left-0 top-10 bottom-10 w-px bg-white/10" />
-                  )}
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                    {s.label}
-                  </span>
-                  <span className="font-display text-display-md font-semibold text-ink">
-                    {s.value}
-                  </span>
-                  <p className="text-sm leading-relaxed text-muted">
-                    {s.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.15}>
+            <div className="relative aspect-[16/7] w-full overflow-hidden rounded-sm">
+              <Image
+                src="/About_photo.jpg"
+                alt="Vlad Holoborodko"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
-      
+
       {/* ── 3. About me ── */}
       <section className="px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
@@ -206,7 +191,7 @@ export default function AboutPage() {
               </p>
             </Reveal>
             <Reveal delay={0.05}>
-             <div className="space-y-6 text-sm leading-relaxed text-muted md:text-base">
+              <div className="space-y-6 text-sm leading-relaxed text-muted md:text-base">
                 <p>
                   My path into design started with a strong visual foundation.
                   I studied at an art school before earning a Bachelor&apos;s
@@ -237,6 +222,37 @@ export default function AboutPage() {
                 </p>
               </div>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 2. Stats ── */}
+      <section className="px-8 py-16 md:px-14">
+        <div className="mx-auto max-w-content">
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {[
+              { value: "7+", label: "Years of experience", body: "A proven track record of delivering outcome-focused design solutions." },
+              { value: "20+", label: "Products shipped", body: "Shipped products across fintech, proptech, SaaS and enterprise platforms." },
+              { value: "3", label: "Industries shaped", body: "Fintech, PropTech, and LegalTech products used by real customers." },
+              { value: "Lead", label: "Design level", body: "Led design from discovery to delivery, across mobile and web platforms." },
+            ].map((s, i) => (
+              <Reveal key={s.label} delay={i * 0.05}>
+                <div className="relative section-invert flex flex-col gap-4 px-8 py-10">
+                  {i > 0 && (
+                    <div className="absolute left-0 top-10 bottom-10 w-px bg-white/10" />
+                  )}
+                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                    {s.label}
+                  </span>
+                  <span className="font-display text-display-md font-semibold text-ink">
+                    {s.value}
+                  </span>
+                  <p className="text-sm leading-relaxed text-muted">
+                    {s.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
