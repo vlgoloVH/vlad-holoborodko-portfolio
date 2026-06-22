@@ -281,7 +281,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                   {item.tags && (
-                    <div className="flex flex-wrap gap-2 md:flex-col md:items-end">
+                    <div className="flex flex-wrap gap-2">
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
