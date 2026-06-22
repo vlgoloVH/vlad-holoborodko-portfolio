@@ -371,17 +371,22 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* What I bring */}
+          </div>
+      </section>
+
+      {/* ── 6. What I bring ── */}
+      <section className="px-8 py-24 md:px-14 md:py-32">
+        <div className="mx-auto max-w-content">
           <Reveal>
-            <h2 className="mt-24 font-display text-display-md font-semibold uppercase text-ink">
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink">
               What I bring
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-px bg-white/5 sm:grid-cols-2">
+          <div className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-2">
             {VALUE.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06}>
-                <div className="group flex flex-col gap-4 bg-[#181613] px-8 py-10 transition-colors duration-300 hover:bg-[#1c1a14]">
+                <div className="group flex flex-col gap-4 bg-bg px-8 py-10 transition-colors duration-300 hover:bg-surface">
                   <div className="flex items-start gap-4">
                     <span className="mt-1 font-mono text-xs text-accent/40 group-hover:text-accent transition-colors duration-300">
                       {String(i + 1).padStart(2, "0")}
@@ -397,7 +402,6 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
-
         </div>
       </section>
 
