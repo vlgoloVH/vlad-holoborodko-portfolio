@@ -116,15 +116,14 @@ export default function AboutPage() {
           <div className="grid gap-16 md:grid-cols-[440px_1fr] md:items-start">
 
             <Reveal delay={0.05}>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-surface">
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
-                  <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#a39a8a" }}>Portrait</span>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted opacity-60">replace with final photo</span>
-                </div>
-                <span className="absolute left-3 top-3 h-3 w-3 border-l border-t border-line" />
-                <span className="absolute right-3 top-3 h-3 w-3 border-r border-t border-line" />
-                <span className="absolute bottom-3 left-3 h-3 w-3 border-b border-l border-line" />
-                <span className="absolute bottom-3 right-3 h-3 w-3 border-b border-r border-line" />
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
+                <Image
+                  src="/About_photo.jpg"
+                  alt="Vlad Holoborodko"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </Reveal>
 
