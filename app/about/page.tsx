@@ -383,7 +383,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-6">
+          <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-6">
             {STACK.map((group, i) => (
               <Reveal key={group.label} delay={i * 0.05}>
                 <div className="flex flex-col gap-3">
