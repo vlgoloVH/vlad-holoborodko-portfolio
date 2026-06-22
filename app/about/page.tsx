@@ -321,26 +321,26 @@ export default function AboutPage() {
               {
                 step: "01",
                 title: "Discover",
-                body: "Understand users, business goals, constraints, and opportunities.",
+                body: "Research users, map business goals, and uncover the real problem before touching the interface.",
                 accent: "Research & Insights",
               },
               {
                 step: "02",
                 title: "Define",
-                body: "Turn messy problems into clear product direction, flows, and priorities.",
+                body: "Transform insights into product strategy, clear priorities, user flows, and measurable outcomes.",
                 accent: "Strategy & Direction",
               },
               {
                 step: "03",
                 title: "Design",
-                body: "Create intuitive interfaces, prototypes, and scalable design patterns.",
-                accent: "UI & Systems",
+                body: "Craft intuitive experiences, scalable systems, and high-quality interfaces across platforms.",
+                accent: "UX, UI & Design Systems",
               },
               {
                 step: "04",
                 title: "Validate",
-                body: "Test assumptions, use feedback, and improve with data.",
-                accent: "Testing & Iteration",
+                body: "Test solutions, gather feedback, measure impact, and continuously improve the product.",
+                accent: "Testing & Optimization",
               },
             ].map((p, i) => (
               <Reveal key={p.step} delay={i * 0.08}>
