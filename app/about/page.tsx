@@ -139,7 +139,7 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={0.1}>
-              
+              <a
                 href="/resume.pdf"
                 download
                 data-cursor="Download"
