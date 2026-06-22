@@ -408,7 +408,7 @@ export default function AboutPage() {
       </section>
       
       {/* ── 8. Photo grid ── */}
-      <section className="px-8 py-24 md:px-14 md:py-32">
+      <section className="border-t border-line px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
           <div className="grid grid-cols-3 grid-rows-2 gap-3 h-[600px]">
             <div className="row-span-2 bg-surface rounded-sm overflow-hidden relative">
