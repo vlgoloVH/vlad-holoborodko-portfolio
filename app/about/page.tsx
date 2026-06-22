@@ -113,7 +113,7 @@ export default function AboutPage() {
       {/* ── 1. Hero ── */}
       <section className="px-8 pb-0 pt-36 md:px-14 md:pt-44">
         <div className="mx-auto max-w-content">
-          <div className="flex items-start justify-between gap-8">
+          <div className="flex items-center justify-between gap-8">
             <div className="flex flex-col gap-6">
               <Reveal>
                 <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
@@ -126,15 +126,6 @@ export default function AboutPage() {
                 <h1 className="mt-6 font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
                   Designing products where <span className="text-accent">clarity</span> meets complexity<span className="text-accent">.</span>
                 </h1>
-              </Reveal>
-              <Reveal delay={0.1} className="mt-4 flex flex-wrap gap-4">
-                <Link
-                  href="/#work"
-                  className="group inline-flex items-center gap-3 rounded-full border border-ink px-5 py-4 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink"
-                >
-                  View work
-                  <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
               </Reveal>
             </div>
 
