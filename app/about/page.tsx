@@ -226,7 +226,7 @@ export default function AboutPage() {
      {/* ── 2. Stats ── */}
       <section className="px-8 py-20 md:px-14">
         <div className="mx-auto max-w-content">
-          <div className="grid grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 items-stretch">
             {[
               { value: "11+", label: "Years of experience", body: "A proven track record of designing and launching digital products across multiple industries." },
               { value: "40+", label: "Projects launched", body: "Delivered web and mobile products from concept to launch in startups and enterprise teams." },
@@ -234,7 +234,7 @@ export default function AboutPage() {
               { value: "Lead", label: "Product Designer", body: "Driving product strategy, UX direction and execution." },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 0.05}>
-                <div className="relative section-invert flex flex-col gap-4 px-8 py-14">
+                <div className="relative section-invert flex flex-col gap-4 px-8 py-14 h-full">
                   {i > 0 && (
                     <div className="absolute left-0 top-10 bottom-10 w-px bg-white/10" />
                   )}
