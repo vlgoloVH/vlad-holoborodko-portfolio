@@ -406,27 +406,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* ── 8. Beyond design ── */}
-      <section className="px-8 py-24 md:px-14 md:py-32">
-        <div className="mx-auto max-w-content">
-          <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
-            <Reveal>
-              <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                — Beyond design
-              </p>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <p className="max-w-2xl text-sm leading-relaxed text-muted md:text-base">
-                I&apos;m interested in AI, product strategy, entrepreneurship, and
-                how digital products can create real business value. Outside of
-                interface design, I enjoy exploring how products grow, how teams
-                make decisions, and how good systems scale.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
       
       {/* ── 8. Photo grid ── */}
       <section className="px-8 py-24 md:px-14 md:py-32">
