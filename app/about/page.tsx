@@ -383,24 +383,23 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-2">
+          <div className="mt-12">
             {VALUE.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06}>
-                <div className="group flex flex-col gap-4 bg-bg px-8 py-10 transition-colors duration-300 hover:bg-surface">
-                  <div className="flex items-start gap-4">
-                    <span className="mt-1 font-mono text-xs text-accent/40 group-hover:text-accent transition-colors duration-300">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="font-display text-lg font-semibold uppercase text-ink">
-                      {v.title}
-                    </h3>
-                  </div>
-                  <p className="pl-8 text-sm leading-relaxed text-muted">
+                <div className="group grid cursor-default border-t border-line py-8 transition-all duration-500 md:grid-cols-[64px_1fr_1fr] md:items-center md:py-10 hover:border-accent">
+                  <span className="font-display text-display-sm font-semibold text-accent/20 transition-colors duration-500 group-hover:text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display text-2xl font-semibold uppercase text-ink transition-colors duration-300 group-hover:text-accent md:text-3xl">
+                    {v.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted md:mt-0 md:text-base">
                     {v.body}
                   </p>
                 </div>
               </Reveal>
             ))}
+            <div className="border-t border-line" />
           </div>
         </div>
       </section>
