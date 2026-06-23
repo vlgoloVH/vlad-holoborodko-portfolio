@@ -14,35 +14,60 @@ export interface ProductArea {
 
 export interface CaseData {
   slug: string;
-  overview: {
-    about: string;
-    challenge: string;
+  heroMockup?: string;
+  tagline: string;
+  shortDescription: string;
+  executiveSummary: {
+    narrative: string;
+    deliverables: string[];
   };
-  impact: {
-    role: string[];
-    areas: string[];
+  scope: {
+    title: string;
+    description: string;
+  }[];
+  audit: {
+    text: string;
+    findings: string[];
   };
-  understanding: {
-    business: string[];
-    users: string[];
-    constraints: string[];
+  challenges: {
+    user: string;
+    business: string;
+    design: string;
   };
+  timeline: {
+    title: string;
+    description: string;
+  }[];
+  responsibilities: {
+    title: string;
+    description: string;
+  }[];
+  principles: {
+    title: string;
+    description: string;
+  }[];
   productAreas: ProductArea[];
-  designSystem?: {
+  designSystem: {
     description: string;
     visual?: string;
     highlights: string[];
+  };
+  partnerPlatforms: {
+    description: string;
+  };
+  research: {
+    description: string;
+    cards: string[];
   };
   selectedScreens?: {
     label: string;
     src: string;
   }[];
-  metrics: {
-    value: string;
-    label: string;
-  }[];
+  impact: {
+    items: string[];
+    summary: string;
+  };
   reflection: string;
-  heroMockup?: string;
 }
 
 interface CaseLayoutProps {
@@ -52,303 +77,312 @@ interface CaseLayoutProps {
 }
 
 export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) {
-  const platforms = caseMeta.platform;
-  const duration = caseMeta.meta.duration;
-  const role = caseMeta.meta.role;
-  const industry = caseMeta.industry;
-
   return (
     <main>
+
       {/* 01. HERO */}
       <section className="px-8 md:px-14 pt-20 pb-0">
         <div className="mx-auto max-w-content">
-          <div className="mb-12">
-            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-6">
-              Case Study
-            </p>
-            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mb-6">
-              {caseMeta.title}
-            </h1>
-            <p className="text-xl md:text-2xl text-muted max-w-2xl leading-snug mb-12">
-              {caseMeta.description}
-            </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border pt-8">
-              <div>
-                <p className="font-mono text-xs text-muted uppercase tracking-wider mb-1">Role</p>
-                <p className="text-sm font-medium">{role}</p>
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-6">
+            Case Study · {caseMeta.year}
+          </p>
+          <h1 className="font-display text-6xl md:text-8xl leading-[0.92] mb-8">
+            {caseMeta.title}
+          </h1>
+          <p className="text-2xl md:text-3xl font-display text-muted max-w-3xl leading-snug mb-6">
+            {caseData.tagline}
+          </p>
+          <p className="text-base text-muted max-w-2xl leading-relaxed mb-12">
+            {caseData.shortDescription}
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 border-t border-border pt-8">
+            {[
+              { label: "Role", value: caseMeta.meta.role },
+              { label: "Industry", value: caseMeta.industry },
+              { label: "Platform", value: caseMeta.platform },
+              { label: "Duration", value: caseMeta.meta.duration },
+              { label: "Team", value: caseMeta.meta.team },
+            ].map((item) => (
+              <div key={item.label}>
+                <p className="font-mono text-[10px] text-muted uppercase tracking-wider mb-1">{item.label}</p>
+                <p className="text-sm leading-snug">{item.value}</p>
               </div>
-              <div>
-                <p className="font-mono text-xs text-muted uppercase tracking-wider mb-1">Duration</p>
-                <p className="text-sm font-medium">{duration}</p>
-              </div>
-              <div>
-                <p className="font-mono text-xs text-muted uppercase tracking-wider mb-1">Platform</p>
-                <p className="text-sm font-medium">{platforms}</p>
-              </div>
-              <div>
-                <p className="font-mono text-xs text-muted uppercase tracking-wider mb-1">Industry</p>
-                <p className="text-sm font-medium">{industry}</p>
-              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-12 w-full bg-[#f0ede6] dark:bg-white/5">
+          <div className="mx-auto max-w-content px-8 md:px-14">
+            <div className="w-full aspect-[16/8] flex items-center justify-center">
+              {caseData.heroMockup ? (
+                <Image src={caseData.heroMockup} alt={caseMeta.title} fill className="object-cover" />
+              ) : (
+                <p className="font-mono text-xs text-muted">Hero mockup — coming soon</p>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Hero Mockup */}
-      <div className="w-full bg-[#f0ede6] mt-8">
-        <div className="mx-auto max-w-content px-8 md:px-14">
-          {caseData.heroMockup ? (
-            <div className="relative w-full aspect-[16/9]">
-              <Image
-                src={caseData.heroMockup}
-                alt={`${caseMeta.title} product mockup`}
-                fill
-                className="object-contain object-bottom"
-              />
-            </div>
-          ) : (
-            <div className="w-full aspect-[16/9] flex items-center justify-center">
-              <p className="font-mono text-xs text-muted">{caseMeta.title} — mockup coming soon</p>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* 02. PROJECT OVERVIEW */}
+      {/* 02. EXECUTIVE SUMMARY */}
       <section className="px-8 md:px-14 py-24">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">
-            Project Overview
-          </p>
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Executive Summary</p>
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <h2 className="font-display text-2xl mb-4">About the Product</h2>
-              <p className="text-muted leading-relaxed">{caseData.overview.about}</p>
+              <h2 className="font-display text-3xl mb-6">From product audit to full platform transformation</h2>
+              <p className="text-muted leading-relaxed">{caseData.executiveSummary.narrative}</p>
             </div>
-            <div>
-              <h2 className="font-display text-2xl mb-4">The Challenge</h2>
-              <p className="text-muted leading-relaxed">{caseData.overview.challenge}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 03. MY IMPACT */}
-      <section className="section-invert px-8 md:px-14 py-24">
-        <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase opacity-40 mb-12">
-            My Impact
-          </p>
-          <div className="grid md:grid-cols-2 gap-16">
-            <div>
-              <h2 className="font-display text-3xl mb-8">My Role</h2>
-              <ul className="space-y-3">
-                {caseData.impact.role.map((item, i) => (
-                  <li key={i} className="flex gap-3 opacity-80">
-                    <span className="text-accent mt-1 shrink-0">→</span>
-                    <span className="leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-display text-3xl mb-8">Areas Owned</h2>
-              <div className="flex flex-wrap gap-2">
-                {caseData.impact.areas.map((area, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1.5 border border-white/20 text-sm rounded-full opacity-80"
-                  >
-                    {area}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 04. UNDERSTANDING THE SPACE */}
-      <section className="px-8 md:px-14 py-24">
-        <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">
-            Understanding the Space
-          </p>
-          <h2 className="font-display text-4xl mb-16 max-w-xl">
-            Product thinking before pixels.
-          </h2>
-          <div className="grid md:grid-cols-3 gap-12">
-            <div>
-              <h3 className="font-display text-xl mb-6 pb-4 border-b border-border">
-                Business Goals
-              </h3>
-              <ul className="space-y-3">
-                {caseData.understanding.business.map((item, i) => (
-                  <li key={i} className="text-muted text-sm leading-relaxed">{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-display text-xl mb-6 pb-4 border-b border-border">
-                User Goals
-              </h3>
-              <ul className="space-y-3">
-                {caseData.understanding.users.map((item, i) => (
-                  <li key={i} className="text-muted text-sm leading-relaxed">{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-display text-xl mb-6 pb-4 border-b border-border">
-                Constraints
-              </h3>
-              <ul className="space-y-3">
-                {caseData.understanding.constraints.map((item, i) => (
-                  <li key={i} className="text-muted text-sm leading-relaxed">{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 05. DESIGN APPROACH */}
-      <section className="px-8 md:px-14 py-24 bg-[#f0ede6]">
-        <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-16">
-            Design Approach
-          </p>
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-0 overflow-x-auto">
-            {["Discover", "Define", "Design", "Validate", "Ship", "Iterate"].map((step, i, arr) => (
-              <div key={step} className="flex md:flex-col items-center">
-                <div className="flex flex-col md:flex-row items-center">
-                  <div className="w-px h-8 md:w-8 md:h-px bg-border md:hidden" />
-                  <div className="flex flex-col items-center py-4 md:py-0 md:px-8">
-                    <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center mb-3 hover:border-accent hover:text-accent transition-colors">
-                      <span className="font-mono text-xs">{String(i + 1).padStart(2, "0")}</span>
-                    </div>
-                    <span className="font-display text-base md:mt-3 text-center whitespace-nowrap">
-                      {step}
-                    </span>
-                  </div>
-                  {i < arr.length - 1 && (
-                    <div className="hidden md:block w-12 h-px bg-border shrink-0" />
-                  )}
+            <div className="grid grid-cols-2 gap-3 content-start">
+              {caseData.executiveSummary.deliverables.map((item, i) => (
+                <div key={i} className="border border-border rounded-sm px-4 py-3">
+                  <p className="text-sm leading-snug">{item}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 03. PROJECT SCOPE */}
+      <section className="px-8 md:px-14 py-24 bg-[#f0ede6] dark:bg-white/5">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Project Scope</p>
+          <h2 className="font-display text-4xl mb-12">A multi-platform product redesign</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {caseData.scope.map((item, i) => (
+              <div key={i} className="border border-border rounded-sm p-6 bg-bg dark:bg-white/5">
+                <p className="font-mono text-xs text-muted uppercase tracking-wider mb-3">0{i + 1}</p>
+                <h3 className="font-display text-xl mb-3">{item.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 06. KEY PRODUCT AREAS */}
+      {/* 04. PRODUCT AUDIT */}
       <section className="px-8 md:px-14 py-24">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">
-            Key Product Areas
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Product Audit</p>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 className="font-display text-4xl mb-6">Starting with a full product audit</h2>
+              <p className="text-muted leading-relaxed mb-4">{caseData.audit.text}</p>
+              <p className="text-sm text-muted italic border-l-2 border-accent pl-4">
+                The audit became the foundation for the product redesign roadmap.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {caseData.audit.findings.map((finding, i) => (
+                <div key={i} className="border border-border rounded-sm p-4 flex items-start gap-3">
+                  <span className="text-accent mt-0.5 shrink-0">→</span>
+                  <p className="text-sm leading-snug">{finding}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 05. THE CHALLENGE */}
+      <section className="section-invert px-8 md:px-14 py-24">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase opacity-40 mb-12">The Challenge</p>
+          <h2 className="font-display text-4xl mb-12">The platform had grown faster than its experience</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { label: "User Challenge", text: caseData.challenges.user },
+              { label: "Business Challenge", text: caseData.challenges.business },
+              { label: "Design Challenge", text: caseData.challenges.design },
+            ].map((col) => (
+              <div key={col.label}>
+                <p className="font-mono text-xs uppercase tracking-wider opacity-40 mb-4">{col.label}</p>
+                <p className="opacity-75 leading-relaxed text-sm">{col.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 06. TIMELINE */}
+      <section className="px-8 md:px-14 py-24">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Transformation Timeline</p>
+          <h2 className="font-display text-4xl mb-12">How the product evolved</h2>
+          <div className="relative">
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-border" />
+            <div className="space-y-0">
+              {caseData.timeline.map((step, i) => (
+                <div key={i} className="relative pl-12 pb-10">
+                  <div className="absolute left-0 top-1 w-8 h-8 rounded-full border border-border bg-bg flex items-center justify-center">
+                    <span className="font-mono text-[10px] text-muted">{String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h3 className="font-display text-xl mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 07. MY ROLE */}
+      <section className="px-8 md:px-14 py-24 bg-[#f0ede6] dark:bg-white/5">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">My Role</p>
+          <h2 className="font-display text-4xl mb-4">Lead Product Designer</h2>
+          <p className="text-muted max-w-2xl leading-relaxed mb-12">
+            I led product design across mobile, web, and partner experiences. My role combined hands-on design execution, product thinking, research, stakeholder collaboration, and design leadership.
           </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {caseData.responsibilities.map((item, i) => (
+              <div key={i} className="border border-border rounded-sm p-6 bg-bg dark:bg-white/5">
+                <h3 className="font-display text-lg mb-2">{item.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 08. DESIGN PRINCIPLES */}
+      <section className="px-8 md:px-14 py-24">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Design Principles</p>
+          <h2 className="font-display text-4xl mb-12">Principles that guided the redesign</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            {caseData.principles.map((item, i) => (
+              <div key={i} className="border-t-2 border-accent pt-6">
+                <h3 className="font-display text-lg mb-3">{item.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 09. KEY PRODUCT AREAS */}
+      <section className="px-8 md:px-14 py-24 border-t border-border">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Key Product Areas</p>
+          <h2 className="font-display text-4xl mb-16">Key product areas redesigned</h2>
           <div className="space-y-0">
             {caseData.productAreas.map((area, i) => (
               <div key={i}>
-                <div className="py-24">
-                  {/* Visual */}
-                  <div className="w-full aspect-[16/8] bg-[#f0ede6] rounded-sm mb-12 flex items-center justify-center overflow-hidden">
+                <div className="py-20">
+                  <div className="w-full aspect-[16/8] bg-[#f0ede6] dark:bg-white/5 rounded-sm mb-10 flex items-center justify-center overflow-hidden">
                     {area.visual ? (
-                      <Image
-                        src={area.visual}
-                        alt={area.title}
-                        width={1400}
-                        height={700}
-                        className="w-full h-full object-cover"
-                      />
+                      <Image src={area.visual} alt={area.title} width={1400} height={700} className="w-full h-full object-cover" />
                     ) : (
                       <p className="font-mono text-xs text-muted">{area.title} — visual coming soon</p>
                     )}
                   </div>
-
-                  {/* Text */}
-                  <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-12 items-start">
+                  <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-12">
                     <div>
-                      <h3 className="font-display text-3xl mb-6">{area.title}</h3>
+                      <p className="font-mono text-xs text-muted uppercase tracking-wider mb-3">0{i + 1}</p>
+                      <h3 className="font-display text-3xl mb-4">{area.title}</h3>
                       <p className="text-muted leading-relaxed">{area.problem}</p>
                     </div>
                     <div>
                       <p className="font-mono text-xs text-muted uppercase tracking-wider mb-3">Solution</p>
                       <p className="text-sm leading-relaxed">{area.solution}</p>
                     </div>
-                    <div>
-                      <p className="font-mono text-xs text-muted uppercase tracking-wider mb-3">Result</p>
-                      <p className="text-sm leading-relaxed">{area.result}</p>
+                    <div className="border border-border rounded-sm p-4 self-start">
+                      <p className="font-mono text-[10px] text-muted uppercase tracking-wider mb-2">Platform</p>
+                      <p className="text-sm">{caseMeta.platform}</p>
                     </div>
                   </div>
                 </div>
-                {i < caseData.productAreas.length - 1 && (
-                  <div className="border-b border-border" />
-                )}
+                {i < caseData.productAreas.length - 1 && <div className="border-b border-border" />}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 07. DESIGN SYSTEM */}
-      {caseData.designSystem && (
-        <section className="section-invert px-8 md:px-14 py-24">
-          <div className="mx-auto max-w-content">
-            <p className="font-mono text-xs tracking-widest uppercase opacity-40 mb-12">
-              Design System
-            </p>
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="font-display text-4xl mb-6">Scalable Foundations</h2>
-                <p className="opacity-70 leading-relaxed mb-8">{caseData.designSystem.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {caseData.designSystem.highlights.map((item, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1.5 border border-white/20 text-sm rounded-full opacity-70"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="aspect-[4/3] bg-white/5 rounded-sm flex items-center justify-center overflow-hidden">
-                {caseData.designSystem.visual ? (
-                  <Image
-                    src={caseData.designSystem.visual}
-                    alt="Design system"
-                    width={700}
-                    height={525}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <p className="font-mono text-xs opacity-30">Design system visual coming soon</p>
-                )}
+      {/* 10. DESIGN SYSTEM */}
+      <section className="section-invert px-8 md:px-14 py-24">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase opacity-40 mb-12">Design System</p>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="font-display text-4xl mb-6">Building a scalable design foundation</h2>
+              <p className="opacity-70 leading-relaxed mb-8">{caseData.designSystem.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {caseData.designSystem.highlights.map((item, i) => (
+                  <span key={i} className="px-3 py-1.5 border border-white/20 text-sm rounded-full opacity-70">
+                    {item}
+                  </span>
+                ))}
               </div>
             </div>
+            <div className="aspect-[4/3] bg-white/5 rounded-sm flex items-center justify-center">
+              {caseData.designSystem.visual ? (
+                <Image src={caseData.designSystem.visual} alt="Design system" width={700} height={525} className="w-full h-full object-cover rounded-sm" />
+              ) : (
+                <p className="font-mono text-xs opacity-30">Design system visual — coming soon</p>
+              )}
+            </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      {/* 08. SELECTED SCREENS */}
+      {/* 11. PARTNER PLATFORMS */}
+      <section className="px-8 md:px-14 py-24">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Partner Platforms</p>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 className="font-display text-4xl mb-6">Scaling the product beyond SmartCrowd</h2>
+              <p className="text-muted leading-relaxed mb-8">{caseData.partnerPlatforms.description}</p>
+              <p className="text-sm text-muted italic border-l-2 border-accent pl-4">
+                This required the design system to be flexible enough to support brand adaptation without rebuilding the experience from scratch.
+              </p>
+            </div>
+            <div className="space-y-3">
+              {["Core Platform Logic", "SmartCrowd App", "SmartCrowd Web", "Partner Platform A", "Partner Platform B"].map((item, i) => (
+                <div key={i} className={`border border-border rounded-sm px-5 py-3 flex items-center gap-3 ${i === 0 ? "border-accent" : ""}`} style={{ marginLeft: i === 0 ? 0 : `${i * 16}px` }}>
+                  {i > 0 && <span className="text-muted text-xs">→</span>}
+                  <p className="text-sm">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 12. RESEARCH */}
+      <section className="px-8 md:px-14 py-24 bg-[#f0ede6] dark:bg-white/5">
+        <div className="mx-auto max-w-content">
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Research & Collaboration</p>
+          <div className="grid md:grid-cols-2 gap-16">
+            <div>
+              <h2 className="font-display text-4xl mb-6">Designing with users and teams</h2>
+              <p className="text-muted leading-relaxed mb-6">{caseData.research.description}</p>
+              <p className="text-sm text-muted leading-relaxed">
+                Because the product operates in a regulated investment space, many design decisions required balancing user needs, business goals, technical feasibility, and compliance requirements.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 content-start">
+              {caseData.research.cards.map((card, i) => (
+                <div key={i} className="border border-border rounded-sm p-5 bg-bg dark:bg-white/5">
+                  <p className="font-display text-base">{card}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 13. SELECTED SCREENS */}
       {caseData.selectedScreens && caseData.selectedScreens.length > 0 && (
         <section className="px-8 md:px-14 py-24">
           <div className="mx-auto max-w-content">
-            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">
-              Selected Screens
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Selected Screens</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {caseData.selectedScreens.map((screen, i) => (
-                <div key={i} className="aspect-[3/4] bg-[#f0ede6] rounded-sm overflow-hidden">
-                  <Image
-                    src={screen.src}
-                    alt={screen.label}
-                    width={400}
-                    height={533}
-                    className="w-full h-full object-cover"
-                  />
+                <div key={i} className="aspect-[9/16] bg-[#f0ede6] dark:bg-white/5 rounded-sm overflow-hidden">
+                  <Image src={screen.src} alt={screen.label} width={300} height={533} className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
@@ -356,59 +390,42 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </section>
       )}
 
-      {/* 09. IMPACT */}
+      {/* 14. IMPACT */}
       <section className="px-8 md:px-14 py-24 border-t border-border">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-16">
-            Impact
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-            {caseData.metrics.map((metric, i) => (
-              <div key={i}>
-                <p className="font-display text-6xl md:text-7xl leading-none mb-3 text-accent">
-                  {metric.value}
-                </p>
-                <p className="text-sm text-muted leading-snug">{metric.label}</p>
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-16">Impact</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {caseData.impact.items.map((item, i) => (
+              <div key={i} className="border border-border rounded-sm p-5">
+                <span className="text-accent text-lg">✦</span>
+                <p className="text-sm mt-2 leading-snug">{item}</p>
               </div>
             ))}
           </div>
+          <p className="text-muted max-w-2xl leading-relaxed">{caseData.impact.summary}</p>
         </div>
       </section>
 
-      {/* 10. REFLECTIONS */}
-      <section className="px-8 md:px-14 py-24 bg-[#f0ede6]">
+      {/* 15. REFLECTION */}
+      <section className="px-8 md:px-14 py-24 bg-[#f0ede6] dark:bg-white/5">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">
-            Reflections
-          </p>
-          <blockquote className="font-display text-2xl md:text-3xl leading-snug max-w-3xl text-ink/80">
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Reflection</p>
+          <blockquote className="font-display text-2xl md:text-3xl leading-snug max-w-3xl text-ink/80 dark:text-white/70">
             {caseData.reflection}
           </blockquote>
         </div>
       </section>
 
-      {/* 11. EXPLORE MORE WORK */}
+      {/* 16. MORE WORK */}
       <section className="px-8 md:px-14 py-24">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">
-            Explore More Work
-          </p>
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Explore More Work</p>
           <div className="grid md:grid-cols-2 gap-6">
             {otherCases.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/cases/${c.slug}`}
-                className="group block border border-border rounded-sm p-8 hover:border-ink/30 transition-colors"
-              >
-                <div className="aspect-[16/9] bg-[#f0ede6] rounded-sm mb-6 overflow-hidden">
+              <Link key={c.slug} href={`/cases/${c.slug}`} className="group block border border-border rounded-sm p-8 hover:border-ink/30 dark:hover:border-white/30 transition-colors">
+                <div className="aspect-[16/9] bg-[#f0ede6] dark:bg-white/5 rounded-sm mb-6 overflow-hidden">
                   {c.cover ? (
-                    <Image
-                      src={c.cover}
-                      alt={c.title}
-                      width={700}
-                      height={394}
-                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    />
+                    <Image src={c.cover} alt={c.title} width={700} height={394} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
                       <p className="font-mono text-xs text-muted">{c.title}</p>
@@ -420,7 +437,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
                     <h3 className="font-display text-xl mb-1">{c.title}</h3>
                     <p className="text-sm text-muted">{c.industry}</p>
                   </div>
-                  <span className="text-muted group-hover:text-ink group-hover:translate-x-1 transition-all duration-200">→</span>
+                  <span className="text-muted group-hover:text-ink dark:group-hover:text-white group-hover:translate-x-1 transition-all duration-200">→</span>
                 </div>
               </Link>
             ))}
@@ -428,35 +445,28 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 12. CONTACT CTA */}
+      {/* 17. CONTACT CTA */}
       <section className="section-invert px-8 md:px-14 py-32">
         <div className="mx-auto max-w-content">
           <div className="max-w-2xl">
             <p className="font-mono text-xs tracking-widest uppercase opacity-40 mb-8">
-              Interested in working together?
+              Looking for a Product Designer who can simplify complex products?
             </p>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-12">
-              Let's build better products.
+              Let's build something meaningful.
             </h2>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="https://linkedin.com/in/vladholoborodko"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-sm hover:border-white/60 transition-colors rounded-full"
-              >
+              <a href="https://linkedin.com/in/vladholoborodko" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-sm hover:border-white/60 transition-colors rounded-full">
                 LinkedIn →
               </a>
-              <a
-                href="mailto:vlgolo1996@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white text-sm hover:bg-accent/90 transition-colors rounded-full"
-              >
+              <a href="mailto:vlgolo1996@gmail.com" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white text-sm hover:bg-accent/90 transition-colors rounded-full">
                 Email me →
               </a>
             </div>
           </div>
         </div>
       </section>
+
     </main>
   );
 }
