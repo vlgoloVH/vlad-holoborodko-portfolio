@@ -124,9 +124,8 @@ const caseDataMap: Record<string, CaseData> = {
         ],
       },
     ],
-        designSystem: {
-      description: "A token-based system built to scale across three platforms and multiple brands.",
-      highlights: ["100+ Components", "Semantic tokens", "Light & dark themes", "Mobile & web", "Partner brands", "Dev handoff"],
+            partnerPlatforms: {
+      description: "SmartCrowd's platform logic was used by partner products requiring different branding and adapted feature sets.",
     },
     partnerPlatforms: {
       description: "SmartCrowd's platform logic was used by partner products requiring different branding and adapted feature sets.",
