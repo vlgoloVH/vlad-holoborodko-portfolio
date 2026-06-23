@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Case } from "@/lib/cases";
-import { Reveal } from "@/components/ui/reveal"; 
+import { Reveal } from "@/components/ui/reveal";
 
 export interface TransformationTheme {
   number: string;
@@ -17,47 +17,23 @@ export interface CaseData {
   slug: string;
   heroMockup?: string;
   tagline: string;
-  shortDescription: string;
-  executiveSummary: {
-    narrative: string;
-    deliverables: string[];
+  context: {
+    invite: string;
+    situation: string;
+    outcome: string;
   };
-  scope: {
-    title: string;
-    description: string;
-  }[];
-  audit: {
-    text: string;
-    findings: string[];
+  role: {
+    summary: string;
+    responsibilities: string[];
+    team: string[];
   };
-  challenges: {
-    user: string;
-    business: string;
-    design: string;
-  };
-  timeline: {
-    title: string;
-    description: string;
-  }[];
-  responsibilities: {
-    title: string;
-    description: string;
-  }[];
-  principles: {
-    title: string;
-    description: string;
-  }[];
   transformation: TransformationTheme[];
-  research: {
-    description: string;
-    cards: string[];
-  };
   selectedScreens?: {
     label: string;
     src: string;
   }[];
   impact: {
-    items: string[];
+    items: { value: string; label: string }[];
     summary: string;
   };
   reflection: string;
@@ -85,9 +61,6 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             </h1>
             <p className="mt-6 font-display text-display-sm leading-snug text-ink max-w-3xl">
               {caseData.tagline}
-            </p>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
-              {caseData.shortDescription}
             </p>
           </Reveal>
 
@@ -120,150 +93,25 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 02. EXECUTIVE SUMMARY */}
+      {/* 02. CONTEXT */}
       <section className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                Executive Summary
-              </h2>
+            <div className="flex items-baseline justify-between mb-12">
+              <h2 className="font-display text-display-md font-semibold uppercase text-ink">Context</h2>
               <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 01 ]</span>
             </div>
-            <div className=" mt-6 w-full" />
           </Reveal>
-          <div className="mt-12 grid md:grid-cols-2 gap-16">
-            <Reveal delay={0.05}>
-              <h3 className="font-display text-2xl font-semibold uppercase text-ink mb-6">
-                From product audit to full platform transformation
-              </h3>
-              <p className="text-sm leading-relaxed text-muted md:text-base">{caseData.executiveSummary.narrative}</p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="grid grid-cols-2 gap-3">
-                {caseData.executiveSummary.deliverables.map((item, i) => (
-                  <div key={i} className="rounded-sm border border-line px-4 py-3">
-                    <p className="text-sm leading-snug text-ink">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 03. PROJECT SCOPE */}
-      <section className="section-invert px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                Project Scope
-              </h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 02 ]</span>
-            </div>
-          </Reveal>
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {caseData.scope.map((item, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <div className="rounded-sm border border-white/10 p-6 h-full">
-                  <p className="font-mono text-xs uppercase tracking-widest text-muted mb-3">0{i + 1}</p>
-                  <h3 className="font-display text-xl font-semibold uppercase text-ink mb-3">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted">{item.description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 04. PRODUCT AUDIT */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                Product Audit
-              </h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 03 ]</span>
-            </div>
-            <div className=" mt-6 w-full" />
-          </Reveal>
-          <div className="mt-12 grid md:grid-cols-2 gap-16 items-start">
-            <Reveal delay={0.05}>
-              <h3 className="font-display text-2xl font-semibold uppercase text-ink mb-6">
-                Starting with a full product audit
-              </h3>
-              <p className="text-sm leading-relaxed text-muted md:text-base mb-6">{caseData.audit.text}</p>
-              <p className="text-sm text-muted italic border-l-2 border-accent pl-4">
-                The audit became the foundation for the product redesign roadmap.
-              </p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="grid grid-cols-2 gap-3">
-                {caseData.audit.findings.map((finding, i) => (
-                  <div key={i} className="rounded-sm border border-line p-4 flex items-start gap-3">
-                    <span className="text-accent mt-0.5 shrink-0">→</span>
-                    <p className="text-sm leading-snug text-ink">{finding}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 05. THE CHALLENGE */}
-      <section className="section-invert px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                The Challenge
-              </h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 04 ]</span>
-            </div>
-            <p className="mt-4 font-display text-display-sm leading-snug text-ink max-w-2xl">
-              The platform had grown faster than its experience.
-            </p>
-          </Reveal>
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12">
             {[
-              { label: "User Challenge", text: caseData.challenges.user },
-              { label: "Business Challenge", text: caseData.challenges.business },
-              { label: "Design Challenge", text: caseData.challenges.design },
+              { label: "The Invite", text: caseData.context.invite },
+              { label: "The Situation", text: caseData.context.situation },
+              { label: "What Followed", text: caseData.context.outcome },
             ].map((col, i) => (
               <Reveal key={col.label} delay={i * 0.05}>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">{col.label}</p>
-                <p className="text-sm leading-relaxed text-muted md:text-base">{col.text}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 06. TIMELINE */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                Timeline
-              </h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 05 ]</span>
-            </div>
-            <div className=" mt-6 w-full" />
-          </Reveal>
-          <div className="mt-12 relative">
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-line" />
-            {caseData.timeline.map((step, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <div className="relative pl-12 pb-10">
-                  <div className="absolute left-0 top-1 w-8 h-8 rounded-full border border-line bg-bg flex items-center justify-center">
-                    <span className="font-mono text-[10px] text-muted">{String(i + 1).padStart(2, "0")}</span>
-                  </div>
-                  <h3 className="font-display text-xl font-semibold uppercase text-ink mb-2">{step.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted">{step.description}</p>
+                <div className="border-t-2 border-accent pt-6">
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">{col.label}</p>
+                  <p className="text-sm leading-relaxed text-muted md:text-base">{col.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -271,78 +119,61 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 07. DESIGN LEADERSHIP */}
+      {/* 03. MY ROLE */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                Design Leadership
-              </h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 06 ]</span>
+            <div className="flex items-baseline justify-between mb-4">
+              <h2 className="font-display text-display-md font-semibold uppercase text-ink">My Role</h2>
+              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 02 ]</span>
             </div>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
-              I led product design across mobile, web, and partner experiences — combining hands-on execution, product thinking, research, stakeholder collaboration, and design leadership.
+            <p className="max-w-2xl text-sm leading-relaxed text-muted md:text-base mb-12">
+              {caseData.role.summary}
             </p>
           </Reveal>
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {caseData.responsibilities.map((item, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <div className="rounded-sm border border-white/10 p-6 h-full">
-                  <h3 className="font-display text-xl font-semibold uppercase text-ink mb-2">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted">{item.description}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="grid md:grid-cols-2 gap-16">
+            <Reveal delay={0.05}>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">Responsibilities</p>
+              <ul className="space-y-4">
+                {caseData.role.responsibilities.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-accent mt-1 shrink-0">→</span>
+                    <p className="text-sm leading-snug text-muted md:text-base">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">Collaborated With</p>
+              <div className="flex flex-wrap gap-2">
+                {caseData.role.team.map((item, i) => (
+                  <span key={i} className="rounded-full border border-white/20 px-3 py-1.5 font-mono text-xs tracking-wide text-muted">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 08. DESIGN PRINCIPLES */}
+      {/* 04. PRODUCT TRANSFORMATION */}
       <section className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                Design Principles
-              </h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 07 ]</span>
+            <div className="flex items-baseline justify-between mb-4">
+              <h2 className="font-display text-display-md font-semibold uppercase text-ink">Product Transformation</h2>
+              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 03 ]</span>
             </div>
-            <div className=" mt-6 w-full" />
-          </Reveal>
-          <div className="mt-12 grid md:grid-cols-4 gap-6">
-            {caseData.principles.map((item, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <div className="border-t-2 border-accent pt-6">
-                  <h3 className="font-display text-xl font-semibold uppercase text-ink mb-3">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted">{item.description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 09. PRODUCT TRANSFORMATION */}
-      <section className="px-6 py-24 md:px-10 md:py-32 border-t border-line">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">
-                Product Transformation
-              </h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 08 ]</span>
-            </div>
-            <p className="mt-4 font-display text-display-sm leading-snug text-ink max-w-3xl">
-              Transforming a fragmented platform into a scalable ecosystem.
+            <p className="mt-2 font-display text-display-sm leading-snug text-ink max-w-3xl mb-4">
+              Not a redesign. A full platform transformation.
             </p>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted md:text-base">
-              The transformation was not about redesigning individual screens. It was about rethinking the entire product — its structure, experience, foundation, and scale.
+            <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base">
+              The work covered every layer of the product — structure, experience, design foundation, and ecosystem scale.
             </p>
-            <div className=" mt-6 w-full" />
           </Reveal>
 
-          <div className="mt-12 space-y-0">
+          <div className="mt-20 space-y-0">
             {caseData.transformation.map((theme, i) => (
               <Reveal key={i} delay={0.05}>
                 <div>
@@ -378,74 +209,57 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 10. SELECTED SCREENS */}
-      {caseData.selectedScreens && caseData.selectedScreens.length > 0 && (
-        <section className="px-6 py-24 md:px-10 md:py-32 bg-surface">
-          <div className="mx-auto max-w-content">
-            <Reveal>
-              <div className="flex items-baseline justify-between">
-                <h2 className="font-display text-display-md font-semibold uppercase text-ink">Selected Screens</h2>
-                <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 09 ]</span>
-              </div>
-              <div className=" mt-6 w-full" />
-            </Reveal>
-            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-              {caseData.selectedScreens.map((screen, i) => (
-                <div key={i} className="aspect-[9/16] bg-bg rounded-sm overflow-hidden">
-                  <Image src={screen.src} alt={screen.label} width={300} height={533} className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 11. RESEARCH */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
+      {/* 05. SELECTED SCREENS */}
+      <section className="px-6 py-24 md:px-10 md:py-32 bg-surface">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">Research & Collaboration</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 10 ]</span>
+            <div className="flex items-baseline justify-between mb-12">
+              <h2 className="font-display text-display-md font-semibold uppercase text-ink">Selected Screens</h2>
+              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 04 ]</span>
             </div>
-            <div className=" mt-6 w-full" />
           </Reveal>
-          <div className="mt-12 grid md:grid-cols-2 gap-16">
-            <Reveal delay={0.05}>
-              <h3 className="font-display text-2xl font-semibold uppercase text-ink mb-6">Designing with users and teams</h3>
-              <p className="text-sm leading-relaxed text-muted md:text-base mb-6">{caseData.research.description}</p>
-              <p className="text-sm leading-relaxed text-muted">
-                Because the product operates in a regulated investment space, many design decisions required balancing user needs, business goals, technical feasibility, and compliance requirements.
-              </p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="grid grid-cols-2 gap-4">
-                {caseData.research.cards.map((card, i) => (
-                  <div key={i} className="rounded-sm border border-line p-5">
-                    <p className="font-display text-xl font-semibold uppercase text-ink">{card}</p>
+          {caseData.selectedScreens && caseData.selectedScreens.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {caseData.selectedScreens.map((screen, i) => (
+                <Reveal key={i} delay={i * 0.05}>
+                  <div className="aspect-[9/16] bg-bg rounded-sm overflow-hidden">
+                    <Image src={screen.src} alt={screen.label} width={300} height={533} className="w-full h-full object-cover" />
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          ) : (
+            <Reveal>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {["Explore", "Property Details", "Portfolio", "Wallet", "Investment Flow", "Registration", "Reinvest", "Partner Platform"].map((label, i) => (
+                  <div key={i} className="aspect-[9/16] bg-bg rounded-sm flex items-center justify-center">
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted text-center px-2">{label}</p>
                   </div>
                 ))}
               </div>
             </Reveal>
-          </div>
+          )}
         </div>
       </section>
 
-      {/* 12. IMPACT */}
+      {/* 06. IMPACT */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between">
+            <div className="flex items-baseline justify-between mb-16">
               <h2 className="font-display text-display-md font-semibold uppercase text-ink">Impact</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 11 ]</span>
+              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 05 ]</span>
             </div>
           </Reveal>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 items-stretch mb-16">
             {caseData.impact.items.map((item, i) => (
               <Reveal key={i} delay={i * 0.05}>
-                <div className="rounded-sm border border-white/10 p-5 h-full">
-                  <span className="text-accent text-lg">✦</span>
-                  <p className="text-sm mt-2 leading-snug text-muted">{item}</p>
+                <div className="relative flex flex-col gap-4 px-8 py-12 h-full">
+                  {i > 0 && <div className="absolute left-0 top-10 bottom-10 w-px bg-white/10" />}
+                  <span className="font-display text-display-xl font-semibold leading-none text-accent">
+                    {item.value}
+                  </span>
+                  <p className="text-sm leading-relaxed text-muted">{item.label}</p>
                 </div>
               </Reveal>
             ))}
@@ -456,11 +270,11 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 13. REFLECTION */}
+      {/* 07. REFLECTION */}
       <section className="px-6 py-24 md:px-10 md:py-32 bg-surface">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-8">[ 12 — Reflection ]</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-8">[ 06 — Reflection ]</p>
             <blockquote className="font-display text-display-sm font-semibold uppercase leading-snug text-ink max-w-3xl">
               {caseData.reflection}
             </blockquote>
@@ -468,17 +282,16 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 14. MORE WORK */}
+      {/* 08. MORE WORK */}
       <section className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between">
+            <div className="flex items-baseline justify-between mb-12">
               <h2 className="font-display text-display-md font-semibold uppercase text-ink">More Work</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 13 ]</span>
+              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 07 ]</span>
             </div>
-            <div className=" mt-6 w-full" />
           </Reveal>
-          <div className="mt-12 grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-10">
             {otherCases.map((c, i) => (
               <Reveal key={c.slug} delay={i * 0.05}>
                 <Link href={`/cases/${c.slug}`} className="group block">
@@ -503,7 +316,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 15. CONTACT CTA */}
+      {/* CONTACT CTA */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
