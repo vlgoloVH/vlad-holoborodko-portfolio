@@ -124,12 +124,6 @@ const caseDataMap: Record<string, CaseData> = {
         ],
       },
     ],
-            partnerPlatforms: {
-      description: "SmartCrowd's platform logic was used by partner products requiring different branding and adapted feature sets.",
-    },
-    partnerPlatforms: {
-      description: "SmartCrowd's platform logic was used by partner products requiring different branding and adapted feature sets.",
-    },
     research: {
       description: "The redesign was shaped through product discussions, brainstorming sessions, user interviews, stakeholder alignment, and continuous collaboration with cross-functional teams.",
       cards: ["User interviews", "Product brainstorms", "Compliance alignment", "Developer handoff"],
