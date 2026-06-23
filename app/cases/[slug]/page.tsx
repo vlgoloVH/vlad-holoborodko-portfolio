@@ -71,22 +71,65 @@ const caseDataMap: Record<string, CaseData> = {
       { title: "Scalable by default", description: "Create patterns that work across mobile, web, partner platforms, light mode, dark mode, and future features." },
       { title: "Regulation-aware UX", description: "Design experiences that respect compliance requirements while keeping flows understandable and user-friendly." },
     ],
-    productAreas: [
-      { title: "Property Discovery", problem: "Users struggled to explore available investment opportunities and compare properties efficiently. The explore experience lacked filtering, sorting, and the context needed to make informed decisions.", solution: "Redesigned the explore flow with smarter filtering, clearer property cards, and better visual hierarchy to help users find and evaluate opportunities faster." },
-      { title: "Property Details", problem: "The property details screen presented financial information, projected returns, and documents in a dense, hard-to-navigate layout that reduced investor confidence.", solution: "Rethought the details experience with progressive disclosure — surfacing key numbers first, then allowing investors to explore documents, risks, and projections at their own pace." },
-      { title: "Investment Flow", problem: "The investment journey had too many steps, unclear payment logic, and poor error handling — causing drop-offs at critical moments.", solution: "Reduced friction by consolidating steps, clarifying payment options, and adding real-time feedback so investors feel in control at every stage." },
-      { title: "Portfolio", problem: "Investors had no clear view of their holdings, returns, or overall performance. Data was scattered with no visual hierarchy.", solution: "Built a unified portfolio view with net worth summary, per-property performance, and a distributions timeline — giving investors a clear picture of their growth." },
-      { title: "Wallet & Payments", problem: "Deposit and withdrawal flows were inconsistent across platforms and transaction status was unclear, causing unnecessary support requests.", solution: "Designed a unified Wallet hub with real-time transaction states, clear status indicators, and push notifications tied to each payment milestone." },
-      { title: "Registration & KYC", problem: "Onboarding required users to complete lengthy compliance flows with little guidance, leading to incomplete registrations and high drop-off.", solution: "Redesigned the flow with contextual explanations, clear progress indicators, and smarter step ordering that builds trust while satisfying regulatory requirements." },
-      { title: "Auto Reinvest", problem: "Monthly rental income sat idle in user wallets with no mechanism to put it back to work automatically.", solution: "Designed a Reinvest feature with configurable rules, threshold controls, and a compounding preview — turning passive income into active growth." },
-      { title: "Partner Platforms", problem: "Partner products shared SmartCrowd's core logic but required different branding and adapted feature sets — without a flexible system this was slow and inconsistent.", solution: "Leveraged the design system's token architecture to enable fast brand adaptation — changing colors, typography, and component variants without rebuilding flows." },
+    transformation: [
+      {
+        number: "01 — Product Architecture",
+        title: "Rethinking the platform structure",
+        description: "The existing app had grown organically without a clear structural logic. Navigation was inconsistent, information was hard to find, and the overall architecture didn't reflect how investors actually think about and manage their money. We started by mapping the entire product, identifying what needed to be simplified, consolidated, or removed.",
+        points: [
+          "Mapped the full existing product structure and identified structural gaps",
+          "Simplified navigation from a fragmented multi-level system to a clear 5-tab architecture",
+          "Consolidated overlapping sections and removed redundant entry points",
+          "Rethought information hierarchy across all major product areas",
+          "Created a new IA that reflects the investor mental model — not the technical backend structure",
+          "Defined clear product zones: Explore, Invest, Portfolio, Wallet, Account",
+        ],
+      },
+      {
+        number: "02 — Experience Redesign",
+        title: "Reimagining the investment experience",
+        description: "Rather than fixing individual screens, we redesigned the entire investment experience as one connected ecosystem. Every flow — from discovering a property to tracking returns — was rethought to reduce friction, build confidence, and feel consistent across mobile and web.",
+        points: [
+          "Redesigned the full mobile app experience across iOS and Android",
+          "Built a consistent web platform experience that extended the mobile logic",
+          "Rethought property discovery, investment flows, portfolio tracking, and account management",
+          "Introduced new product capabilities: Auto Reinvest, improved Wallet, enhanced KYC",
+          "Ensured visual and functional consistency across all platforms",
+          "Collaborated with engineering to define interaction patterns and component behavior",
+        ],
+      },
+      {
+        number: "03 — Design System & Foundations",
+        title: "Building a scalable design foundation",
+        description: "To support the redesign and all future product work, we built a comprehensive design system from scratch. This wasn't just a component library — it was a shared language between design and engineering that enabled faster, more consistent delivery across all platforms and brands.",
+        points: [
+          "Created 100+ reusable components covering all major UI patterns",
+          "Defined semantic design tokens for color, spacing, typography, and elevation",
+          "Built full light mode and dark mode support across mobile and web",
+          "Documented component usage, states, variants, and responsive behavior",
+          "Established a developer handoff process that reduced implementation friction",
+          "Designed the system to support partner brand adaptation through token overrides",
+        ],
+      },
+      {
+        number: "04 — Multi-Brand Ecosystem",
+        title: "Scaling beyond a single product",
+        description: "SmartCrowd's platform logic was adapted for partner products that required different branding, color systems, and sometimes a reduced feature set. The design system's token architecture made this possible without rebuilding flows from scratch — one scalable foundation, multiple branded experiences.",
+        points: [
+          "Adapted the core platform for multiple partner products with distinct visual identities",
+          "Used token-based theming to swap brand colors, typography, and component styles",
+          "Maintained UX consistency across all brand variants while respecting each brand's identity",
+          "Enabled faster partner onboarding through reusable design foundations",
+          "Documented brand adaptation guidelines for design and engineering teams",
+        ],
+      },
     ],
     designSystem: {
-      description: "To support the redesign and future product growth, I created a design system with reusable components, design tokens, and theming support. The system helped unify mobile, web, and partner product experiences while making design and development more consistent.",
-      highlights: ["100+ Components", "Semantic tokens", "Light & dark themes", "Mobile & web patterns", "Partner brand adaptation", "Developer handoff"],
+      description: "A token-based system built to scale across three platforms and multiple brands.",
+      highlights: ["100+ Components", "Semantic tokens", "Light & dark themes", "Mobile & web", "Partner brands", "Dev handoff"],
     },
     partnerPlatforms: {
-      description: "SmartCrowd's platform logic was also used by partner products. These platforms shared the same core investment logic but required different branding, color systems, and sometimes a reduced or adapted feature set.",
+      description: "SmartCrowd's platform logic was used by partner products requiring different branding and adapted feature sets.",
     },
     research: {
       description: "The redesign was shaped through product discussions, brainstorming sessions, user interviews, stakeholder alignment, and continuous collaboration with cross-functional teams.",
@@ -94,10 +137,21 @@ const caseDataMap: Record<string, CaseData> = {
     },
     selectedScreens: [],
     impact: {
-      items: ["Full mobile app redesigned", "Web platform redesigned", "Partner platforms supported", "Design system created", "Light & dark themes introduced", "Core flows restructured", "New features designed", "Cross-functional delivery improved"],
-      summary: "The redesign created a more unified, scalable, and consistent product experience across SmartCrowd's ecosystem. It also gave the team a stronger foundation for launching new features, adapting partner products, and maintaining design consistency across platforms.",
+      items: [
+        "Full mobile app redesigned",
+        "Web platform redesigned",
+        "Partner platforms supported",
+        "Design system created",
+        "Light & dark themes",
+        "New IA established",
+        "New features shipped",
+        "Cross-functional delivery improved",
+      ],
+      summary:
+        "The redesign created a more unified, scalable, and consistent product experience across SmartCrowd's ecosystem. It also gave the team a stronger foundation for launching new features, adapting partner products, and maintaining design consistency across platforms.",
     },
-    reflection: "This project strengthened my ability to lead design in a complex product environment where user needs, business goals, regulatory requirements, and technical constraints all had to be balanced. It also reinforced the importance of scalable systems, cross-functional collaboration, and clear product thinking when designing financial products.",
+    reflection:
+      "This project strengthened my ability to lead design in a complex product environment where user needs, business goals, regulatory requirements, and technical constraints all had to be balanced. It also reinforced the importance of scalable systems, cross-functional collaboration, and clear product thinking when designing financial products.",
   },
 };
 
