@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Case } from "@/lib/cases";
-import { Reveal } from "@/components/ui/reveal";
+import { Reveal } from "@/components/ui/reveal"; 
 
 export interface TransformationTheme {
   number: string;
@@ -130,7 +130,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               </h2>
               <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 01 ]</span>
             </div>
-            <div className="ruler mt-6 w-full" />
+            <div className=" mt-6 w-full" />
           </Reveal>
           <div className="mt-12 grid md:grid-cols-2 gap-16">
             <Reveal delay={0.05}>
@@ -187,7 +187,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               </h2>
               <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 03 ]</span>
             </div>
-            <div className="ruler mt-6 w-full" />
+            <div className=" mt-6 w-full" />
           </Reveal>
           <div className="mt-12 grid md:grid-cols-2 gap-16 items-start">
             <Reveal delay={0.05}>
@@ -252,7 +252,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               </h2>
               <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 05 ]</span>
             </div>
-            <div className="ruler mt-6 w-full" />
+            <div className=" mt-6 w-full" />
           </Reveal>
           <div className="mt-12 relative">
             <div className="absolute left-4 top-0 bottom-0 w-px bg-line" />
@@ -308,7 +308,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               </h2>
               <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 07 ]</span>
             </div>
-            <div className="ruler mt-6 w-full" />
+            <div className=" mt-6 w-full" />
           </Reveal>
           <div className="mt-12 grid md:grid-cols-4 gap-6">
             {caseData.principles.map((item, i) => (
@@ -339,7 +339,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted md:text-base">
               The transformation was not about redesigning individual screens. It was about rethinking the entire product — its structure, experience, foundation, and scale.
             </p>
-            <div className="ruler mt-6 w-full" />
+            <div className=" mt-6 w-full" />
           </Reveal>
 
           <div className="mt-12 space-y-0">
@@ -387,7 +387,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
                 <h2 className="font-display text-display-md font-semibold uppercase text-ink">Selected Screens</h2>
                 <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 09 ]</span>
               </div>
-              <div className="ruler mt-6 w-full" />
+              <div className=" mt-6 w-full" />
             </Reveal>
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
               {caseData.selectedScreens.map((screen, i) => (
@@ -408,7 +408,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               <h2 className="font-display text-display-md font-semibold uppercase text-ink">Research & Collaboration</h2>
               <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 10 ]</span>
             </div>
-            <div className="ruler mt-6 w-full" />
+            <div className=" mt-6 w-full" />
           </Reveal>
           <div className="mt-12 grid md:grid-cols-2 gap-16">
             <Reveal delay={0.05}>
@@ -476,7 +476,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               <h2 className="font-display text-display-md font-semibold uppercase text-ink">More Work</h2>
               <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 13 ]</span>
             </div>
-            <div className="ruler mt-6 w-full" />
+            <div className=" mt-6 w-full" />
           </Reveal>
           <div className="mt-12 grid md:grid-cols-2 gap-10">
             {otherCases.map((c, i) => (
