@@ -4,12 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Case } from "@/lib/cases";
 
-export interface ProductArea {
+export interface TransformationTheme {
+  number: string;
   title: string;
+  description: string;
   visual?: string;
-  problem: string;
-  solution: string;
-  result?: string;
+  points: string[];
 }
 
 export interface CaseData {
@@ -46,7 +46,7 @@ export interface CaseData {
     title: string;
     description: string;
   }[];
-  productAreas: ProductArea[];
+  transformation: TransformationTheme[];
   designSystem: {
     description: string;
     visual?: string;
@@ -226,10 +226,10 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 07. MY ROLE */}
+      {/* 07. DESIGN LEADERSHIP */}
       <section className="px-8 md:px-14 py-24 bg-[#f0ede6] dark:bg-white/5">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">My Role</p>
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Design Leadership</p>
           <h2 className="font-display text-4xl mb-4">Lead Product Designer</h2>
           <p className="text-muted max-w-2xl leading-relaxed mb-12">
             I led product design across mobile, web, and partner experiences. My role combined hands-on design execution, product thinking, research, stakeholder collaboration, and design leadership.
@@ -261,100 +261,70 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 09. KEY PRODUCT AREAS */}
+      {/* 09. PRODUCT TRANSFORMATION */}
       <section className="px-8 md:px-14 py-24 border-t border-border">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Key Product Areas</p>
-          <h2 className="font-display text-4xl mb-16">Key product areas redesigned</h2>
+          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Product Transformation</p>
+          <h2 className="font-display text-4xl mb-4 max-w-2xl">
+            Transforming a fragmented platform into a scalable ecosystem.
+          </h2>
+          <p className="text-muted max-w-xl leading-relaxed mb-20">
+            The transformation was not about redesigning individual screens. It was about rethinking the entire product — its structure, experience, foundation, and scale.
+          </p>
           <div className="space-y-0">
-            {caseData.productAreas.map((area, i) => (
+            {caseData.transformation.map((theme, i) => (
               <div key={i}>
                 <div className="py-20">
-                  <div className="w-full aspect-[16/8] bg-[#f0ede6] dark:bg-white/5 rounded-sm mb-10 flex items-center justify-center overflow-hidden">
-                    {area.visual ? (
-                      <Image src={area.visual} alt={area.title} width={1400} height={700} className="w-full h-full object-cover" />
+                  <div className="w-full aspect-[16/8] bg-[#f0ede6] dark:bg-white/5 rounded-sm mb-12 flex items-center justify-center overflow-hidden">
+                    {theme.visual ? (
+                      <Image src={theme.visual} alt={theme.title} width={1400} height={700} className="w-full h-full object-cover" />
                     ) : (
-                      <p className="font-mono text-xs text-muted">{area.title} — visual coming soon</p>
+                      <p className="font-mono text-xs text-muted">{theme.title} — visual coming soon</p>
                     )}
                   </div>
-                  <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-12">
+                  <div className="grid md:grid-cols-2 gap-16 items-start">
                     <div>
-                      <p className="font-mono text-xs text-muted uppercase tracking-wider mb-3">0{i + 1}</p>
-                      <h3 className="font-display text-3xl mb-4">{area.title}</h3>
-                      <p className="text-muted leading-relaxed">{area.problem}</p>
+                      <p className="font-mono text-xs text-muted uppercase tracking-wider mb-4">{theme.number}</p>
+                      <h3 className="font-display text-4xl mb-6">{theme.title}</h3>
+                      <p className="text-muted leading-relaxed text-base">{theme.description}</p>
                     </div>
-                    <div>
-                      <p className="font-mono text-xs text-muted uppercase tracking-wider mb-3">Solution</p>
-                      <p className="text-sm leading-relaxed">{area.solution}</p>
-                    </div>
-                    <div className="border border-border rounded-sm p-4 self-start">
-                      <p className="font-mono text-[10px] text-muted uppercase tracking-wider mb-2">Platform</p>
-                      <p className="text-sm">{caseMeta.platform}</p>
+                    <div className="space-y-3 pt-2">
+                      {theme.points.map((point, j) => (
+                        <div key={j} className="flex items-start gap-3 border-b border-border pb-3 last:border-0">
+                          <span className="text-accent mt-1 shrink-0 text-xs">→</span>
+                          <p className="text-sm leading-snug">{point}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
-                {i < caseData.productAreas.length - 1 && <div className="border-b border-border" />}
+                {i < caseData.transformation.length - 1 && <div className="border-b border-border" />}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 10. DESIGN SYSTEM */}
-      <section className="section-invert px-8 md:px-14 py-24">
-        <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase opacity-40 mb-12">Design System</p>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-display text-4xl mb-6">Building a scalable design foundation</h2>
-              <p className="opacity-70 leading-relaxed mb-8">{caseData.designSystem.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {caseData.designSystem.highlights.map((item, i) => (
-                  <span key={i} className="px-3 py-1.5 border border-white/20 text-sm rounded-full opacity-70">
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="aspect-[4/3] bg-white/5 rounded-sm flex items-center justify-center">
-              {caseData.designSystem.visual ? (
-                <Image src={caseData.designSystem.visual} alt="Design system" width={700} height={525} className="w-full h-full object-cover rounded-sm" />
-              ) : (
-                <p className="font-mono text-xs opacity-30">Design system visual — coming soon</p>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 11. PARTNER PLATFORMS */}
-      <section className="px-8 md:px-14 py-24">
-        <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Partner Platforms</p>
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-              <h2 className="font-display text-4xl mb-6">Scaling the product beyond SmartCrowd</h2>
-              <p className="text-muted leading-relaxed mb-8">{caseData.partnerPlatforms.description}</p>
-              <p className="text-sm text-muted italic border-l-2 border-accent pl-4">
-                This required the design system to be flexible enough to support brand adaptation without rebuilding the experience from scratch.
-              </p>
-            </div>
-            <div className="space-y-3">
-              {["Core Platform Logic", "SmartCrowd App", "SmartCrowd Web", "Partner Platform A", "Partner Platform B"].map((item, i) => (
-                <div key={i} className={`border border-border rounded-sm px-5 py-3 flex items-center gap-3 ${i === 0 ? "border-accent" : ""}`} style={{ marginLeft: i === 0 ? 0 : `${i * 16}px` }}>
-                  {i > 0 && <span className="text-muted text-xs">→</span>}
-                  <p className="text-sm">{item}</p>
+      {/* 10. SELECTED SCREENS */}
+      {caseData.selectedScreens && caseData.selectedScreens.length > 0 && (
+        <section className="px-8 md:px-14 py-24 bg-[#f0ede6] dark:bg-white/5">
+          <div className="mx-auto max-w-content">
+            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Selected Screens</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {caseData.selectedScreens.map((screen, i) => (
+                <div key={i} className="aspect-[9/16] bg-white/50 dark:bg-white/5 rounded-sm overflow-hidden">
+                  <Image src={screen.src} alt={screen.label} width={300} height={533} className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* 12. RESEARCH */}
-      <section className="px-8 md:px-14 py-24 bg-[#f0ede6] dark:bg-white/5">
+      {/* 11. RESEARCH */}
+      <section className="px-8 md:px-14 py-24">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Research & Collaboration</p>
+          <p className="font-mono text-xs tracking-widests uppercase text-muted mb-12">Research & Collaboration</p>
           <div className="grid md:grid-cols-2 gap-16">
             <div>
               <h2 className="font-display text-4xl mb-6">Designing with users and teams</h2>
@@ -365,7 +335,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             </div>
             <div className="grid grid-cols-2 gap-4 content-start">
               {caseData.research.cards.map((card, i) => (
-                <div key={i} className="border border-border rounded-sm p-5 bg-bg dark:bg-white/5">
+                <div key={i} className="border border-border rounded-sm p-5">
                   <p className="font-display text-base">{card}</p>
                 </div>
               ))}
@@ -374,39 +344,23 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 13. SELECTED SCREENS */}
-      {caseData.selectedScreens && caseData.selectedScreens.length > 0 && (
-        <section className="px-8 md:px-14 py-24">
-          <div className="mx-auto max-w-content">
-            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Selected Screens</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {caseData.selectedScreens.map((screen, i) => (
-                <div key={i} className="aspect-[9/16] bg-[#f0ede6] dark:bg-white/5 rounded-sm overflow-hidden">
-                  <Image src={screen.src} alt={screen.label} width={300} height={533} className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 14. IMPACT */}
-      <section className="px-8 md:px-14 py-24 border-t border-border">
+      {/* 12. IMPACT */}
+      <section className="section-invert px-8 md:px-14 py-24">
         <div className="mx-auto max-w-content">
-          <p className="font-mono text-xs tracking-widest uppercase text-muted mb-16">Impact</p>
+          <p className="font-mono text-xs tracking-widest uppercase opacity-40 mb-16">Impact</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {caseData.impact.items.map((item, i) => (
-              <div key={i} className="border border-border rounded-sm p-5">
+              <div key={i} className="border border-white/10 rounded-sm p-5">
                 <span className="text-accent text-lg">✦</span>
-                <p className="text-sm mt-2 leading-snug">{item}</p>
+                <p className="text-sm mt-2 leading-snug opacity-80">{item}</p>
               </div>
             ))}
           </div>
-          <p className="text-muted max-w-2xl leading-relaxed">{caseData.impact.summary}</p>
+          <p className="opacity-60 max-w-2xl leading-relaxed">{caseData.impact.summary}</p>
         </div>
       </section>
 
-      {/* 15. REFLECTION */}
+      {/* 13. REFLECTION */}
       <section className="px-8 md:px-14 py-24 bg-[#f0ede6] dark:bg-white/5">
         <div className="mx-auto max-w-content">
           <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Reflection</p>
@@ -416,7 +370,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 16. MORE WORK */}
+      {/* 14. MORE WORK */}
       <section className="px-8 md:px-14 py-24">
         <div className="mx-auto max-w-content">
           <p className="font-mono text-xs tracking-widest uppercase text-muted mb-12">Explore More Work</p>
@@ -445,7 +399,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 17. CONTACT CTA */}
+      {/* 15. CONTACT CTA */}
       <section className="section-invert px-8 md:px-14 py-32">
         <div className="mx-auto max-w-content">
           <div className="max-w-2xl">
