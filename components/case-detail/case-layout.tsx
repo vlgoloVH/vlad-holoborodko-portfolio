@@ -9,7 +9,7 @@ export interface ProductArea {
   visual?: string;
   problem: string;
   solution: string;
-  result: string;
+  result?: string;
 }
 
 export interface CaseData {
