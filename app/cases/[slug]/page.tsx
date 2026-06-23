@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { CASES } from "@/lib/cases";
-import { CaseLayout, CaseData } from "@/components/case-layout";
+import { CaseLayout, CaseData } from "@/components/case-detail/case-layout";
 
 interface Props {
   params: { slug: string };
