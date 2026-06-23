@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Case } from "@/lib/cases";
 import { Reveal } from "@/components/ui/reveal";
+import { ArrowUpRight } from "lucide-react";
 
 export interface TransformationTheme {
   number: string;
@@ -46,6 +47,9 @@ interface CaseLayoutProps {
 }
 
 export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) {
+  const prev = otherCases[0] ?? null;
+  const next = otherCases[1] ?? null;
+
   return (
     <main>
 
@@ -97,10 +101,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between mb-12">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">Context</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 01 ]</span>
-            </div>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-12">Context</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-12">
             {[
@@ -123,10 +124,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between mb-4">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">My Role</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 02 ]</span>
-            </div>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">My Role</h2>
             <p className="max-w-2xl text-sm leading-relaxed text-muted md:text-base mb-12">
               {caseData.role.summary}
             </p>
@@ -161,11 +159,8 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between mb-4">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">Product Transformation</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 03 ]</span>
-            </div>
-            <p className="mt-2 font-display text-display-sm leading-snug text-ink max-w-3xl mb-4">
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">Product Transformation</h2>
+            <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-4">
               Not a redesign. A full platform transformation.
             </p>
             <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base">
@@ -178,23 +173,32 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               <Reveal key={i} delay={0.05}>
                 <div>
                   <div className="py-20">
-                    <div className="w-full aspect-[16/8] bg-surface rounded-sm mb-12 flex items-center justify-center overflow-hidden">
+                    {/* Visual */}
+                    <div className="w-full aspect-[16/8] bg-surface rounded-sm mb-16 flex items-center justify-center overflow-hidden">
                       {theme.visual ? (
                         <Image src={theme.visual} alt={theme.title} width={1400} height={700} className="w-full h-full object-cover" />
                       ) : (
                         <p className="font-mono text-xs uppercase tracking-widest text-muted">{theme.title} — visual coming soon</p>
                       )}
                     </div>
-                    <div className="grid md:grid-cols-2 gap-16 items-start">
-                      <div>
-                        <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">{theme.number}</p>
+
+                    {/* Content — number + title left, points right */}
+                    <div className="grid md:grid-cols-[1fr_1px_1fr] gap-0 items-start">
+                      {/* Left */}
+                      <div className="pr-0 md:pr-16">
+                        <p className="font-mono text-xs uppercase tracking-widest text-accent mb-4">{theme.number}</p>
                         <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
                         <p className="text-sm leading-relaxed text-muted md:text-base">{theme.description}</p>
                       </div>
-                      <div className="space-y-3 pt-2">
+
+                      {/* Divider */}
+                      <div className="hidden md:block w-px bg-line mx-16 self-stretch" />
+
+                      {/* Right — points */}
+                      <div className="mt-10 md:mt-0 md:pl-0 space-y-0">
                         {theme.points.map((point, j) => (
-                          <div key={j} className="flex items-start gap-3 border-b border-line pb-3 last:border-0">
-                            <span className="text-accent mt-1 shrink-0 text-xs">→</span>
+                          <div key={j} className="flex items-start gap-3 py-4 border-b border-line first:border-t first:border-line">
+                            <span className="text-accent mt-0.5 shrink-0 text-xs">→</span>
                             <p className="text-sm leading-snug text-ink">{point}</p>
                           </div>
                         ))}
@@ -209,47 +213,41 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 05. SELECTED SCREENS */}
-      <section className="px-6 py-24 md:px-10 md:py-32 bg-surface">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <div className="flex items-baseline justify-between mb-12">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">Selected Screens</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 04 ]</span>
-            </div>
-          </Reveal>
-          {caseData.selectedScreens && caseData.selectedScreens.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {caseData.selectedScreens.map((screen, i) => (
-                <Reveal key={i} delay={i * 0.05}>
-                  <div className="aspect-[9/16] bg-bg rounded-sm overflow-hidden">
-                    <Image src={screen.src} alt={screen.label} width={300} height={533} className="w-full h-full object-cover" />
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          ) : (
+      {/* 05. SELECTED SCREENS — horizontal scroll */}
+      <section className="py-24 md:py-32 overflow-hidden">
+        <div className="px-6 md:px-10">
+          <div className="mx-auto max-w-content">
             <Reveal>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {["Explore", "Property Details", "Portfolio", "Wallet", "Investment Flow", "Registration", "Reinvest", "Partner Platform"].map((label, i) => (
-                  <div key={i} className="aspect-[9/16] bg-bg rounded-sm flex items-center justify-center">
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted text-center px-2">{label}</p>
-                  </div>
-                ))}
-              </div>
+              <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-12">Selected Screens</h2>
             </Reveal>
-          )}
+          </div>
         </div>
+        <Reveal delay={0.05}>
+          <div className="flex gap-4 overflow-x-auto pb-4 px-6 md:px-10 scrollbar-hide snap-x snap-mandatory">
+            {(caseData.selectedScreens && caseData.selectedScreens.length > 0
+              ? caseData.selectedScreens.map((s) => ({ label: s.label, src: s.src }))
+              : ["Explore", "Property Details", "Portfolio", "Wallet", "Investment Flow", "Registration", "Reinvest", "Partner Platform"].map((label) => ({ label, src: "" }))
+            ).map((screen, i) => (
+              <div
+                key={i}
+                className="shrink-0 snap-start w-[240px] md:w-[300px] aspect-[9/16] bg-surface rounded-sm overflow-hidden flex items-center justify-center"
+              >
+                {screen.src ? (
+                  <Image src={screen.src} alt={screen.label} width={300} height={533} className="w-full h-full object-cover" />
+                ) : (
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-muted text-center px-4">{screen.label}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       {/* 06. IMPACT */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between mb-16">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">Impact</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 05 ]</span>
-            </div>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-16">Impact</h2>
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 items-stretch mb-16">
             {caseData.impact.items.map((item, i) => (
@@ -274,47 +272,72 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="px-6 py-24 md:px-10 md:py-32 bg-surface">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-8">[ 06 — Reflection ]</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-8">Reflection</p>
             <blockquote className="font-display text-display-sm font-semibold uppercase leading-snug text-ink max-w-3xl">
-              {caseData.reflection}
+              "{caseData.reflection}"
             </blockquote>
           </Reveal>
         </div>
       </section>
 
-      {/* 08. MORE WORK */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <div className="flex items-baseline justify-between mb-12">
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink">More Work</h2>
-              <span className="font-mono text-xs uppercase tracking-widest text-muted">[ 07 ]</span>
-            </div>
-          </Reveal>
-          <div className="grid md:grid-cols-2 gap-10">
-            {otherCases.map((c, i) => (
-              <Reveal key={c.slug} delay={i * 0.05}>
-                <Link href={`/cases/${c.slug}`} className="group block">
-                  <div className="aspect-[4/3] bg-surface rounded-sm mb-5 overflow-hidden">
-                    {c.cover ? (
-                      <Image src={c.cover} alt={c.title} width={700} height={525} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
+      {/* 08. PREV / NEXT */}
+      {(prev || next) && (
+        <section className="border-t border-line">
+          <div className="grid md:grid-cols-2">
+            {prev ? (
+              <Reveal>
+                <Link
+                  href={`/cases/${prev.slug}`}
+                  className="group flex flex-col justify-between gap-8 p-10 md:p-16 border-b md:border-b-0 md:border-r border-line hover:bg-surface transition-colors duration-300"
+                >
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">← Previous</p>
+                    <h3 className="font-display text-display-sm font-semibold uppercase text-ink group-hover:text-accent transition-colors duration-300">
+                      {prev.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted">{prev.industry}</p>
+                  </div>
+                  <div className="aspect-[16/9] bg-surface rounded-sm overflow-hidden">
+                    {prev.cover ? (
+                      <Image src={prev.cover} alt={prev.title} width={700} height={394} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <p className="font-mono text-xs uppercase tracking-widest text-muted">{c.title}</p>
+                        <p className="font-mono text-xs uppercase tracking-widest text-muted">{prev.title}</p>
                       </div>
                     )}
                   </div>
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-display text-xl font-semibold uppercase text-ink group-hover:text-accent transition-colors duration-300 md:text-2xl">{c.title}</h3>
-                    <span className="font-mono text-xs uppercase tracking-widest text-muted shrink-0">{c.year}</span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{c.description}</p>
                 </Link>
               </Reveal>
-            ))}
+            ) : <div />}
+
+            {next ? (
+              <Reveal delay={0.05}>
+                <Link
+                  href={`/cases/${next.slug}`}
+                  className="group flex flex-col justify-between gap-8 p-10 md:p-16 hover:bg-surface transition-colors duration-300"
+                >
+                  <div className="md:text-right">
+                    <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">Next →</p>
+                    <h3 className="font-display text-display-sm font-semibold uppercase text-ink group-hover:text-accent transition-colors duration-300">
+                      {next.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted">{next.industry}</p>
+                  </div>
+                  <div className="aspect-[16/9] bg-surface rounded-sm overflow-hidden">
+                    {next.cover ? (
+                      <Image src={next.cover} alt={next.title} width={700} height={394} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <p className="font-mono text-xs uppercase tracking-widest text-muted">{next.title}</p>
+                      </div>
+                    )}
+                  </div>
+                </Link>
+              </Reveal>
+            ) : <div />}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CONTACT CTA */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
