@@ -268,17 +268,38 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 07. REFLECTION */}
-      <section className="px-6 py-24 md:px-10 md:py-32 bg-surface">
+            {/* 07. REFLECTION */}
+      <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-8">Reflection</p>
-            <blockquote className="font-display text-display-sm font-semibold uppercase leading-snug text-ink max-w-3xl">
-              "{caseData.reflection}"
-            </blockquote>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-16">Reflection</p>
           </Reveal>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                number: "01",
+                insight: "Real product leadership means holding the full picture — user needs, business goals, technical constraints, and compliance — all at once.",
+              },
+              {
+                number: "02",
+                insight: "The most valuable thing I built wasn't a screen. It was a foundation the entire team could keep building on.",
+              },
+              {
+                number: "03",
+                insight: "Designing for regulated financial products taught me that clarity and compliance aren't opposites — good UX makes both possible.",
+              },
+            ].map((item, i) => (
+              <Reveal key={i} delay={i * 0.05}>
+                <div className="border-t border-white/20 pt-8">
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">{item.number}</p>
+                  <p className="font-display text-xl leading-snug text-ink md:text-2xl">{item.insight}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
+
 
       {/* 08. PREV / NEXT */}
       {(prev || next) && (
@@ -297,15 +318,6 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
                     </h3>
                     <p className="mt-2 text-sm text-muted">{prev.industry}</p>
                   </div>
-                  <div className="aspect-[16/9] bg-surface rounded-sm overflow-hidden">
-                    {prev.cover ? (
-                      <Image src={prev.cover} alt={prev.title} width={700} height={394} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <p className="font-mono text-xs uppercase tracking-widest text-muted">{prev.title}</p>
-                      </div>
-                    )}
-                  </div>
                 </Link>
               </Reveal>
             ) : <div />}
@@ -322,15 +334,6 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
                       {next.title}
                     </h3>
                     <p className="mt-2 text-sm text-muted">{next.industry}</p>
-                  </div>
-                  <div className="aspect-[16/9] bg-surface rounded-sm overflow-hidden">
-                    {next.cover ? (
-                      <Image src={next.cover} alt={next.title} width={700} height={394} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <p className="font-mono text-xs uppercase tracking-widest text-muted">{next.title}</p>
-                      </div>
-                    )}
                   </div>
                 </Link>
               </Reveal>
