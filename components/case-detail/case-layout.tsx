@@ -53,7 +53,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
   return (
     <main>
 
-      {/* 01. HEROO */}
+      {/* 01. HERO */}
       <section className="px-6 pb-0 pt-32 md:px-10 md:pt-44">
         <div className="mx-auto max-w-content">
           <Reveal>
@@ -130,39 +130,35 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-3 divide-x divide-white/10">
-            <Reveal delay={0.05}>
-              <div className="pr-8">
-                <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">What I Owned</p>
-                <ul className="space-y-3">
-                  {["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"].map((item, j) => (
-                    <li key={j} className="text-sm leading-snug text-muted py-1">{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="px-8">
-                <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">How I Worked</p>
-                <ul className="space-y-3">
-                  {["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"].map((item, j) => (
-                    <li key={j} className="text-sm leading-snug text-muted py-1">{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.15}>
-              <div className="pl-8">
-                <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">With Whom</p>
-                <ul className="space-y-3">
-                  {["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"].map((item, j) => (
-                    <li key={j} className="text-sm leading-snug text-muted py-1">{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
+          <div className="grid grid-cols-3 gap-px bg-white/10">
+            {[
+              {
+                label: "What I Owned",
+                items: ["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"],
+              },
+              {
+                label: "How I Worked",
+                items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
+              },
+              {
+                label: "With Whom",
+                items: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
+              },
+            ].map((col, i) => (
+              <Reveal key={i} delay={i * 0.05}>
+                <div className="bg-[#181613] p-8 h-full flex flex-col gap-6">
+                  <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
+                  <ul className="flex flex-col gap-0 flex-1">
+                    {col.items.map((item, j) => (
+                      <li key={j} className="flex items-center gap-3 py-3 border-b border-white/10 last:border-0">
+                        <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
+                        <span className="text-sm text-muted">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
