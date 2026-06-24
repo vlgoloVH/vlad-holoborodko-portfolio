@@ -249,7 +249,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               <Reveal>
                 <Link
                   href={`/cases/${prev.slug}`}
-                  className="group flex flex-col justify-between gap-8 p-10 md:p-16 border-b md:border-b-0 md:border-r border-line hover:bg-surface transition-colors duration-300"
+                  className="group flex flex-col items-center justify-center gap-4 p-16 md:p-24 border-b md:border-b-0 md:border-r border-line hover:bg-surface transition-colors duration-300 text-center"
                 >
                   <div>
                     <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">← Previous</p>
@@ -266,7 +266,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               <Reveal delay={0.05}>
                 <Link
                   href={`/cases/${next.slug}`}
-                  className="group flex flex-col justify-between gap-8 p-10 md:p-16 hover:bg-surface transition-colors duration-300"
+                  className="group flex flex-col items-center justify-center gap-4 p-16 md:p-24 hover:bg-surface transition-colors duration-300 text-center"
                 >
                   <div className="md:text-right">
                     <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">Next →</p>
