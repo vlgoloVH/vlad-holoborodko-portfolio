@@ -27,7 +27,7 @@ export function TransformationSticky({ themes }: Props) {
             if (entry.isIntersecting) setActiveIndex(i);
           });
         },
-        { threshold: 0, rootMargin: "-40% 0px -40% 0px" }
+        { threshold: 0, rootMargin: "-20% 0px -20% 0px" }
       );
       observer.observe(ref);
       return observer;
