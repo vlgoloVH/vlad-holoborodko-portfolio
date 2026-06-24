@@ -127,44 +127,32 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-12">My Role</h2>
           </Reveal>
 
-          <Reveal delay={0.05}>
-            <div className="flex flex-wrap gap-2 mb-16 pb-16 border-b border-white/10">
-              {[
-                "Product Strategy",
-                "Information Architecture",
-                "Mobile Design",
-                "Web Design",
-                "Design System",
-                "Partner Platforms",
-                "User Research",
-                "Design Leadership",
-                "Mentorship",
-              ].map((tag) => (
-                <span key={tag} className="rounded-full border border-white/20 px-4 py-2 font-mono text-xs uppercase tracking-widest text-muted">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <Reveal delay={0.1}>
-              <p className="text-sm leading-relaxed text-muted md:text-base">
-                {caseData.role.summary}
-              </p>
-              <p className="mt-6 font-mono text-[10px] uppercase tracking-widest text-muted">
-                Collaborated with · {caseData.role.team.join(" · ")}
+            <Reveal delay={0.05}>
+              <p className="font-display text-display-sm font-semibold uppercase leading-snug text-ink">
+                I was brought in to audit the platform. Then stayed to lead its full transformation — across mobile, web, partner products, and design system.
               </p>
             </Reveal>
 
-            <Reveal delay={0.15}>
-              <div className="border border-white/10 rounded-sm p-8">
-                <p className="font-display text-4xl font-semibold text-ink mb-2">1</p>
-                <p className="font-mono text-xs uppercase tracking-widest text-accent mb-4">Designer Mentored</p>
-                <p className="text-sm leading-relaxed text-muted">
-                  Beyond execution, I led and mentored another product designer on the team — helping them grow their product thinking, design skills, and ability to work independently across complex flows.
-                </p>
-              </div>
+            <Reveal delay={0.1}>
+              <ul className="space-y-5 border-t border-white/10 pt-1">
+                {[
+                  "Conducted full product audit and presented findings to leadership",
+                  "Led product design across iOS, Android, and Web",
+                  "Defined information architecture and product structure",
+                  "Redesigned core investment flows and introduced new features",
+                  "Built a token-based design system with light and dark themes",
+                  "Adapted the platform for partner products with custom branding",
+                  "Ran user interviews and facilitated cross-functional brainstorms",
+                  "Collaborated with Product, Engineering, Compliance, Marketing, and QA",
+                  "Mentored a product designer on the team",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4 border-b border-white/10 pb-5 last:border-0 last:pb-0">
+                    <span className="font-mono text-[10px] text-accent shrink-0 mt-1">{String(i + 1).padStart(2, "0")}</span>
+                    <p className="text-sm leading-snug text-muted">{item}</p>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           </div>
         </div>
