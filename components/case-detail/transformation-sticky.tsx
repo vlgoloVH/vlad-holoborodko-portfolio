@@ -50,7 +50,6 @@ export function TransformationSticky({ themes }: Props) {
           <div
             key={i}
             ref={(el) => { itemRefs.current[i] = el; }}
-            className="md:min-h-screen flex flex-col justify-center py-16 md:py-24 md:pr-16"
           >
             <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
             <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
@@ -63,6 +62,15 @@ export function TransformationSticky({ themes }: Props) {
                 </li>
               ))}
             </ul>
+            
+            {/* Mobile image */}
+            <div className="mt-8 md:hidden w-full aspect-[4/3] bg-surface rounded-sm flex items-center justify-center overflow-hidden">
+              {theme.visual ? (
+                <Image src={theme.visual} alt={theme.title} width={700} height={525} className="w-full h-full object-cover" />
+              ) : (
+                <p className="font-mono text-[10px] uppercase tracking-widest text-muted text-center px-4">{theme.title}<br />visual coming soon</p>
+              )}
+            </div>
           </div>
         ))}
       </div>
