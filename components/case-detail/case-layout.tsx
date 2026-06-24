@@ -123,31 +123,30 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       {/* 03. MY ROLE */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
-          <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">My Role</h2>
-            <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-16">
-              {caseData.role.summary}
-            </p>
-          </Reveal>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <Reveal>
+              <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-6">My Role</h2>
+              <p className="text-sm leading-relaxed text-muted md:text-base mb-12">
+                {caseData.role.summary}
+              </p>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-muted leading-relaxed">
+                Collaborated with · {caseData.role.team.join(" · ")}
+              </p>
+            </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-            {caseData.role.responsibilities.map((item, i) => (
-              <Reveal key={i} delay={i * 0.04}>
-                <div className="border border-white/10 rounded-sm p-6 h-full">
-                  <p className="font-mono text-xs uppercase tracking-widest text-accent mb-3">
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <p className="text-sm leading-relaxed text-muted md:text-base">{item}</p>
-                </div>
-              </Reveal>
-            ))}
+            <Reveal delay={0.05}>
+              <div className="space-y-2">
+                {caseData.role.responsibilities.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 border border-white/10 rounded-sm px-4 py-3">
+                    <span className="font-mono text-[10px] text-accent shrink-0 mt-0.5">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-sm leading-snug text-muted">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
-
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted">
-              Collaborated with · {caseData.role.team.join(" · ")}
-            </p>
-          </Reveal>
         </div>
       </section>
 
