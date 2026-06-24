@@ -192,25 +192,24 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <TransformationSticky themes={caseData.transformation} />
       
       {/* 06. IMPACT */}
-      <section className="section-invert px-6 py-24 md:px-10 md:py-32">
+      <section className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-16">Impact</h2>
           </Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 items-stretch mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 items-stretch">
             {caseData.impact.items.map((item, i) => (
               <Reveal key={i} delay={i * 0.05}>
-                <div className="relative flex flex-col gap-4 px-8 py-12 h-full">
+                <div className="relative section-invert flex flex-col gap-4 px-8 py-14 h-full">
                   {i > 0 && <div className="absolute left-0 top-10 bottom-10 w-px bg-white/10" />}
-                  <span className="font-display text-display-xl font-semibold leading-none text-accent">
-                    {item.value}
-                  </span>
-                  <p className="text-sm leading-relaxed text-muted">{item.label}</p>
+                  <span className="font-mono text-xs uppercase tracking-widest text-muted">{item.label}</span>
+                  <span className="font-display text-display-lg font-semibold text-ink">{item.value}</span>
+                  {item.body && <p className="text-sm leading-relaxed text-muted">{item.body}</p>}
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="mt-16">
             <p className="max-w-2xl text-sm leading-relaxed text-muted md:text-base">{caseData.impact.summary}</p>
           </Reveal>
         </div>
