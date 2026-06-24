@@ -6,6 +6,7 @@ import { Case } from "@/lib/cases";
 import { Reveal } from "@/components/ui/reveal";
 import { ArrowUpRight } from "lucide-react";
 
+
 export interface TransformationTheme {
   number: string;
   title: string;
@@ -125,9 +126,14 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         <div className="mx-auto max-w-content">
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">My Role</h2>
-            <p className="font-display text-display-sm font-semibold uppercase leading-snug text-ink max-w-4xl mb-16">
-              Led the full design transformation — from initial audit to shipped product — across mobile, web, partner platforms, and design system.
-            </p>
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
+              <p className="text-sm leading-relaxed text-muted md:text-base">
+                As Lead Product Designer, I owned the full design direction of SmartCrowd — from the initial product audit that identified core UX gaps, to leading the complete redesign of the mobile app, web platform, and partner products. I set the strategic design direction, shaped information architecture, and ensured every platform felt unified and intentional.
+              </p>
+              <p className="text-sm leading-relaxed text-muted md:text-base">
+                Beyond execution, I built the design system from scratch — creating a scalable token-based foundation with light and dark themes that served both SmartCrowd and its partner brands. I worked closely with Product, Engineering, Compliance, and Marketing, and mentored another designer on the team throughout the project.
+              </p>
+            </div>
           </Reveal>
 
           <div className="grid grid-cols-3 gap-4">
