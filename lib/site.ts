@@ -39,21 +39,28 @@ export const COMPANY_LOGOS = [
 
 export const TESTIMONIALS = [
   {
-    quote:
-      "Vlad doesn't wait for a brief — he builds the case for what to design next. Our roadmap got sharper the moment he joined.",
+    quote: "Vlad doesn't wait for a brief — he builds the case for what to design next. Our roadmap got sharper the moment he joined.",
     name: "Elena Marsh",
     role: "VP Product, Finlytic",
   },
   {
-    quote:
-      "He's the rare designer who can sit in a sales call, a research session and a sprint planning meeting and be equally useful in all three.",
+    quote: "He's the rare designer who can sit in a sales call, a research session and a sprint planning meeting and be equally useful in all three.",
     name: "Tomás Reyes",
     role: "Co-founder, Wayfare",
   },
   {
-    quote:
-      "The onboarding redesign he led cut our support tickets by a third in the first month. That's design with a P&L attached.",
+    quote: "The onboarding redesign he led cut our support tickets by a third in the first month. That's design with a P&L attached.",
     name: "Priya Nair",
     role: "Head of Operations, Cohort HR",
+  },
+  {
+    quote: "Vlad brings both design craft and product thinking — he doesn't just make things look good, he makes them work better.",
+    name: "James Okafor",
+    role: "CPO, Pulse Health",
+  },
+  {
+    quote: "Working with Vlad felt like having a co-founder who happened to be a designer. He owned the problem, not just the pixels.",
+    name: "Sarah Lindqvist",
+    role: "CEO, Atlas Studio",
   },
 ];
