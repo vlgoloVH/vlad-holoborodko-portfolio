@@ -34,8 +34,8 @@ export interface CaseData {
     label: string;
     src: string;
   }[];
-  impact: {
-    items: { value: string; label: string }[];
+  iimpact: {
+    items: { value: string; label: string; body?: string }[];
     summary: string;
   };
   reflection: string;
