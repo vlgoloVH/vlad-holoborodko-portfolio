@@ -54,7 +54,7 @@ export function TransformationSticky({ themes }: Props) {
                 <p className="text-sm leading-relaxed text-muted md:text-base mb-10">{theme.description}</p>
                 <ul className="space-y-0">
                   {theme.points.map((point, j) => (
-                    <li key={j} className="flex items-start gap-3 py-3 border-b border-line last:border-0">
+                    <li key={j} className="flex items-start gap-3 py-3">
                       <span className="text-accent mt-1 shrink-0 text-xs">→</span>
                       <p className="text-sm leading-snug text-ink">{point}</p>
                     </li>
