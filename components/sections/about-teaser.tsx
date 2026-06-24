@@ -70,9 +70,13 @@ export function AboutTeaser() {
           <Reveal delay={0.15}>
             <div className="flex flex-col gap-4">
               <p className="font-mono text-xs uppercase tracking-widest text-muted">What I do</p>
-              <p className="font-display text-display-sm leading-snug text-ink">
-                {SKILLS.practice.join(" · ")}
-              </p>
+              <ul className="flex flex-col gap-2">
+                {SKILLS.practice.map((item) => (
+                  <li key={item} className="font-display text-lg text-ink">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
         </div>
