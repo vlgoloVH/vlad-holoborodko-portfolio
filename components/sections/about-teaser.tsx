@@ -68,38 +68,11 @@ export function AboutTeaser() {
 
           {/* Right — Skills */}
           <Reveal delay={0.15}>
-            <div className="flex flex-col gap-8">
-              <div>
-                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-muted">
-                  What I do
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {SKILLS.practice.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-muted">
-                  Product Design Stack
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Figma", "FigJam", "Sketch", "Storybook", "Design Tokens", "Maze", "Mobbin", "User Interviews", "Amplitude", "SQL", "Jira", "Notion", "Claude", "ChatGPT", "Figma Make"].map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="flex flex-col gap-4">
+              <p className="font-mono text-xs uppercase tracking-widest text-muted">What I do</p>
+              <p className="font-display text-display-sm leading-snug text-ink">
+                {SKILLS.practice.join(" · ")}
+              </p>
             </div>
           </Reveal>
         </div>
