@@ -15,7 +15,6 @@ export function CasesGrid() {
               [ 02 — Case Studies ]
             </span>
           </div>
-          <div className="ruler mt-6 w-full" />
         </Reveal>
 
         <div className="mt-12 grid gap-16 md:grid-cols-2 md:gap-x-10 md:gap-y-0">
