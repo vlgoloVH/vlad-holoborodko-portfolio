@@ -190,7 +190,9 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-     <TransformationSticky themes={caseData.transformation} />
+     <section className="px-6 md:px-10">
+        <TransformationSticky themes={caseData.transformation} />
+      </section>
       
       {/* 05. SELECTED SCREENS — horizontal scroll */}
       <section className="py-24 md:py-32 overflow-hidden">
