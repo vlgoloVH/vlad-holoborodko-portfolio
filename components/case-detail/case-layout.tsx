@@ -177,18 +177,31 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-4">
               Not a redesign. A full platform transformation.
             </p>
-            <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base mb-24">
+            <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base mb-12">
               The work covered every layer of the product — structure, experience, design foundation, and ecosystem scale.
             </p>
           </Reveal>
-        </div>
 
-        {/* Sticky scroll items */}
-        <div className="mx-auto max-w-content">
-          {caseData.transformation.map((theme, i) => (
-            <div key={i} className="relative grid md:grid-cols-2 gap-16 mb-0">
+          {/* Hero visual */}
+          <Reveal delay={0.1} className="mb-0">
+            <div className="w-full aspect-[16/8] bg-surface rounded-sm flex items-center justify-center overflow-hidden">
+              {caseData.heroMockup ? (
+                <Image src={caseData.heroMockup} alt="Product Transformation" width={1400} height={700} className="w-full h-full object-cover" />
+              ) : (
+                <p className="font-mono text-xs uppercase tracking-widest text-muted">Product overview — visual coming soon</p>
+              )}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Sticky scroll transformation items */}
+      {caseData.transformation.map((theme, i) => (
+        <section key={i} className="border-t border-line">
+          <div className="mx-auto max-w-content px-6 md:px-10">
+            <div className="grid md:grid-cols-2 min-h-screen">
               {/* Left — sticky text */}
-              <div className="md:sticky md:top-32 self-start py-20">
+              <div className="md:sticky md:top-0 md:h-screen flex flex-col justify-center py-24 pr-0 md:pr-16">
                 <Reveal>
                   <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
                   <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
@@ -204,26 +217,24 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
                 </Reveal>
               </div>
 
-              {/* Right — visual */}
-              <div className="py-20">
-                <Reveal delay={0.1}>
-                  <div className="w-full aspect-[3/4] bg-surface rounded-sm flex items-center justify-center overflow-hidden sticky top-32">
+              {/* Right — visual full height */}
+              <div className="flex items-center py-24 pl-0 md:pl-16 border-l border-line">
+                <Reveal delay={0.1} className="w-full">
+                  <div className="w-full aspect-[3/4] bg-surface rounded-sm flex items-center justify-center overflow-hidden">
                     {theme.visual ? (
                       <Image src={theme.visual} alt={theme.title} width={700} height={933} className="w-full h-full object-cover" />
                     ) : (
-                      <p className="font-mono text-xs uppercase tracking-widest text-muted text-center px-8">{theme.title}<br />visual coming soon</p>
+                      <p className="font-mono text-xs uppercase tracking-widest text-muted text-center px-8">
+                        {theme.title}<br />visual coming soon
+                      </p>
                     )}
                   </div>
                 </Reveal>
               </div>
-
-              {i < caseData.transformation.length - 1 && (
-                <div className="absolute bottom-0 left-0 right-0 border-b border-line" />
-              )}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      ))}
 
       {/* 05. SELECTED SCREENS — horizontal scroll */}
       <section className="py-24 md:py-32 overflow-hidden">
