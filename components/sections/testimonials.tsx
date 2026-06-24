@@ -6,7 +6,7 @@ import { useRef, useState, useCallback } from "react";
 
 function TestimonialCard({ quote, name, role }: { quote: string; name: string; role: string }) {
   return (
-    <div className="w-[420px] shrink-0 rounded-2xl border border-line bg-bg p-8 flex flex-col gap-6" style={{ height: "300px" }}>
+    <div className="w-[660px] shrink-0 rounded-2xl border border-line bg-bg p-8 flex flex-col gap-6" style={{ height: "300px" }}>
       <span className="font-display text-4xl leading-none text-accent">"</span>
       <p className="font-display text-base leading-snug text-ink md:text-lg flex-1">
         {quote}
