@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -26,21 +25,24 @@ export function Reveal({
     </motion.div>
   );
 }
+
 export function RevealText({
   children,
   delay = 0,
   className,
+  animate = true,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
+  animate?: boolean;
 }) {
   return (
     <div className={`overflow-hidden ${className ?? ""}`}>
       <motion.div
         initial={{ y: "100%" }}
-        animate={{ y: "0%" }}
-        transition={{ duration: 0.8, delay, ease: [0.25, 1, 0.5, 1] }}
+        animate={{ y: animate ? "0%" : "100%" }}
+        transition={{ duration: 0.9, delay, ease: [0.25, 1, 0.5, 1] }}
       >
         {children}
       </motion.div>
