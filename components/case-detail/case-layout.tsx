@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Case } from "@/lib/cases";
 import { Reveal } from "@/components/ui/reveal";
 import { ArrowUpRight } from "lucide-react";
+import { Contact } from "@/components/sections/contact";
 
 export interface TransformationTheme {
   number: string;
@@ -282,27 +283,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </section>
       )}
 
-      {/* CONTACT CTA */}
-      <section className="section-invert px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-8">
-              — Looking for a Product Designer who can simplify complex products?
-            </p>
-            <h2 className="font-display text-display-lg font-semibold uppercase leading-[0.95] text-ink mb-12">
-              Let's build something meaningful.
-            </h2>
-            <div className="flex flex-wrap gap-4">
-              <a href="https://linkedin.com/in/vladholoborodko" target="_blank" rel="noopener noreferrer" className="rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink">
-                LinkedIn →
-              </a>
-              <a href="mailto:vlgolo1996@gmail.com" className="rounded-full border border-accent bg-accent px-6 py-3 font-mono text-xs uppercase tracking-widest text-accent-ink transition-colors duration-300 hover:bg-accent/90">
-                Email me →
-              </a>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <Contact />
 
     </main>
   );
