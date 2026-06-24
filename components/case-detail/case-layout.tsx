@@ -130,7 +130,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             </p>
           </Reveal>
 
-         <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {[
               {
                 label: "What I Owned",
@@ -146,11 +146,11 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               },
             ].map((col, i) => (
               <Reveal key={i} delay={i * 0.05}>
-                <div className="bg-[#181613] p-8 h-full flex flex-col gap-6">
+                <div className="border border-white/10 rounded-sm p-8 h-full flex flex-col gap-6">
                   <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
                   <ul className="flex flex-col gap-0 flex-1">
                     {col.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-3 py-3 border-b border-white/10 last:border-0">
+                      <li key={j} className="flex items-center gap-3 py-3">
                         <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
                         <span className="text-sm text-muted">{item}</span>
                       </li>
