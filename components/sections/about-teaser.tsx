@@ -70,13 +70,16 @@ export function AboutTeaser() {
           <Reveal delay={0.15}>
             <div className="flex flex-col gap-4">
               <p className="font-mono text-xs uppercase tracking-widest text-muted">What I do</p>
-              <ul className="flex flex-col gap-2">
+              <div className="flex flex-wrap gap-2">
                 {SKILLS.practice.map((item) => (
-                  <li key={item} className="font-display text-lg text-ink">
+                  <span
+                    key={item}
+                    className="rounded-full border border-line px-4 py-2 font-mono text-sm tracking-wide text-ink"
+                  >
                     {item}
-                  </li>
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
           </Reveal>
         </div>
