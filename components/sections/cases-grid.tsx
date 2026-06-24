@@ -19,7 +19,7 @@ export function CasesGrid() {
 
         <div className="mt-12 grid gap-16 md:grid-cols-2 md:gap-x-10 md:gap-y-0">
           {CASES.map((item, index) => (
-            <Reveal key={item.slug} delay={index * 0.05}>
+            <Reveal key={item.slug} delay={index * 0.12} y={48}>
               <CaseCard item={item} index={index} />
             </Reveal>
           ))}
