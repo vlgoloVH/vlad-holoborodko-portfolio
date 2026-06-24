@@ -40,7 +40,7 @@ export function TransformationSticky({ themes }: Props) {
   return (
     <div className="px-6 md:px-10">
       <div className="mx-auto max-w-content">
-        <div className="relative md:grid md:grid-cols-2 md:gap-16">
+        <div className="relative md:grid md:grid-cols-2 md:gap-8">
           {/* Left — scrolling text */}
           <div>
             {themes.map((theme, i) => (
