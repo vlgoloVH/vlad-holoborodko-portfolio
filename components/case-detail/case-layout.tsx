@@ -146,7 +146,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               },
             ].map((col, i) => (
               <Reveal key={i} delay={i * 0.05}>
-                <div className="border border-white/10 rounded-sm p-8 h-full flex flex-col gap-6">
+                <div className="bg-[#1c1a14] rounded-sm p-8 h-full flex flex-col gap-6">
                   <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
                   <ul className="flex flex-col gap-0 flex-1">
                     {col.items.map((item, j) => (
