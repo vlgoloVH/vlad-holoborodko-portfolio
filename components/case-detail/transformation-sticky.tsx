@@ -45,12 +45,12 @@ export function TransformationSticky({ themes }: Props) {
   return (
     <div className="grid md:grid-cols-2 gap-0">
       {/* Left — scrolling text */}
-      <div>
+      <div className="md:col-span-1">
         {themes.map((theme, i) => (
           <div
             key={i}
             ref={(el) => { itemRefs.current[i] = el; }}
-            className="min-h-screen flex flex-col justify-center py-24 pr-16"
+            className="min-h-screen flex flex-col justify-center py-24 md:pr-16"
           >
             <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
             <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
@@ -68,7 +68,7 @@ export function TransformationSticky({ themes }: Props) {
       </div>
 
       {/* Right — sticky image */}
-      <div className="sticky top-0 h-screen flex items-center py-8">
+      <div className="hidden md:block sticky top-0 h-screen flex items-center py-8">
         <div className="relative w-full h-full overflow-hidden rounded-sm bg-surface">
           {themes.map((theme, i) => (
             <div
