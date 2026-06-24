@@ -40,14 +40,14 @@ export function TransformationSticky({ themes }: Props) {
   return (
     <div className="px-6 md:px-10">
       <div className="mx-auto max-w-content">
-        <div className="relative md:grid md:grid-cols-2 md:gap-8 md:items-start">
+        <div className="md:grid md:grid-cols-2 md:gap-8">
           {/* Left — scrolling text */}
           <div>
             {themes.map((theme, i) => (
               <div
                 key={i}
                 ref={(el) => { itemRefs.current[i] = el; }}
-                className="md:min-h-screen flex flex-col justify-center py-16"
+                className="min-h-screen flex flex-col justify-center py-8"
               >
                 <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
                 <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
