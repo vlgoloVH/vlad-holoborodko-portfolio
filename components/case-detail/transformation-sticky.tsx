@@ -76,7 +76,7 @@ export function TransformationSticky({ themes }: Props) {
 
       {/* Right — sticky image, absolute positioned */}
       <div className="hidden md:block absolute top-0 right-0 w-1/2 h-full">
-        <div className="sticky top-0 h-screen py-8 px-6 md:px-10">
+        <div className="sticky top-0 h-screen py-16 px-6 md:px-10">
           <div className="relative w-full h-full overflow-hidden rounded-sm bg-surface">
             {themes.map((theme, i) => (
               <div
