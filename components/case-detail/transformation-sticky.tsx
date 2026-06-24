@@ -47,7 +47,7 @@ export function TransformationSticky({ themes }: Props) {
               <div
                 key={i}
                 ref={(el) => { itemRefs.current[i] = el; }}
-                className="md:min-h-screen flex flex-col justify-center py-16 md:py-24"
+                className="md:min-h-screen flex flex-col justify-center py-10 md:py-16"
               >
                 <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
                 <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
@@ -73,7 +73,7 @@ export function TransformationSticky({ themes }: Props) {
 
           {/* Right — sticky image */}
           <div className="hidden md:block">
-            <div className="sticky top-24 h-[calc(100vh-6rem)] py-20">
+            <div className="sticky top-24 h-[calc(100vh-6rem)] py-28">
               <div className="relative w-full h-full overflow-hidden rounded-sm bg-surface">
                 {themes.map((theme, i) => (
                   <div
