@@ -26,3 +26,24 @@ export function Reveal({
     </motion.div>
   );
 }
+export function RevealText({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <div className={`overflow-hidden ${className ?? ""}`}>
+      <motion.div
+        initial={{ y: "100%" }}
+        animate={{ y: "0%" }}
+        transition={{ duration: 0.8, delay, ease: [0.25, 1, 0.5, 1] }}
+      >
+        {children}
+      </motion.div>
+    </div>
+  );
+}
