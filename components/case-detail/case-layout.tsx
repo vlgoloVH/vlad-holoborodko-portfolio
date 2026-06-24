@@ -120,47 +120,50 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {/* 03. MY ROLE */}
-      <section className="section-invert px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">My Role</h2>
-            <p className="font-display text-display-sm font-semibold uppercase leading-snug text-ink max-w-4xl mb-16">
-              Led the full design transformation — from initial audit to shipped product — across mobile, web, partner platforms, and design system.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-3 divide-x divide-white/10">
-            {[
+      {[
               {
                 label: "What I Owned",
                 items: ["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"],
               },
               {
-                label: "How I Worked",
-                items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
+                label: "How I Worked · With Whom",
+                items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "—", "Product · Engineering · Compliance · Marketing · QA"],
               },
               {
-                label: "With Whom",
-                items: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
+                label: "Scale",
+                items: null,
+                metrics: [
+                  { value: "3", label: "Platforms" },
+                  { value: "100+", label: "Components" },
+                  { value: "70+", label: "Team size" },
+                  { value: "2", label: "Theme modes" },
+                ],
               },
             ].map((col, i) => (
               <Reveal key={i} delay={i * 0.05}>
                 <div className={i === 0 ? "pr-8" : i === 2 ? "pl-8" : "px-8"}>
                   <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">{col.label}</p>
-                  <ul className="space-y-3">
-                    {col.items.map((item, j) => (
-                      <li key={j} className="text-sm leading-snug text-muted py-1">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  {col.items ? (
+                    <ul className="space-y-3">
+                      {col.items.map((item, j) => (
+                        <li key={j} className={`text-sm leading-snug py-1 ${item === "—" ? "text-white/20" : "text-muted"}`}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div className="grid grid-cols-2 gap-6">
+                      {col.metrics!.map((m, j) => (
+                        <div key={j}>
+                          <p className="font-display text-4xl font-semibold text-ink">{m.value}</p>
+                          <p className="font-mono text-[10px] uppercase tracking-widest text-muted mt-1">{m.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </Reveal>
             ))}
-          </div>
-        </div>
-      </section>
       
       {/* 04. PRODUCT TRANSFORMATION */}
       <section className="px-6 py-24 md:px-10 md:py-32">
