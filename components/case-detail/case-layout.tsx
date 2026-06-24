@@ -53,7 +53,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
   return (
     <main>
 
-      {/* 01. HERO */}
+      {/* 01. HEROO */}
       <section className="px-6 pb-0 pt-32 md:px-10 md:pt-44">
         <div className="mx-auto max-w-content">
           <Reveal>
