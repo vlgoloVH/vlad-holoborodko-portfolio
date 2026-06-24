@@ -125,7 +125,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">My Role</h2>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-16">My Role</h2>
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <p className="text-sm leading-relaxed text-muted md:text-base">
                 As Lead Product Designer, I owned the full design direction of SmartCrowd — from the initial product audit that identified core UX gaps, to leading the complete redesign of the mobile app, web platform, and partner products. I set the strategic design direction, shaped information architecture, and ensured every platform felt unified and intentional.
