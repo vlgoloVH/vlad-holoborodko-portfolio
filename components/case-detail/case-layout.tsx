@@ -177,53 +177,51 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-4">
               Not a redesign. A full platform transformation.
             </p>
-            <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base">
+            <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base mb-24">
               The work covered every layer of the product — structure, experience, design foundation, and ecosystem scale.
             </p>
           </Reveal>
+        </div>
 
-          <div className="mt-20 space-y-0">
-            {caseData.transformation.map((theme, i) => (
-              <Reveal key={i} delay={0.05}>
-                <div>
-                  <div className="py-20">
-                    {/* Visual */}
-                    <div className="w-full aspect-[16/8] bg-surface rounded-sm mb-16 flex items-center justify-center overflow-hidden">
-                      {theme.visual ? (
-                        <Image src={theme.visual} alt={theme.title} width={1400} height={700} className="w-full h-full object-cover" />
-                      ) : (
-                        <p className="font-mono text-xs uppercase tracking-widest text-muted">{theme.title} — visual coming soon</p>
-                      )}
-                    </div>
+        {/* Sticky scroll items */}
+        <div className="mx-auto max-w-content">
+          {caseData.transformation.map((theme, i) => (
+            <div key={i} className="relative grid md:grid-cols-2 gap-16 mb-0">
+              {/* Left — sticky text */}
+              <div className="md:sticky md:top-32 self-start py-20">
+                <Reveal>
+                  <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
+                  <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted md:text-base mb-10">{theme.description}</p>
+                  <ul className="space-y-0">
+                    {theme.points.map((point, j) => (
+                      <li key={j} className="flex items-start gap-3 py-3 border-b border-line last:border-0">
+                        <span className="text-accent mt-1 shrink-0 text-xs">→</span>
+                        <p className="text-sm leading-snug text-ink">{point}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              </div>
 
-                    {/* Content — number + title left, points right */}
-                    <div className="grid md:grid-cols-[1fr_1px_1fr] gap-0 items-start">
-                      {/* Left */}
-                      <div className="pr-0 md:pr-16">
-                        <p className="font-mono text-xs uppercase tracking-widest text-accent mb-4">{theme.number}</p>
-                        <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
-                        <p className="text-sm leading-relaxed text-muted md:text-base">{theme.description}</p>
-                      </div>
-
-                      {/* Divider */}
-                      <div className="hidden md:block w-px bg-line mx-16 self-stretch" />
-
-                      {/* Right — points */}
-                      <div className="mt-10 md:mt-0 md:pl-0 space-y-0">
-                        {theme.points.map((point, j) => (
-                          <div key={j} className="flex items-start gap-3 py-4 border-b border-line first:border-t first:border-line">
-                            <span className="text-accent mt-0.5 shrink-0 text-xs">→</span>
-                            <p className="text-sm leading-snug text-ink">{point}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+              {/* Right — visual */}
+              <div className="py-20">
+                <Reveal delay={0.1}>
+                  <div className="w-full aspect-[3/4] bg-surface rounded-sm flex items-center justify-center overflow-hidden sticky top-32">
+                    {theme.visual ? (
+                      <Image src={theme.visual} alt={theme.title} width={700} height={933} className="w-full h-full object-cover" />
+                    ) : (
+                      <p className="font-mono text-xs uppercase tracking-widest text-muted text-center px-8">{theme.title}<br />visual coming soon</p>
+                    )}
                   </div>
-                  {i < caseData.transformation.length - 1 && <div className="border-b border-line" />}
-                </div>
-              </Reveal>
-            ))}
-          </div>
+                </Reveal>
+              </div>
+
+              {i < caseData.transformation.length - 1 && (
+                <div className="absolute bottom-0 left-0 right-0 border-b border-line" />
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
