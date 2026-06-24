@@ -189,36 +189,41 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
-        {caseData.transformation.map((theme, i) => (
-          <div key={i} className="snap-start h-screen flex items-stretch">
-            <div className="w-full grid md:grid-cols-2 px-6 md:px-10 mx-auto max-w-content">
-              <div className="flex flex-col justify-center py-16 md:pr-16">
-                <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
-                <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
-                <p className="text-sm leading-relaxed text-muted md:text-base mb-10">{theme.description}</p>
-                <ul className="space-y-0">
-                  {theme.points.map((point, j) => (
-                    <li key={j} className="flex items-start gap-3 py-3 border-b border-line last:border-0">
-                      <span className="text-accent mt-1 shrink-0 text-xs">→</span>
-                      <p className="text-sm leading-snug text-ink">{point}</p>
-                    </li>
-                  ))}
-                </ul>
+      {caseData.transformation.map((theme, i) => (
+        <section key={i} className="border-t border-line">
+          <div className="mx-auto max-w-content px-6 md:px-10">
+            <div className="grid md:grid-cols-2 min-h-screen">
+              <div className="md:sticky md:top-0 md:h-screen flex flex-col justify-center py-24 md:pr-16">
+                <Reveal>
+                  <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
+                  <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted md:text-base mb-10">{theme.description}</p>
+                  <ul className="space-y-0">
+                    {theme.points.map((point, j) => (
+                      <li key={j} className="flex items-start gap-3 py-3 border-b border-line last:border-0">
+                        <span className="text-accent mt-1 shrink-0 text-xs">→</span>
+                        <p className="text-sm leading-snug text-ink">{point}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
               </div>
-              <div className="flex items-center py-16 md:pl-16">
-                <div className="w-full h-[70vh] bg-surface rounded-sm flex items-center justify-center overflow-hidden">
-                  {theme.visual ? (
-                    <Image src={theme.visual} alt={theme.title} width={700} height={933} className="w-full h-full object-cover" />
-                  ) : (
-                    <p className="font-mono text-xs uppercase tracking-widest text-muted text-center px-8">{theme.title}<br />visual coming soon</p>
-                  )}
-                </div>
+
+              <div className="flex items-center py-24 md:pl-16">
+                <Reveal delay={0.1} className="w-full h-full">
+                  <div className="w-full h-screen bg-surface rounded-sm flex items-center justify-center overflow-hidden sticky top-0">
+                    {theme.visual ? (
+                      <Image src={theme.visual} alt={theme.title} width={700} height={933} className="w-full h-full object-cover" />
+                    ) : (
+                      <p className="font-mono text-xs uppercase tracking-widest text-muted text-center px-8">{theme.title}<br />visual coming soon</p>
+                    )}
+                  </div>
+                </Reveal>
               </div>
             </div>
           </div>
-        ))}
-      </div>
+        </section>
+      ))}
       
       {/* 05. SELECTED SCREENS — horizontal scroll */}
       <section className="py-24 md:py-32 overflow-hidden">
