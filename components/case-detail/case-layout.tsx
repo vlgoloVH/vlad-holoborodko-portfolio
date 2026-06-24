@@ -123,33 +123,41 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       {/* 03. MY ROLE */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
+          <Reveal>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-16">My Role</h2>
+          </Reveal>
+
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <Reveal>
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-6">My Role</h2>
-              <p className="text-sm leading-relaxed text-muted md:text-base mb-12">
-                {caseData.role.summary}
-              </p>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted leading-relaxed">
-                Collaborated with · {caseData.role.team.join(" · ")}
+            <Reveal delay={0.05}>
+              <p className="font-display text-display-lg font-semibold uppercase leading-[0.95] text-ink">
+                Led.<br />Designed.<br />Shipped.<br />Scaled.
               </p>
             </Reveal>
 
-            <Reveal delay={0.05}>
-              <div className="space-y-2">
-                {caseData.role.responsibilities.map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 border border-white/10 rounded-sm px-4 py-3">
-                    <span className="font-mono text-[10px] text-accent shrink-0 mt-0.5">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p className="text-sm leading-snug text-muted">{item}</p>
-                  </div>
-                ))}
-              </div>
+            <Reveal delay={0.1}>
+              <table className="w-full">
+                <tbody>
+                  {[
+                    { label: "Title", value: "Lead Product Designer" },
+                    { label: "Scope", value: "Mobile · Web · Partner Platforms · Design System" },
+                    { label: "Responsibilities", value: caseData.role.responsibilities.join(", ") },
+                    { label: "Team", value: caseData.role.team.join(" · ") },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-t border-white/10">
+                      <td className="py-4 pr-8 font-mono text-[10px] uppercase tracking-widest text-muted align-top w-32">
+                        {row.label}
+                      </td>
+                      <td className="py-4 text-sm leading-relaxed text-muted">
+                        {row.value}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </Reveal>
           </div>
         </div>
       </section>
-
       {/* 04. PRODUCT TRANSFORMATION */}
       <section className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
