@@ -124,40 +124,52 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-16">My Role</h2>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-12">My Role</h2>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <div className="flex flex-wrap gap-2 mb-16 pb-16 border-b border-white/10">
+              {[
+                "Product Strategy",
+                "Information Architecture",
+                "Mobile Design",
+                "Web Design",
+                "Design System",
+                "Partner Platforms",
+                "User Research",
+                "Design Leadership",
+                "Mentorship",
+              ].map((tag) => (
+                <span key={tag} className="rounded-full border border-white/20 px-4 py-2 font-mono text-xs uppercase tracking-widest text-muted">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <Reveal delay={0.05}>
-              <p className="font-display text-display-lg font-semibold uppercase leading-[0.95] text-ink">
-                Led.<br />Designed.<br />Shipped.<br />Scaled.
+            <Reveal delay={0.1}>
+              <p className="text-sm leading-relaxed text-muted md:text-base">
+                {caseData.role.summary}
+              </p>
+              <p className="mt-6 font-mono text-[10px] uppercase tracking-widest text-muted">
+                Collaborated with · {caseData.role.team.join(" · ")}
               </p>
             </Reveal>
 
-            <Reveal delay={0.1}>
-              <table className="w-full">
-                <tbody>
-                  {[
-                    { label: "Title", value: "Lead Product Designer" },
-                    { label: "Scope", value: "Mobile · Web · Partner Platforms · Design System" },
-                    { label: "Responsibilities", value: caseData.role.responsibilities.join(", ") },
-                    { label: "Team", value: caseData.role.team.join(" · ") },
-                  ].map((row, i) => (
-                    <tr key={i} className="border-t border-white/10">
-                      <td className="py-4 pr-8 font-mono text-[10px] uppercase tracking-widest text-muted align-top w-32">
-                        {row.label}
-                      </td>
-                      <td className="py-4 text-sm leading-relaxed text-muted">
-                        {row.value}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <Reveal delay={0.15}>
+              <div className="border border-white/10 rounded-sm p-8">
+                <p className="font-display text-4xl font-semibold text-ink mb-2">1</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-accent mb-4">Designer Mentored</p>
+                <p className="text-sm leading-relaxed text-muted">
+                  Beyond execution, I led and mentored another product designer on the team — helping them grow their product thinking, design skills, and ability to work independently across complex flows.
+                </p>
+              </div>
             </Reveal>
           </div>
         </div>
       </section>
+      
       {/* 04. PRODUCT TRANSFORMATION */}
       <section className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
