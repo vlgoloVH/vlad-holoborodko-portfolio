@@ -28,14 +28,21 @@ export function Preloader() {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-bg"
           aria-hidden="true"
         >
-          <motion.div
-            initial={{ clipPath: "inset(0 100% 0 0)" }}
-            animate={{ clipPath: "inset(0 0% 0 0)" }}
-            transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
-            className="font-display text-2xl uppercase tracking-widest text-ink"
-          >
-            Vlad Holoborodko
-          </motion.div>
+          <div className="flex items-center gap-3">
+            {[0, 1, 2].map((i) => (
+              <motion.span
+                key={i}
+                className="block h-2.5 w-2.5 rounded-full bg-accent"
+                animate={{ opacity: [0.2, 1, 0.2] }}
+                transition={{
+                  duration: 1.2,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
