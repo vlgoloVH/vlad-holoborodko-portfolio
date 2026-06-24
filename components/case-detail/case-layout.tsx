@@ -130,7 +130,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-3 gap-px bg-white/10">
+         <div className="grid grid-cols-3 gap-4">
             {[
               {
                 label: "What I Owned",
