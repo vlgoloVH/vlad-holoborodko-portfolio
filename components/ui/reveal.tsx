@@ -38,14 +38,15 @@ export function RevealText({
   animate?: boolean;
 }) {
   return (
-    <div className={`overflow-hidden ${className ?? ""}`}>
+    return (
       <motion.div
-        initial={{ y: "100%" }}
-        animate={{ y: animate ? "0%" : "100%" }}
-        transition={{ duration: 0.9, delay, ease: [0.25, 1, 0.5, 1] }}
+        className={className}
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: animate ? 1 : 0, x: animate ? 0 : -40 }}
+        transition={{ duration: 0.8, delay, ease: [0.25, 1, 0.5, 1] }}
       >
         {children}
       </motion.div>
-    </div>
+    );
   );
 }
