@@ -19,18 +19,12 @@ export function Hero() {
           </div>
           <div className="mt-8 grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-10">
             <div>
-              <Reveal delay={0.05}>
-                <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink">
-                  Designing
-                  <br />
-                  <span className="text-accent">products</span>
-                  <br />
-                  that drive
-                  <br />
-                  <span className="text-accent">growth</span>
-                  <span className="text-accent">.</span>
-                </h1>
-              </Reveal>
+              <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink">
+                <RevealText delay={0.05}>Designing</RevealText>
+                <RevealText delay={0.15}><span className="text-accent">products</span></RevealText>
+                <RevealText delay={0.25}>that drive</RevealText>
+                <RevealText delay={0.35}><span className="text-accent">growth</span><span className="text-accent">.</span></RevealText>
+              </h1>
               <Reveal delay={0.1} className="mt-4">
                 <p className="font-display text-display-sm leading-snug text-ink max-w-3xl">
                   I design calm, considered products for teams solving{" "}
