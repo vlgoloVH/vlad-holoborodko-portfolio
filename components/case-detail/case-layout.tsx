@@ -1,5 +1,6 @@
 "use client";
 
+import { TransformationSticky } from "@/components/case-detail/transformation-sticky";
 import Link from "next/link";
 import Image from "next/image";
 import { Case } from "@/lib/cases";
@@ -189,35 +190,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-      {caseData.transformation.map((theme, i) => (
-        <div key={i} className="grid md:grid-cols-2" style={{ height: "100vh" }}>
-          {/* Left sticky text */}
-          <div className="sticky top-0 h-screen flex flex-col justify-center px-6 md:px-10 md:pr-16 overflow-hidden">
-            <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
-            <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
-            <p className="text-sm leading-relaxed text-muted md:text-base mb-10">{theme.description}</p>
-            <ul className="space-y-0">
-              {theme.points.map((point, j) => (
-                <li key={j} className="flex items-start gap-3 py-3 border-b border-line last:border-0">
-                  <span className="text-accent mt-1 shrink-0 text-xs">→</span>
-                  <p className="text-sm leading-snug text-ink">{point}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Right visual full height */}
-          <div className="h-screen px-6 md:px-10 md:pl-0 py-6">
-            <div className="w-full h-full bg-surface rounded-sm flex items-center justify-center overflow-hidden">
-              {theme.visual ? (
-                <Image src={theme.visual} alt={theme.title} width={700} height={933} className="w-full h-full object-cover" />
-              ) : (
-                <p className="font-mono text-xs uppercase tracking-widest text-muted text-center px-8">{theme.title}<br />visual coming soon</p>
-              )}
-            </div>
-          </div>
-        </div>
-      ))}
+      <TransformationSticky themes={caseData.transformation} />
       
       {/* 05. SELECTED SCREENS — horizontal scroll */}
       <section className="py-24 md:py-32 overflow-hidden">
