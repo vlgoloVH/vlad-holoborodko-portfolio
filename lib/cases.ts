@@ -13,7 +13,7 @@ export type Case = {
   cover: string;
   industry: string;
   businessType: "B2B" | "B2C" | "SaaS";
-  platform: "Web" | "Mobile" | "Desktop";
+  platform: string;
   tags?: string[];
   meta: {
     duration: string;
