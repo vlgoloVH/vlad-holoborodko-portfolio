@@ -1,8 +1,17 @@
+"use client";
+import { useState, useEffect } from "react";
 import { Download } from "lucide-react";
 import { Reveal, RevealText } from "@/components/ui/reveal";
 import { LogoStrip } from "@/components/sections/logo-strip";
 
 export function Hero() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setReady(true), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative flex h-full flex-col justify-between overflow-hidden border-none bg-[var(--color-bg)] px-8 md:px-14">
       <div className="flex flex-1 items-center pt-16">
@@ -20,20 +29,20 @@ export function Hero() {
           <div className="mt-8 grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-10">
             <div>
               <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink">
-                <RevealText delay={0.05}>Designing</RevealText>
-                <RevealText delay={0.15}><span className="text-accent">products</span></RevealText>
-                <RevealText delay={0.25}>that drive</RevealText>
-                <RevealText delay={0.35}><span className="text-accent">growth</span><span className="text-accent">.</span></RevealText>
+                <RevealText delay={0.1} animate={ready}>Designing</RevealText>
+                <RevealText delay={0.2} animate={ready}><span className="text-accent">products</span></RevealText>
+                <RevealText delay={0.3} animate={ready}>that drive</RevealText>
+                <RevealText delay={0.4} animate={ready}><span className="text-accent">growth</span><span className="text-accent">.</span></RevealText>
               </h1>
-              <Reveal delay={0.1} className="mt-4">
+              <Reveal delay={0.5} className="mt-4">
                 <p className="font-display text-display-sm leading-snug text-ink max-w-3xl">
                   I design calm, considered products for teams solving{" "}
                   <span className="text-accent">genuinely complex</span> problems.
                 </p>
               </Reveal>
             </div>
-            <Reveal delay={0.15}>
-              <a
+            <Reveal delay={0.6}>
+              
                 href="/resume.pdf"
                 download
                 data-cursor="Download"
@@ -64,7 +73,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
       <div className="w-full border-none">
         <LogoStrip />
       </div>
