@@ -124,32 +124,38 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-12">My Role</h2>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">My Role</h2>
+            <p className="font-display text-display-sm font-semibold uppercase leading-snug text-ink max-w-4xl mb-16 pb-16 border-b border-white/10">
+              Led the full design transformation — from initial audit to shipped product — across mobile, web, partner platforms, and design system.
+            </p>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <Reveal delay={0.05}>
-              <p className="font-display text-2xl font-semibold uppercase leading-snug text-ink">
-                As Lead Product Designer, I owned the full design direction — shaping product strategy, redesigning the core experience across three platforms, building the design system from scratch, and leading the team through every stage of the transformation.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <ul className="space-y-5 border-t border-white/10 pt-1">
-                {[
-                  "Owned product design direction across iOS, Android, and Web",
-                  "Defined information architecture, product structure, and core investment flows",
-                  "Built a token-based design system with light and dark themes for mobile, web, and partner platforms",
-                  "Ran user interviews, facilitated cross-functional brainstorms with Product, Engineering, Compliance, and Marketing",
-                  "Mentored a product designer on the team",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-4 border-b border-white/10 pb-5 last:border-0 last:pb-0">
-                    <span className="font-mono text-[10px] text-accent shrink-0 mt-1">{String(i + 1).padStart(2, "0")}</span>
-                    <p className="text-sm leading-snug text-muted">{item}</p>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+          <div className="grid grid-cols-3 gap-8">
+            {[
+              {
+                label: "What I Owned",
+                items: ["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"],
+              },
+              {
+                label: "How I Worked",
+                items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
+              },
+              {
+                label: "With Whom",
+                items: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
+              },
+            ].map((col, i) => (
+              <Reveal key={i} delay={i * 0.05}>
+                <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">{col.label}</p>
+                <ul className="space-y-3">
+                  {col.items.map((item, j) => (
+                    <li key={j} className="text-sm leading-snug text-muted border-b border-white/10 pb-3 last:border-0">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
