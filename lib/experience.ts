@@ -53,6 +53,8 @@ export const SKILLS = {
     "Product strategy",
     "Design systems",
     "Product analytics",
+    "Workshop facilitation",
+    "Cross-functional collaboration",
   ],
   collaboration: [
     "Cross-functional facilitation",
