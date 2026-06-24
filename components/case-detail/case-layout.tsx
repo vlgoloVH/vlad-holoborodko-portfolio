@@ -100,10 +100,10 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       </section>
 
       {/* 02. CONTEXT */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-12">Context</h2>
+      <section className="px-6 pt-24 pb-0 md:px-10 md:pt-32">
+  <div className="mx-auto max-w-content">
+    <Reveal>
+      <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">Product Transformation</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-12">
             {[
