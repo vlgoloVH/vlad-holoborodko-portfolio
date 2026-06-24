@@ -206,12 +206,6 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               </Reveal>
             ))}
           </div>
-          <Reveal delay={0.1} className="mt-16 border-t border-line pt-16">
-            <div className="flex gap-8 items-start">
-              <span className="font-display text-[80px] leading-none text-accent/30 shrink-0 mt-[-16px]">"</span>
-              <p className="font-display text-display-sm leading-snug text-ink">{caseData.impact.summary}</p>
-            </div>
-          </Reveal>
         </div>
       </section>
 
