@@ -75,11 +75,4 @@ export function Hero() {
       </div>
     </section>
   );
-}        </div>
-      </div>
-      <div className="w-full border-none">
-        <LogoStrip />
-      </div>
-    </section>
-  );
 }
