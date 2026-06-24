@@ -268,7 +268,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
                   href={`/cases/${next.slug}`}
                   className="group flex flex-col items-center justify-center gap-4 p-16 md:p-24 hover:bg-surface transition-colors duration-300 text-center"
                 >
-                  <div className="md:text-right">
+                  <div className="text-center">
                     <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">Next →</p>
                     <h3 className="font-display text-display-sm font-semibold uppercase text-ink group-hover:text-accent transition-colors duration-300">
                       {next.title}
