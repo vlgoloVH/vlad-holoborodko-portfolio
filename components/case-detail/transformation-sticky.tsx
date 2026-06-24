@@ -43,7 +43,7 @@ export function TransformationSticky({ themes }: Props) {
   }, []);
 
   return (
-   <div className="relative mx-auto max-w-content px-6 md:px-10">
+   <div className="relative mx-auto max-w-content">
       {/* Left — scrolling text */}
       <div>
         {themes.map((theme, i) => (
