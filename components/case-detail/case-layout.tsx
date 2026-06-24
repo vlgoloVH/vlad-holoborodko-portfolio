@@ -190,37 +190,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       </section>
 
       <TransformationSticky themes={caseData.transformation} />
-
-      {/* 05. SELECTED SCREENS */}
-      <section className="py-24 md:py-32 overflow-hidden">
-        <div className="px-6 md:px-10">
-          <div className="mx-auto max-w-content">
-            <Reveal>
-              <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-12">Selected Screens</h2>
-            </Reveal>
-          </div>
-        </div>
-        <Reveal delay={0.05}>
-          <div className="flex gap-4 overflow-x-auto pb-4 px-6 md:px-10 scrollbar-hide snap-x snap-mandatory">
-            {(caseData.selectedScreens && caseData.selectedScreens.length > 0
-              ? caseData.selectedScreens.map((s) => ({ label: s.label, src: s.src }))
-              : ["Explore", "Property Details", "Portfolio", "Wallet", "Investment Flow", "Registration", "Reinvest", "Partner Platform"].map((label) => ({ label, src: "" }))
-            ).map((screen, i) => (
-              <div
-                key={i}
-                className="shrink-0 snap-start w-[240px] md:w-[300px] aspect-[9/16] bg-surface rounded-sm overflow-hidden flex items-center justify-center"
-              >
-                {screen.src ? (
-                  <Image src={screen.src} alt={screen.label} width={300} height={533} className="w-full h-full object-cover" />
-                ) : (
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-muted text-center px-4">{screen.label}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
+      
       {/* 06. IMPACT */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
