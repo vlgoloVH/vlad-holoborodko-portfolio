@@ -74,7 +74,7 @@ export function AboutTeaser() {
                 {SKILLS.practice.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-line px-4 py-2 font-mono text-sm tracking-wide text-ink"
+                    className="rounded-full border border-line px-4 py-2 font-mono text-sm tracking-wide text-ink transition-colors duration-300 hover:border-accent hover:text-accent cursor-default"
                   >
                     {item}
                   </span>
