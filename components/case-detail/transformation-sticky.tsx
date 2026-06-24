@@ -50,8 +50,8 @@ export function TransformationSticky({ themes }: Props) {
           <div
             key={i}
             ref={(el) => { itemRefs.current[i] = el; }}
-            className="md:min-h-screen flex flex-col justify-center py-16 md:py-24 px-6 md:px-10"
-            style={{ paddingRight: "4rem" }}
+            className="md:min-h-screen flex flex-col justify-center py-16 md:py-24"
+            style={{ paddingLeft: "clamp(1.5rem, 6.94vw, 5rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
           >
             <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
             <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
