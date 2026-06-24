@@ -1,5 +1,5 @@
 import { Download } from "lucide-react";
-import { Reveal } from "@/components/ui/reveal";
+import { Reveal, RevealText } from "@/components/ui/reveal";
 import { LogoStrip } from "@/components/sections/logo-strip";
 
 export function Hero() {
