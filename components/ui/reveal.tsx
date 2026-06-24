@@ -37,7 +37,6 @@ export function RevealText({
   className?: string;
   animate?: boolean;
 }) {
-  return (
     return (
       <motion.div
         className={className}
