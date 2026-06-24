@@ -83,10 +83,10 @@ export const smartcrowdData: CaseData = {
   selectedScreens: [],
   impact: {
     items: [
-      { value: "3", label: "Platforms redesigned — iOS, Android, Web" },
-      { value: "2+", label: "Partner platforms adapted and shipped" },
-      { value: "100+", label: "Design system components created" },
-      { value: "2", label: "Theme modes — light and dark" },
+      { value: "3", label: "Platforms redesigned", body: "iOS, Android, and Web — all rebuilt from the ground up with consistent logic." },
+      { value: "2+", label: "Partner platforms", body: "Adapted and shipped with full brand customization via token-based theming." },
+      { value: "100+", label: "Design system components", body: "Covering all major UI patterns across mobile and web with light and dark modes." },
+      { value: "2", label: "Theme modes", body: "Full light and dark mode support across the entire product ecosystem." },
     ],
     summary: "The transformation created a unified, scalable product experience across SmartCrowd's entire ecosystem — giving the team a strong foundation to ship faster, onboard partners more efficiently, and maintain design quality as the product continues to grow.",
   },
