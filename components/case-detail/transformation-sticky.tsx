@@ -43,15 +43,14 @@ export function TransformationSticky({ themes }: Props) {
   }, []);
 
   return (
-    <div className="grid md:grid-cols-2 gap-0">
+    <div className="relative">
       {/* Left — scrolling text */}
-      <div className="md:col-span-1">
+      <div>
         {themes.map((theme, i) => (
           <div
             key={i}
             ref={(el) => { itemRefs.current[i] = el; }}
-            className="md:min-h-screen flex flex-col justify-center py-16 md:py-24"
-            style={{ paddingLeft: "clamp(1.5rem, 6.94vw, 5rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+            className="md:min-h-screen flex flex-col justify-center py-16 md:py-24 px-6 md:px-10 md:w-1/2"
           >
             <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{theme.number}</p>
             <h3 className="font-display text-display-sm font-semibold uppercase text-ink mb-6">{theme.title}</h3>
@@ -64,8 +63,6 @@ export function TransformationSticky({ themes }: Props) {
                 </li>
               ))}
             </ul>
-            
-            {/* Mobile image */}
             <div className="mt-8 md:hidden w-full aspect-[4/3] bg-surface rounded-sm flex items-center justify-center overflow-hidden">
               {theme.visual ? (
                 <Image src={theme.visual} alt={theme.title} width={700} height={525} className="w-full h-full object-cover" />
@@ -77,26 +74,27 @@ export function TransformationSticky({ themes }: Props) {
         ))}
       </div>
 
-      {/* Right — sticky image */}
-      <div className="hidden md:flex sticky top-0 h-screen items-center py-8 px-6 md:px-10">
-        <div className="relative w-full h-full overflow-hidden rounded-sm bg-surface">
-          {themes.map((theme, i) => (
-            <div
-              key={i}
-              className="absolute inset-0 transition-opacity duration-700 ease-in-out flex items-center justify-center"
-              style={{ opacity: activeIndex === i ? 1 : 0 }}
-            >
-              {theme.visual ? (
-                <Image src={theme.visual} alt={theme.title} fill className="object-cover" />
-              ) : (
-                <p className="font-mono text-xs uppercase tracking-widest text-muted text-center px-8">
-                  {theme.title}<br />visual coming soon
-                </p>
-              )}
-            </div>
-          ))}
+      {/* Right — sticky image, absolute positioned */}
+      <div className="hidden md:block absolute top-0 right-0 w-1/2 h-full">
+        <div className="sticky top-0 h-screen py-8 px-6 md:px-10">
+          <div className="relative w-full h-full overflow-hidden rounded-sm bg-surface">
+            {themes.map((theme, i) => (
+              <div
+                key={i}
+                className="absolute inset-0 transition-opacity duration-700 ease-in-out flex items-center justify-center"
+                style={{ opacity: activeIndex === i ? 1 : 0 }}
+              >
+                {theme.visual ? (
+                  <Image src={theme.visual} alt={theme.title} fill className="object-cover" />
+                ) : (
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted text-center px-8">
+                    {theme.title}<br />visual coming soon
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
-}
