@@ -34,14 +34,14 @@ export const CASES: Case[] = [
     description:
       "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
     cover: "/SmartCrowd_preview.jpg",
-    industry: "Fintech",
+    industry: "PropTech · Fintech",
     businessType: "B2C",
-    platform: "Web",
+    platform: "Web · iOS · Android",
     tags: ["Fintech", "Proptech", "Product Design"],
     meta: {
-      duration: "7 months",
+      duration: "12 months",
       role: "Lead Product Designer",
-      team: "2 PMs, 6 engineers, 1 data analyst",
+      team: "70+",
       tools: ["Figma", "FigJam", "Maze", "Notion"],
       skills: ["Fintech", "Proptech", "Product Design"],
     },
