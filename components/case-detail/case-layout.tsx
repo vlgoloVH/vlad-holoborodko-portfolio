@@ -129,22 +129,18 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
 
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <Reveal delay={0.05}>
-              <p className="font-display text-display-sm font-semibold uppercase leading-snug text-ink">
-                I was brought in to audit the platform. Then stayed to lead its full transformation — across mobile, web, partner products, and design system.
+              <p className="font-display text-2xl font-semibold uppercase leading-snug text-ink">
+                As Lead Product Designer, I owned the full design direction — shaping product strategy, redesigning the core experience across three platforms, building the design system from scratch, and leading the team through every stage of the transformation.
               </p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <ul className="space-y-5 border-t border-white/10 pt-1">
                 {[
-                  "Conducted full product audit and presented findings to leadership",
-                  "Led product design across iOS, Android, and Web",
-                  "Defined information architecture and product structure",
-                  "Redesigned core investment flows and introduced new features",
-                  "Built a token-based design system with light and dark themes",
-                  "Adapted the platform for partner products with custom branding",
-                  "Ran user interviews and facilitated cross-functional brainstorms",
-                  "Collaborated with Product, Engineering, Compliance, Marketing, and QA",
+                  "Owned product design direction across iOS, Android, and Web",
+                  "Defined information architecture, product structure, and core investment flows",
+                  "Built a token-based design system with light and dark themes for mobile, web, and partner platforms",
+                  "Ran user interviews, facilitated cross-functional brainstorms with Product, Engineering, Compliance, and Marketing",
                   "Mentored a product designer on the team",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4 border-b border-white/10 pb-5 last:border-0 last:pb-0">
