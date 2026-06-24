@@ -125,7 +125,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         <div className="mx-auto max-w-content">
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">My Role</h2>
-            <p className="font-display text-display-sm font-semibold uppercase leading-snug text-ink max-w-4xl mb-16 pb-16 border-b border-white/10">
+            <p className="font-display text-display-sm font-semibold uppercase leading-snug text-ink max-w-4xl mb-16">
               Led the full design transformation — from initial audit to shipped product — across mobile, web, partner platforms, and design system.
             </p>
           </Reveal>
