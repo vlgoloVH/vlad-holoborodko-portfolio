@@ -80,7 +80,7 @@ export function Testimonials() {
     window.addEventListener("mouseup", onUp);
   }, []);
 
-  const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
+  const doubled = TESTIMONIALS;
 
   return (
     <section className="border-t border-line px-6 py-20 md:px-10 md:py-28">
