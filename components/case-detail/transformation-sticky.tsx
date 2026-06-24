@@ -73,7 +73,7 @@ export function TransformationSticky({ themes }: Props) {
 
           {/* Right — sticky image */}
           <div className="hidden md:block">
-            <div className="sticky top-24 h-[63vh]">
+            <div className="sticky top-24 h-[72vh]">
               <div className="relative w-full h-full overflow-hidden rounded-sm bg-surface">
                 {themes.map((theme, i) => (
                   <div
