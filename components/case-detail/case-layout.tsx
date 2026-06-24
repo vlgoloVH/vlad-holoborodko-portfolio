@@ -211,11 +211,8 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       </section>
 
       {/* 07. REFLECTION */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
+      <section className="px-6 pt-0 pb-24 md:px-10 md:pb-32">
         <div className="mx-auto max-w-content">
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted mb-16">Reflection</p>
-          </Reveal>
           <div className="grid md:grid-cols-3 gap-12">
             {[
               {
