@@ -7,7 +7,6 @@ import { Case } from "@/lib/cases";
 import { Reveal } from "@/components/ui/reveal";
 import { ArrowUpRight } from "lucide-react";
 
-
 export interface TransformationTheme {
   number: string;
   title: string;
@@ -100,10 +99,10 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       </section>
 
       {/* 02. CONTEXT */}
-      <section className="px-6 pt-24 pb-0 md:px-10 md:pt-32">
-  <div className="mx-auto max-w-content">
-    <Reveal>
-      <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">Product Transformation</h2>
+      <section className="px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-content">
+          <Reveal>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-12">Context</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-12">
             {[
@@ -169,9 +168,9 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
           </div>
         </div>
       </section>
-      
+
       {/* 04. PRODUCT TRANSFORMATION */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
+      <section className="px-6 pt-24 pb-0 md:px-10 md:pt-32">
         <div className="mx-auto max-w-content">
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">Product Transformation</h2>
@@ -190,9 +189,9 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-     <TransformationSticky themes={caseData.transformation} />
-      
-      {/* 05. SELECTED SCREENS — horizontal scroll */}
+      <TransformationSticky themes={caseData.transformation} />
+
+      {/* 05. SELECTED SCREENS */}
       <section className="py-24 md:py-32 overflow-hidden">
         <div className="px-6 md:px-10">
           <div className="mx-auto max-w-content">
@@ -247,7 +246,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         </div>
       </section>
 
-            {/* 07. REFLECTION */}
+      {/* 07. REFLECTION */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
@@ -278,7 +277,6 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
           </div>
         </div>
       </section>
-
 
       {/* 08. PREV / NEXT */}
       {(prev || next) && (
