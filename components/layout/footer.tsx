@@ -11,10 +11,13 @@ export function Footer() {
           </p>
           <a
             href="#top"
-            className="transition-colors duration-300 hover:text-accent"
+          className="transition-colors duration-300 hover:text-accent"
           >
-            Back to top ↑
-          </a>
+          <span className="hidden md:inline">Back to top ↑</span>
+          <span className="flex md:hidden h-10 w-10 items-center justify-center rounded-full border border-line text-muted hover:border-accent hover:text-accent transition-colors duration-300">
+          ↑
+          </span>
+        </a>
         </div>
       </div>
     </footer>
