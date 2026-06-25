@@ -55,23 +55,18 @@ function ProductOverviewScroll() {
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
-  const animRef = useRef<number>(0);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    let lastTime = 0;
-    const speed = 0.5;
-    const tick = (time: number) => {
+    const interval = setInterval(() => {
       if (!isDragging.current) {
-        const delta = time - lastTime;
-        el.scrollLeft += (speed * delta) / 16;
+        el.scrollLeft += 0.5;
+        const max = el.scrollWidth - el.clientWidth;
+        setProgress(max > 0 ? el.scrollLeft / max : 0);
       }
-      lastTime = time;
-      animRef.current = requestAnimationFrame(tick);
-    };
-    animRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(animRef.current);
+    }, 16);
+    return () => clearInterval(interval);
   }, []);
 
   const handleScroll = () => {
@@ -92,6 +87,8 @@ function ProductOverviewScroll() {
     if (!isDragging.current || !scrollRef.current) return;
     const dx = e.pageX - startX.current;
     scrollRef.current.scrollLeft = startScrollLeft.current - dx;
+    const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+    setProgress(max > 0 ? scrollRef.current.scrollLeft / max : 0);
   };
 
   const onMouseUp = () => {
