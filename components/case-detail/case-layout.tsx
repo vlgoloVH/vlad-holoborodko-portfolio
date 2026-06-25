@@ -184,11 +184,8 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
         <div className="mx-auto max-w-content">
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">Product Transformation</h2>
-            <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-4">
-              Not a redesign. A full platform transformation.
-            </p>
-            <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base mb-12">
-              The work covered every layer of the product — structure, experience, design foundation, and ecosystem scale.
+            <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-12">
+              Not a redesign. <span className="text-accent">A full platform transformation.</span>
             </p>
           </Reveal>
           <Reveal delay={0.1}>
