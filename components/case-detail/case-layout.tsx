@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { TransformationSticky } from "@/components/case-detail/transformation-sticky";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,6 +47,60 @@ interface CaseLayoutProps {
   caseData: CaseData;
   caseMeta: Case;
   otherCases: Case[];
+}
+
+function ProductOverviewScroll() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const startScrollLeft = useRef(0);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const interval = setInterval(() => {
+      if (!isDragging.current) {
+        el.scrollLeft += 1;
+      }
+    }, 20);
+    return () => clearInterval(interval);
+  }, []);
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.pageX;
+    startScrollLeft.current = scrollRef.current?.scrollLeft ?? 0;
+    document.body.style.userSelect = "none";
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !scrollRef.current) return;
+    const dx = e.pageX - startX.current;
+    scrollRef.current.scrollLeft = startScrollLeft.current - dx;
+  };
+
+  const onMouseUp = () => {
+    isDragging.current = false;
+    document.body.style.userSelect = "";
+  };
+
+  return (
+    <div
+      ref={scrollRef}
+      onMouseDown={onMouseDown}
+      onMouseMove={onMouseMove}
+      onMouseUp={onMouseUp}
+      onMouseLeave={onMouseUp}
+      className="w-full aspect-[16/8] rounded-sm overflow-x-auto cursor-grab active:cursor-grabbing"
+      style={{ scrollbarWidth: "none" }}
+    >
+      <img
+        src="/Product_overview_smartcrowd_8256x1400.jpg"
+        alt="Product overview"
+        className="h-full w-auto max-w-none"
+      />
+    </div>
+  );
 }
 
 export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) {
@@ -129,7 +184,6 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
           <div className="grid md:grid-cols-2 gap-16 md:gap-24">
-            {/* Left — title + text */}
             <Reveal>
               <div className="flex flex-col gap-8">
                 <h2 className="font-display text-display-md font-semibold uppercase text-ink">My Role</h2>
@@ -142,7 +196,6 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               </div>
             </Reveal>
 
-            {/* Right — three pill columns */}
             <Reveal delay={0.1}>
               <div className="flex flex-col gap-10">
                 {[
@@ -189,18 +242,13 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="w-full aspect-[16/8] rounded-sm overflow-hidden">
-              <div className="flex h-full animate-[marquee-x_40s_linear_infinite]" style={{ width: "200%" }}>
-                <img src="/Product_overview_smartcrowd_8256x1400.jpg" alt="Product overview" className="h-full w-auto object-cover" />
-                <img src="/Product_overview_smartcrowd_8256x1400.jpg" alt="Product overview" className="h-full w-auto object-cover" />
-              </div>
-            </div>
+            <ProductOverviewScroll />
           </Reveal>
         </div>
       </section>
 
       <TransformationSticky themes={caseData.transformation} />
-      
+
       {/* 06. IMPACT */}
       <section className="px-6 pt-0 pb-24 md:px-10 md:pb-32">
         <div className="mx-auto max-w-content">
@@ -241,7 +289,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               },
             ].map((item, i) => (
               <Reveal key={i} delay={i * 0.05}>
-                <div className="border-t border-white/20 pt-8">
+                <div className="border-t border-line pt-8">
                   <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{item.number}</p>
                   <p className="font-display text-xl leading-snug text-ink md:text-2xl">{item.insight}</p>
                 </div>
