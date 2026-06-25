@@ -31,8 +31,8 @@ export function LogoStrip() {
         <div className="px-8 md:px-14">
           <div className="mx-auto max-w-content">
             <Reveal>
-              <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                Companies I&apos;ve shipped products with
+              <p className="font-mono text-xs uppercase tracking-widest text-muted text-center md:text-left">
+              Companies I&apos;ve shipped products with
               </p>
             </Reveal>
           </div>
