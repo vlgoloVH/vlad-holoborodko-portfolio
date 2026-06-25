@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="section-invert border-t border-line">
       <div className="px-8 md:px-14">
-        <div className="mx-auto flex max-w-content flex-col gap-4 py-8 font-mono text-xs uppercase tracking-widest text-muted md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex max-w-content flex-row items-center justify-between py-8 font-mono text-xs uppercase tracking-widest text-muted md:gap-4">
           <p>
             © {new Date().getFullYear()} {SITE.name} — {SITE.role}
           </p>
