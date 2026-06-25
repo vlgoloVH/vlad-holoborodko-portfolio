@@ -226,7 +226,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       <section className="px-6 pt-0 pb-24 md:px-10 md:pb-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-16">Reflection</h2>
+            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-8">Reflection</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-12">
             {[
@@ -245,7 +245,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             ].map((item, i) => (
               <Reveal key={i} delay={i * 0.05}>
                 <div className="border-t border-white/20 pt-8">
-                  <p className="font-mono text-xs uppercase tracking-widest text-muted mb-6">{item.number}</p>
+                  <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{item.number}</p>
                   <p className="font-display text-xl leading-snug text-ink md:text-2xl">{item.insight}</p>
                 </div>
               </Reveal>
