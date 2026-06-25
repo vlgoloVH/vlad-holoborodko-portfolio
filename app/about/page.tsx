@@ -284,8 +284,8 @@ export default function AboutPage() {
                     </p>
                   </div>
                   <div className="flex flex-col gap-1">
-                    {item.role.split(" · ").map((part) => (
-                      <span key={part} className="font-mono text-xs uppercase tracking-widest text-muted">
+                    {item.role.split(" · ").map((part, idx) => (
+                      <span key={part} className={`font-mono text-xs uppercase tracking-widest ${idx === 0 ? "text-accent" : "text-muted"}`}>
                         {part}
                       </span>
                     ))}
