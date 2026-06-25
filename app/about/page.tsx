@@ -335,9 +335,6 @@ export default function AboutPage() {
             ].map((p, i) => (
               <Reveal key={p.step} delay={i * 0.08}>
                 <div className="group relative flex flex-col gap-8 bg-[#181613] px-8 py-12 transition-colors duration-500 hover:bg-[#1c1a14] min-h-[380px]">
-                  {i > 0 && (
-                    <div className="absolute left-0 top-12 bottom-12 w-px bg-white/10" />
-                  )}
                   <span className="font-display text-[80px] font-semibold leading-none text-white/5 select-none">
                     {p.step}
                   </span>
