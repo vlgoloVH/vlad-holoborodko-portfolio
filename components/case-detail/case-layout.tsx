@@ -192,8 +192,11 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="w-full aspect-[16/8] bg-surface rounded-sm flex items-center justify-center overflow-hidden">
-              <p className="font-mono text-xs uppercase tracking-widest text-muted">Product overview — visual coming soon</p>
+            <div className="w-full aspect-[16/8] rounded-sm overflow-hidden">
+              <div className="flex h-full animate-[marquee-x_40s_linear_infinite]" style={{ width: "200%" }}>
+                <img src="/Product_overview_smartcrowd_8256x1400.jpg" alt="Product overview" className="h-full w-auto object-cover" />
+                <img src="/Product_overview_smartcrowd_8256x1400.jpg" alt="Product overview" className="h-full w-auto object-cover" />
+              </div>
             </div>
           </Reveal>
         </div>
