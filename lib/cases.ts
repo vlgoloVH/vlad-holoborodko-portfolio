@@ -134,7 +134,7 @@ export const CASES: Case[] = [
       "Designed the end-to-end ticketing experience for one of Seattle's most iconic attractions. Created customer-facing products across kiosks, web, and box offices, alongside a powerful internal platform for managing ticket inventory, pricing, discounts, schedules, and sales operations.",
     tags: ["B2C", "B2B", "Enterprise"],
     cover: "/SpaceNeedle_preview.jpg",
-    industry: "Travel",
+    industry: "Travel & Entertainment",
     businessType: "B2C",
     platform: "Mobile",
     meta: {
