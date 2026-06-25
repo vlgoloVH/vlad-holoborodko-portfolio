@@ -161,11 +161,11 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
                 ].map((col, i) => (
                   <div key={i} className="flex flex-col gap-4">
                     <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-wrap gap-2">
                       {col.items.map((item) => (
                         <span
                           key={item}
-                          className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink w-fit transition-colors duration-300 hover:border-accent hover:text-accent"
+                          className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
                         >
                           {item}
                         </span>
