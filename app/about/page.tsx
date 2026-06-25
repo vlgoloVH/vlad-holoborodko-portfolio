@@ -279,25 +279,17 @@ export default function AboutPage() {
                     <h3 className="font-display text-xl font-semibold uppercase text-ink md:text-2xl">
                       {item.company}
                     </h3>
-                    <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted">
-                      {item.role}
-                    </p>
                     <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
                       {item.body}
                     </p>
                   </div>
-                  {item.tags && (
-                    <div className="flex flex-wrap gap-2">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-muted"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex flex-col gap-1">
+                    {item.role.split(" · ").map((part) => (
+                      <span key={part} className="font-mono text-xs uppercase tracking-widest text-muted">
+                        {part}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Reveal>
             ))}
