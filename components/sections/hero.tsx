@@ -43,7 +43,7 @@ export function Hero() {
                 href="/resume.pdf"
                 download
                 data-cursor="Download"
-                className="group relative mx-auto flex h-44 w-44 items-center justify-center md:h-56 md:w-56 mt-8 md:mt-0"
+                className="group relative mx-auto flex h-44 w-44 items-center justify-center md:h-56 md:w-56 mt-16 md:mt-0"
               >
                 <svg
                   viewBox="0 0 200 200"
