@@ -28,9 +28,13 @@ export interface CaseData {
   };
   role: {
     summary: string;
-    responsibilities: string[];
-    team: string[];
+    summaryExtra?: string;
+    owned: string[];
+    withWhom: string[];
+    howIWorked: string[];
   };
+  overviewImage?: string;
+  overviewTagline?: string;
   transformation: TransformationTheme[];
   selectedScreens?: {
     label: string;
@@ -40,7 +44,9 @@ export interface CaseData {
     items: { value: string; label: string; body?: string }[];
     summary: string;
   };
-  reflection: string;
+  reflection: {
+    insights: { number: string; insight: string }[];
+  };
 }
 
 interface CaseLayoutProps {
@@ -49,7 +55,7 @@ interface CaseLayoutProps {
   otherCases: Case[];
 }
 
-function ProductOverviewScroll() {
+function ProductOverviewScroll({ image }: { image: string }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
   const isDragging = useRef(false);
@@ -131,7 +137,7 @@ function ProductOverviewScroll() {
         style={{ scrollbarWidth: "none" }}
       >
         <img
-          src="/Product_overview_smartcrowd_8256x1400.jpg"
+          src={image}
           alt="Product overview"
           className="h-full w-auto max-w-none"
           draggable={false}
@@ -214,8 +220,8 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
           <div className="grid md:grid-cols-3 gap-12">
             {[
               { label: "The Invite", text: caseData.context.invite, icon: Mail },
-              { label: "What Followed", text: caseData.context.outcome, icon: ArrowUpRight },
-              { label: "The Outcome", text: "A fragmented platform became a unified, scalable ecosystem — covering mobile, web, and partner products. The foundation I built continues to support SmartCrowd's growth today.", icon: Layers },
+              { label: "What Followed", text: caseData.context.situation, icon: Layers },
+              { label: "The Outcome", text: caseData.context.outcome, icon: ArrowUpRight },
             ].map((col, i) => (
               <Reveal key={col.label} delay={i * 0.05}>
                 <div className="pt-6">
@@ -236,30 +242,19 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             <Reveal>
               <div className="flex flex-col gap-8">
                 <h2 className="font-display text-display-md font-semibold uppercase text-ink">My Role</h2>
-                <p className="text-sm leading-relaxed text-muted md:text-base">
-                  As Lead Product Designer, I owned the full design direction of SmartCrowd — from the initial product audit that identified core UX gaps, to leading the complete redesign of the mobile app, web platform, and partner products. I set the strategic design direction, shaped information architecture, and ensured every platform felt unified and intentional.
-                </p>
-                <p className="text-sm leading-relaxed text-muted md:text-base">
-                  Beyond execution, I built the design system from scratch — creating a scalable token-based foundation with light and dark themes that served both SmartCrowd and its partner brands. I worked closely with Product, Engineering, Compliance, and Marketing, and mentored another designer on the team throughout the project.
-                </p>
+                <p className="text-sm leading-relaxed text-muted md:text-base">{caseData.role.summary}</p>
+                {caseData.role.summaryExtra && (
+                  <p className="text-sm leading-relaxed text-muted md:text-base">{caseData.role.summaryExtra}</p>
+                )}
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
               <div className="flex flex-col gap-10">
                 {[
-                  {
-                    label: "What I Owned",
-                    items: ["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"],
-                  },
-                  {
-                    label: "With Whom",
-                    items: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
-                  },
-                  {
-                    label: "How I Worked",
-                    items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
-                  },
+                  { label: "What I Owned", items: caseData.role.owned },
+                  { label: "With Whom", items: caseData.role.withWhom },
+                  { label: "How I Worked", items: caseData.role.howIWorked },
                 ].map((col, i) => (
                   <div key={i} className="flex flex-col gap-4">
                     <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
@@ -287,12 +282,18 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">Product Transformation</h2>
             <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-12">
-              Not a redesign. <span className="text-accent">A full platform transformation.</span>
+              {caseData.overviewTagline ? (
+                caseData.overviewTagline
+              ) : (
+                <>Not a redesign. <span className="text-accent">A full platform transformation.</span></>
+              )}
             </p>
           </Reveal>
-          <Reveal delay={0.1}>
-            <ProductOverviewScroll />
-          </Reveal>
+          {caseData.overviewImage && (
+            <Reveal delay={0.1}>
+              <ProductOverviewScroll image={caseData.overviewImage} />
+            </Reveal>
+          )}
         </div>
       </section>
 
@@ -323,20 +324,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-8">Reflection</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-12">
-            {[
-              {
-                number: "01",
-                insight: "Real product leadership means holding the full picture — user needs, business goals, technical constraints, and compliance — all at once.",
-              },
-              {
-                number: "02",
-                insight: "The most valuable thing I built wasn't a screen. It was a foundation the entire team could keep building on.",
-              },
-              {
-                number: "03",
-                insight: "Designing for regulated financial products taught me that clarity and compliance aren't opposites — good UX makes both possible.",
-              },
-            ].map((item, i) => (
+            {caseData.reflection.insights.map((item, i) => (
               <Reveal key={i} delay={i * 0.05}>
                 <div className="border-t border-line pt-8">
                   <p className="font-mono text-xs uppercase tracking-widest text-accent mb-6">{item.number}</p>
