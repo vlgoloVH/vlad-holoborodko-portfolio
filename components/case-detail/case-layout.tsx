@@ -66,10 +66,7 @@ function ProductOverviewScroll() {
         setProgress(max > 0 ? el.scrollLeft / max : 0);
       }
     }, 16);
-    return () => clearInterval(interval);
-  }, []);
 
-  useEffect(() => {
     const onMove = (e: MouseEvent) => {
       if (!isDragging.current || !scrollRef.current) return;
       const dx = e.pageX - startX.current;
@@ -83,7 +80,9 @@ function ProductOverviewScroll() {
     };
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseup", onUp);
+
     return () => {
+      clearInterval(interval);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseup", onUp);
     };
