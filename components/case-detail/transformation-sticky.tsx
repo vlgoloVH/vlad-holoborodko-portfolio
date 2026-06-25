@@ -56,7 +56,7 @@ export function TransformationSticky({ themes }: Props) {
                   {theme.points.map((point, j) => (
                     <li key={j} className="flex items-start gap-3 py-3">
                       <span className="text-accent mt-1 shrink-0 text-xs">→</span>
-                      <p className="text-lg leading-snug text-ink font-semibold">{point}</p>
+                      <p className="text-base leading-snug text-ink font-semibold">{point}</p>
                     </li>
                   ))}
                 </ul>
