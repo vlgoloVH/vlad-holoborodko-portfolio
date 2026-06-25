@@ -88,11 +88,13 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
           </Reveal>
 
           <Reveal delay={0.1} className="mt-12">
-            <div className="w-full bg-surface aspect-[16/8] rounded-sm flex items-center justify-center overflow-hidden">
+            <div className="relative w-full bg-surface aspect-[16/8] rounded-sm overflow-hidden">
               {caseData.heroMockup ? (
-                <Image src={caseData.heroMockup} alt={caseMeta.title} fill className="object-cover" />
+                <Image src={caseData.heroMockup} alt={caseMeta.title} fill className="object-cover object-center" />
               ) : (
-                <p className="font-mono text-xs uppercase tracking-widest text-muted">Hero mockup — coming soon</p>
+                <div className="flex h-full items-center justify-center">
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted">Hero mockup — coming soon</p>
+                </div>
               )}
             </div>
           </Reveal>
