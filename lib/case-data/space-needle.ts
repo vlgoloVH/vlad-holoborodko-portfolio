@@ -16,7 +16,7 @@ export const spaceNeedleData: CaseData = {
     withWhom: ["Product Management", "Engineering", "Operations Team", "Marketing", "Partner Teams (CGG, STT)"],
     howIWorked: ["End-to-end product design", "Multi-platform thinking", "Cross-functional collaboration", "Iterative delivery", "Partner adaptation", "Research-informed decisions"],
   },
-  overviewImage: "",
+  overviewImage: "/Product_overview_smartcrowd_8256x1400.jpg",
   overviewTagline: "One ecosystem. Six products. Three brands.",
   transformation: [
     {
