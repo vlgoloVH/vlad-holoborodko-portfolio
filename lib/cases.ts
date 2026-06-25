@@ -136,7 +136,7 @@ export const CASES: Case[] = [
     cover: "/SpaceNeedle_preview.jpg",
     industry: "Travel & Entertainment",
     businessType: "B2C",
-    platform: "Mobile",
+    platform: "Web · Kiosk · Tablet",
     meta: {
       duration: "5 months",
       role: "Senior Product Designer",
