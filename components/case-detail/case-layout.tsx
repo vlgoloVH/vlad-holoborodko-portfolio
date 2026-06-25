@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import { TransformationSticky } from "@/components/case-detail/transformation-sticky";
 import Link from "next/link";
 import Image from "next/image";
@@ -51,70 +51,101 @@ interface CaseLayoutProps {
 
 function ProductOverviewScroll() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollbarRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
+  const isScrollbarDragging = useRef(false);
 
-  useEffect(() => {
+  const handleScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
-    const interval = setInterval(() => {
-      if (!isDragging.current) {
-        el.scrollLeft += 1;
-        const max = el.scrollWidth - el.clientWidth;
-        setProgress(max > 0 ? el.scrollLeft / max : 0);
-      }
-    }, 16);
-    return () => clearInterval(interval);
-  }, []);
+    const max = el.scrollWidth - el.clientWidth;
+    setProgress(max > 0 ? el.scrollLeft / max : 0);
+  };
 
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      if (!isDragging.current || !scrollRef.current) return;
-      const dx = e.pageX - startX.current;
-      scrollRef.current.scrollLeft = startScrollLeft.current - dx;
-      const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-      setProgress(max > 0 ? scrollRef.current.scrollLeft / max : 0);
-    };
-    const onUp = () => {
-      isDragging.current = false;
-      document.body.style.userSelect = "";
-    };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
-    return () => {
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseup", onUp);
-    };
-  }, []);
-
-  const onMouseDown = (e: React.MouseEvent) => {
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
     isDragging.current = true;
     startX.current = e.pageX;
     startScrollLeft.current = scrollRef.current?.scrollLeft ?? 0;
     document.body.style.userSelect = "none";
-  };
+  }, []);
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging.current || !scrollRef.current) return;
+    const dx = e.pageX - startX.current;
+    scrollRef.current.scrollLeft = startScrollLeft.current - dx;
+  }, []);
+
+  const onMouseUp = useCallback(() => {
+    isDragging.current = false;
+    document.body.style.userSelect = "";
+  }, []);
+
+  const onScrollbarMouseDown = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    isScrollbarDragging.current = true;
+    const bar = scrollbarRef.current;
+    if (!bar) return;
+    const thumbWidth = bar.getBoundingClientRect().width * 0.3;
+
+    const onMove = (ev: MouseEvent) => {
+      if (!isScrollbarDragging.current || !scrollRef.current || !bar) return;
+      const rect = bar.getBoundingClientRect();
+      const maxLeft = rect.width - thumbWidth;
+      const x = Math.max(0, Math.min(ev.clientX - rect.left - thumbWidth / 2, maxLeft));
+      const newProgress = x / maxLeft;
+      const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+      scrollRef.current.scrollLeft = newProgress * max;
+    };
+
+    const onUp = () => {
+      isScrollbarDragging.current = false;
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+  }, []);
 
   return (
     <div>
       <div
         ref={scrollRef}
+        onScroll={handleScroll}
         onMouseDown={onMouseDown}
-        className="w-full aspect-[16/8] rounded-sm overflow-x-auto cursor-grab active:cursor-grabbing"
-        style={{ scrollbarWidth: "none" }}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        className="overflow-x-auto cursor-grab active:cursor-grabbing"
+        style={{
+          scrollbarWidth: "none",
+          width: "100vw",
+          marginLeft: "calc(50% - 50vw)",
+        } as React.CSSProperties}
       >
-        <img
-          src="/Product_overview_smartcrowd_8256x1400.jpg"
-          alt="Product overview"
-          className="h-full w-auto max-w-none"
-        />
+        <div style={{ paddingLeft: "max(1.5rem, calc(50vw - 700px))", paddingRight: "max(1.5rem, calc(50vw - 700px))" }}>
+          <img
+            src="/Product_overview_smartcrowd_8256x1400.jpg"
+            alt="Product overview"
+            className="h-[400px] w-auto max-w-none rounded-sm"
+            draggable={false}
+          />
+        </div>
       </div>
-      <div className="relative h-2.5 rounded-full bg-line mt-4">
+      <div className="mx-auto max-w-content px-6 md:px-10">
         <div
-          className="absolute top-0 h-full rounded-full bg-accent"
-          style={{ width: "30%", left: `${progress * 70}%`, transition: "left 0.05s linear" }}
-        />
+          ref={scrollbarRef}
+          className="relative h-2.5 rounded-full bg-line cursor-pointer mt-6"
+          onMouseDown={onScrollbarMouseDown}
+        >
+          <div
+            className="absolute top-0 h-full rounded-full bg-accent"
+            style={{ width: "30%", left: `${progress * 70}%`, transition: "left 0.05s linear" }}
+          />
+        </div>
       </div>
     </div>
   );
@@ -250,18 +281,20 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       </section>
 
       {/* 04. PRODUCT TRANSFORMATION */}
-      <section className="px-6 pt-24 pb-0 md:px-10 md:pt-32">
-        <div className="mx-auto max-w-content">
-          <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">Product Transformation</h2>
-            <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-12">
-              Not a redesign. <span className="text-accent">A full platform transformation.</span>
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <ProductOverviewScroll />
-          </Reveal>
+      <section className="pt-24 pb-0 md:pt-32">
+        <div className="px-6 md:px-10">
+          <div className="mx-auto max-w-content">
+            <Reveal>
+              <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-4">Product Transformation</h2>
+              <p className="font-display text-display-sm leading-snug text-ink max-w-3xl mb-12">
+                Not a redesign. <span className="text-accent">A full platform transformation.</span>
+              </p>
+            </Reveal>
+          </div>
         </div>
+        <Reveal delay={0.1}>
+          <ProductOverviewScroll />
+        </Reveal>
       </section>
 
       <TransformationSticky themes={caseData.transformation} />
