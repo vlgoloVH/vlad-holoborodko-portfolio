@@ -130,7 +130,7 @@ function ProductOverviewScroll() {
           <img
             src="/Product_overview_smartcrowd_8256x1400.jpg"
             alt="Product overview"
-            className="h-[400px] w-auto max-w-none rounded-sm"
+            className="h-[50vw] w-auto max-w-none rounded-sm"
             draggable={false}
           />
         </div>
