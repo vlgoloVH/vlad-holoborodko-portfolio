@@ -55,6 +55,8 @@ function ProductOverviewScroll() {
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
+  const scrollbarRef = useRef<HTMLDivElement>(null);
+  const isScrollbarDragging = useRef(false);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -96,6 +98,30 @@ function ProductOverviewScroll() {
     document.body.style.userSelect = "none";
   };
 
+  const onScrollbarMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    isScrollbarDragging.current = true;
+    const bar = scrollbarRef.current;
+    if (!bar) return;
+    const thumbWidth = bar.getBoundingClientRect().width * 0.3;
+    const onMove = (ev: MouseEvent) => {
+      if (!isScrollbarDragging.current || !scrollRef.current || !bar) return;
+      const rect = bar.getBoundingClientRect();
+      const maxLeft = rect.width - thumbWidth;
+      const x = Math.max(0, Math.min(ev.clientX - rect.left - thumbWidth / 2, maxLeft));
+      const newProgress = x / maxLeft;
+      const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+      scrollRef.current.scrollLeft = newProgress * max;
+    };
+    const onUp = () => {
+      isScrollbarDragging.current = false;
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+  };
+
   return (
     <div>
       <div
@@ -112,7 +138,11 @@ function ProductOverviewScroll() {
           onDragStart={(e) => e.preventDefault()}
         />
       </div>
-      <div className="relative h-2.5 rounded-full bg-line mt-4">
+      <div
+        ref={scrollbarRef}
+        className="relative h-2.5 rounded-full bg-line cursor-pointer mt-4"
+        onMouseDown={onScrollbarMouseDown}
+      >
         <div
           className="absolute top-0 h-full rounded-full bg-accent"
           style={{ width: "30%", left: `${progress * 70}%`, transition: "left 0.05s linear" }}
