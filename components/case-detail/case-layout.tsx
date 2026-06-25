@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Case } from "@/lib/cases";
 import { Reveal } from "@/components/ui/reveal";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail, Layers } from "lucide-react";
 import { Contact } from "@/components/sections/contact";
 
 export interface TransformationTheme {
@@ -109,12 +109,13 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
           </Reveal>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { label: "The Invite", text: caseData.context.invite },
-              { label: "The Situation", text: caseData.context.situation },
-              { label: "What Followed", text: caseData.context.outcome },
+              { label: "The Invite", text: caseData.context.invite, icon: Mail },
+              { label: "The Situation", text: caseData.context.situation, icon: Layers },
+              { label: "What Followed", text: caseData.context.outcome, icon: ArrowUpRight },
             ].map((col, i) => (
               <Reveal key={col.label} delay={i * 0.05}>
-                <div className="border-t-2 border-accent pt-6">
+                <div className="pt-6">
+                  <col.icon size={20} strokeWidth={1.5} className="text-accent mb-4" />
                   <p className="font-mono text-xs uppercase tracking-widest text-muted mb-4">{col.label}</p>
                   <p className="text-sm leading-relaxed text-muted md:text-base">{col.text}</p>
                 </div>
