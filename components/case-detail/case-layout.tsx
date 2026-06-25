@@ -128,47 +128,53 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
       {/* 03. MY ROLE */}
       <section className="section-invert px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-content">
-          <Reveal>
-            <h2 className="font-display text-display-md font-semibold uppercase text-ink mb-16">My Role</h2>
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <p className="text-sm leading-relaxed text-muted md:text-base">
-                As Lead Product Designer, I owned the full design direction of SmartCrowd — from the initial product audit that identified core UX gaps, to leading the complete redesign of the mobile app, web platform, and partner products. I set the strategic design direction, shaped information architecture, and ensured every platform felt unified and intentional.
-              </p>
-              <p className="text-sm leading-relaxed text-muted md:text-base">
-                Beyond execution, I built the design system from scratch — creating a scalable token-based foundation with light and dark themes that served both SmartCrowd and its partner brands. I worked closely with Product, Engineering, Compliance, and Marketing, and mentored another designer on the team throughout the project.
-              </p>
-            </div>
-          </Reveal>
+          <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+            {/* Left — title + text */}
+            <Reveal>
+              <div className="flex flex-col gap-8">
+                <h2 className="font-display text-display-md font-semibold uppercase text-ink">My Role</h2>
+                <p className="text-sm leading-relaxed text-muted md:text-base">
+                  As Lead Product Designer, I owned the full design direction of SmartCrowd — from the initial product audit that identified core UX gaps, to leading the complete redesign of the mobile app, web platform, and partner products. I set the strategic design direction, shaped information architecture, and ensured every platform felt unified and intentional.
+                </p>
+                <p className="text-sm leading-relaxed text-muted md:text-base">
+                  Beyond execution, I built the design system from scratch — creating a scalable token-based foundation with light and dark themes that served both SmartCrowd and its partner brands. I worked closely with Product, Engineering, Compliance, and Marketing, and mentored another designer on the team throughout the project.
+                </p>
+              </div>
+            </Reveal>
 
-          <div className="grid grid-cols-3">
-            {[
-              {
-                label: "What I Owned",
-                items: ["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"],
-              },
-              {
-                label: "With Whom",
-                items: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
-              },
-              {
-                label: "How I Worked",
-                items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
-              },
-            ].map((col, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <div className="group relative flex flex-col gap-6 px-8 py-12 transition-colors duration-500 hover:bg-[#1c1a14] h-full">
-                  <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
-                  <ul className="flex flex-col gap-0 flex-1">
-                    {col.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-3 py-3 whitespace-nowrap">
-                        <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
-                        <span className="text-base text-muted">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
+            {/* Right — three pill columns */}
+            <Reveal delay={0.1}>
+              <div className="grid grid-cols-3 gap-8">
+                {[
+                  {
+                    label: "What I Owned",
+                    items: ["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"],
+                  },
+                  {
+                    label: "With Whom",
+                    items: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
+                  },
+                  {
+                    label: "How I Worked",
+                    items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
+                  },
+                ].map((col, i) => (
+                  <div key={i} className="flex flex-col gap-4">
+                    <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
+                    <div className="flex flex-col gap-2">
+                      {col.items.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-line px-3 py-1.5 font-mono text-xs tracking-wide text-ink w-fit transition-colors duration-300 hover:border-accent hover:text-accent"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
