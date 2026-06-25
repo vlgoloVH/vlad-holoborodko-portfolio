@@ -89,6 +89,7 @@ function ProductOverviewScroll() {
   }, []);
 
   const onMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
     isDragging.current = true;
     startX.current = e.pageX;
     startScrollLeft.current = scrollRef.current?.scrollLeft ?? 0;
@@ -107,6 +108,8 @@ function ProductOverviewScroll() {
           src="/Product_overview_smartcrowd_8256x1400.jpg"
           alt="Product overview"
           className="h-full w-auto max-w-none"
+          draggable={false}
+          onDragStart={(e) => e.preventDefault()}
         />
       </div>
       <div className="relative h-2.5 rounded-full bg-line mt-4">
