@@ -140,7 +140,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3">
             {[
               {
                 label: "What I Owned",
@@ -156,13 +156,16 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               },
             ].map((col, i) => (
               <Reveal key={i} delay={i * 0.05}>
-                <div className="bg-[#1c1a14] rounded-sm p-8 h-full flex flex-col gap-6">
+                <div className="group relative flex flex-col gap-6 px-8 py-12 transition-colors duration-500 hover:bg-[#1c1a14] h-full">
+                  {i > 0 && (
+                    <div className="absolute left-0 top-12 bottom-12 w-px bg-white/10" />
+                  )}
                   <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
                   <ul className="flex flex-col gap-0 flex-1">
                     {col.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-3 py-3">
+                      <li key={j} className="flex items-center gap-3 py-3 whitespace-nowrap">
                         <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
-                        <span className="text-sm text-muted">{item}</span>
+                        <span className="text-base text-muted">{item}</span>
                       </li>
                     ))}
                   </ul>
