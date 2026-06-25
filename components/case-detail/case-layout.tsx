@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { TransformationSticky } from "@/components/case-detail/transformation-sticky";
 import Link from "next/link";
 import Image from "next/image";
@@ -51,20 +51,35 @@ interface CaseLayoutProps {
 
 function ProductOverviewScroll() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
+  const animRef = useRef<number>(0);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    const interval = setInterval(() => {
+    let lastTime = 0;
+    const speed = 0.5;
+    const tick = (time: number) => {
       if (!isDragging.current) {
-        el.scrollLeft += 1;
+        const delta = time - lastTime;
+        el.scrollLeft += (speed * delta) / 16;
       }
-    }, 20);
-    return () => clearInterval(interval);
+      lastTime = time;
+      animRef.current = requestAnimationFrame(tick);
+    };
+    animRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animRef.current);
   }, []);
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setProgress(max > 0 ? el.scrollLeft / max : 0);
+  };
 
   const onMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
@@ -85,20 +100,29 @@ function ProductOverviewScroll() {
   };
 
   return (
-    <div
-      ref={scrollRef}
-      onMouseDown={onMouseDown}
-      onMouseMove={onMouseMove}
-      onMouseUp={onMouseUp}
-      onMouseLeave={onMouseUp}
-      className="w-full aspect-[16/8] rounded-sm overflow-x-auto cursor-grab active:cursor-grabbing"
-      style={{ scrollbarWidth: "none" }}
-    >
-      <img
-        src="/Product_overview_smartcrowd_8256x1400.jpg"
-        alt="Product overview"
-        className="h-full w-auto max-w-none"
-      />
+    <div>
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        className="w-full aspect-[16/8] rounded-sm overflow-x-auto cursor-grab active:cursor-grabbing"
+        style={{ scrollbarWidth: "none" }}
+      >
+        <img
+          src="/Product_overview_smartcrowd_8256x1400.jpg"
+          alt="Product overview"
+          className="h-full w-auto max-w-none"
+        />
+      </div>
+      <div className="relative h-2.5 rounded-full bg-line cursor-pointer mt-4">
+        <div
+          className="absolute top-0 h-full rounded-full bg-accent"
+          style={{ width: "30%", left: `${progress * 70}%`, transition: "left 0.05s linear" }}
+        />
+      </div>
     </div>
   );
 }
