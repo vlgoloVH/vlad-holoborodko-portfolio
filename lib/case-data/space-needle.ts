@@ -13,7 +13,7 @@ export const spaceNeedleData: CaseData = {
     summary: "As Senior Product Designer, I owned end-to-end design across all customer-facing and internal touchpoints — from in-tower tablet experiences to the internal operations platform used by managers daily.",
     summaryExtra: "The scope expanded significantly over the engagement — what began as tablet UI work grew to cover kiosks, web flows, box office interfaces, a full internal management platform, and Spacebook. Each product had its own audience, context, and constraints.",
     owned: ["In-Tower Camera Tablet UI", "Ticketing Kiosk Redesign", "Web Purchase Flow", "Box Office Interface", "Internal Management Platform", "Spacebook (Web & Tablet)", "Partner Platform Adaptation"],
-    withWhom: ["Product Management", "Engineering", "Operations Team", "Marketing", "Partner Teams (CGG, STT)"],
+    withWhom: ["Product Management", "Engineering", "Operations Team", "Marketing"],
     howIWorked: ["End-to-end product design", "Multi-platform thinking", "Cross-functional collaboration", "Iterative delivery", "Partner adaptation", "Research-informed decisions"],
   },
   overviewImage: "/Product_overview_smartcrowd_8256x1400.jpg",
