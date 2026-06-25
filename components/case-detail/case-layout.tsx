@@ -61,7 +61,7 @@ function ProductOverviewScroll() {
     if (!el) return;
     const interval = setInterval(() => {
       if (!isDragging.current) {
-        el.scrollLeft += 0.5;
+        el.scrollLeft += 1;
         const max = el.scrollWidth - el.clientWidth;
         setProgress(max > 0 ? el.scrollLeft / max : 0);
       }
@@ -69,12 +69,25 @@ function ProductOverviewScroll() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleScroll = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    setProgress(max > 0 ? el.scrollLeft / max : 0);
-  };
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      if (!isDragging.current || !scrollRef.current) return;
+      const dx = e.pageX - startX.current;
+      scrollRef.current.scrollLeft = startScrollLeft.current - dx;
+      const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+      setProgress(max > 0 ? scrollRef.current.scrollLeft / max : 0);
+    };
+    const onUp = () => {
+      isDragging.current = false;
+      document.body.style.userSelect = "";
+    };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+  }, []);
 
   const onMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
@@ -83,28 +96,11 @@ function ProductOverviewScroll() {
     document.body.style.userSelect = "none";
   };
 
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging.current || !scrollRef.current) return;
-    const dx = e.pageX - startX.current;
-    scrollRef.current.scrollLeft = startScrollLeft.current - dx;
-    const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-    setProgress(max > 0 ? scrollRef.current.scrollLeft / max : 0);
-  };
-
-  const onMouseUp = () => {
-    isDragging.current = false;
-    document.body.style.userSelect = "";
-  };
-
   return (
     <div>
       <div
         ref={scrollRef}
-        onScroll={handleScroll}
         onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={onMouseUp}
-        onMouseLeave={onMouseUp}
         className="w-full aspect-[16/8] rounded-sm overflow-x-auto cursor-grab active:cursor-grabbing"
         style={{ scrollbarWidth: "none" }}
       >
@@ -114,7 +110,7 @@ function ProductOverviewScroll() {
           className="h-full w-auto max-w-none"
         />
       </div>
-      <div className="relative h-2.5 rounded-full bg-line cursor-pointer mt-4">
+      <div className="relative h-2.5 rounded-full bg-line mt-4">
         <div
           className="absolute top-0 h-full rounded-full bg-accent"
           style={{ width: "30%", left: `${progress * 70}%`, transition: "left 0.05s linear" }}
