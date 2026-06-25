@@ -2,6 +2,7 @@ import type { CaseData } from "@/components/case-detail/case-layout";
 
 export const smartcrowdData: CaseData = {
   slug: "smartcrowd",
+  heroMockup: "/Hero_mockup_smartcrowd_2800x1400.jpg",
   tagline: "Leading the transformation of a fragmented real estate investment platform into a scalable multi-platform ecosystem.",
   context: {
     invite: "SmartCrowd invited me to conduct a full audit of their existing platform — analyzing the UX, product structure, and identifying opportunities for improvement across mobile and web.",
