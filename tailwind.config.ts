@@ -42,6 +42,10 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "marquee-x": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
         blink: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.25" },
