@@ -118,10 +118,10 @@ export function Contact() {
         <div className="mx-auto max-w-content">
           <div className="flex flex-col gap-0 md:grid md:grid-cols-[1fr_auto] md:grid-rows-[auto_auto] md:items-center">
             <Reveal>
-              <p className="mb-6 font-mono text-xs uppercase tracking-widest text-muted">
+              <p className="mb-6 font-mono text-xs uppercase tracking-widest text-muted text-center md:text-left">
                 — Get in touch
               </p>
-              <h2 className="font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink">
+              <h2 className="font-display text-display-lg font-semibold uppercase leading-[1.02] text-ink text-center md:text-left">
                 Let&apos;s create
                 <br />
                 something
@@ -149,7 +149,7 @@ export function Contact() {
               </span>
             </a>
             <Reveal delay={0.1} className="mt-6">
-              <p className="max-w-lg text-sm leading-relaxed text-muted md:text-base">
+              <p className="max-w-lg text-sm leading-relaxed text-muted md:text-base text-center md:text-left">
                 Open to senior product design roles and select freelance
                 engagements — research, UX, UI or design-systems work. If you&apos;re
                 solving a hard problem and need someone to make it feel obvious,
@@ -158,7 +158,7 @@ export function Contact() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
+          <Reveal delay={0.2} className="mt-10 flex flex-col gap-6 border-t border-line pt-8 items-center md:flex-row md:items-center md:justify-between">
             <a
               href={`mailto:${SITE.email}`}
               data-cursor="Email"
