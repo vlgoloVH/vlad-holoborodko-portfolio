@@ -32,6 +32,7 @@ export const smartcrowdData: CaseData = {
   transformation: [
     {
       number: "01 — Product Architecture",
+      visual: "/Product_atchitecture_smartcrowd_1300x1560.jpg",
       title: "Rethinking the platform structure",
       description: "The existing app had no clear structural logic. Navigation was fragmented, sections overlapped, and the information architecture didn't reflect how investors actually think. We mapped the entire product and rebuilt it from the ground up.",
       points: [
@@ -44,6 +45,7 @@ export const smartcrowdData: CaseData = {
     },
     {
       number: "02 — Experience Redesign",
+      visual: "/Experience_redesign_smartcrowd_1300x1560.jpg",
       title: "Reimagining the investment experience",
       description: "Rather than patching individual screens, we redesigned the entire investment experience as one connected product. Every flow — from discovering a property to tracking returns — was rethought to reduce friction, build confidence, and work consistently across mobile and web.",
       points: [
@@ -57,6 +59,7 @@ export const smartcrowdData: CaseData = {
     },
     {
       number: "03 — Design System & Foundations",
+      visual: "/Design_system_smartcrowd_1300x1560.jpg",
       title: "Building a scalable design foundation",
       description: "To support the redesign and all future work, I built a comprehensive design system from scratch — not just a component library, but a shared language between design and engineering that works across all platforms and brands.",
       points: [
@@ -70,6 +73,7 @@ export const smartcrowdData: CaseData = {
     },
     {
       number: "04 — Partner Platform Ecosystem",
+      visual: "/Partner_platform_smartcrowd_1300x1560.jpg",
       title: "Scaling beyond a single product",
       description: "SmartCrowd's platform logic powered partner products that required different branding and adapted feature sets. The design system's token architecture made this possible without rebuilding from scratch — one foundation, multiple branded experiences.",
       points: [
