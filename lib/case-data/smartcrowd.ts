@@ -10,31 +10,20 @@ export const smartcrowdData: CaseData = {
     outcome: "After presenting the audit findings, I joined SmartCrowd as Lead Product Designer. What started as an audit became a full platform transformation — covering mobile, web, partner platforms, and design system.",
   },
   role: {
-    summary: "I led product design end-to-end across mobile, web, and partner platforms. My role went beyond execution — I shaped product direction, built design foundations, led research, and mentored another designer on the team.",
-    responsibilities: [
-      "Led the full redesign of the SmartCrowd mobile app (iOS & Android) and web platform",
-      "Defined product structure, information architecture, and UX strategy",
-      "Created a scalable token-based design system with light and dark themes",
-      "Adapted the platform for partner products with different branding and functionality",
-      "Conducted user interviews and facilitated product brainstorming sessions",
-      "Collaborated with Product, Engineering, Compliance, Marketing, and QA",
-      "Mentored and managed another product designer on the team",
-    ],
-    team: [
-      "Product Management",
-      "Engineering",
-      "Compliance",
-      "Marketing",
-      "QA",
-      "1 Designer (mentored)",
-    ],
+    summary: "As Lead Product Designer, I owned the full design direction of SmartCrowd — from the initial product audit that identified core UX gaps, to leading the complete redesign of the mobile app, web platform, and partner products. I set the strategic design direction, shaped information architecture, and ensured every platform felt unified and intentional.",
+    summaryExtra: "Beyond execution, I built the design system from scratch — creating a scalable token-based foundation with light and dark themes that served both SmartCrowd and its partner brands. I worked closely with Product, Engineering, Compliance, and Marketing, and mentored another designer on the team throughout the project.",
+    owned: ["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"],
+    withWhom: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
+    howIWorked: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
   },
+  overviewImage: "/Product_overview_smartcrowd_8256x1400.jpg",
+  overviewTagline: "Not a redesign. A full platform transformation.",
   transformation: [
     {
       number: "01 — Product Architecture",
-      visual: "/Product_atchitecture_smartcrowd_1300x1560.jpg",
       title: "Rethinking the platform structure",
       description: "The existing app had no clear structural logic. Navigation was fragmented, sections overlapped, and the information architecture didn't reflect how investors actually think. We mapped the entire product and rebuilt it from the ground up.",
+      visual: "/Product_atchitecture_smartcrowd_1300x1560.jpg",
       points: [
         "Conducted a full audit of the existing product structure and navigation",
         "Simplified from a fragmented multi-level system to a clear 5-tab architecture",
@@ -45,9 +34,9 @@ export const smartcrowdData: CaseData = {
     },
     {
       number: "02 — Experience Redesign",
-      visual: "/Experience_redesign_smartcrowd_1300x1560.jpg",
       title: "Reimagining the investment experience",
       description: "Rather than patching individual screens, we redesigned the entire investment experience as one connected product. Every flow — from discovering a property to tracking returns — was rethought to reduce friction, build confidence, and work consistently across mobile and web.",
+      visual: "/Experience_redesign_smartcrowd_1300x1560.jpg",
       points: [
         "Full redesign of the mobile app across iOS and Android",
         "Web platform redesigned with consistent logic and patterns",
@@ -59,9 +48,9 @@ export const smartcrowdData: CaseData = {
     },
     {
       number: "03 — Design System & Foundations",
-      visual: "/Design_system_smartcrowd_1300x1560.jpg",
       title: "Building a scalable design foundation",
       description: "To support the redesign and all future work, I built a comprehensive design system from scratch — not just a component library, but a shared language between design and engineering that works across all platforms and brands.",
+      visual: "/Design_system_smartcrowd_1300x1560.jpg",
       points: [
         "100+ components covering all major UI patterns across mobile and web",
         "Semantic design tokens for color, spacing, typography, and elevation",
@@ -73,9 +62,9 @@ export const smartcrowdData: CaseData = {
     },
     {
       number: "04 — Partner Platform Ecosystem",
-      visual: "/Partner_platform_smartcrowd_1300x1560.jpg",
       title: "Scaling beyond a single product",
       description: "SmartCrowd's platform logic powered partner products that required different branding and adapted feature sets. The design system's token architecture made this possible without rebuilding from scratch — one foundation, multiple branded experiences.",
+      visual: "/Partner_platform_smartcrowd_1300x1560.jpg",
       points: [
         "Adapted the core platform for multiple partner products",
         "Token-based theming enables full brand adaptation: colors, typography, components",
@@ -93,7 +82,22 @@ export const smartcrowdData: CaseData = {
       { value: "100+", label: "Design system components", body: "Covering all major UI patterns across mobile and web with light and dark modes." },
       { value: "2", label: "Theme modes", body: "Full light and dark mode support across the entire product ecosystem." },
     ],
-    summary: "The transformation created a unified, scalable product experience across SmartCrowd's entire ecosystem — giving the team a strong foundation to ship faster, onboard partners more efficiently, and maintain design quality as the product continues to grow.",
+    summary: "The transformation created a unified, scalable product experience across SmartCrowd's entire ecosystem.",
   },
-  reflection: "This project taught me that real product leadership means holding the full picture — user needs, business goals, technical constraints, and regulatory requirements — all at once. The most valuable thing I built wasn't a screen. It was a foundation the team could keep building on.",
+  reflection: {
+    insights: [
+      {
+        number: "01",
+        insight: "Real product leadership means holding the full picture — user needs, business goals, technical constraints, and compliance — all at once.",
+      },
+      {
+        number: "02",
+        insight: "The most valuable thing I built wasn't a screen. It was a foundation the entire team could keep building on.",
+      },
+      {
+        number: "03",
+        insight: "Designing for regulated financial products taught me that clarity and compliance aren't opposites — good UX makes both possible.",
+      },
+    ],
+  },
 };
