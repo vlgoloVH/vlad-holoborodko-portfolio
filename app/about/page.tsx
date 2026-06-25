@@ -167,10 +167,10 @@ export default function AboutPage() {
           <Reveal delay={0.15}>
             <div className="relative aspect-[16/7] w-full overflow-hidden rounded-sm">
               <Image
-                src="/About_photo.jpg"
+                src="/About_page_photo_2800x1225.jpg"
                 alt="Vlad Holoborodko"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 priority
               />
             </div>
@@ -412,29 +412,19 @@ export default function AboutPage() {
         <div className="mx-auto max-w-content">
           <div className="grid grid-cols-3 grid-rows-2 gap-3 h-[600px]">
             <div className="row-span-2 bg-surface rounded-sm overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 1</span>
-              </div>
+              <Image src="/About_photo_1_920x1200.jpg" alt="Vlad Holoborodko" fill className="object-cover" />
             </div>
             <div className="bg-surface rounded-sm overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 2</span>
-              </div>
+              <Image src="/About_photo_2_920x590.jpg" alt="Vlad Holoborodko" fill className="object-cover" />
             </div>
             <div className="bg-surface rounded-sm overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 3</span>
-              </div>
+              <Image src="/About_photo_3_920x590.jpg" alt="Vlad Holoborodko" fill className="object-cover" />
             </div>
             <div className="bg-surface rounded-sm overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 4</span>
-              </div>
+              <Image src="/About_photo_4_920x590.jpg" alt="Vlad Holoborodko" fill className="object-cover" />
             </div>
             <div className="bg-surface rounded-sm overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-muted">Photo 5</span>
-              </div>
+              <Image src="/About_photo_5_920x590.jpg" alt="Vlad Holoborodko" fill className="object-cover" />
             </div>
           </div>
         </div>
