@@ -144,7 +144,7 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
 
             {/* Right — three pill columns */}
             <Reveal delay={0.1}>
-              <div className="grid grid-cols-3 gap-8">
+              <div className="flex flex-col gap-10">
                 {[
                   {
                     label: "What I Owned",
