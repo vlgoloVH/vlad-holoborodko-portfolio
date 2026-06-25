@@ -147,12 +147,12 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
                 items: ["Product Strategy", "Information Architecture", "Mobile · iOS & Android", "Web Platform", "Design System", "Partner Platforms", "User Research"],
               },
               {
-                label: "How I Worked",
-                items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
-              },
-              {
                 label: "With Whom",
                 items: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
+              },
+              {
+                label: "How I Worked",
+                items: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
               },
             ].map((col, i) => (
               <Reveal key={i} delay={i * 0.05}>
