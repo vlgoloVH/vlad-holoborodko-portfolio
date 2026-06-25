@@ -297,11 +297,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 5. How I work + What I bring ── */}
+      {/* ── 5. How I work ── */}
       <section className="section-invert px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
-
-          {/* How I work */}
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
               How I work
@@ -336,11 +334,11 @@ export default function AboutPage() {
               },
             ].map((p, i) => (
               <Reveal key={p.step} delay={i * 0.08}>
-                <div className="group relative flex flex-col gap-8 bg-[#181613] px-8 py-12 transition-all duration-500 hover:bg-[#1c1a14] min-h-[380px]">
+                <div className="group relative flex flex-col gap-8 bg-[#181613] px-8 py-12 transition-colors duration-500 hover:bg-[#1c1a14] min-h-[380px]">
                   {i > 0 && (
                     <div className="absolute left-0 top-12 bottom-12 w-px bg-white/10" />
                   )}
-                  <span className="font-display text-[80px] font-semibold leading-none text-white/5 transition-colors duration-500 group-hover:text-accent/20 select-none">
+                  <span className="font-display text-[80px] font-semibold leading-none text-white/5 select-none">
                     {p.step}
                   </span>
                   <div className="flex flex-col gap-3 flex-1">
@@ -351,19 +349,14 @@ export default function AboutPage() {
                       {p.body}
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="h-px w-6 bg-accent/40 transition-all duration-500 group-hover:w-10 group-hover:bg-accent" />
-                    <span className="font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 group-hover:text-accent">
-                      {p.accent}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-accent transition-all duration-500 group-hover:w-full" />
+                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                    {p.accent}
+                  </span>
                 </div>
               </Reveal>
             ))}
           </div>
-
-          </div>
+        </div>
       </section>
 
       {/* ── 7. Product Design Stack ── */}
