@@ -110,8 +110,8 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
           <div className="grid md:grid-cols-3 gap-12">
             {[
               { label: "The Invite", text: caseData.context.invite, icon: Mail },
-              { label: "The Situation", text: caseData.context.situation, icon: Layers },
               { label: "What Followed", text: caseData.context.outcome, icon: ArrowUpRight },
+              { label: "The Outcome", text: "A fragmented platform became a unified, scalable ecosystem — covering mobile, web, and partner products. The foundation I built continues to support SmartCrowd's growth today.", icon: Layers },
             ].map((col, i) => (
               <Reveal key={col.label} delay={i * 0.05}>
                 <div className="pt-6">
