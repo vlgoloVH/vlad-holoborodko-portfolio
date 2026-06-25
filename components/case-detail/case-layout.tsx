@@ -157,9 +157,6 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
             ].map((col, i) => (
               <Reveal key={i} delay={i * 0.05}>
                 <div className="group relative flex flex-col gap-6 px-8 py-12 transition-colors duration-500 hover:bg-[#1c1a14] h-full">
-                  {i > 0 && (
-                    <div className="absolute left-0 top-12 bottom-12 w-px bg-white/10" />
-                  )}
                   <p className="font-mono text-xs uppercase tracking-widest text-accent">{col.label}</p>
                   <ul className="flex flex-col gap-0 flex-1">
                     {col.items.map((item, j) => (
