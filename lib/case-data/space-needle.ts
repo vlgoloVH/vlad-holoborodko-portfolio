@@ -2,7 +2,7 @@ import type { CaseData } from "@/components/case-detail/case-layout";
 
 export const spaceNeedleData: CaseData = {
   slug: "space-needle",
-  heroMockup: "",
+  heroMockup: "/Hero_mockup_spaceneedle_2800x1400.jpg",
   tagline: "Designing the complete digital ecosystem for one of Seattle's most iconic landmarks — from in-tower camera experiences to ticketing kiosks, web flows, partner platforms, and internal operations.",
   context: {
     invite: "Space Needle brought me in to design tablet interfaces for their in-tower camera experiences — Oculus Selfie, Halo Selfie, SkyHigh, and more. What started as a focused UI project evolved into a long-term partnership across the entire digital product ecosystem.",
@@ -16,7 +16,7 @@ export const spaceNeedleData: CaseData = {
     withWhom: ["Product Management", "Engineering", "Operations Team", "Marketing"],
     howIWorked: ["End-to-end product design", "Multi-platform thinking", "Cross-functional collaboration", "Iterative delivery", "Partner adaptation", "Research-informed decisions"],
   },
-  overviewImages: ["", "", "", ""],
+  overviewImages: ["/Image_1_spaceneedle_2800x1400.jpg", "/Image_2_spaceneedle_2800x1400.jpg", "/Image_3_spaceneedle_2800x1400.jpg", "/Image_4_spaceneedle_2800x1400.jpg"],
   overviewTagline: "One ecosystem. Six products. Three brands.",
   transformation: [
     {
