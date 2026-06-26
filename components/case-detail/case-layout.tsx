@@ -228,7 +228,8 @@ function OverviewGalleryScroll({ images }: { images: string[] }) {
             <div
               key={i}
               className="shrink-0 rounded-2xl overflow-hidden bg-surface aspect-[2/1]"
-              style={{ width: "min(85vw, 900px)" }}
+              style={{ width: "min(90vw, 1400px)" }}
+
             >
               {src ? (
                 <img
