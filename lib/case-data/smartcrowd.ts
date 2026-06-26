@@ -16,7 +16,7 @@ export const smartcrowdData: CaseData = {
     withWhom: ["Product Management", "Engineering", "Compliance", "Marketing", "QA", "1 Designer"],
     howIWorked: ["End-to-end execution", "Hands-on design leadership", "Cross-functional collaboration", "Research-driven decisions", "Iterative delivery", "Design mentorship"],
   },
-  overviewImages: ["/Product_overview_smartcrowd_8256x1400.jpg", "", "", ""],
+  overviewImages: ["/Image_1_smartcrowd_2800x1400.jpg", "/Image_2_smartcrowd_2800x1400.jpg", "/Image_3_smartcrowd_2800x1400.jpg", "/Image_4_smartcrowd_2800x1400.jpg"],
   overviewTagline: "Not a redesign. A full platform transformation.",
   transformation: [
     {
