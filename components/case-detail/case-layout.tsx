@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useCallback, useState } from "react";
 import { TransformationSticky } from "@/components/case-detail/transformation-sticky";
 import Link from "next/link";
 import Image from "next/image";
@@ -34,6 +34,7 @@ export interface CaseData {
     howIWorked: string[];
   };
   overviewImage?: string;
+  overviewImages?: string[];
   overviewTagline?: string;
   transformation: TransformationTheme[];
   selectedScreens?: {
@@ -64,44 +65,25 @@ function ProductOverviewScroll({ image }: { image: string }) {
   const scrollbarRef = useRef<HTMLDivElement>(null);
   const isScrollbarDragging = useRef(false);
 
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const interval = setInterval(() => {
-      if (!isDragging.current) {
-        el.scrollLeft += 1;
-        const max = el.scrollWidth - el.clientWidth;
-        setProgress(max > 0 ? el.scrollLeft / max : 0);
-      }
-    }, 16);
-
-    const onMove = (e: MouseEvent) => {
-      if (!isDragging.current || !scrollRef.current) return;
-      const dx = e.pageX - startX.current;
-      scrollRef.current.scrollLeft = startScrollLeft.current - dx;
-      const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-      setProgress(max > 0 ? scrollRef.current.scrollLeft / max : 0);
-    };
-    const onUp = () => {
-      isDragging.current = false;
-      document.body.style.userSelect = "";
-    };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
-
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseup", onUp);
-    };
-  }, []);
-
   const onMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
     isDragging.current = true;
     startX.current = e.pageX;
     startScrollLeft.current = scrollRef.current?.scrollLeft ?? 0;
     document.body.style.userSelect = "none";
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !scrollRef.current) return;
+    const dx = e.pageX - startX.current;
+    scrollRef.current.scrollLeft = startScrollLeft.current - dx;
+    const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+    setProgress(max > 0 ? scrollRef.current.scrollLeft / max : 0);
+  };
+
+  const onMouseUp = () => {
+    isDragging.current = false;
+    document.body.style.userSelect = "";
   };
 
   const onScrollbarMouseDown = (e: React.MouseEvent) => {
@@ -133,6 +115,9 @@ function ProductOverviewScroll({ image }: { image: string }) {
       <div
         ref={scrollRef}
         onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
         className="w-full aspect-[16/8] rounded-sm overflow-x-auto cursor-grab active:cursor-grabbing"
         style={{ scrollbarWidth: "none" }}
       >
@@ -147,6 +132,125 @@ function ProductOverviewScroll({ image }: { image: string }) {
       <div
         ref={scrollbarRef}
         className="relative h-2.5 rounded-full bg-line cursor-pointer mt-4"
+        onMouseDown={onScrollbarMouseDown}
+      >
+        <div
+          className="absolute top-0 h-full rounded-full bg-accent"
+          style={{ width: "30%", left: `${progress * 70}%`, transition: "left 0.05s linear" }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function OverviewGalleryScroll({ images }: { images: string[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const startScrollLeft = useRef(0);
+  const scrollbarRef = useRef<HTMLDivElement>(null);
+  const isScrollbarDragging = useRef(false);
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setProgress(max > 0 ? el.scrollLeft / max : 0);
+  };
+
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.pageX;
+    startScrollLeft.current = scrollRef.current?.scrollLeft ?? 0;
+    document.body.style.userSelect = "none";
+  }, []);
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging.current || !scrollRef.current) return;
+    const dx = e.pageX - startX.current;
+    scrollRef.current.scrollLeft = startScrollLeft.current - dx;
+  }, []);
+
+  const onMouseUp = useCallback(() => {
+    isDragging.current = false;
+    document.body.style.userSelect = "";
+  }, []);
+
+  const onScrollbarMouseDown = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    isScrollbarDragging.current = true;
+    const bar = scrollbarRef.current;
+    if (!bar) return;
+    const thumbWidth = bar.getBoundingClientRect().width * 0.3;
+    const onMove = (ev: MouseEvent) => {
+      if (!isScrollbarDragging.current || !scrollRef.current || !bar) return;
+      const rect = bar.getBoundingClientRect();
+      const maxLeft = rect.width - thumbWidth;
+      const x = Math.max(0, Math.min(ev.clientX - rect.left - thumbWidth / 2, maxLeft));
+      const newProgress = x / maxLeft;
+      const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+      scrollRef.current.scrollLeft = newProgress * max;
+    };
+    const onUp = () => {
+      isScrollbarDragging.current = false;
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+  }, []);
+
+  return (
+    <div className="mx-auto max-w-content">
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        className="overflow-x-auto cursor-grab active:cursor-grabbing"
+        style={{
+          scrollbarWidth: "none",
+          width: "100vw",
+          marginLeft: "calc(50% - 50vw)",
+        } as React.CSSProperties}
+      >
+        <div
+          className="flex gap-4 pb-4"
+          style={{
+            paddingLeft: "max(1.5rem, calc(50vw - 700px))",
+            paddingRight: 0,
+          }}
+        >
+          {images.map((src, i) => (
+            <div
+              key={i}
+              className="shrink-0 rounded-2xl overflow-hidden bg-surface aspect-[2/1]"
+              style={{ width: "min(85vw, 900px)" }}
+            >
+              {src ? (
+                <img
+                  src={src}
+                  alt={`Overview ${i + 1}`}
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                  onDragStart={(e) => e.preventDefault()}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted">Image {i + 1} — coming soon</p>
+                </div>
+              )}
+            </div>
+          ))}
+          <div style={{ width: "max(1.5rem, calc(50vw - 700px))", flexShrink: 0 }} />
+        </div>
+      </div>
+      <div
+        ref={scrollbarRef}
+        className="relative h-2.5 rounded-full bg-line cursor-pointer mt-6"
         onMouseDown={onScrollbarMouseDown}
       >
         <div
@@ -289,12 +393,18 @@ export function CaseLayout({ caseData, caseMeta, otherCases }: CaseLayoutProps) 
               )}
             </p>
           </Reveal>
-          {caseData.overviewImage && (
+        </div>
+        {caseData.overviewImages && caseData.overviewImages.length > 0 ? (
+          <Reveal delay={0.1}>
+            <OverviewGalleryScroll images={caseData.overviewImages} />
+          </Reveal>
+        ) : caseData.overviewImage ? (
+          <div className="mx-auto max-w-content">
             <Reveal delay={0.1}>
               <ProductOverviewScroll image={caseData.overviewImage} />
             </Reveal>
-          )}
-        </div>
+          </div>
+        ) : null}
       </section>
 
       <TransformationSticky themes={caseData.transformation} />
