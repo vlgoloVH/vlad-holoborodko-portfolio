@@ -3,6 +3,7 @@ import { CASES } from "@/lib/cases";
 import { CaseLayout } from "@/components/case-detail/case-layout";
 import { smartcrowdData } from "@/lib/case-data/smartcrowd";
 import { spaceNeedleData } from "@/lib/case-data/space-needle";
+import { bitterbrainsData } from "@/lib/case-data/bitterbrains";
 
 interface Props {
   params: { slug: string };
@@ -11,6 +12,7 @@ interface Props {
 const caseDataMap = {
   smartcrowd: smartcrowdData,
   "space-needle": spaceNeedleData,
+  bitterbrains: bitterbrainsData,
 };
 
 export async function generateStaticParams() {
