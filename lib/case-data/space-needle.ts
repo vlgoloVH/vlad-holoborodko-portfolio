@@ -36,7 +36,7 @@ export const spaceNeedleData: CaseData = {
     {
       number: "02 — Ticketing Kiosks",
       title: "Reimagining self-service ticketing",
-      description: "Following the camera experience work, I led the redesign of Space Needle's ticketing kiosks — both standard and large-format. The same designs were then adapted for partner attractions Chihuly Garden and Glass and Seattle Top Tix.",
+      description: "The kiosk had to work for two very different contexts — a quick self-serve purchase at the entrance and a high-traffic large-format screen in the main lobby. The same design logic then needed to adapt for two partner brands without losing coherence.",
       visual: "",
       points: [
         "Full redesign of standard ticketing kiosk UI",
@@ -50,7 +50,7 @@ export const spaceNeedleData: CaseData = {
     {
       number: "03 — Web & Box Office",
       title: "A unified purchase experience",
-      description: "I designed the complete web ticket purchase flow for Space Needle — then adapted it for both partner platforms. Alongside this, I designed the box office interface used by on-site staff to serve guests directly at the counter.",
+      description: "Three brands, one purchase flow. The web ticketing experience had to feel native to Space Needle, Chihuly Garden and Glass, and Seattle Top Tix — while sharing the same underlying logic, components, and checkout architecture.",
       visual: "",
       points: [
         "End-to-end web ticketing flow for Space Needle",
