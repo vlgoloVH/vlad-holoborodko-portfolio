@@ -51,7 +51,7 @@ export const spaceNeedleData: CaseData = {
       number: "03 — Web Purchase Flow",
       title: "Tickets online, on any device",
       description: "The web purchase flow had to convert visitors into buyers — on desktop and mobile, for guests planning ahead and for last-minute purchases. Clear pricing, smooth checkout, and zero unnecessary steps.",
-      visual: "",
+      visual: "/Web_spaceneedle_1300x1560.jpg",
       points: [
         "End-to-end web ticketing flow for Space Needle",
         "Responsive design across desktop and mobile",
