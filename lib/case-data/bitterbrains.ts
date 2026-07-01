@@ -16,7 +16,7 @@ export const bitterbrainsData: CaseData = {
     withWhom: ["Engineering", "Marketing", "Content & Education", "1 Designer", "Video Designers", "External Partners"],
     howIWorked: ["End-to-end product design", "Brand & visual identity", "Cross-functional collaboration", "Marketing design", "Conference experience design", "Iterative delivery"],
   },
-  overviewImages: ["", "", "", "", ""],
+  overviewImages: ["", "", "", ""],
   overviewTagline: "One team. Six years. Fifteen products.",
   transformation: [
     {
