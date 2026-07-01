@@ -5,7 +5,7 @@ export const bitterbrainsData: CaseData = {
   heroMockup: "",
   tagline: "From a small Vue.js education startup to a global developer education company with 15 products, 4 conferences, and over 2 million developers reached — I was there for all of it.",
   context: {
-    invite: "I joined the team when the company was still VueSchool — a small but ambitious group of developers and educators building the best place to learn Vue.js on the internet. The team was just a handful of people, and design was handled by whoever had time.",
+    invite: "I joined the team when the company was still VueSchool — a small but ambitious group of developers and educators building the best place to learn Vue.js on the internet. I was the first and only designer on the team, brought in to bring structure and craft to a product that had been built entirely by developers.",
     situation: "As the company grew, so did the scope of what needed to be designed. New products were launched, conferences were created, certifications were introduced, and business services were added — each requiring its own design thinking, visual language, and product experience.",
     outcome: "Over six years I helped grow VueSchool into BitterBrains — a developer education company with 15 products, 4 global conferences, official certifications trusted by 350+ companies, and a community of over 2 million developers across 156 countries.",
   },
