@@ -368,7 +368,7 @@ export const CASES: Case[] = [
       "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
     tags: ["EdTech", "SaaS", "Community"],
     cover: "/BitterBrail_preview.jpg",
-    industry: "HR Tech",
+    industry: "EdTech · Developer Education",
     businessType: "B2B",
     platform: "Web",
     meta: {
