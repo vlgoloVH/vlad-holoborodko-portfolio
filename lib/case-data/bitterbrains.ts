@@ -2,7 +2,7 @@ import type { CaseData } from "@/components/case-detail/case-layout";
 
 export const bitterbrainsData: CaseData = {
   slug: "bitterbrains",
-  heroMockup: "",
+  heroMockup: "/Hero_mockup_bitterbrain_2800x1400.jpg",
   tagline: "From a small Vue.js education startup to a global developer education company with 15 products, 4 conferences, and over 2 million developers reached — I was there for all of it.",
   context: {
     invite: "I joined the team when the company was still VueSchool — a small but ambitious group of developers and educators building the best place to learn Vue.js on the internet. I was the first and only designer on the team, brought in to bring structure and craft to a product that had been built entirely by developers.",
