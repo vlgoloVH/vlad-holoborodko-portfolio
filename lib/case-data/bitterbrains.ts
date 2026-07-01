@@ -10,7 +10,7 @@ export const bitterbrainsData: CaseData = {
     outcome: "Over six years I helped grow VueSchool into BitterBrains — a developer education company with 15 products, 4 global conferences, official certifications trusted by 350+ companies, and a community of over 2 million developers across 156 countries.",
   },
   role: {
-    summary: "I joined as a UX/UI Designer and grew into a Product Designer over six years — becoming the person responsible for the design of every product, conference, and brand touchpoint the company produced.",
+    summary: "I joined as a UX/UI Designer and grew into a Product Designer over five years — becoming the person responsible for the design of every product, conference, and brand touchpoint the company produced.",
     summaryExtra: "I worked across every function: product, marketing, engineering, and content. From designing platform UIs and course experiences to creating conference brands, social media assets, and physical event materials — if it needed to look good and work well, it came through me.",
     owned: ["Vue School Platform UI", "Mastering Nuxt & Mastering Pinia", "AIDD Product", "Certificates.dev", "Vue Bundle", "InstantDev & LevelUp", "Conference Branding & UI", "Social Media & Marketing Design", "Physical Event Materials"],
     withWhom: ["Engineering", "Marketing", "Content & Education", "1 Designer", "Video Designers", "External Partners"],
