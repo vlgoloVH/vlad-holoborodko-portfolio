@@ -23,7 +23,7 @@ export const spaceNeedleData: CaseData = {
       number: "01 — In-Tower Camera Experiences",
       title: "Designing the magic inside the tower",
       description: "My first project at Space Needle — designing tablet interfaces for three distinct in-tower camera experiences. Each had its own context, camera setup, and guest flow, but all shared the same constraint: it had to work for anyone, instantly, with no prior experience.",
-      visual: "",
+      visual: "/Camera_expiriences_spaceneedle_1300x1560.jpg",
       points: [
         "Oculus Selfie — overhead shot looking straight down through the iconic glass oculus stairs",
         "Halo Selfie — 360° camera experience on the outer observation ring",
@@ -37,7 +37,7 @@ export const spaceNeedleData: CaseData = {
       number: "02 — Ticketing Kiosks",
       title: "Reimagining self-service ticketing",
       description: "Self-service ticketing for one of Seattle's busiest attractions — redesigned for speed, clarity, and two very different kiosk formats. The design had to handle everything from a single adult ticket to complex group bookings, without friction.",
-      visual: "",
+      visual: "/Ticketing_kiosk_spaceneedle_1300x1560.jpg",
       points: [
         "Full redesign of standard ticketing kiosk UI",
         "New large-format kiosk interface for high-traffic entry points",
@@ -65,7 +65,7 @@ export const spaceNeedleData: CaseData = {
       number: "04 — Box Office",
       title: "Designed for the people on the ground",
       description: "The box office interface is used by Space Needle staff every single day — selling tickets, handling modifications, managing groups, and processing payments at the counter. Speed and reliability were non-negotiable.",
-      visual: "",
+      visual: "/Box_office_spaceneedle_1300x1560.jpg",
       points: [
         "POS interface designed for on-site staff at the ticket counter",
         "Fast ticket lookup, date and time modification, and cancellation flows",
@@ -79,7 +79,7 @@ export const spaceNeedleData: CaseData = {
       number: "05 — Internal Management Platform",
       title: "Powering operations behind the scenes",
       description: "The management platform gives Space Needle operations teams full control over every variable that affects the guest experience — pricing, inventory, schedules, discounts, bundles, and real-time sales data across all channels.",
-      visual: "",
+      visual: "/Internal_management_spaceneedle_1300x1560.jpg",
       points: [
         "Pricing configuration by month, week, day, and individual time slot",
         "Ticket inventory and capacity management per channel",
@@ -93,7 +93,7 @@ export const spaceNeedleData: CaseData = {
       number: "06 — Partner Platforms",
       title: "One foundation. Three brands.",
       description: "Every product designed for Space Needle was adapted for two partner attractions — Chihuly Garden and Glass and Seattle Top Tix. Same underlying logic, same component architecture, completely different brand expressions.",
-      visual: "",
+      visual: "/Partner_platforms_spaceneedle_1300x1560.jpg",
       points: [
         "Kiosk UI adapted for Chihuly Garden and Glass",
         "Kiosk UI adapted for Seattle Top Tix",
