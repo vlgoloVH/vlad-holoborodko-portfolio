@@ -16,7 +16,7 @@ export const spaceNeedleData: CaseData = {
     withWhom: ["Product Management", "Engineering", "Operations Team", "Marketing"],
     howIWorked: ["End-to-end product design", "Multi-platform thinking", "Cross-functional collaboration", "Iterative delivery", "Partner adaptation", "Research-informed decisions"],
   },
-  overviewImages: ["/Image_1_spaceneedle_2800x1400.jpg", "/Image_2_spaceneedle_2800x1400.jpg", "/Image_3_spaceneedle_2800x1400.jpg", "/Image_4_spaceneedle_2800x1400.jpg", "", ""],
+  overviewImages: ["/Image_1_spaceneedle_2800x1400.jpg", "/Image_2_spaceneedle_2800x1400.jpg", "/Image_3_spaceneedle_2800x1400.jpg", "/Image_4_spaceneedle_2800x1400.jpg"],
   overviewTagline: "One ecosystem. Six products. Three brands.",
   transformation: [
     {
