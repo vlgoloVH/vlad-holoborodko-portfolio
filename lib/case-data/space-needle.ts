@@ -68,11 +68,11 @@ export const spaceNeedleData: CaseData = {
       visual: "",
       points: [
         "POS interface designed for on-site staff at the ticket counter",
-        "Fast ticket lookup, date modification, and group booking",
-        "Real-time availability and capacity visibility",
+        "Fast ticket lookup, date and time modification, and cancellation flows",
+        "Group booking and multi-ticket management in a few taps",
+        "Bundle and promo discovery — staff can quickly find the best option for each guest",
+        "Real-time availability and capacity visibility across all sessions",
         "Integrated payment processing across multiple tender types",
-        "Error-tolerant flows for high-pressure, high-volume situations",
-        "Designed to minimize training time for new staff",
       ],
     },
     {
@@ -85,8 +85,8 @@ export const spaceNeedleData: CaseData = {
         "Ticket inventory and capacity management per channel",
         "Bundle, package, and discount configuration",
         "Real-time sales tracking across kiosks, web, and box office",
-        "Spacebook web — guests find and download their visit photos",
-        "Spacebook tablet — in-tower version for immediate photo access",
+        "Schedule management for experiences, sessions, and time slots",
+        "Role-based access for managers and operations staff",
       ],
     },
     {
