@@ -17,17 +17,17 @@ export const bitterbrainsData: CaseData = {
     howIWorked: ["End-to-end product design", "Brand & visual identity", "Cross-functional collaboration", "Marketing design", "Conference experience design", "Iterative delivery"],
   },
   overviewImages: [
-  "/Image_1_bitterbrain_2800x1400.jpg",
-  "/Image_2_bitterbrain_2800x1400.jpg",
-  "/Image_3_bitterbrain_2800x1400.jpg",
-  "/Image_4_bitterbrain_2800x1400.jpg",
-  "/Image_5_bitterbrain_2800x1400.jpg",
-],
+    "/Image_1_bitterbrain_2800x1400.jpg",
+    "/Image_2_bitterbrain_2800x1400.jpg",
+    "/Image_3_bitterbrain_2800x1400.jpg",
+    "/Image_4_bitterbrain_2800x1400.jpg",
+    "/Image_5_bitterbrain_2800x1400.jpg",
+  ],
   overviewTagline: "One team. Six years. Fifteen products.",
   transformation: [
     {
       number: "01 — Educational Platform",
-      title: "Building the #1 source for Vue.js education",
+      title: "Building the foundation everyone else stood on",
       description: "Vue School was the foundation everything else was built on. I designed and continuously evolved the platform experience — from course pages and lesson players to onboarding flows, subscription management, and the overall product UI — as the library grew to 1,500+ lessons serving developers in 156 countries.",
       visual: "",
       points: [
@@ -41,7 +41,7 @@ export const bitterbrainsData: CaseData = {
     },
     {
       number: "02 — Certifications",
-      title: "Validating developer skills at scale",
+      title: "Turning skills into credentials the industry trusts",
       description: "BitterBrains became the only official certification partner for Vue.js and Nuxt. I designed the full product experience for Certificates.dev — the platform that lets developers earn industry-recognized credentials trusted by over 350 companies worldwide.",
       visual: "",
       points: [
@@ -54,23 +54,9 @@ export const bitterbrainsData: CaseData = {
       ],
     },
     {
-      number: "03 — AIDD & Emerging Products",
-      title: "Designing for the next wave of developer tools",
-      description: "As AI became central to how developers work, BitterBrains launched AIDD — an AI-Driven Development learning path designed to help developers build faster and smarter using AI tools. I designed the full product experience from scratch.",
-      visual: "",
-      points: [
-        "AIDD — AI-Driven Development hands-on learning path product",
-        "Multi-module course experience with progressive skill building",
-        "Designed to help developers operate like a team 20x their size",
-        "Product UI, onboarding flow, and marketing landing page",
-        "Positioned as BitterBrains' entry into the AI education space",
-        "InstantDev & LevelUp — additional emerging product experiences",
-      ],
-    },
-    {
-      number: "04 — Global Conferences",
-      title: "Designing experiences for 115,000+ developers",
-      description: "BitterBrains runs four global developer conferences — Frontend Nation, Vue.js Nation, Nuxt Nation, and Vue.js Forge. I designed everything: the conference websites, speaker and schedule UIs, live event experiences, social media campaigns, and physical materials for in-person events.",
+      number: "03 — Global Conferences",
+      title: "Taking the community off the platform and into rooms",
+      description: "BitterBrains runs four global developer conferences — Frontend Nation, Vue.js Nation, Nuxt Nation, and Vue.js Forge. I designed everything: the conference websites, speaker and schedule UIs, live event experiences, social media campaigns, and physical materials for in-person events. What started as an online-only education product became something over 115,000 developers now travel and log in to be part of.",
       visual: "",
       points: [
         "Frontend Nation — conference website, branding, and event UI",
@@ -82,9 +68,9 @@ export const bitterbrainsData: CaseData = {
       ],
     },
     {
-      number: "05 — Business Services & Scale",
-      title: "Expanding beyond education",
-      description: "As BitterBrains matured, it launched business-facing products — InstantDev, LevelUp, and developer hiring services. I designed these products from scratch, helping the company move beyond B2C education into B2B services, while maintaining a coherent brand and product experience across an ever-growing portfolio.",
+      number: "04 — Business Services & Scale",
+      title: "Moving from teaching developers to hiring them",
+      description: "As BitterBrains matured, it launched business-facing products — InstantDev, LevelUp, and developer hiring services — moving the company from pure B2C education into B2B territory. I designed these products from scratch, translating six years of consumer-facing product thinking into services built for companies rather than individual learners.",
       visual: "",
       points: [
         "InstantDev — product design for developer services platform",
@@ -93,6 +79,19 @@ export const bitterbrainsData: CaseData = {
         "Consistent brand application across B2B and B2C products",
         "Marketing design supporting product launches and growth campaigns",
         "Design contributions to 48x revenue increase since 2017",
+      ],
+    },
+    {
+      number: "05 — AIDD & What's Next",
+      title: "Designing for how developers will work, not just how they learn today",
+      description: "As AI began reshaping how developers write and ship code, BitterBrains launched AIDD — an AI-Driven Development learning path designed to help developers build faster and smarter using AI tools. I designed the full product experience from scratch, positioning it as the company's first product built for what comes after traditional courses — and a signal of where the platform is headed next.",
+      visual: "",
+      points: [
+        "AIDD — AI-Driven Development hands-on learning path product",
+        "Multi-module course experience with progressive skill building",
+        "Designed to help developers operate like a team 20x their size",
+        "Product UI, onboarding flow, and marketing landing page",
+        "Positioned as BitterBrains' entry into the AI education space",
       ],
     },
   ],
