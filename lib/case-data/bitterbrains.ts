@@ -1,7 +1,7 @@
 import type { CaseData } from "@/components/case-detail/case-layout";
 
 export const bitterbrainsData: CaseData = {
-  slug: "bitterbrains",
+  slug: "bitterbrainіs",
   heroMockup: "/Hero_mockup_bitterbrain_2800x1400.jpg",
   tagline: "From a small Vue.js education startup to a global developer education company with 15 products, 4 conferences, and over 2 million developers reached — I was there for all of it.",
   context: {
