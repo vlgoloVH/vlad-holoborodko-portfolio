@@ -16,7 +16,13 @@ export const bitterbrainsData: CaseData = {
     withWhom: ["Engineering", "Marketing", "Content & Education", "1 Designer", "Video Designers", "External Partners"],
     howIWorked: ["End-to-end product design", "Brand & visual identity", "Cross-functional collaboration", "Marketing design", "Conference experience design", "Iterative delivery"],
   },
-  overviewImages: ["", "", "", "", ""],
+  overviewImages: [
+  "/Image_1_bitterbrain_2800x1400.jpg",
+  "/Image_2_bitterbrain_2800x1400.jpg",
+  "/Image_3_bitterbrain_2800x1400.jpg",
+  "/Image_4_bitterbrain_2800x1400.jpg",
+  "/Image_5_bitterbrain_2800x1400.jpg",
+],
   overviewTagline: "One team. Six years. Fifteen products.",
   transformation: [
     {
