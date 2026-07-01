@@ -16,7 +16,7 @@ export const bitterbrainsData: CaseData = {
     withWhom: ["Engineering", "Marketing", "Content & Education", "1 Designer", "Video Designers", "External Partners"],
     howIWorked: ["End-to-end product design", "Brand & visual identity", "Cross-functional collaboration", "Marketing design", "Conference experience design", "Iterative delivery"],
   },
-  overviewImages: ["", "", "", ""],
+  overviewImages: ["", "", "", "", ""],
   overviewTagline: "One team. Six years. Fifteen products.",
   transformation: [
     {
@@ -34,21 +34,35 @@ export const bitterbrainsData: CaseData = {
       ],
     },
     {
-      number: "02 — Certifications & Career Products",
+      number: "02 — Certifications",
       title: "Validating developer skills at scale",
-      description: "As BitterBrains expanded into official certifications, I designed the full product experience for Certificates.dev — the platform that lets developers earn industry-recognized credentials for Vue.js, Nuxt, Angular, and React. I also designed AIDD, Vue Bundle, and the surrounding product ecosystem that helped developers grow their careers.",
+      description: "BitterBrains became the only official certification partner for Vue.js and Nuxt. I designed the full product experience for Certificates.dev — the platform that lets developers earn industry-recognized credentials trusted by over 350 companies worldwide.",
       visual: "",
       points: [
         "Certificates.dev — full product UI for certification exams and credential management",
         "Vue.js and Nuxt official certifications trusted by 350+ companies",
-        "AIDD — AI-Driven Development learning path product",
-        "Vue Bundle — bundled product offering with dynamic pricing UI",
+        "Angular and React certification products added to the platform",
         "Certification landing pages and marketing experiences",
         "Career-focused product flows from purchase to credential delivery",
+        "Vue Bundle — bundled product offering with dynamic pricing UI",
       ],
     },
     {
-      number: "03 — Global Conferences",
+      number: "03 — AIDD & Emerging Products",
+      title: "Designing for the next wave of developer tools",
+      description: "As AI became central to how developers work, BitterBrains launched AIDD — an AI-Driven Development learning path designed to help developers build faster and smarter using AI tools. I designed the full product experience from scratch.",
+      visual: "",
+      points: [
+        "AIDD — AI-Driven Development hands-on learning path product",
+        "Multi-module course experience with progressive skill building",
+        "Designed to help developers operate like a team 20x their size",
+        "Product UI, onboarding flow, and marketing landing page",
+        "Positioned as BitterBrains' entry into the AI education space",
+        "InstantDev & LevelUp — additional emerging product experiences",
+      ],
+    },
+    {
+      number: "04 — Global Conferences",
       title: "Designing experiences for 115,000+ developers",
       description: "BitterBrains runs four global developer conferences — Frontend Nation, Vue.js Nation, Nuxt Nation, and Vue.js Forge. I designed everything: the conference websites, speaker and schedule UIs, live event experiences, social media campaigns, and physical materials for in-person events.",
       visual: "",
@@ -62,7 +76,7 @@ export const bitterbrainsData: CaseData = {
       ],
     },
     {
-      number: "04 — Business Services & Scale",
+      number: "05 — Business Services & Scale",
       title: "Expanding beyond education",
       description: "As BitterBrains matured, it launched business-facing products — InstantDev, LevelUp, and developer hiring services. I designed these products from scratch, helping the company move beyond B2C education into B2B services, while maintaining a coherent brand and product experience across an ever-growing portfolio.",
       visual: "",
