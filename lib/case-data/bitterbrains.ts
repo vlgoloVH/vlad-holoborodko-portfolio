@@ -96,7 +96,7 @@ export const bitterbrainsData: CaseData = {
       { value: "15", label: "Products designed", body: "From Vue School and certifications to conferences and business services — every product touched by design." },
       { value: "2M+", label: "Developers reached", body: "Across 156 countries through educational products, certifications, and global conferences." },
       { value: "4", label: "Conferences branded", body: "Frontend Nation, Vue.js Nation, Nuxt Nation, and Vue.js Forge — online and in-person." },
-      { value: "6", label: "Years of growth", body: "From a small startup with a handful of people to a team of 50+ with global reach." },
+      { value: "5", label: "Years of growth", body: "From a small startup with a handful of people to a team of 50+ with global reach." },
     ],
     summary: "Six years of design work that helped turn a small Vue.js education project into a global developer education company — one product, one conference, one experience at a time.",
   },
