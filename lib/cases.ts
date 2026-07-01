@@ -372,9 +372,9 @@ export const CASES: Case[] = [
     businessType: "B2B",
     platform: "Web",
     meta: {
-      duration: "4 months",
+      duration: "5+ years",
       role: "Product Designer",
-      team: "1 PM, 3 engineers",
+      team: "30+",
       tools: ["Figma", "FullStory", "Typeform"],
       skills: ["Onboarding design", "Workflow mapping", "Content design", "Usability testing"],
     },
