@@ -29,7 +29,7 @@ export const bitterbrainsData: CaseData = {
       number: "01 — Educational Platform",
       title: "Building the foundation everyone else stood on",
       description: "Vue School was the foundation everything else was built on. I designed and continuously evolved the platform experience — from course pages and lesson players to onboarding flows, subscription management, and the overall product UI — as the library grew to 1,500+ lessons serving developers in 156 countries.",
-      visual: "",
+      visual: "/Education_platform_bitterbrain_1300x1560.jpg",
       points: [
         "Full platform UI design across multiple product iterations",
         "Course discovery, lesson player, and learning progress experiences",
@@ -43,7 +43,7 @@ export const bitterbrainsData: CaseData = {
       number: "02 — Certifications",
       title: "Turning skills into credentials the industry trusts",
       description: "BitterBrains became the only official certification partner for Vue.js and Nuxt. I designed the full product experience for Certificates.dev — the platform that lets developers earn industry-recognized credentials trusted by over 350 companies worldwide.",
-      visual: "",
+      visual: "/Certifications_bitterbrain_1300x1560.jpg",
       points: [
         "Certificates.dev — full product UI for certification exams and credential management",
         "Vue.js and Nuxt official certifications trusted by 350+ companies",
@@ -57,7 +57,7 @@ export const bitterbrainsData: CaseData = {
       number: "03 — Global Conferences",
       title: "Taking the community off the platform and into rooms",
       description: "BitterBrains runs four global developer conferences — Frontend Nation, Vue.js Nation, Nuxt Nation, and Vue.js Forge. I designed everything: the conference websites, speaker and schedule UIs, live event experiences, social media campaigns, and physical materials for in-person events. What started as an online-only education product became something over 115,000 developers now travel and log in to be part of.",
-      visual: "",
+      visual: "/Global_conferences_bitterbrain_1300x1560.jpg",
       points: [
         "Frontend Nation — conference website, branding, and event UI",
         "Vue.js Nation — annual online conference design across multiple editions",
@@ -71,7 +71,7 @@ export const bitterbrainsData: CaseData = {
       number: "04 — Business Services & Scale",
       title: "Moving from teaching developers to hiring them",
       description: "As BitterBrains matured, it launched business-facing products — InstantDev, LevelUp, and developer hiring services — moving the company from pure B2C education into B2B territory. I designed these products from scratch, translating six years of consumer-facing product thinking into services built for companies rather than individual learners.",
-      visual: "",
+      visual: "/Business_services_bitterbrain_1300x1560.jpg",
       points: [
         "InstantDev — product design for developer services platform",
         "LevelUp — business service product UI and experience",
@@ -85,7 +85,7 @@ export const bitterbrainsData: CaseData = {
       number: "05 — AIDD & What's Next",
       title: "Designing for how developers will work, not just how they learn today",
       description: "As AI began reshaping how developers write and ship code, BitterBrains launched AIDD — an AI-Driven Development learning path designed to help developers build faster and smarter using AI tools. I designed the full product experience from scratch, positioning it as the company's first product built for what comes after traditional courses — and a signal of where the platform is headed next.",
-      visual: "",
+      visual: "/AIDD_bitterbrain_1300x1560.jpg",
       points: [
         "AIDD — AI-Driven Development hands-on learning path product",
         "Multi-module course experience with progressive skill building",
