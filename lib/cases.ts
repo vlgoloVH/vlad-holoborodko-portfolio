@@ -104,7 +104,7 @@ export const CASES: Case[] = [
     meta: {
       duration: "6 months",
       role: "Product Designer",
-      team: "PM · Engineering · Ops",
+      team: "15+",
       tools: ["Figma"],
       skills: ["Enterprise UX", "Workflow Mapping", "Information Architecture", "Design System"],
     },
