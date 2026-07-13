@@ -17,7 +17,7 @@ export const danMonFairwindData: CaseData = {
     howIWorked: ["End-to-end execution", "Workflow-driven design", "Hands-on with the team", "Module-by-module delivery", "Validated with daily users"],
   },
   overviewImages: ["/Image_1_danmo_2800x1400.jpg", "/Image_2_danmo_2800x1400.jpg", "/Image_3_danmo_2800x1400.jpg", "/Image_4_danmo_2800x1400.jpg"],
-  overviewTagline: "One connected CRM for the full sales-to-supply lifecycle.",
+  overviewTagline: "One CRM for the entire sales lifecycle.",
   transformation: [
     {
       number: "01 — Opportunities & Pipeline",
