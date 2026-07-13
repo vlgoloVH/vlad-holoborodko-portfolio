@@ -71,7 +71,7 @@ export const danMonFairwindData: CaseData = {
       { value: "4", label: "Connected modules", body: "Opportunities, quotations, procurement & fulfilment, and accounts — one system." },
       { value: "1", label: "Source of truth", body: "A single CRM replaces scattered spreadsheets, email, and disconnected tools." },
       { value: "100%", label: "Lifecycle coverage", body: "The full sales-to-supply journey designed, from enquiry to delivered order." },
-      { value: "Global", label: "Operational reach", body: "Supports sourcing, fulfilment, and delivery to customers worldwide." },
+      { value: "60+", label: "Countries reached", body: "Supports sourcing, fulfilment, and delivery to customers worldwide." },
     ],
     summary: "By designing the CRM around how the business truly runs, the team gained one connected view of every deal — and the speed, clarity, and control to scale a complex global operation.",
   },
