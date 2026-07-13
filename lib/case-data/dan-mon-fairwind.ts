@@ -42,29 +42,19 @@ export const danMonFairwindData: CaseData = {
       ],
     },
     {
-      number: "03 — Procurement & Purchasing",
-      title: "Turning won deals into purchase orders",
-      description: "Once a quote was accepted, procurement re-entered the same data to order from suppliers. We connected sales to procurement so an accepted quote flows straight into supplier purchase orders.",
+      number: "03 — Procurement & Fulfilment",
+      title: "From won deal to delivered order",
+      description: "Once a quote was accepted, procurement re-entered the same data to order from suppliers, then tracked delivery separately. We connected the whole flow so an accepted quote moves straight into supplier orders and on to the customer.",
       visual: "", // TODO
       points: [
         "Convert accepted quotes into supplier purchase orders",
         "Source and compare across multiple suppliers",
-        "Clear status from order placed to parts received",
-      ],
-    },
-    {
-      number: "04 — Order Fulfilment & Delivery",
-      title: "Tracking every order to the customer",
-      description: "With parts shipping worldwide, the team needed to see where each order stood. We designed fulfilment and delivery so status stays visible from supplier to customer.",
-      visual: "", // TODO
-      points: [
         "Track fulfilment from supplier to customer delivery",
-        "Consolidate items into shipments where it saves cost",
         "Every order connected back to its original deal",
       ],
     },
     {
-      number: "05 — Customers & Accounts",
+      number: "04 — Customers & Accounts",
       title: "The full history behind every relationship",
       description: "Customer information was spread across people and files. We built account management so every relationship carries its full history — enquiries, quotes, orders — in one place.",
       visual: "", // TODO
@@ -74,22 +64,11 @@ export const danMonFairwindData: CaseData = {
         "The context to serve repeat customers faster",
       ],
     },
-    {
-      number: "06 — Reporting & Operations",
-      title: "Visibility across the whole business",
-      description: "Leadership had no live view of sales or operations. We designed reporting so the team can see pipeline, quotes, orders, and performance across the business in real time.",
-      visual: "", // TODO
-      points: [
-        "Live view of pipeline, quotes, and orders",
-        "Performance visible across sales and procurement",
-        "Decisions based on real data, not scattered spreadsheets",
-      ],
-    },
   ],
   selectedScreens: [],
   impact: {
     items: [
-      { value: "6", label: "Connected modules", body: "Opportunities, quotations, procurement, fulfilment, accounts, and reporting — one system." },
+      { value: "4", label: "Connected modules", body: "Opportunities, quotations, procurement & fulfilment, and accounts — one system." },
       { value: "1", label: "Source of truth", body: "A single CRM replaces scattered spreadsheets, email, and disconnected tools." },
       { value: "100%", label: "Lifecycle coverage", body: "The full sales-to-supply journey designed, from enquiry to delivered order." },
       { value: "Global", label: "Operational reach", body: "Supports sourcing, fulfilment, and delivery to customers worldwide." },
