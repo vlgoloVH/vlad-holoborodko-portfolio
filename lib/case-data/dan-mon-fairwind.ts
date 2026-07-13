@@ -23,7 +23,7 @@ export const danMonFairwindData: CaseData = {
       number: "01 — Opportunities & Pipeline",
       title: "One view of every deal in play",
       description: "Enquiries used to live in inboxes with no shared status. We designed a pipeline that gives sales one view of every opportunity — from first enquiry to won or lost — with the context needed to move each deal forward.",
-      visual: "", // TODO
+      visual: "/Opportunities_pipeline_danmo_1300x1560.jpg",
       points: [
         "Capture every enquiry in one place, not scattered across inboxes",
         "Track each opportunity through clear pipeline stages",
@@ -34,7 +34,7 @@ export const danMonFairwindData: CaseData = {
       number: "02 — Quotations",
       title: "From enquiry to quote in one flow",
       description: "Building a quote meant sourcing prices, then re-keying everything into a document. We designed a quotation module that turns an opportunity into a professional quote without leaving the system.",
-      visual: "", // TODO
+      visual: "/Quotations_danmo_1300x1560.jpg",
       points: [
         "Generate quotes directly from an opportunity",
         "Pull parts, pricing, and supplier data into one place",
@@ -45,7 +45,7 @@ export const danMonFairwindData: CaseData = {
       number: "03 — Procurement & Fulfilment",
       title: "From won deal to delivered order",
       description: "Once a quote was accepted, procurement re-entered the same data to order from suppliers, then tracked delivery separately. We connected the whole flow so an accepted quote moves straight into supplier orders and on to the customer.",
-      visual: "", // TODO
+      visual: "/Procurement_fulfilment_danmo_1300x1560.jpg",
       points: [
         "Convert accepted quotes into supplier purchase orders",
         "Source and compare across multiple suppliers",
@@ -57,7 +57,7 @@ export const danMonFairwindData: CaseData = {
       number: "04 — Customers & Accounts",
       title: "The full history behind every relationship",
       description: "Customer information was spread across people and files. We built account management so every relationship carries its full history — enquiries, quotes, orders — in one place.",
-      visual: "", // TODO
+      visual: "/Customers_accounts_danmo_1300x1560.jpg",
       points: [
         "A single record for every customer and account",
         "Full history of enquiries, quotes, and orders per account",
