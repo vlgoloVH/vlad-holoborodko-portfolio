@@ -212,18 +212,18 @@ export const CASES: Case[] = [
       "Designed an enterprise CRM platform that supports the complete sales lifecycle for marine equipment and spare parts, helping global teams manage opportunities, quotations, procurement, and customer relationships in one place.",
     tags: ["Enterprise", "CRM", "B2B"],
     cover: "/DanMon_preview.jpg",
-    industry: "Healthcare",
-    businessType: "B2C",
-    platform: "Mobile",
+    industry: "Maritime · Spare Parts",
+    businessType: "B2B",
+    platform: "Web",
     meta: {
       duration: "6 months",
-      role: "Senior Product Designer",
-      team: "1 PM, 5 engineers, 1 clinical advisor",
-      tools: ["Figma", "Principle", "Maze"],
-      skills: ["Accessibility", "Service design", "Prototyping", "Cross-functional collaboration"],
+      role: "Product Designer",
+      team: "PM · Engineering · Ops",
+      tools: ["Figma"],
+      skills: ["Enterprise UX", "Workflow Mapping", "Information Architecture", "Design System"],
     },
-    sections: [
-      {
+    sections: [],
+  },
         id: "summary",
         title: "Executive summary",
         body: [
