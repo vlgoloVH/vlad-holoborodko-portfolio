@@ -2,7 +2,7 @@ import type { CaseData } from "@/components/case-detail/case-layout";
 
 export const danMonFairwindData: CaseData = {
   slug: "dan-mon-fairwind",
-  heroMockup: "", // TODO: add hero image, e.g. "/Hero_mockup_danmon_2800x1400.jpg"
+  heroMockup: "/Hero_mockup_danmo_2800x1400.jpg",
   tagline: "Designing the enterprise CRM that runs the full sales-to-supply lifecycle for a global marine spare-parts business.",
   context: {
     invite: "Dan-Mon Fairwind runs a global marine spare-parts business on a web of spreadsheets, email, and disconnected tools. They brought me in to design a single internal CRM their whole team could run the business on — from first enquiry to delivered order.",
@@ -16,7 +16,7 @@ export const danMonFairwindData: CaseData = {
     withWhom: ["Founders / Operations Lead", "Sales Team", "Procurement Team", "Engineering"],
     howIWorked: ["End-to-end execution", "Workflow-driven design", "Hands-on with the team", "Module-by-module delivery", "Validated with daily users"],
   },
-  overviewImages: ["", "", "", ""], // TODO: add platform screen exports
+  overviewImages: ["/Image_1_danmo_2800x1400.jpg", "/Image_2_danmo_2800x1400.jpg", "/Image_3_danmo_2800x1400.jpg", "/Image_4_danmo_2800x1400.jpg"],
   overviewTagline: "One connected CRM for the full sales-to-supply lifecycle.",
   transformation: [
     {
