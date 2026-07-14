@@ -32,7 +32,7 @@ export const CASES: Case[] = [
     client: "SmartCrowd — Real Estate Investment Platform",
     year: "2025-2026",
     description:
-      "Redesigning the UAE's leading real estate investment platform to help investors discover, invest, and manage properties with confidence.",
+      "A UAE real estate investment platform where people can invest in property and manage their portfolio in one place.",
     cover: "/SmartCrowd_preview.jpg",
     industry: "PropTech · Fintech",
     businessType: "B2C",
@@ -53,7 +53,7 @@ export const CASES: Case[] = [
     client: "Notary HUB — LegalTech SaaS Platform",
     year: "2018-2019",
     description:
-      "Led a complete redesign of a LegalTech SaaS platform that helps notaries manage clients, documents, approvals, and remote online notarization workflows.",
+      "A US platform for Remote Online Notarization, letting notaries, companies, and clients sign and handle legal documents fully online.",
     cover: "/NotaryHUB_preview.jpg",
     industry: "LegalTech",
     businessType: "B2B",
@@ -74,7 +74,7 @@ export const CASES: Case[] = [
     client: "Space Needle — Ticketing Experience",
     year: "2024-2025",
     description:
-      "Designed the end-to-end ticketing experience for one of Seattle's most iconic attractions. Created customer-facing products across kiosks, web, and box offices, alongside a powerful internal platform for managing ticket inventory, pricing, discounts, schedules, and sales operations.",
+      "The ticketing and digital experience for Space Needle, one of Seattle's most iconic landmarks, visited by millions each year.",
     tags: ["B2C", "B2B", "Enterprise"],
     cover: "/SpaceNeedle_preview.jpg",
     industry: "Travel & Entertainment",
@@ -94,8 +94,8 @@ export const CASES: Case[] = [
     title: "Dan-Mon Fairwind",
     client: "Dan-Mon Fairwind — Enterprise CRM",
     year: "2022-2023",
-    description:
-      "Designed an enterprise CRM platform that supports the complete sales lifecycle for marine equipment and spare parts, helping global teams manage opportunities, quotations, procurement, and customer relationships in one place.",
+   description:
+      "A global marine supplier that sources and delivers technical spare parts for ship equipment anywhere in the world.",
     tags: ["Enterprise", "CRM", "B2B"],
     cover: "/DanMon_preview.jpg",
     industry: "Maritime · Spare Parts",
@@ -115,8 +115,8 @@ export const CASES: Case[] = [
     title: "Fozzy Group",
     client: "Fozzy Group — Internal Back-Office Platform",
     year: "2025",
-    description:
-      "Designed for Silpo's internal back-office, the system behind one of Ukraine's largest supermarket chains: improving existing tools, shaping new flows, and building a large design system.",
+    ddescription:
+      "Silpo, the flagship supermarket chain of Fozzy Group, one of Ukraine's largest retailers with hundreds of stores nationwide.",
     tags: ["Retail", "Back-Office", "Design System"],
     cover: "/FozzyGroup_preview.jpg",
     industry: "Retail · Enterprise",
@@ -137,7 +137,7 @@ export const CASES: Case[] = [
     client: "BitterBrains — Developer Education Platform",
     year: "2019-2025",
     description:
-      "Designing products that help millions of developers learn, validate their skills, and grow their careers through education, certifications, and global community events.",
+      "A developer education company building online learning platforms, skill certifications, and global conferences for software engineers around the world.",
     tags: ["EdTech", "SaaS", "Community"],
     cover: "/BitterBrail_preview.jpg",
     industry: "EdTech · Developer Education",
