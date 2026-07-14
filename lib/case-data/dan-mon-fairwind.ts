@@ -1,6 +1,6 @@
 import type { CaseData } from "@/components/case-detail/case-layout";
 
-export const notaryHubData: CaseData = {
+export const danMonFairwindData: CaseData = {
   slug: "notary-hub",
   heroMockup: "/Hero_mockup_notaryhub_2800x1400.jpg",
   tagline: "Designing NotaryHub end to end: the Remote Online Notarization platform for notaries, companies, and their clients, plus the internal back-office system that keeps it running.",
