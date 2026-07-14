@@ -115,7 +115,7 @@ export const CASES: Case[] = [
     title: "Fozzy Group",
     client: "Fozzy Group — Internal Back-Office Platform",
     year: "2025",
-    ddescription:
+    description:
       "Silpo, the flagship supermarket chain of Fozzy Group, one of Ukraine's largest retailers with hundreds of stores nationwide.",
     tags: ["Retail", "Back-Office", "Design System"],
     cover: "/FozzyGroup_preview.jpg",
