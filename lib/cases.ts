@@ -57,7 +57,7 @@ export const CASES: Case[] = [
     cover: "/NotaryHUB_preview.jpg",
     industry: "LegalTech",
     businessType: "B2B",
-    platform: "Web",
+    platform: "Web · PWA",
     tags: ["LegalTech", "SaaS", "Product Design"],
     meta: {
       duration: "8 months",
