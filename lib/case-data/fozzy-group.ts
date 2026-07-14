@@ -2,7 +2,7 @@ import type { CaseData } from "@/components/case-detail/case-layout";
 
 export const fozzyGroupData: CaseData = {
   slug: "fozzy-group",
-  heroMockup: "", // TODO: add hero image, e.g. "/Hero_mockup_fozzy_2800x1400.jpg"
+  heroMockup: "/Hero_mockup_fozzy_2800x1400.jpg",
   tagline: "Designing for the internal back-office of Silpo, the flagship supermarket chain of one of Ukraine's largest retailers.",
   context: {
     invite: "Fozzy Group is one of Ukraine's largest retailers, and Silpo is its flagship supermarket chain with hundreds of stores across the country. I joined the team designing Silpo's internal back-office, the system the business runs its retail operations on.",
@@ -16,7 +16,12 @@ export const fozzyGroupData: CaseData = {
     withWhom: ["Product Management", "Engineering", "Other Designers", "Operations Teams"],
     howIWorked: ["Feature-by-feature delivery", "Design system contribution", "Cross-functional collaboration", "Close design collaboration", "Iterative improvement"],
   },
-  overviewImages: ["", "", "", ""], // TODO: add platform screen exports
+  overviewImages: [
+  "/Image_1_fozzy_2800x1400.jpg",
+  "/Image_2_fozzy_2800x1400.jpg",
+  "/Image_3_fozzy_2800x1400.jpg",
+  "/Image_4_fozzy_2800x1400.jpg",
+],
   overviewTagline: "Improving the system Silpo runs on, and the design system behind it.",
   transformation: [
     {
