@@ -23,7 +23,7 @@ export const notaryHubData: CaseData = {
       number: "01 — For Consumers",
       title: "Get a document notarized in minutes",
       description: "Most people had never used an online notary, so the flow had to be obvious. We built a consumer experience where anyone uploads a document, verifies their identity, and meets a notary over live video, finishing a legally valid notarization in as little as five minutes.",
-      visual: "", // TODO
+      visual: "/Consumers_notaryhub_1300x1560.jpg",
       points: [
         "Request a notary on demand, or schedule one you already trust",
         "Guided identity verification, then sign live over video",
@@ -34,7 +34,7 @@ export const notaryHubData: CaseData = {
       number: "02 — For Notaries",
       title: "Run a modern notary practice",
       description: "Notaries needed one place to run their business and host the signing itself: manage appointments, prepare documents, conduct the live session, set pricing, and get paid, all while reaching clients well beyond their local area.",
-      visual: "", // TODO
+      visual: "/Notaries_notaryhub_1300x1560.jpg",
       points: [
         "Manage appointments and run live signing sessions in one place",
         "Prepare documents and apply the digital notary seal and signature",
@@ -45,7 +45,7 @@ export const notaryHubData: CaseData = {
       number: "03 — On Any Device",
       title: "A full platform that fits in your pocket",
       description: "Notarization can't wait for someone to be at a desk. We built NotaryHub as a responsive web app (a PWA), so the whole experience adapts from a large monitor down to a phone, and installs straight from the browser without an app store.",
-      visual: "", // TODO
+      visual: "/pwa_notaryhub_1300x1560.jpg",
       points: [
         "One responsive web app (PWA) across desktop, tablet, and phone",
         "Installable from the browser, no app store needed",
@@ -56,7 +56,7 @@ export const notaryHubData: CaseData = {
       number: "04 — Internal Back-Office",
       title: "The system that runs the platform",
       description: "Behind every audience sits the engine NotaryHub's own team uses to run the platform. I designed the internal back office for oversight of every user, session, document, and compliance record across the databases.",
-      visual: "", // TODO
+      visual: "/back0ffice_notaryhub_1300x1560.jpg",
       points: [
         "Oversee every notary, user, and company from one admin system",
         "Track sessions, documents, and identity records at scale",
