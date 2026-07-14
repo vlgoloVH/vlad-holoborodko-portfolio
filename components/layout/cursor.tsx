@@ -44,7 +44,7 @@ export function Cursor() {
   return (
     <motion.div
       style={{ left: springX, top: springY }}
-      className="pointer-events-none fixed z-[70] -translate-x-1/2 -translate-y-1/2"
+      className="pointer-events-none fixed z-[200] -translate-x-1/2 -translate-y-1/2"
       aria-hidden="true"
     >
       <motion.div
