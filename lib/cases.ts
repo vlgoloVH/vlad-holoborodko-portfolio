@@ -60,9 +60,9 @@ export const CASES: Case[] = [
     platform: "Web",
     tags: ["LegalTech", "SaaS", "Product Design"],
     meta: {
-      duration: "TBD",
+      duration: "8 months",
       role: "Lead Product Designer",
-      team: "TBD",
+      team: "10+",
       tools: ["Figma"],
       skills: ["Product Design"],
     },
