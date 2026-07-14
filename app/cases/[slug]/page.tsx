@@ -6,6 +6,7 @@ import { spaceNeedleData } from "@/lib/case-data/space-needle";
 import { bitterbrainsData } from "@/lib/case-data/bitterbrains";
 import { danMonFairwindData } from "@/lib/case-data/dan-mon-fairwind";
 import { notaryHubData } from "@/lib/case-data/notary-hub";
+import { fozzyGroupData } from "@/lib/case-data/fozzy-group";
 
 interface Props {
   params: { slug: string };
@@ -17,6 +18,7 @@ const caseDataMap = {
   bitterbrains: bitterbrainsData,
   "dan-mon-fairwind": danMonFairwindData,
   "notary-hub": notaryHubData,
+  "fozzy-group": fozzyGroupData,
 };
 
 export async function generateStaticParams() {
