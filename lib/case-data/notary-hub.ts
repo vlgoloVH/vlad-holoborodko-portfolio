@@ -2,7 +2,7 @@ import type { CaseData } from "@/components/case-detail/case-layout";
 
 export const notaryHubData: CaseData = {
   slug: "notary-hub",
-  heroMockup: "", // TODO: add hero image, e.g. "/Hero_mockup_notaryhub_2800x1400.jpg"
+  heroMockup: "/Hero_mockup_notaryhub_2800x1400.jpg",
   tagline: "Designing NotaryHub end to end: the Remote Online Notarization platform for notaries, companies, and their clients, plus the internal back-office system that keeps it running.",
   context: {
     invite: "NotaryHub is a US platform for Remote Online Notarization (RON). They brought me in to design the whole product: both the client-facing side that notaries, companies, and clients use to notarize documents online, and the internal system that runs everything behind the scenes.",
@@ -16,7 +16,7 @@ export const notaryHubData: CaseData = {
     withWhom: ["Product Management", "Engineering", "Legal / Compliance", "Operations"],
     howIWorked: ["End-to-end design", "Multi-sided platform thinking", "Responsive / PWA", "Cross-functional collaboration", "Iterative delivery"],
   },
-  overviewImages: ["", "", "", ""], // TODO: add platform screen exports
+  overviewImages: ["/Image_1_notaryhub_2800x1400.jpg", "/Image_2_notaryhub_2800x1400.jpg", "/Image_3_notaryhub_2800x1400.jpg", "/Image_4_notaryhub_2800x1400.jpg"],
   overviewTagline: "One product: the client platform and the internal back office that runs it.",
   transformation: [
     {
