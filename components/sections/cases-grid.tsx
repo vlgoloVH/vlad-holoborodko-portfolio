@@ -7,7 +7,7 @@ export function CasesGrid() {
     <section id="work" className="px-6 py-20 md:px-10 md:py-28 lg:scroll-mt-24">
       <div className="mx-auto max-w-content">
         <Reveal>
-          <div className="flex items-baseline justify-between">
+          <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
               Featured Projects
             </h2>
