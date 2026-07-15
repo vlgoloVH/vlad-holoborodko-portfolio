@@ -39,7 +39,6 @@ export const COMPANY_LOGOS = [
 
 export const TESTIMONIALS = [
   {
-    {
     quote: "Vlad has helped us enormously over five years, across a wide range of projects — and honestly, working with him has been one of the most consistent bright spots of that time. Vlad has this quiet superpower: no matter how complex or undefined a design problem is, he finds his way through it. I've seen him take on projects that felt almost impossible to scope and come back with solutions that were not only technically sound but genuinely beautiful to use. His eye for detail and his instinct for what users actually need are things you can't teach. Vlad would be a tremendous asset to any product team lucky enough to work with him.",
     name: "Olesia Borshchova",
     role: "Senior PM & PO",
