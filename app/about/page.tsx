@@ -228,7 +228,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-content">
           <div className="grid grid-cols-2 md:grid-cols-4 items-stretch">
             {[
-              { value: "11+", label: "Years of experience", body: "A proven track record of designing and launching digital products across multiple industries." },
+              { value: "10+", label: "Years of experience", body: "A proven track record of designing and launching digital products across multiple industries." },
               { value: "40+", label: "Projects launched", body: "Delivered web and mobile products from concept to launch in startups and enterprise teams." },
               { value: "15+", label: "Industries shaped", body: "From investment platforms and retail systems to SaaS products, education platforms and enterprise solutions." },
               { value: "Lead", label: "Product Designer", body: "Driving product strategy, UX direction and execution." },
