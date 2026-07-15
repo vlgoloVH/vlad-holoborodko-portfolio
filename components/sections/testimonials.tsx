@@ -101,7 +101,7 @@ export function Testimonials() {
     <section className="border-t border-line px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-content">
         <Reveal>
-          <div className="flex items-baseline justify-between mb-12">
+          <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between mb-12">
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
               What people say
             </h2>
