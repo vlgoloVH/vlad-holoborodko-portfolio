@@ -4,8 +4,8 @@ import { LogoStrip } from "@/components/sections/logo-strip";
 
 export function Hero() {
   return (
-    <section className="relative flex h-full flex-col justify-between overflow-hidden border-none bg-[var(--color-bg)] px-8 md:px-14">
-      <div className="flex flex-1 items-start pt-24 md:items-center md:pt-16">
+    <section className="relative flex h-full flex-col justify-center overflow-hidden border-none bg-[var(--color-bg)] px-8 md:justify-between md:px-14">
+      <div className="md:flex md:flex-1 md:items-center md:pt-16">
         <div className="mx-auto w-full max-w-content">
           <div className="flex flex-col gap-1.5 font-mono text-[11px] uppercase tracking-widest text-muted items-center text-center md:flex-row md:items-center md:justify-between md:text-left md:gap-3 md:text-xs">
             <span>— SENIOR PRODUCT DESIGNER · EST. 2015</span>
@@ -70,7 +70,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <div className="w-full border-none">
+      <div className="hidden w-full border-none md:block">
         <LogoStrip />
       </div>
     </section>
