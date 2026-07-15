@@ -28,7 +28,7 @@ export const fozzyGroupData: CaseData = {
       number: "01 — Product Catalog",
       title: "Building the foundation the whole catalog runs on",
       description: "Every product in Silpo's catalog needs a consistent structure behind it. I improved existing tools and designed new ones for managing products, categories, modifier groups, product characteristics, and characteristic sets, giving merchandising teams a clear, connected way to manage what gets sold across hundreds of stores.",
-      visual: "", // TODO
+      visual: "/Product_catalog_fozzy_1300x1560.jpg",
       points: [
         "Products and categories: structure and management flows",
         "Modifier groups for configuring product variations",
@@ -40,7 +40,7 @@ export const fozzyGroupData: CaseData = {
       number: "02 — Commerce Operations",
       title: "Running the business behind the storefront",
       description: "Beyond the catalog, I designed the tools that keep the business running day to day: offers, the order flow, merchant management, branch-level services, and access levels that control who can act on what. Each one had its own operational logic to work through.",
-      visual: "", // TODO
+      visual: "/Commerse_operations_fozzy_1300x1560.jpg",
       points: [
         "Offers: creation and management flows",
         "Order flow, from creation through fulfillment",
@@ -52,7 +52,7 @@ export const fozzyGroupData: CaseData = {
       number: "03 — Design System",
       title: "One system behind a sprawling product",
       description: "Alongside the feature work, I contributed to a large design system: the shared components, patterns, and rules that keep this many tools, and this many teams, moving in the same direction.",
-      visual: "", // TODO
+      visual: "/Design_system_fozzy_1300x1560.jpg",
       points: [
         "Contributed to a large-scale design system",
         "Shared components and patterns across the back-office",
