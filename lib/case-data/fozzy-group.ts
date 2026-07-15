@@ -25,40 +25,18 @@ export const fozzyGroupData: CaseData = {
   overviewTagline: "Improving the system Silpo runs on, and the design system behind it.",
   transformation: [
     {
-      number: "01 — Improving the System",
-      title: "Reworking tools people use all day",
-      description: "Silpo's back-office had grown dense over years of new features. We went through it piece by piece, simplifying cluttered screens and smoothing out the everyday tasks teams rely on to keep stores running.",
+      number: "01 — The Audit",
+      title: "Finding out how broken the system really was",
+      description: "Before any new screen got built, we needed to understand how the existing back-office had actually grown over the years. I audited the tools and interfaces across teams, mapping where patterns and workflows had drifted apart, and where that inconsistency was costing people the most time.",
       visual: "", // TODO
       points: [
-        "Audited and reworked existing tools used across the business",
-        "Simplified cluttered, overloaded screens into clear layouts",
-        "Smoothed out the everyday tasks teams repeat all day",
+        "Audited existing tools and interfaces across multiple teams",
+        "Mapped where inconsistent patterns slowed people down the most",
+        "Prioritized what to fix first based on real daily friction, not guesswork",
       ],
     },
     {
-      number: "02 — New Flows",
-      title: "Designing what the system was missing",
-      description: "Beyond fixing what existed, the business needed new capabilities. I designed new flows from scratch, turning complex operational requirements into steps that felt straightforward for the people using them.",
-      visual: "", // TODO
-      points: [
-        "Designed new workflows from the ground up",
-        "Turned complex retail requirements into simple, guided steps",
-        "Shaped features around how teams actually work",
-      ],
-    },
-    {
-      number: "03 — Data-Heavy Tools",
-      title: "Making dense data usable",
-      description: "Retail operations run on a lot of data: inventory, pricing, logistics, and more. I designed the dense, table-heavy interfaces this needs, so people can find and act on information quickly instead of getting lost in it.",
-      visual: "", // TODO
-      points: [
-        "Designed data-heavy tables, filters, and dashboards",
-        "Made large volumes of information scannable and actionable",
-        "Balanced density with clarity for expert daily users",
-      ],
-    },
-    {
-      number: "04 — The Design System",
+      number: "02 — The Design System",
       title: "One system behind the whole product",
       description: "Tying it all together was a large design system. Working with other designers, I helped build the shared components, patterns, and rules that keep a product this size consistent and let the team move faster.",
       visual: "", // TODO
@@ -66,6 +44,28 @@ export const fozzyGroupData: CaseData = {
         "Built shared components and patterns at scale",
         "Brought consistency across a huge, sprawling product",
         "Helped the team ship faster on a common foundation",
+      ],
+    },
+    {
+      number: "03 — New Flows",
+      title: "Designing what the system was missing",
+      description: "With a shared foundation in place, the business could ask for more than fixes. I designed new flows from scratch, turning complex operational requirements into steps that felt straightforward for the people using them.",
+      visual: "", // TODO
+      points: [
+        "Designed new workflows from the ground up on top of the shared system",
+        "Turned complex retail requirements into simple, guided steps",
+        "Shaped features around how teams actually work",
+      ],
+    },
+    {
+      number: "04 — Data-Heavy Tools",
+      title: "Making dense data usable",
+      description: "Retail operations run on a lot of data: inventory, pricing, logistics, and more. I designed the dense, table-heavy interfaces this needs, so people can find and act on information quickly instead of getting lost in it.",
+      visual: "", // TODO
+      points: [
+        "Designed data-heavy tables, filters, and dashboards",
+        "Made large volumes of information scannable and actionable",
+        "Balanced density with clarity for expert daily users",
       ],
     },
   ],
