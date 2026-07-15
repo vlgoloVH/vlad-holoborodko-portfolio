@@ -1,16 +1,34 @@
 "use client";
-
 import { Reveal } from "@/components/ui/reveal";
 import { TESTIMONIALS } from "@/lib/site";
 import { useRef, useState, useCallback } from "react";
 
 function TestimonialCard({ quote, name, role }: { quote: string; name: string; role: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const isLong = quote.length > 240;
+
   return (
-    <div className="w-[85vw] md:w-[660px] shrink-0 rounded-2xl bg-surface p-8 flex flex-col gap-6" style={{ height: "300px" }}>
+    <div
+      className="w-[85vw] md:w-[660px] shrink-0 rounded-2xl bg-surface p-8 flex flex-col gap-6"
+      style={{ minHeight: "340px" }}
+    >
       <span className="font-display text-4xl leading-none text-accent">"</span>
-      <p className="font-display text-base leading-snug text-ink md:text-lg flex-1">
+      <p
+        className={`font-display text-base leading-snug text-ink md:text-lg flex-1 ${
+          !expanded && isLong ? "line-clamp-6" : ""
+        }`}
+      >
         {quote}
       </p>
+      {isLong && (
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          className="self-start font-mono text-xs uppercase tracking-widest text-accent transition-colors duration-300 hover:text-ink"
+        >
+          {expanded ? "Show less" : "Read more"}
+        </button>
+      )}
       <div>
         <p className="text-sm font-medium text-ink">{name}</p>
         <p className="font-mono text-xs uppercase tracking-widest text-muted">{role}</p>
@@ -59,7 +77,6 @@ export function Testimonials() {
     const bar = scrollbarRef.current;
     if (!bar) return;
     const thumbWidth = bar.getBoundingClientRect().width * 0.3;
-
     const onMove = (ev: MouseEvent) => {
       if (!isScrollbarDragging.current || !scrollRef.current || !bar) return;
       const rect = bar.getBoundingClientRect();
@@ -69,13 +86,11 @@ export function Testimonials() {
       const max = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
       scrollRef.current.scrollLeft = newProgress * max;
     };
-
     const onUp = () => {
       isScrollbarDragging.current = false;
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseup", onUp);
     };
-
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseup", onUp);
   }, []);
@@ -95,7 +110,6 @@ export function Testimonials() {
             </span>
           </div>
         </Reveal>
-
         <div
           ref={scrollRef}
           onScroll={handleScroll}
@@ -111,7 +125,7 @@ export function Testimonials() {
           } as React.CSSProperties}
         >
           <div
-            className="flex gap-4 pb-4"
+            className="flex items-start gap-4 pb-4"
             style={{
               paddingLeft: "max(1.5rem, calc(50vw - 700px))",
               paddingRight: 0,
@@ -123,7 +137,6 @@ export function Testimonials() {
            <div style={{ width: "max(3rem, calc(50vw - 700px + 1.5rem))", flexShrink: 0 }} />
           </div>
         </div>
-
         <div
           ref={scrollbarRef}
           className="relative h-2.5 rounded-full bg-line cursor-pointer mt-6"
