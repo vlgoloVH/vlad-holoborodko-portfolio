@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -16,7 +15,6 @@ export function Header() {
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll<HTMLElement>(".section-invert"));
     if (!sections.length) return;
-
     const check = () => {
       const overlap = sections.some((s) => {
         const rect = s.getBoundingClientRect();
@@ -24,7 +22,6 @@ export function Header() {
       });
       setOverDark(overlap);
     };
-
     check();
     window.addEventListener("scroll", check, { passive: true });
     window.addEventListener("resize", check);
@@ -34,9 +31,16 @@ export function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header className={`fixed inset-x-0 top-0 z-50 ${overDark ? "section-invert" : ""}`}>
-      <div className="glass-bg backdrop-blur-md transition-colors duration-300">
+      <div className="glass-bg relative z-10 backdrop-blur-md transition-colors duration-300">
         <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5 md:px-0">
           <Link
             href="/"
@@ -44,7 +48,6 @@ export function Header() {
           >
             Vlad Holoborodko<span className="text-accent">.</span>
           </Link>
-
           <nav className="hidden items-center gap-8 md:flex">
             {NAV_LINKS.map((link) => (
               <Link
@@ -58,7 +61,6 @@ export function Header() {
             ))}
             <ThemeToggle />
           </nav>
-
           <div className="flex items-center gap-3 md:hidden">
             <ThemeToggle />
             <button
@@ -72,23 +74,22 @@ export function Header() {
           </div>
         </div>
       </div>
-
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-            className="overflow-hidden border-b border-line bg-bg md:hidden"
+            className="fixed inset-0 z-0 flex items-center justify-center bg-bg md:hidden"
           >
-            <nav className="flex flex-col gap-1 px-6 py-4">
+            <nav className="flex flex-col items-center gap-10">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="py-2 font-mono text-sm uppercase tracking-widest text-muted transition-colors hover:text-ink"
+                  className="font-mono text-3xl uppercase tracking-widest text-ink transition-colors hover:text-accent"
                 >
                   {link.label}
                 </Link>
