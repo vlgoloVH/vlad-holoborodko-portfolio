@@ -106,14 +106,22 @@ export function Testimonials() {
       if (!sc || !track) return;
       const s = sc.getBoundingClientRect();
       const t = track.getBoundingClientRect();
+      const row = sc.firstElementChild as HTMLElement | null;
+      const gap = row ? parseFloat(getComputedStyle(row).columnGap) || 0 : 0;
       setPads({
         left: Math.max(0, Math.round(t.left - s.left)),
-        right: Math.max(0, Math.round(s.right - t.right)),
+        // subtract the flex gap: the trailing spacer sits one gap away from
+        // the last card, so the card's right edge = content edge exactly.
+        right: Math.max(0, Math.round(s.right - t.right - gap)),
       });
     };
     measure();
+    const raf = requestAnimationFrame(measure);
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", measure);
+    };
   }, []);
 
   const doubled = TESTIMONIALS;
@@ -155,7 +163,7 @@ export function Testimonials() {
             {doubled.map((t, i) => (
               <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
             ))}
-           <div style={{ width: `${pads.right}px`, flexShrink: 0 }} />
+           <div style={{ width: `${pads.right}px`, flexShrink: 0, alignSelf: "stretch" }} />
           </div>
         </div>
         <div
