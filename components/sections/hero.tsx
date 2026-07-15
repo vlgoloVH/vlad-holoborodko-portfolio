@@ -56,7 +56,7 @@ export function Hero() {
                       fill="none"
                     />
                   </defs>
-                  <text fill="currentColor" className="font-mono text-[14px] uppercase tracking-[0.25em]">
+                  <text fill="currentColor" className="font-mono text-[12px] uppercase tracking-[0.25em]">
                     <textPath href="#resume-circle">
                       Download resume • Download resume • Download resume •
                     </textPath>
