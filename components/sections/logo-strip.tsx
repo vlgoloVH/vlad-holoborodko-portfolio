@@ -26,7 +26,7 @@ export function LogoStrip() {
   return (
     <div className="relative -mx-8 md:-mx-14">
       <section className="border-y border-line py-2 md:py-8">
-        <div className="px-8 md:px-14">
+        <div className="hidden px-8 md:block md:px-14">
           <div className="mx-auto max-w-content">
             <Reveal>
               <p className="font-mono text-xs uppercase tracking-widest text-muted text-center md:text-left">
@@ -35,7 +35,7 @@ export function LogoStrip() {
             </Reveal>
           </div>
         </div>
-        <div className="relative mt-2 overflow-hidden md:mt-8">
+        <div className="relative overflow-hidden md:mt-8">
           <div className="flex w-max items-center animate-[scroll_50s_linear_infinite] gap-3 motion-reduce:animate-none md:gap-10">
             {[...LOGOS, ...LOGOS].map((logo, i) => {
               const suffix = theme === "dark" ? "Dark" : "Light";
