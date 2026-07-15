@@ -1,7 +1,7 @@
 "use client";
 import { Reveal } from "@/components/ui/reveal";
 import { TESTIMONIALS } from "@/lib/site";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 function TestimonialCard({ quote, name, role }: { quote: string; name: string; role: string }) {
   const [expanded, setExpanded] = useState(false);
@@ -40,6 +40,10 @@ function TestimonialCard({ quote, name, role }: { quote: string; name: string; r
 export function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
+  // Edge padding measured from the actual content column (the scrollbar track
+  // sits exactly at the content width), so the first/last cards line up with
+  // the content edges on every screen — no magic numbers, no scrollbar drift.
+  const [pads, setPads] = useState({ left: 24, right: 24 });
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
@@ -95,6 +99,23 @@ export function Testimonials() {
     window.addEventListener("mouseup", onUp);
   }, []);
 
+  useEffect(() => {
+    const measure = () => {
+      const sc = scrollRef.current;
+      const track = scrollbarRef.current;
+      if (!sc || !track) return;
+      const s = sc.getBoundingClientRect();
+      const t = track.getBoundingClientRect();
+      setPads({
+        left: Math.max(0, Math.round(t.left - s.left)),
+        right: Math.max(0, Math.round(s.right - t.right)),
+      });
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
   const doubled = TESTIMONIALS;
 
   return (
@@ -127,14 +148,14 @@ export function Testimonials() {
           <div
             className="flex items-start gap-4 pb-4"
             style={{
-              paddingLeft: "max(1.5rem, calc(50vw - 700px))",
+              paddingLeft: `${pads.left}px`,
               paddingRight: 0,
             }}
           >
             {doubled.map((t, i) => (
               <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
             ))}
-           <div style={{ width: "max(1.5rem, calc(50vw - 700px))", flexShrink: 0 }} />
+           <div style={{ width: `${pads.right}px`, flexShrink: 0 }} />
           </div>
         </div>
         <div
