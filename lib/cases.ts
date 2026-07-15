@@ -62,7 +62,7 @@ export const CASES: Case[] = [
     meta: {
       duration: "8 months",
       role: "Lead Product Designer",
-      team: "10+",
+      team: "20+",
       tools: ["Figma"],
       skills: ["Product Design"],
     },
