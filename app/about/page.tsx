@@ -208,9 +208,9 @@ export default function AboutPage() {
                   scale-ups, and international companies, designing products
                   across fintech, proptech, SaaS, LegalTech, retail, and
                   enterprise software. Along the way, my focus naturally evolved
-                  from visual design to product design — combining research,
-                  strategy, systems thinking, and user experience to solve
-                  increasingly complex challenges.
+                  from visual design to product design. That shift meant
+                  combining research, strategy, systems thinking, and user
+                  experience to solve increasingly complex challenges.
                 </p>
                 <p>
                   Today, I help teams turn complexity into clarity by creating
