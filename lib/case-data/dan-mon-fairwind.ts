@@ -5,13 +5,13 @@ export const danMonFairwindData: CaseData = {
   heroMockup: "/Hero_mockup_danmo_2800x1400.jpg",
   tagline: "Designing the enterprise CRM that runs the full sales-to-supply lifecycle for a global marine spare-parts business.",
   context: {
-    invite: "Dan-Mon Fairwind runs a global marine spare-parts business on a web of spreadsheets, email, and disconnected tools. They brought me in to design a single internal CRM their whole team could run the business on — from first enquiry to delivered order.",
+    invite: "Dan-Mon Fairwind runs a global marine spare-parts business on a web of spreadsheets, email, and disconnected tools. They brought me in to design a single internal CRM their whole team could run the business on, from first enquiry to delivered order.",
     situation: "Every enquiry, quote, purchase order, and customer lived in a different place. Sales chased quotes over email, procurement re-keyed the same data, and no one had a clear view of a deal from start to finish. As volume grew, context and margin leaked at every handoff.",
-    outcome: "A unified enterprise CRM covering the complete lifecycle — opportunities, quotations, procurement, order fulfilment, and customer relationships — giving the team one connected system and a single source of truth for every deal.",
+    outcome: "A unified enterprise CRM covering the complete lifecycle, including opportunities, quotations, procurement, order fulfilment, and customer relationships, giving the team one connected system and a single source of truth for every deal.",
   },
   role: {
-    summary: "I owned end-to-end design of the internal CRM — the system the entire company uses to manage the sales-to-supply lifecycle. From product discovery and workflow mapping to information architecture and interface design across every module, I shaped how the team turns enquiries into quotes, purchase orders, and delivered parts.",
-    summaryExtra: "I worked upstream from the screens: mapping the real, messy workflow first — across sales, procurement, and operations — then designing each module to mirror how the business actually runs. I built a shared pattern library so complex, data-heavy tools stayed consistent, and validated every flow with the people who use it daily.",
+    summary: "I owned end-to-end design of the internal CRM, the system the entire company uses to manage the sales-to-supply lifecycle. From product discovery and workflow mapping to information architecture and interface design across every module, I shaped how the team turns enquiries into quotes, purchase orders, and delivered parts.",
+    summaryExtra: "I worked upstream from the screens, mapping the real, messy workflow first across sales, procurement, and operations, then designing each module to mirror how the business actually runs. I built a shared pattern library so complex, data-heavy tools stayed consistent, and validated every flow with the people who use it daily.",
     owned: ["Product Discovery", "Workflow Mapping", "Information Architecture", "Interface Design", "Platform Design System", "Prototyping & Validation"],
     withWhom: ["Founders / Operations Lead", "Sales Team", "Procurement Team", "Engineering"],
     howIWorked: ["End-to-end execution", "Workflow-driven design", "Hands-on with the team", "Module-by-module delivery", "Validated with daily users"],
@@ -22,12 +22,12 @@ export const danMonFairwindData: CaseData = {
     {
       number: "01 — Opportunities & Pipeline",
       title: "One view of every deal in play",
-      description: "Enquiries used to live in inboxes with no shared status. We designed a pipeline that gives sales one view of every opportunity — from first enquiry to won or lost — with the context needed to move each deal forward.",
+      description: "Enquiries used to live in inboxes with no shared status. We designed a pipeline that gives sales one view of every opportunity, from first enquiry to won or lost, with the context needed to move each deal forward.",
       visual: "/Opportunities_pipeline_danmo_1300x1560.jpg",
       points: [
         "Capture every enquiry in one place, not scattered across inboxes",
         "Track each opportunity through clear pipeline stages",
-        "Full context on each deal — customer, parts, history — at a glance",
+        "Full context on each deal, including customer, parts, and history, at a glance",
       ],
     },
     {
@@ -38,7 +38,7 @@ export const danMonFairwindData: CaseData = {
       points: [
         "Generate quotes directly from an opportunity",
         "Pull parts, pricing, and supplier data into one place",
-        "Track quote status — sent, accepted, revised — end to end",
+        "Track quote status, from sent to accepted to revised, end to end",
       ],
     },
     {
@@ -56,7 +56,7 @@ export const danMonFairwindData: CaseData = {
     {
       number: "04 — Customers & Accounts",
       title: "The full history behind every relationship",
-      description: "Customer information was spread across people and files. We built account management so every relationship carries its full history — enquiries, quotes, orders — in one place.",
+      description: "Customer information was spread across people and files. We built account management so every relationship carries its full history, including enquiries, quotes, and orders, in one place.",
       visual: "/Customers_accounts_danmo_1300x1560.jpg",
       points: [
         "A single record for every customer and account",
@@ -68,22 +68,22 @@ export const danMonFairwindData: CaseData = {
   selectedScreens: [],
   impact: {
     items: [
-      { value: "4", label: "Connected modules", body: "Opportunities, quotations, procurement & fulfilment, and accounts — one system." },
+      { value: "4", label: "Connected modules", body: "Opportunities, quotations, procurement & fulfilment, and accounts, all in one system." },
       { value: "1", label: "Source of truth", body: "A single CRM replaces scattered spreadsheets, email, and disconnected tools." },
       { value: "100%", label: "Lifecycle coverage", body: "The full sales-to-supply journey designed, from enquiry to delivered order." },
       { value: "Global", label: "Operational reach", body: "Supports sourcing, fulfilment, and delivery to customers worldwide." },
     ],
-    summary: "By designing the CRM around how the business truly runs, the team gained one connected view of every deal — and the speed, clarity, and control to scale a complex global operation.",
+    summary: "By designing the CRM around how the business truly runs, the team gained one connected view of every deal, along with the speed, clarity, and control to scale a complex global operation.",
   },
   reflection: {
     insights: [
       {
         number: "01",
-        insight: "For internal tools, clarity and speed beat visual polish — every extra click and re-keyed field costs the team real time and margin.",
+        insight: "For internal tools, clarity and speed beat visual polish. Every extra click and re-keyed field costs the team real time and margin.",
       },
       {
         number: "02",
-        insight: "Mapping the real, messy workflow across sales, procurement, and ops mattered more than any single screen — the system had to mirror how the business actually runs.",
+        insight: "Mapping the real, messy workflow across sales, procurement, and ops mattered more than any single screen. The system had to mirror how the business actually runs.",
       },
       {
         number: "03",
