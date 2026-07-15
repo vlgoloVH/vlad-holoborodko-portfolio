@@ -5,7 +5,7 @@ import { LogoStrip } from "@/components/sections/logo-strip";
 export function Hero() {
   return (
     <section className="relative flex h-full flex-col justify-between overflow-hidden border-none bg-[var(--color-bg)] px-8 md:px-14">
-      <div className="flex flex-1 items-center pt-16">
+      <div className="flex flex-1 items-center pt-8 md:pt-16">
         <div className="mx-auto w-full max-w-content">
           <div className="flex flex-col gap-3 font-mono text-xs uppercase tracking-widest text-muted items-center text-center md:flex-row md:items-center md:justify-between md:text-left">
             <span>— SENIOR PRODUCT DESIGNER · EST. 2015</span>
@@ -17,7 +17,7 @@ export function Hero() {
               Available for new projects
             </span>
           </div>
-          <div className="mt-8 grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-10">
+          <div className="mt-6 grid items-center gap-6 md:mt-8 md:grid-cols-[1fr_auto] md:gap-10">
             <div>
               <Reveal delay={0.05}>
                 <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink text-center md:text-left">
@@ -43,7 +43,7 @@ export function Hero() {
                 href="/resume.pdf"
                 download
                 data-cursor="Download"
-                className="group relative mx-auto flex h-44 w-44 items-center justify-center md:h-56 md:w-56 mt-16 md:mt-0"
+                className="group relative mx-auto flex h-32 w-32 items-center justify-center md:h-56 md:w-56 mt-6 md:mt-0"
               >
                 <svg
                   viewBox="0 0 200 200"
