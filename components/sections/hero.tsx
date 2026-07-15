@@ -17,7 +17,7 @@ export function Hero() {
               Available for new projects
             </span>
           </div>
-          <div className="mt-6 grid items-center gap-6 md:mt-8 md:grid-cols-[1fr_auto] md:gap-10">
+          <div className="mt-4 grid items-center gap-6 md:mt-8 md:grid-cols-[1fr_auto] md:gap-10">
             <div>
               <Reveal delay={0.05}>
                 <h1 className="font-display text-display-xl font-semibold uppercase leading-[0.95] text-ink text-center md:text-left">
@@ -43,7 +43,7 @@ export function Hero() {
                 href="/resume.pdf"
                 download
                 data-cursor="Download"
-                className="group relative mx-auto flex h-40 w-40 items-center justify-center mt-2 md:h-56 md:w-56 md:mt-0"
+                className="group relative mx-auto flex h-40 w-40 items-center justify-center mt-0 md:h-56 md:w-56 md:mt-0"
               >
                 <svg
                   viewBox="0 0 200 200"
@@ -70,7 +70,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <div className="w-full border-none mt-2 md:mt-0">
+      <div className="w-full border-none md:mt-0">
         <LogoStrip />
       </div>
     </section>
