@@ -140,7 +140,7 @@ export function Contact() {
                 <defs>
                   <path id="contact-circle" d="M 100,100 m -88,0 a 88,88 0 1,1 176,0 a 88,88 0 1,1 -176,0" fill="none" />
                 </defs>
-                <text fill="currentColor" className="font-mono text-[14px] uppercase tracking-[0.25em]">
+                <text fill="currentColor" className="font-mono text-[12px] uppercase tracking-[0.25em]">
                   <textPath href="#contact-circle">Download resume • Download resume • Download resume •</textPath>
                 </text>
               </svg>
