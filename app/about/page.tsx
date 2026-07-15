@@ -258,7 +258,7 @@ export default function AboutPage() {
       <section className="px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
-            <div className="flex items-baseline justify-between">
+            <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
               <h2 className="font-display text-display-md font-semibold uppercase text-ink">
                 Experience
               </h2>
