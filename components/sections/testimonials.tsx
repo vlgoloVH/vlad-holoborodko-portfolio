@@ -125,13 +125,16 @@ export function Testimonials() {
           } as React.CSSProperties}
         >
           <div
-            className="flex items-start gap-4 pb-4 pl-[max(1.5rem,calc(50vw_-_700px))] md:pl-[max(2.5rem,calc(50vw_-_700px))]"
-            style={{ paddingRight: 0 }}
+            className="flex items-start gap-4 pb-4"
+            style={{
+              paddingLeft: "max(1.5rem, calc(50vw - 700px))",
+              paddingRight: 0,
+            }}
           >
             {doubled.map((t, i) => (
               <TestimonialCard key={`${t.name}-${i}`} quote={t.quote} name={t.name} role={t.role} />
             ))}
-           <div className="shrink-0 w-[max(1.5rem,calc(50vw_-_700px))] md:w-[max(2.5rem,calc(50vw_-_700px))]" />
+           <div style={{ width: "max(1.5rem, calc(50vw - 700px))", flexShrink: 0 }} />
           </div>
         </div>
         <div
