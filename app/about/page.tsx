@@ -357,7 +357,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── 7. Product Design Stack ── */}
-      <section className="border-t border-line px-8 py-24 md:px-14 md:py-32">
+        <section className="px-8 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-content">
           <Reveal>
             <h2 className="font-display text-display-md font-semibold uppercase text-ink">
