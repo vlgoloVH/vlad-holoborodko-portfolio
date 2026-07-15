@@ -12,7 +12,7 @@ export const bitterbrainsData: CaseData = {
   role: {
     summary: "I joined as a UX/UI Designer and grew into a Product Designer over five years, becoming the person responsible for the design of every product, conference, and brand touchpoint the company produced.",
     summaryExtra: "I worked across every function: product, marketing, engineering, and content. From designing platform UIs and course experiences to creating conference brands, social media assets, and physical event materials, if it needed to look good and work well, it came through me.",
-    owned: ["Vue School Platform UX & UI", "Mastering Nuxt & Mastering Pinia", "AIDD Product", "Certificates.dev", "Vue Bundle", "InstantDev & LevelUp", "Conference Branding & UI", "Social Media & Marketing Design", "Physical Event Materials"],
+    owned: ["Platform UX & UI", "Design Systems", "Brand & Visual Identity", "Conference Experience Design", "Certification Product Design", "Marketing & Campaign Design", "Cross-Product Consistency"],
     withWhom: ["Engineering", "Marketing", "Content & Education", "1 Designer", "Video Designers", "External Partners"],
     howIWorked: ["End-to-end product design", "Brand & visual identity", "Cross-functional collaboration", "Marketing design", "Conference experience design", "Iterative delivery"],
   },
