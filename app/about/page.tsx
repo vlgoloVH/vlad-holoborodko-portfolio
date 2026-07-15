@@ -204,7 +204,7 @@ export default function AboutPage() {
                   importance of designing for both people and business outcomes.
                 </p>
                 <p>
-                  Over the last 11+ years, I&apos;ve collaborated with startups,
+                  Over the last 10+ years, I&apos;ve collaborated with startups,
                   scale-ups, and international companies, designing products
                   across fintech, proptech, SaaS, LegalTech, retail, and
                   enterprise software. Along the way, my focus naturally evolved
