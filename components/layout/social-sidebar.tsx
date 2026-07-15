@@ -56,7 +56,7 @@ export function SocialSidebar() {
             rel="noreferrer noopener"
             aria-label={link.label}
             data-cursor="Open"
-            className="glass-bg flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink backdrop-blur-md transition-colors duration-300 hover:border-accent hover:text-accent"
+            className="glass-bg flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink backdrop-blur-md transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-black"
           >
             {Icon && <Icon size={18} strokeWidth={1.5} />}
           </a>
