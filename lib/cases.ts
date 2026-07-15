@@ -127,7 +127,7 @@ export const CASES: Case[] = [
       role: "Senior Product Designer",
       team: "30+",
       tools: ["Figma", "Storybook", "Zeroheight"],
-      skills: ["Back-office UX", "Workflow design", "Design systems", "Data-heavy interfaces"],
+      skills: ["Product Catalog", "Commerce Operations", "Design Systems", "Cross-functional Collaboration"],
     },
     sections: [],
   },
