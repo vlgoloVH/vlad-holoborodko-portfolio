@@ -29,7 +29,7 @@ export const spaceNeedleData: CaseData = {
         "Halo Selfie: 360° camera experience on the outer observation ring",
         "SkyHigh Selfie: photo experience at 520 feet on the open-air deck",
         "Touchscreen tablet UI designed for guests of all ages and tech familiarity",
-        "Instant photo preview and delivery to the Space Needle app",
+        "Instant photo preview and delivery to the SpaceBook app",
         "Optimized for high-traffic, fast-paced guest interactions",
       ],
     },
