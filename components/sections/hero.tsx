@@ -8,7 +8,7 @@ export function Hero() {
       <div className="flex flex-1 items-center pt-16">
         <div className="mx-auto w-full max-w-content">
           <div className="flex flex-col gap-3 font-mono text-xs uppercase tracking-widest text-muted items-center text-center md:flex-row md:items-center md:justify-between md:text-left">
-            <span>— Product Designer · Est. 2015</span>
+            <span>— SENIOR PRODUCT DESIGNER · EST. 2015</span>
             <span className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
