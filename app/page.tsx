@@ -7,7 +7,7 @@ import { Contact } from "@/components/sections/contact";
 export default function HomePage() {
   return (
     <>
-      <div className="sticky top-0 z-0 h-screen">
+      <div className="sticky top-0 z-0 h-dvh">
         <Hero />
       </div>
       <div className="relative z-10 bg-[var(--color-bg)]">
