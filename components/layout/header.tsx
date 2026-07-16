@@ -2,11 +2,18 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { NAV_LINKS, SITE } from "@/lib/site";
+import { Menu, X, Linkedin, Instagram, Dribbble } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { NAV_LINKS, SOCIAL_LINKS } from "@/lib/site";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const HEADER_HEIGHT = 88;
+
+const SOCIAL_ICONS: Record<string, LucideIcon> = {
+  LinkedIn: Linkedin,
+  Dribbble: Dribbble,
+  Instagram: Instagram,
+};
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -95,6 +102,23 @@ export function Header() {
                 </Link>
               ))}
             </nav>
+            <div className="absolute inset-x-0 bottom-12 flex justify-center gap-5">
+              {SOCIAL_LINKS.map((link) => {
+                const Icon = SOCIAL_ICONS[link.label];
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={link.label}
+                    className="glass-bg flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink backdrop-blur-md transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-black"
+                  >
+                    {Icon && <Icon size={18} strokeWidth={1.5} />}
+                  </a>
+                );
+              })}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
