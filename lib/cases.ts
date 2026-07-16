@@ -135,7 +135,7 @@ export const CASES: Case[] = [
     slug: "bitterbrains",
     title: "BitterBrains",
     client: "BitterBrains — Developer Education Platform",
-    year: "2019-2025",
+    year: "2018-2023",
     description:
       "A developer education company building online learning platforms, skill certifications, and global conferences for software engineers around the world.",
     tags: ["EdTech", "SaaS", "Community"],

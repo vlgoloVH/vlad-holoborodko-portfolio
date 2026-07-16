@@ -8,7 +8,7 @@ import { Contact } from "@/components/sections/contact";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Product designer with 7+ years of experience across fintech, proptech, SaaS and enterprise platforms.",
+    "Product designer with 10+ years of experience across fintech, proptech, SaaS and enterprise platforms.",
 };
 
 const STACK = [
@@ -101,7 +101,7 @@ const EXPERIENCE = [
 ];
 
 const STATS = [
-  { value: "7+", label: "Years of experience" },
+  { value: "10+", label: "Years of experience" },
   { value: "3", label: "Fintech · Proptech · SaaS" },
   { value: "20+", label: "Products shipped" },
   { value: "Lead", label: "Product Design level" },
