@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { CASES } from "@/lib/cases";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://vladholoborodko.com";
+  const base = "https://vlgolo.com";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${base}/`, changeFrequency: "monthly", priority: 1 },

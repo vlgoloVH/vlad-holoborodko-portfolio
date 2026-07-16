@@ -29,7 +29,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vladholoborodko.com"),
+  metadataBase: new URL("https://vlgolo.com"),
   title: {
     default: `${SITE.name} — ${SITE.role}`,
     template: `%s — ${SITE.name}`,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE.name} — ${SITE.role}`,
     description: SITE.description,
-    url: "https://vladholoborodko.com",
+    url: "https://vlgolo.com",
     siteName: SITE.name,
     type: "website",
   },
