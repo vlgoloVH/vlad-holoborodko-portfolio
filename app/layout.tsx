@@ -8,6 +8,7 @@ import { SocialSidebar } from "@/components/layout/social-sidebar";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { Preloader } from "@/components/layout/preloader";
 import { Cursor } from "@/components/layout/cursor";
+import { Analytics } from "@vercel/analytics/next";
 import { SITE } from "@/lib/site";
 
 const display = Bricolage_Grotesque({
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
