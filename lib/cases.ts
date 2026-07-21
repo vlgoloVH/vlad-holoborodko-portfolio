@@ -48,6 +48,27 @@ export const CASES: Case[] = [
     sections: [],
   },
   {
+    slug: "notary-hub",
+    title: "Notary HUB",
+    client: "Notary HUB — LegalTech SaaS Platform",
+    year: "2018-2019",
+    description:
+      "A US platform for Remote Online Notarization, letting notaries, companies, and clients sign and handle legal documents fully online.",
+    cover: "/NotaryHUB_preview.jpg",
+    industry: "LegalTech",
+    businessType: "B2B",
+    platform: "Web · PWA",
+    tags: ["LegalTech", "SaaS", "Product Design"],
+    meta: {
+      duration: "8 months",
+      role: "Lead Product Designer",
+      team: "20+",
+      tools: ["Figma"],
+      skills: ["Product Design"],
+    },
+    sections: [],
+  },
+  {
     slug: "space-needle",
     title: "Space Needle",
     client: "Space Needle — Ticketing Experience",
