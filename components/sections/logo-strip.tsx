@@ -13,7 +13,6 @@ const LOGOS = [
   "LegalShelf",
   "LoquidBank",
   "Marffa",
-  "NotaryHUB",
   "SmartCrowd",
   "SpaceNeedle",
   "SPD",

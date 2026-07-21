@@ -5,7 +5,6 @@ import { smartcrowdData } from "@/lib/case-data/smartcrowd";
 import { spaceNeedleData } from "@/lib/case-data/space-needle";
 import { bitterbrainsData } from "@/lib/case-data/bitterbrains";
 import { danMonFairwindData } from "@/lib/case-data/dan-mon-fairwind";
-import { notaryHubData } from "@/lib/case-data/notary-hub";
 import { fozzyGroupData } from "@/lib/case-data/fozzy-group";
 
 interface Props {
@@ -17,7 +16,6 @@ const caseDataMap = {
   "space-needle": spaceNeedleData,
   bitterbrains: bitterbrainsData,
   "dan-mon-fairwind": danMonFairwindData,
-  "notary-hub": notaryHubData,
   "fozzy-group": fozzyGroupData,
 };
 
